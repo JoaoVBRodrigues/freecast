@@ -21,6 +21,7 @@ As versões diretas foram resolvidas e gravadas nos lockfiles gerados; patches f
 | PostgreSQL | 17 (imagem `postgres:17-alpine`, configurada mas ainda não iniciada) |
 | Fontsource Roboto / Lato / Inconsolata | 5.3.0 / 5.3.0 / 5.3.0 |
 | Lucide Vue | `@lucide/vue` 1.58.0 |
+| Vue Konva | `vue-konva` 4.0.1 / Konva 10.9.0 |
 
 Context7 confirma que Laravel 12 aceita PHP 8.2 e oferece o starter kit Vue/Inertia com TypeScript; o adaptador Inertia 2.0.28 foi resolvido com Laravel 12.62.0 e a atualização compatível corrigiu a base para 12.70.0. O scaffold foi executado com PHP 8.2.12, e `composer.lock` e `package-lock.json` preservam as versões instaladas. Docker Engine 29.2.1 está disponível. A imagem PostgreSQL 17 do projeto não foi iniciada.
 
@@ -34,6 +35,15 @@ Context7 confirma que Laravel 12 aceita PHP 8.2 e oferece o starter kit Vue/Iner
 - Não há Redis/SSR/microserviços, execução de scripts/plugins legados, engine de dados, upload ou editor de fichas nesta parte.
 - O atalho `composer dev` omite o tail interativo do Pail: o PHP Windows instalado não oferece `pcntl`. Os logs permanecem em `storage/logs/laravel.log`, e o processo web/Vite/fila/Reverb é iniciado normalmente.
 - `composer dev` fixa o Vite em `127.0.0.1:5173` para não mudar silenciosamente de porta se `localhost` resolver para IPv6; o endpoint Echo local usa `REVERB_HOST=127.0.0.1`.
+- A Parte 1 não incluía upload nem editor de mapas; a Parte 2 adiciona esses recursos sem mudar o limite arquitetural do monólito, storage privado, fila no banco ou dependência de PostgreSQL para estado compartilhado.
+
+## Mapas e biblioteca — Parte 2
+
+- Mapas, pastas, recursos, camadas e objetos pertencem à mesa e são persistidos no banco. Imagens usam o disco privado `local`, com upload limitado a 20 MB e dimensões máximas de 8192 × 8192; o download sempre passa por autorização HTTP.
+- Camadas, objetos invisíveis e assets exclusivos do mestre não são serializados para jogadores. Jogadores recebem apenas camadas públicas visíveis e só podem alterar `x/y` de tokens visíveis, desbloqueados e atribuídos à própria conta; mestres controlam todos.
+- Câmera e opção de encaixe são preferências locais no `localStorage`, indexadas por usuário/mapa. Dimensões, grade, camadas, ordem e propriedades/posições dos tokens são compartilhadas no banco.
+- `mapCoordinates.ts` concentra conversões tela/mundo, zoom ancorado e encaixe. O `dragBoundFunc` do Konva recebe/devolve coordenadas absolutas do canvas; o editor converte para coordenadas de mundo antes de aplicar snap/limites e persiste a posição local do nó.
+- `vue-konva` 4.0.1 e Konva 10.9.0 foram escolhidos para Vue 3 após confirmação no Context7; as versões ficam travadas em `package-lock.json`. O editor original não foi validado visualmente; canvas e interações desta etapa são decisões próprias, sem alegação de paridade comprovada.
 
 ## Fontes, ícones e paleta
 

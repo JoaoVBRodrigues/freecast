@@ -8,6 +8,7 @@ import {
     Dices,
     Ellipsis,
     LockKeyhole,
+    MapPinned,
     MessageSquare,
     Music,
     Paperclip,
@@ -114,6 +115,9 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
             <button v-if="!room.is_owner" class="icon-button leave-room-button" type="button" @click="leaveRoom">
                 <span>Sair da mesa</span><X :size="14" />
             </button>
+            <Link class="icon-button map-library-tab-link" :href="`/mesas/${room.id}/mapas`" aria-label="Mapas e biblioteca" title="Mapas e biblioteca">
+                <MapPinned :size="14" /><span>Mapas</span>
+            </Link>
         </template>
         <section class="room-page">
             <div

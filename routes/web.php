@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\MapLibraryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use Illuminate\Support\Facades\Route;
@@ -16,6 +18,22 @@ Route::middleware('auth')->group(function () {
     Route::post('/mesas/{room}/favorita', [RoomController::class, 'toggleFavorite'])->whereNumber('room')->name('rooms.favorite');
     Route::patch('/mesas/{room}/preferencias', [RoomController::class, 'updatePreferences'])->whereNumber('room')->name('rooms.preferences');
     Route::post('/mesas/{room}/mensagens', [RoomController::class, 'storeMessage'])->whereNumber('room')->name('rooms.messages.store');
+    Route::get('/mesas/{room}/mapas', [MapController::class, 'index'])->whereNumber('room')->name('maps.index');
+    Route::post('/mesas/{room}/mapas', [MapController::class, 'store'])->whereNumber('room')->name('maps.store');
+    Route::get('/mesas/{room}/mapas/{map}', [MapController::class, 'show'])->whereNumber(['room', 'map'])->name('maps.show');
+    Route::patch('/mesas/{room}/mapas/{map}', [MapController::class, 'update'])->whereNumber(['room', 'map'])->name('maps.update');
+    Route::post('/mesas/{room}/mapas/{map}/duplicar', [MapController::class, 'duplicate'])->whereNumber(['room', 'map'])->name('maps.duplicate');
+    Route::delete('/mesas/{room}/mapas/{map}', [MapController::class, 'destroy'])->whereNumber(['room', 'map'])->name('maps.destroy');
+    Route::patch('/mesas/{room}/mapas/{map}/camadas/{layer}', [MapController::class, 'updateLayer'])->whereNumber(['room', 'map', 'layer'])->name('maps.layers.update');
+    Route::post('/mesas/{room}/mapas/{map}/objetos', [MapController::class, 'storeObject'])->whereNumber(['room', 'map'])->name('maps.objects.store');
+    Route::patch('/mesas/{room}/mapas/{map}/objetos/{object}', [MapController::class, 'updateObject'])->whereNumber(['room', 'map', 'object'])->name('maps.objects.update');
+    Route::delete('/mesas/{room}/mapas/{map}/objetos/{object}', [MapController::class, 'destroyObject'])->whereNumber(['room', 'map', 'object'])->name('maps.objects.destroy');
+    Route::post('/mesas/{room}/biblioteca/pastas', [MapLibraryController::class, 'storeFolder'])->whereNumber('room')->name('maps.folders.store');
+    Route::patch('/mesas/{room}/biblioteca/pastas/{folder}', [MapLibraryController::class, 'updateFolder'])->whereNumber(['room', 'folder'])->name('maps.folders.update');
+    Route::delete('/mesas/{room}/biblioteca/pastas/{folder}', [MapLibraryController::class, 'destroyFolder'])->whereNumber(['room', 'folder'])->name('maps.folders.destroy');
+    Route::post('/mesas/{room}/biblioteca/recursos', [MapLibraryController::class, 'storeAsset'])->whereNumber('room')->name('maps.assets.store');
+    Route::get('/mesas/{room}/recursos/{asset}', [MapLibraryController::class, 'showAsset'])->whereNumber(['room', 'asset'])->name('maps.assets.show');
+    Route::delete('/mesas/{room}/biblioteca/recursos/{asset}', [MapLibraryController::class, 'destroyAsset'])->whereNumber(['room', 'asset'])->name('maps.assets.destroy');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

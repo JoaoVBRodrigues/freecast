@@ -12,6 +12,7 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createApp, DefineComponent, h } from 'vue';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy';
 import { configureEcho } from '@laravel/echo-vue';
+import VueKonva from 'vue-konva';
 
 configureEcho({
     broadcaster: 'reverb',
@@ -30,6 +31,7 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .use(ZiggyVue)
+            .use(VueKonva)
             .mount(el);
     },
     progress: {

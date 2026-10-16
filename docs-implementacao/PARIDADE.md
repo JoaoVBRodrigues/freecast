@@ -1,4 +1,4 @@
-# Paridade visual e funcional — Parte 1
+# Paridade visual e funcional — Partes 1 e 2
 
 ## Referências alvo
 
@@ -23,3 +23,10 @@ Validação visual e funcional concluída: Playwright MCP capturou ambas as tela
 - Não se reproduz a moldura nativa do Windows; há uma faixa superior funcional dentro da página.
 - A Parte 1 não implementa editor/execução de macros, parser de rolagem, upload, fichas nem regras de turno. Os controles correspondentes são apresentação inicial.
 - O indicador de conectividade e as barras visuais de participantes não prometem telemetria nem valores de personagem.
+
+## Parte 2 — biblioteca e editor de mapas
+
+- A captura [Editor de mapas](capturas/editor-mapa.png) foi feita com Playwright MCP em viewport 867 × 465 usando fundo e tokens sintéticos próprios. Ela registra a aparência funcional implementada e não é uma comparação visual com o editor original.
+- A documentação de investigação não validou visualmente o editor original. Por isso, zoom ancorado no cursor, pan por Espaço, controles de camada e o painel de propriedades são decisões novas, sem alegação de paridade comprovada.
+- A interface mantém os tokens de cor, tipografia, densidade e hierarquia da Parte 1 e conserva o acesso à conversa da mesa por uma aba.
+- O teste browser confirma upload do fundo, colocação e movimentação de três tokens, zoom/pan, encaixe, autorização, dados ocultos e recuperação após recarga. Não verifica sincronização entre navegadores, que pertence à Parte 3.

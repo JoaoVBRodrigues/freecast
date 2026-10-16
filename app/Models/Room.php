@@ -65,4 +65,19 @@ class Room extends Model
     {
         return $this->hasMany(RoomPreference::class);
     }
+
+    public function maps(): HasMany
+    {
+        return $this->hasMany(RoomMap::class);
+    }
+
+    public function assetFolders(): HasMany
+    {
+        return $this->hasMany(RoomAssetFolder::class);
+    }
+
+    public function assets(): HasMany
+    {
+        return $this->hasMany(RoomAsset::class);
+    }
 }

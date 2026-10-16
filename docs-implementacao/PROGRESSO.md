@@ -19,4 +19,20 @@
 - [x] `composer dev` iniciado e verificado no Windows; processo Pail foi removido do atalho por depender de `pcntl`, e Vite está fixado em IPv4/porta 5173.
 - [ ] Validar execução com PostgreSQL: Docker está disponível; habilitar `pdo_pgsql`/`pgsql` no PHP e iniciar o serviço do projeto em 5434. As portas 5432 e 5433 pertencem a outros projetos e não foram alteradas.
 
-Esta entrega para antes da Parte 2. O histórico de conversa e os controles laterais são o recorte inicial; editor de fichas, execução de macros, rolagem estruturada, uploads e gerenciamento de combate não fazem parte desta etapa.
+Na Parte 1, o histórico de conversa e os controles laterais foram o recorte inicial; editor de fichas, execução de macros, rolagem estruturada e gerenciamento de combate continuam fora do escopo.
+
+## Parte 2/4 — biblioteca de imagens e editor de mapas
+
+- [x] Biblioteca da mesa com pastas, upload de imagens privadas, validação e downloads autorizados.
+- [x] CRUD de mapas: criar, renomear, duplicar, excluir e abrir; grade vazia ou fundo, dimensões e aparência da grade persistidos.
+- [x] Editor Konva com zoom ancorado no cursor, pan por Espaço, enquadramento, seleção, arraste, redimensionamento, rotação e edição de tokens.
+- [x] Camadas de fundo, objetos, tokens e mestre com visibilidade, bloqueio e ordem visual persistidos.
+- [x] Atribuição de token a jogador; jogadores só movimentam tokens visíveis, desbloqueados e atribuídos a eles.
+- [x] Preferências de câmera e encaixe salvas localmente por usuário/mapa; estado compartilhado persistido no banco.
+- [x] Testes Laravel: `php artisan test` — 33 testes, 151 assertions aprovadas; inclui dados ocultos e negação de downloads privados.
+- [x] Build: `npm run build` — `vue-tsc` e Vite concluídos.
+- [x] Playwright Test: `npm run test:e2e` — 3 testes aprovados. O fluxo de mapa cria a mesa e o mapa, envia fundo e três tokens sintéticos, testa zoom/pan/arraste com encaixe, permissões do jogador e persistência após recarga.
+- [x] Captura Playwright MCP do canvas em 867 × 465 salva em `capturas/editor-mapa.png`; verifica a implementação nova, não paridade com o editor original.
+- [ ] Validar execução com PostgreSQL; os testes desta etapa usaram SQLite local.
+
+Esta etapa termina antes da Parte 3. A edição é persistente, mas ainda não sincroniza alterações simultâneas entre navegadores; visão dinâmica, áudio, plugins Lua e importador UVTT permanecem fora do escopo.
