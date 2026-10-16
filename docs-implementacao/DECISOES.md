@@ -18,12 +18,12 @@ As versões diretas foram resolvidas e gravadas nos lockfiles gerados; patches f
 | Laravel Reverb | 1.12.0 |
 | Laravel Echo / Echo Vue | 2.6.1 / 2.6.1 |
 | Playwright Test | 1.64.1 |
-| PostgreSQL | 17 (imagem `postgres:17-alpine`, configurada mas ainda não iniciada) |
+| PostgreSQL | 17 (imagem `postgres:17-alpine`, validada em `127.0.0.1:5434`) |
 | Fontsource Roboto / Lato / Inconsolata | 5.3.0 / 5.3.0 / 5.3.0 |
 | Lucide Vue | `@lucide/vue` 1.58.0 |
 | Vue Konva | `vue-konva` 4.0.1 / Konva 10.9.0 |
 
-Context7 confirma que Laravel 12 aceita PHP 8.2 e oferece o starter kit Vue/Inertia com TypeScript; o adaptador Inertia 2.0.28 foi resolvido com Laravel 12.62.0 e a atualização compatível corrigiu a base para 12.70.0. O scaffold foi executado com PHP 8.2.12, e `composer.lock` e `package-lock.json` preservam as versões instaladas. Docker Engine 29.2.1 está disponível. A imagem PostgreSQL 17 do projeto não foi iniciada.
+Context7 confirma que Laravel 12 aceita PHP 8.2 e oferece o starter kit Vue/Inertia com TypeScript; o adaptador Inertia 2.0.28 foi resolvido com Laravel 12.62.0 e a atualização compatível corrigiu a base para 12.70.0. O scaffold foi executado com PHP 8.2.12, e `composer.lock` e `package-lock.json` preservam as versões instaladas. Docker Engine 29.2.1 e PostgreSQL 17 foram validados; o único serviço do Compose iniciado foi o PostgreSQL deste projeto, na porta 5434.
 
 ## Fronteiras
 
@@ -31,8 +31,8 @@ Context7 confirma que Laravel 12 aceita PHP 8.2 e oferece o starter kit Vue/Iner
 - Reverb transmite mensagens apenas no canal privado `rooms.{id}`; a policy do canal consulta associação persistida. HTTP continua sendo a escrita durável.
 - Owner cria a mesa; owner e master estão autorizados a administrar a mesa; jogadores entram e podem sair. Conteúdo e mensagens exigem associação, mesmo que a mesa apareça publicamente no catálogo.
 - Senhas de mesas restritas são armazenadas com hash. O catálogo não enumera mesas privadas.
-- SQLite local é apenas um modo de validação neste ambiente sem servidor PostgreSQL; `.env.example` aponta para PostgreSQL.
-- Não há Redis/SSR/microserviços, execução de scripts/plugins legados, engine de dados, upload ou editor de fichas nesta parte.
+- PostgreSQL é o banco de desenvolvimento ativo. A base SQLite anterior permanece em `database/database.sqlite` sem migração ou alteração dos dados.
+- Não há Redis/SSR/microserviços, execução de scripts/plugins legados, engine de dados ou editor de fichas nas Partes 1 e 2.
 - O atalho `composer dev` omite o tail interativo do Pail: o PHP Windows instalado não oferece `pcntl`. Os logs permanecem em `storage/logs/laravel.log`, e o processo web/Vite/fila/Reverb é iniciado normalmente.
 - `composer dev` fixa o Vite em `127.0.0.1:5173` para não mudar silenciosamente de porta se `localhost` resolver para IPv6; o endpoint Echo local usa `REVERB_HOST=127.0.0.1`.
 - A Parte 1 não incluía upload nem editor de mapas; a Parte 2 adiciona esses recursos sem mudar o limite arquitetural do monólito, storage privado, fila no banco ou dependência de PostgreSQL para estado compartilhado.
@@ -51,14 +51,17 @@ Roboto, Lato e Inconsolata são dependências npm Fontsource 5.3.0; o registro n
 
 Tokens de cor em `resources/css/app.css`: acento `#EB3449`, fundos `#212121`, `#272727`, `#333333`, superfície `#363B45` e texto do chat `#B9BABC`.
 
-## Requisitos do host para PostgreSQL
+## Validação PostgreSQL — host Windows
 
-Este ambiente tem PHP/Composer/Node e Docker Engine 29.2.1. Outros projetos usam as portas 5432 (`petsitters_postgres`) e 5433 (`cineingresso_db`); nenhum foi parado nem alterado. A porta 5434 estava livre na verificação. O PHP não carrega `pdo_pgsql`/`pgsql`, embora as DLLs estejam instaladas. Para usar o banco-alvo no Windows:
+- `where.exe php` identificou `C:\xampp\php\php.exe`; `php --ini` confirmou `C:\xampp\php\php.ini` como configuração efetivamente carregada. `pdo_pgsql` e `pgsql` estavam comentadas nesse arquivo, embora as DLLs existissem.
+- Foi feito backup em `C:\xampp\php\php.ini.freecast-postgres-20261016204746.bak`; somente `;extension=pdo_pgsql` e `;extension=pgsql` foram habilitadas. `php -m` confirmou os dois módulos carregados.
+- `docker compose up -d postgres` iniciou apenas `freecast-postgres-1`, imagem `postgres:17-alpine`, saudável e publicada em `127.0.0.1:5434`. A porta 5434 foi conferida livre antes da inicialização; nenhum container de outro projeto foi parado ou alterado.
+- O `.env` existente foi ajustado somente nas variáveis da conexão PostgreSQL (`DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`, `POSTGRES_HOST_PORT`). A `APP_KEY` foi preservada, o segredo local não foi impresso nem registrado e o arquivo continua ignorado pelo Git. Não foi substituído pelo `.env.example`.
+- A base de desenvolvimento `freecast` estava vazia. `php artisan config:clear`, `php artisan migrate --database=pgsql --force` e `php artisan db:seed --database=pgsql --force` aplicaram as seis migrations e as três contas sintéticas. Uma segunda execução do seed confirmou idempotência.
+- `database/database.sqlite` permaneceu intacto; os dados não foram copiados. A conexão PostgreSQL não importa automaticamente o conteúdo anterior.
+- Foi criada uma base isolada `freecast_test`. Como `phpunit.xml` declara explicitamente `DB_CONNECTION=pgsql`, `DB_DATABASE=freecast_test`, host e porta, a suíte não usa SQLite silenciosamente. `PostgresTestDatabaseTest` verifica a conexão efetiva e o nome da base. `.env.testing` não é necessário nesta configuração.
+- Resultados executados: `php artisan test` — 34 testes/153 assertions aprovadas; `npm run test:e2e` — 3 testes aprovados. A aplicação conectada ao PostgreSQL foi validada com login, criação/entrada em mesa, autorização, upload privado, mapa, tokens, atribuição e persistência após reload. O browser também confirmou uma mensagem da mesa via Reverb.
+- `composer dev` iniciou HTTP, fila, Vite e Reverb; `/login` respondeu HTTP 200, e Reverb iniciou em `0.0.0.0:8080`. A suíte usa fila síncrona nos testes; esta validação confirma inicialização do worker, não processamento de tarefas assíncronas de aplicação.
+- O `storage/logs/laravel.log` preexistente foi mantido. As mensagens SQLite nele terminam antes da troca de conexão e do início do stack PostgreSQL; não há erros posteriores à inicialização. Nos testes Playwright, a espera pelo heading após login foi ampliada para 15 segundos devido à latência medida do POST/redirecionamento no host Windows; a mesma condição de sucesso continua sendo verificada.
 
-1. Se o Engine estiver parado, inicie Docker Desktop e confirme `docker version`.
-2. Em `C:\xampp\php\php.ini`, confirme `extension_dir="C:\xampp\php\ext"` e habilite `extension=pdo_pgsql` e `extension=pgsql`; abra um terminal novo e confirme `php -m | findstr /I "pdo_pgsql pgsql"`.
-3. Copie `.env.example` para `.env`, defina `DB_PASSWORD` com uma senha local e mantenha `DB_HOST=127.0.0.1`, `DB_PORT=5434`, `POSTGRES_HOST_PORT=5434`, `DB_DATABASE=freecast` e `DB_USERNAME=freecast`. Se 5434 também estiver ocupada, altere ambos os valores de porta para a mesma porta livre.
-4. Execute `docker compose up -d postgres`, `composer install`, `npm ci`, `php artisan key:generate` e `php artisan migrate --seed`.
-5. Inicie `composer dev` para HTTP, Vite, fila e Reverb; consulte os logs em `storage/logs/laravel.log`.
-
-As extensões `pdo_pgsql`/`pgsql` permanecem desativadas e a instância deste projeto não foi iniciada. Os testes desta etapa usam SQLite; isso não substitui validação final no PostgreSQL.
+Comandos para iniciar no host já configurado: `docker compose up -d postgres` e `composer dev`. A base está pronta para a Parte 3; transferência de eventuais dados SQLite continua sendo uma operação separada e pendente.

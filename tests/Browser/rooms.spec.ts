@@ -7,7 +7,7 @@ async function signIn(page: Page, email: string): Promise<void> {
     await page.getByLabel('E-mail').fill(email);
     await page.getByLabel('Senha', { exact: true }).fill(demoPassword);
     await page.getByRole('button', { name: 'Entrar', exact: true }).click();
-    await expect(page.getByRole('heading', { name: 'Início' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Início' })).toBeVisible({ timeout: 15_000 });
 }
 
 test('a registered player can sign in and see the home page', async ({ page }) => {
