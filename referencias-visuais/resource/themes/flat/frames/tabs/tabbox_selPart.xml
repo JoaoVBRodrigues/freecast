@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="100" height="34"  >
+	<import file="../../consts.xml"/>
+	<draw>		
+		<path left="0" top="23" right="100" bottom="34" zOrder="1" mode="inv9slice" roundToPixel="true">
+			<anchors left="true" top="false" bottom="true" right="true"/>
+			<borders left="43" top="0" right="43" bottom="0"/>
+			<pathData>M 0 9 H 44 L 50 2 L 56 9 L 100 9</pathData>
+			<stroke color="$(dominant_color)" size="2"/>
+		</path>		
+	</draw>
+</frame>

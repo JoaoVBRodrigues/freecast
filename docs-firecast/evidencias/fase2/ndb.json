@@ -1,0 +1,3827 @@
+{
+  "evidenceId": "F2-NDB-001",
+  "kind": "independent static evidence, not a REA-issued Evidence ID",
+  "procedure": "readZip central directory and in-memory store/deflate decompression; UTF-8 text with 1-based lines split on CRLF/LF; selections only; no Lua evaluation, target launch, profile, cache or log access",
+  "toolVersion": "v22.23.2",
+  "input": {
+    "path": "C:\\Users\\João\\AppData\\Local\\Firecast\\resource.zip",
+    "size": 21462948,
+    "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+    "eocdOffset": 21462926,
+    "centralOffset": 21329906,
+    "centralSize": 133020,
+    "memberCount": 1422
+  },
+  "sources": [
+    {
+      "id": "NDB-S1",
+      "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00081",
+      "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+      "size": 22091,
+      "lineCount": 947,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 76,
+          "end": 96,
+          "lines": [
+            {
+              "line": 76,
+              "text": "function localNDB.Node:getChildCount()"
+            },
+            {
+              "line": 77,
+              "text": "\treturn _ndb_getChildCount(self.handle);"
+            },
+            {
+              "line": 78,
+              "text": "end;"
+            },
+            {
+              "line": 79,
+              "text": ""
+            },
+            {
+              "line": 80,
+              "text": "function localNDB.Node:getChild(indice)"
+            },
+            {
+              "line": 81,
+              "text": "\treturn localNDB.openNode(_ndb_getChild(self.handle, indice));"
+            },
+            {
+              "line": 82,
+              "text": "end;"
+            },
+            {
+              "line": 83,
+              "text": ""
+            },
+            {
+              "line": 84,
+              "text": "function localNDB.Node:getAllChilds()"
+            },
+            {
+              "line": 85,
+              "text": "\tlocal ret = {};"
+            },
+            {
+              "line": 86,
+              "text": "\tlocal count = self:getChildCount();\t\t\t"
+            },
+            {
+              "line": 87,
+              "text": "\t"
+            },
+            {
+              "line": 88,
+              "text": "\tfor i = 0, count - 1, 1 do"
+            },
+            {
+              "line": 89,
+              "text": "\t\tret[i + 1] = self:getChild(i);"
+            },
+            {
+              "line": 90,
+              "text": "\tend;"
+            },
+            {
+              "line": 91,
+              "text": "\t"
+            },
+            {
+              "line": 92,
+              "text": "\treturn ret;"
+            },
+            {
+              "line": 93,
+              "text": "end;"
+            },
+            {
+              "line": 94,
+              "text": ""
+            },
+            {
+              "line": 95,
+              "text": "function localNDB.Node:addChild(nodeName)"
+            },
+            {
+              "line": 96,
+              "text": "\treturn localNDB.openNode(_ndb_addChild(self.handle, nodeName));"
+            }
+          ]
+        },
+        {
+          "start": 111,
+          "end": 128,
+          "lines": [
+            {
+              "line": 111,
+              "text": "function localNDB.Node:exportXML()"
+            },
+            {
+              "line": 112,
+              "text": "\treturn _obj_invoke(self.handle, \"ExportToXMLString\");"
+            },
+            {
+              "line": 113,
+              "text": "end;"
+            },
+            {
+              "line": 114,
+              "text": ""
+            },
+            {
+              "line": 115,
+              "text": "function localNDB.Node:importXML(xmlString)"
+            },
+            {
+              "line": 116,
+              "text": "\treturn _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+            },
+            {
+              "line": 117,
+              "text": "end;\t"
+            },
+            {
+              "line": 118,
+              "text": "\t\t"
+            },
+            {
+              "line": 119,
+              "text": "function localNDB.Node:getLocalID()"
+            },
+            {
+              "line": 120,
+              "text": "\treturn _obj_getProp(self.handle, \"LocalID\");"
+            },
+            {
+              "line": 121,
+              "text": "end;\t"
+            },
+            {
+              "line": 122,
+              "text": ""
+            },
+            {
+              "line": 123,
+              "text": "function localNDB.Node:beginUpdate()"
+            },
+            {
+              "line": 124,
+              "text": "\t_obj_invoke(self.handle, \"BeginUpdate\");"
+            },
+            {
+              "line": 125,
+              "text": "end;\t"
+            },
+            {
+              "line": 126,
+              "text": ""
+            },
+            {
+              "line": 127,
+              "text": "function localNDB.Node:endUpdate()"
+            },
+            {
+              "line": 128,
+              "text": "\t_obj_invoke(self.handle, \"EndUpdate\");"
+            }
+          ]
+        },
+        {
+          "start": 171,
+          "end": 184,
+          "lines": [
+            {
+              "line": 171,
+              "text": "function localNDB.copyNodeToAnother(nodeDest, nodeSrc, ctxCtrl)\t"
+            },
+            {
+              "line": 172,
+              "text": "\tif (nodeDest == nil) or (nodeSrc == nil) or (nodeDest.handle == nodeSrc.handle) then"
+            },
+            {
+              "line": 173,
+              "text": "\t\treturn;"
+            },
+            {
+              "line": 174,
+              "text": "\tend;"
+            },
+            {
+              "line": 175,
+              "text": "\t"
+            },
+            {
+              "line": 176,
+              "text": "\tif ctxCtrl == nil then"
+            },
+            {
+              "line": 177,
+              "text": "\t\tctxCtrl = {}; -- avoid circular reference"
+            },
+            {
+              "line": 178,
+              "text": "\tend;"
+            },
+            {
+              "line": 179,
+              "text": "\t"
+            },
+            {
+              "line": 180,
+              "text": "\tif ctxCtrl[nodeSrc.handle] then"
+            },
+            {
+              "line": 181,
+              "text": "\t\treturn;"
+            },
+            {
+              "line": 182,
+              "text": "\telse"
+            },
+            {
+              "line": 183,
+              "text": "\t\tctxCtrl[nodeSrc.handle] = true; "
+            },
+            {
+              "line": 184,
+              "text": "\tend;\t\t\t\t"
+            }
+          ]
+        },
+        {
+          "start": 186,
+          "end": 216,
+          "lines": [
+            {
+              "line": 186,
+              "text": "\tnodeDest:beginUpdate();"
+            },
+            {
+              "line": 187,
+              "text": "\t"
+            },
+            {
+              "line": 188,
+              "text": "\ttryFinally("
+            },
+            {
+              "line": 189,
+              "text": "\t\tfunction()"
+            },
+            {
+              "line": 190,
+              "text": "\t\t\tnodeDest:clearNode();"
+            },
+            {
+              "line": 191,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 192,
+              "text": "\t\t\tlocal allAtts = nodeSrc:getAllAttributes();"
+            },
+            {
+              "line": 193,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 194,
+              "text": "\t\t\tfor k, v in pairs(allAtts) do"
+            },
+            {
+              "line": 195,
+              "text": "\t\t\t\tlocalNDB.assignPropValueToNode(nodeDest, k, v);"
+            },
+            {
+              "line": 196,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 197,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 198,
+              "text": "\t\t\tlocal allChilds = nodeSrc:getAllChilds();"
+            },
+            {
+              "line": 199,
+              "text": "\t\t\tlocal newChild, srcChild;"
+            },
+            {
+              "line": 200,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 201,
+              "text": "\t\t\tfor _, v in pairs(allChilds) do"
+            },
+            {
+              "line": 202,
+              "text": "\t\t\t\tsrcChild = v;"
+            },
+            {
+              "line": 203,
+              "text": "\t\t\t\t"
+            },
+            {
+              "line": 204,
+              "text": "\t\t\t\tif not ctxCtrl[srcChild.handle] then"
+            },
+            {
+              "line": 205,
+              "text": "\t\t\t\t\tnewChild = nodeDest:addChild(srcChild:getName());"
+            },
+            {
+              "line": 206,
+              "text": "\t\t\t\t\t"
+            },
+            {
+              "line": 207,
+              "text": "\t\t\t\t\tif newChild ~= nil then"
+            },
+            {
+              "line": 208,
+              "text": "\t\t\t\t\t\tlocalNDB.copyNodeToAnother(newChild, srcChild, ctxCtrl);"
+            },
+            {
+              "line": 209,
+              "text": "\t\t\t\t\tend;"
+            },
+            {
+              "line": 210,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 211,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 212,
+              "text": "\t\tend,"
+            },
+            {
+              "line": 213,
+              "text": "\t\t"
+            },
+            {
+              "line": 214,
+              "text": "\t\tfunction()"
+            },
+            {
+              "line": 215,
+              "text": "\t\t\tnodeDest:endUpdate();"
+            },
+            {
+              "line": 216,
+              "text": "\t\tend);"
+            }
+          ]
+        },
+        {
+          "start": 219,
+          "end": 244,
+          "lines": [
+            {
+              "line": 219,
+              "text": "function localNDB.copyTableToNode(nodeDest, tableValue)"
+            },
+            {
+              "line": 220,
+              "text": "\tif (nodeDest == nil) then"
+            },
+            {
+              "line": 221,
+              "text": "\t\treturn;"
+            },
+            {
+              "line": 222,
+              "text": "\tend;"
+            },
+            {
+              "line": 223,
+              "text": "\t"
+            },
+            {
+              "line": 224,
+              "text": "\tnodeDest:clearNode();"
+            },
+            {
+              "line": 225,
+              "text": ""
+            },
+            {
+              "line": 226,
+              "text": "\tfor k, v in pairs(tableValue) do"
+            },
+            {
+              "line": 227,
+              "text": "\t\tlocalNDB.assignPropValueToNode(nodeDest, k, v);"
+            },
+            {
+              "line": 228,
+              "text": "\tend;"
+            },
+            {
+              "line": 229,
+              "text": "end;"
+            },
+            {
+              "line": 230,
+              "text": ""
+            },
+            {
+              "line": 231,
+              "text": "function localNDB.assignPropValueToNode(node, prop, value)"
+            },
+            {
+              "line": 232,
+              "text": "\tprop = tostring(prop);"
+            },
+            {
+              "line": 233,
+              "text": "\t\t"
+            },
+            {
+              "line": 234,
+              "text": "\t-- Limpando propriedade"
+            },
+            {
+              "line": 235,
+              "text": "\tif value == nil then"
+            },
+            {
+              "line": 236,
+              "text": "\t\t_obj_invoke(node.handle, \"RemoveAtributeAndChildNodes\", prop);"
+            },
+            {
+              "line": 237,
+              "text": "\t\treturn;"
+            },
+            {
+              "line": 238,
+              "text": "\tend;"
+            },
+            {
+              "line": 239,
+              "text": ""
+            },
+            {
+              "line": 240,
+              "text": "\tif type(value) == \"function\" then"
+            },
+            {
+              "line": 241,
+              "text": "\t\t-- Tipo inválido para setar"
+            },
+            {
+              "line": 242,
+              "text": "\t\trequire(\"locale.lua\");\t\t"
+            },
+            {
+              "line": 243,
+              "text": "\t\terror(string.format(lang(\"sdk3.err.ndb.functionAssign\"), tostring(prop)));"
+            },
+            {
+              "line": 244,
+              "text": "\t\treturn;"
+            }
+          ]
+        },
+        {
+          "start": 247,
+          "end": 280,
+          "lines": [
+            {
+              "line": 247,
+              "text": "\tif type(value) == \"table\" then"
+            },
+            {
+              "line": 248,
+              "text": "\t\t-- Setando um Table/Child Node"
+            },
+            {
+              "line": 249,
+              "text": "\t\t_obj_invoke(node.handle, \"BeginUpdate\");\t\t"
+            },
+            {
+              "line": 250,
+              "text": "\t\t"
+            },
+            {
+              "line": 251,
+              "text": "\t\ttryFinally("
+            },
+            {
+              "line": 252,
+              "text": "\t\t\tfunction()"
+            },
+            {
+              "line": 253,
+              "text": "\t\t\t\tnode:setAttribute(prop, nil);  -- remover atributo de mesmo nome se existir\t\t"
+            },
+            {
+              "line": 254,
+              "text": "\t\t\t\tlocal childNode = node:findChild(prop);"
+            },
+            {
+              "line": 255,
+              "text": "\t\t\t\t"
+            },
+            {
+              "line": 256,
+              "text": "\t\t\t\tif childNode == nil then"
+            },
+            {
+              "line": 257,
+              "text": "\t\t\t\t\tchildNode = node:addChild(prop); -- Nodo não existe, vamos criar um\t\t\t"
+            },
+            {
+              "line": 258,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 259,
+              "text": "\t\t\t\t"
+            },
+            {
+              "line": 260,
+              "text": "\t\t\t\tif childNode ~= nil then\t\t\t\t"
+            },
+            {
+              "line": 261,
+              "text": "\t\t\t\t\tif rawget(value, \"__nodeFlag\") then"
+            },
+            {
+              "line": 262,
+              "text": "\t\t\t\t\t\t-- é um node"
+            },
+            {
+              "line": 263,
+              "text": "\t\t\t\t\t\tlocalNDB.copyNodeToAnother(childNode, value);"
+            },
+            {
+              "line": 264,
+              "text": "\t\t\t\t\telseif rawget(value, \"__nodeFacadeFlag\") then"
+            },
+            {
+              "line": 265,
+              "text": "\t\t\t\t\t\t-- é um node facade"
+            },
+            {
+              "line": 266,
+              "text": "\t\t\t\t\t\tlocalNDB.copyNodeToAnother(childNode, value.__node);\t"
+            },
+            {
+              "line": 267,
+              "text": "\t\t\t\t\telse"
+            },
+            {
+              "line": 268,
+              "text": "\t\t\t\t\t\t-- Aparentemente é um table comum"
+            },
+            {
+              "line": 269,
+              "text": "\t\t\t\t\t\tlocalNDB.copyTableToNode(childNode, value);\t\t\t"
+            },
+            {
+              "line": 270,
+              "text": "\t\t\t\t\tend;"
+            },
+            {
+              "line": 271,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 272,
+              "text": "\t\t\tend,"
+            },
+            {
+              "line": 273,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 274,
+              "text": "\t\t\tfunction()"
+            },
+            {
+              "line": 275,
+              "text": "\t\t\t\t_obj_invoke(node.handle, \"EndUpdate\");\t"
+            },
+            {
+              "line": 276,
+              "text": "\t\t\tend);\t\t"
+            },
+            {
+              "line": 277,
+              "text": "\telse"
+            },
+            {
+              "line": 278,
+              "text": "\t\t-- Setando um Atributo"
+            },
+            {
+              "line": 279,
+              "text": "\t\t_obj_invoke(node.handle, \"RemoveChildNodes\", prop); -- remover todos os child nodes de mesmo nome\t"
+            },
+            {
+              "line": 280,
+              "text": "\t\tnode:setAttribute(prop, value);\t\t"
+            }
+          ]
+        },
+        {
+          "start": 293,
+          "end": 304,
+          "lines": [
+            {
+              "line": 293,
+              "text": "\t\tlocal node = rawget(table, \"__node\");"
+            },
+            {
+              "line": 294,
+              "text": "\t\t"
+            },
+            {
+              "line": 295,
+              "text": "\t\tif node ~= nil then"
+            },
+            {
+              "line": 296,
+              "text": "\t\t\tlocal childNode = node:findChild(key);"
+            },
+            {
+              "line": 297,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 298,
+              "text": "\t\t\tif childNode ~= nil then"
+            },
+            {
+              "line": 299,
+              "text": "\t\t\t\t-- Achamos um child node com este nome."
+            },
+            {
+              "line": 300,
+              "text": "\t\t\t\treturn childNode:getFacade();"
+            },
+            {
+              "line": 301,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 302,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 303,
+              "text": "\t\t\treturn node:getAttribute(key);"
+            },
+            {
+              "line": 304,
+              "text": "\t\tend;\t\t"
+            }
+          ]
+        },
+        {
+          "start": 365,
+          "end": 386,
+          "lines": [
+            {
+              "line": 365,
+              "text": "function ndb.load(fileName, userName)"
+            },
+            {
+              "line": 366,
+              "text": "\tlocal expandedName = vhd.expandFileName(fileName);"
+            },
+            {
+              "line": 367,
+              "text": "\t"
+            },
+            {
+              "line": 368,
+              "text": "\tif #expandedName > 0 then"
+            },
+            {
+              "line": 369,
+              "text": "\t\tif string.sub(expandedName, 1, 1) ~= \"/\" then"
+            },
+            {
+              "line": 370,
+              "text": "\t\t\texpandedName = \"/\" .. expandedName;"
+            },
+            {
+              "line": 371,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 372,
+              "text": "\tend;"
+            },
+            {
+              "line": 373,
+              "text": "\t"
+            },
+            {
+              "line": 374,
+              "text": "\tif type(userName) ~= \"string\" then"
+            },
+            {
+              "line": 375,
+              "text": "\t\tuserName = \"\";"
+            },
+            {
+              "line": 376,
+              "text": "\tend;"
+            },
+            {
+              "line": 377,
+              "text": "\t"
+            },
+            {
+              "line": 378,
+              "text": "\tlocal openDB = _localOpenNDBs[expandedName];"
+            },
+            {
+              "line": 379,
+              "text": "\t"
+            },
+            {
+              "line": 380,
+              "text": "\tif openDB ~= nil then"
+            },
+            {
+              "line": 381,
+              "text": "\t\treturn ndb.getRoot(openDB);"
+            },
+            {
+              "line": 382,
+              "text": "\tend;"
+            },
+            {
+              "line": 383,
+              "text": "\t"
+            },
+            {
+              "line": 384,
+              "text": "\topenDB = ndb.openNodeDatabaseFromHandle(_obj_newObject(\"TLocalLuaNodeDatabase\"));"
+            },
+            {
+              "line": 385,
+              "text": "\t_obj_invoke(openDB.handle, \"SetupLocalFile\", expandedName, userName);\t\t"
+            },
+            {
+              "line": 386,
+              "text": "\t_localOpenNDBs[expandedName] = openDB;\t"
+            }
+          ]
+        },
+        {
+          "start": 390,
+          "end": 405,
+          "lines": [
+            {
+              "line": 390,
+              "text": "function ndb.newMemNodeDatabase(initialContent)"
+            },
+            {
+              "line": 391,
+              "text": "\tlocal openDB = ndb.openNodeDatabaseFromHandle(_obj_newObject(\"TLuaMemoryNodeDatabase\", initialContent));\t"
+            },
+            {
+              "line": 392,
+              "text": "\treturn ndb.getRoot(openDB);"
+            },
+            {
+              "line": 393,
+              "text": "end;"
+            },
+            {
+              "line": 394,
+              "text": ""
+            },
+            {
+              "line": 395,
+              "text": "function ndb.getRoot(node)"
+            },
+            {
+              "line": 396,
+              "text": "\tif type(node) ~= \"table\" then"
+            },
+            {
+              "line": 397,
+              "text": "\t\treturn nil;"
+            },
+            {
+              "line": 398,
+              "text": "\tend;"
+            },
+            {
+              "line": 399,
+              "text": "\t"
+            },
+            {
+              "line": 400,
+              "text": "\tif node.__nodeFlag then"
+            },
+            {
+              "line": 401,
+              "text": "\t\treturn localNDB.openNodeFacade(_ndb_getTheRoot(node.handle));"
+            },
+            {
+              "line": 402,
+              "text": "\telseif node.__nodeFacadeFlag then"
+            },
+            {
+              "line": 403,
+              "text": "\t\treturn ndb.getRoot(rawget(node, \"__node\"));\t"
+            },
+            {
+              "line": 404,
+              "text": "\telseif node.__dbFlag then"
+            },
+            {
+              "line": 405,
+              "text": "\t\treturn localNDB.openNodeFacade(_ndb_getRoot(node.handle));"
+            }
+          ]
+        },
+        {
+          "start": 429,
+          "end": 477,
+          "lines": [
+            {
+              "line": 429,
+              "text": "function ndb.getChildNodes(nodeObj)"
+            },
+            {
+              "line": 430,
+              "text": "\tif (nodeObj == nil) then"
+            },
+            {
+              "line": 431,
+              "text": "\t\treturn {};"
+            },
+            {
+              "line": 432,
+              "text": "\tend;"
+            },
+            {
+              "line": 433,
+              "text": ""
+            },
+            {
+              "line": 434,
+              "text": "\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 435,
+              "text": "\t"
+            },
+            {
+              "line": 436,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 437,
+              "text": "\t\tlocal nodesCtrls = node:getAllChilds();"
+            },
+            {
+              "line": 438,
+              "text": "\t\tlocal ret = {};"
+            },
+            {
+              "line": 439,
+              "text": "\t\t"
+            },
+            {
+              "line": 440,
+              "text": "\t\tfor i = 1, #nodesCtrls, 1 do"
+            },
+            {
+              "line": 441,
+              "text": "\t\t\tret[i] = nodesCtrls[i]:getFacade();"
+            },
+            {
+              "line": 442,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 443,
+              "text": "\t\t"
+            },
+            {
+              "line": 444,
+              "text": "\t\treturn ret;"
+            },
+            {
+              "line": 445,
+              "text": "\telse"
+            },
+            {
+              "line": 446,
+              "text": "\t\treturn {};"
+            },
+            {
+              "line": 447,
+              "text": "\tend;"
+            },
+            {
+              "line": 448,
+              "text": "end;"
+            },
+            {
+              "line": 449,
+              "text": ""
+            },
+            {
+              "line": 450,
+              "text": "function ndb.getAttributes(nodeObj)"
+            },
+            {
+              "line": 451,
+              "text": "\tif (nodeObj == nil) then"
+            },
+            {
+              "line": 452,
+              "text": "\t\treturn {};"
+            },
+            {
+              "line": 453,
+              "text": "\tend;"
+            },
+            {
+              "line": 454,
+              "text": ""
+            },
+            {
+              "line": 455,
+              "text": "\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 456,
+              "text": "\t"
+            },
+            {
+              "line": 457,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 458,
+              "text": "\t\treturn node:getAllAttributes();"
+            },
+            {
+              "line": 459,
+              "text": "\telse"
+            },
+            {
+              "line": 460,
+              "text": "\t\treturn {};"
+            },
+            {
+              "line": 461,
+              "text": "\tend;"
+            },
+            {
+              "line": 462,
+              "text": "end;"
+            },
+            {
+              "line": 463,
+              "text": ""
+            },
+            {
+              "line": 464,
+              "text": "function ndb.isNodeObject(value)"
+            },
+            {
+              "line": 465,
+              "text": "\tif type(value) ~= \"table\" then"
+            },
+            {
+              "line": 466,
+              "text": "\t\treturn false;"
+            },
+            {
+              "line": 467,
+              "text": "\tend;"
+            },
+            {
+              "line": 468,
+              "text": "\t"
+            },
+            {
+              "line": 469,
+              "text": "\treturn rawget(value, \"__nodeFacadeFlag\");"
+            },
+            {
+              "line": 470,
+              "text": "end;"
+            },
+            {
+              "line": 471,
+              "text": ""
+            },
+            {
+              "line": 472,
+              "text": "function ndb.getNodeHandle(nodeObject)"
+            },
+            {
+              "line": 473,
+              "text": "\tif ndb.isNodeObject(nodeObject) then"
+            },
+            {
+              "line": 474,
+              "text": "\t\treturn nodeObject.__node.handle;"
+            },
+            {
+              "line": 475,
+              "text": "\telse"
+            },
+            {
+              "line": 476,
+              "text": "\t\treturn nil;"
+            },
+            {
+              "line": 477,
+              "text": "\tend;"
+            }
+          ]
+        },
+        {
+          "start": 552,
+          "end": 582,
+          "lines": [
+            {
+              "line": 552,
+              "text": "function ndb.exportXML(nodeObj)"
+            },
+            {
+              "line": 553,
+              "text": "\tif (nodeObj == nil) then"
+            },
+            {
+              "line": 554,
+              "text": "\t\tlocal aLocale = require(\"locale.lua\");"
+            },
+            {
+              "line": 555,
+              "text": "\t\terror(aLocale.lang(\"sdk3.err.ndb.func.exportToXML.invalidPar\"));"
+            },
+            {
+              "line": 556,
+              "text": "\tend;"
+            },
+            {
+              "line": 557,
+              "text": ""
+            },
+            {
+              "line": 558,
+              "text": "\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 559,
+              "text": "\t"
+            },
+            {
+              "line": 560,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 561,
+              "text": "\t\treturn node:exportXML();"
+            },
+            {
+              "line": 562,
+              "text": "\telse"
+            },
+            {
+              "line": 563,
+              "text": "\t\tlocal aLocale = require(\"locale.lua\");"
+            },
+            {
+              "line": 564,
+              "text": "\t\terror(aLocale.lang(\"sdk3.err.ndb.func.exportToXML.invalidPar\"));"
+            },
+            {
+              "line": 565,
+              "text": "\tend;"
+            },
+            {
+              "line": 566,
+              "text": "end;"
+            },
+            {
+              "line": 567,
+              "text": ""
+            },
+            {
+              "line": 568,
+              "text": "function ndb.importXML(nodeObj, xmlString)"
+            },
+            {
+              "line": 569,
+              "text": "\tif (nodeObj == nil) then"
+            },
+            {
+              "line": 570,
+              "text": "\t\tlocal aLocale = require(\"locale.lua\");"
+            },
+            {
+              "line": 571,
+              "text": "\t\terror(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+            },
+            {
+              "line": 572,
+              "text": "\tend;"
+            },
+            {
+              "line": 573,
+              "text": ""
+            },
+            {
+              "line": 574,
+              "text": "\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 575,
+              "text": "\t"
+            },
+            {
+              "line": 576,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 577,
+              "text": "\t\treturn node:importXML(xmlString);"
+            },
+            {
+              "line": 578,
+              "text": "\telse"
+            },
+            {
+              "line": 579,
+              "text": "\t\tlocal aLocale = require(\"locale.lua\");"
+            },
+            {
+              "line": 580,
+              "text": "\t\terror(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+            },
+            {
+              "line": 581,
+              "text": "\tend;"
+            },
+            {
+              "line": 582,
+              "text": "end;"
+            }
+          ]
+        },
+        {
+          "start": 599,
+          "end": 605,
+          "lines": [
+            {
+              "line": 599,
+              "text": "\tif dstNode ~= nil then\t"
+            },
+            {
+              "line": 600,
+              "text": "\t\tif srcNode ~= nil then\t"
+            },
+            {
+              "line": 601,
+              "text": "\t\t\tlocal xmlString = srcNode:exportXML();"
+            },
+            {
+              "line": 602,
+              "text": "\t\t\tdstNode:importXML(xmlString);\t\t\t"
+            },
+            {
+              "line": 603,
+              "text": "\t\telse"
+            },
+            {
+              "line": 604,
+              "text": "\t\t\tdstNode:clearNode();"
+            },
+            {
+              "line": 605,
+              "text": "\t\tend;"
+            }
+          ]
+        },
+        {
+          "start": 632,
+          "end": 659,
+          "lines": [
+            {
+              "line": 632,
+              "text": "function ndb.getState(nodeObj)"
+            },
+            {
+              "line": 633,
+              "text": "\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 634,
+              "text": "\t\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 635,
+              "text": "\t\t"
+            },
+            {
+              "line": 636,
+              "text": "\t\tif node ~= nil then"
+            },
+            {
+              "line": 637,
+              "text": "\t\t\treturn node:getState();\t\t"
+            },
+            {
+              "line": 638,
+              "text": "\t\tend;\t"
+            },
+            {
+              "line": 639,
+              "text": "\tend;"
+            },
+            {
+              "line": 640,
+              "text": "\t"
+            },
+            {
+              "line": 641,
+              "text": "\treturn \"closed\";\t"
+            },
+            {
+              "line": 642,
+              "text": "end;\t"
+            },
+            {
+              "line": 643,
+              "text": ""
+            },
+            {
+              "line": 644,
+              "text": "local _observerBib = nil;"
+            },
+            {
+              "line": 645,
+              "text": ""
+            },
+            {
+              "line": 646,
+              "text": "function ndb.newObserver(nodeObj)"
+            },
+            {
+              "line": 647,
+              "text": "\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 648,
+              "text": "\t\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 649,
+              "text": "\t\t"
+            },
+            {
+              "line": 650,
+              "text": "\t\tif node ~= nil then"
+            },
+            {
+              "line": 651,
+              "text": "\t\t\tif _observerBib == nil then"
+            },
+            {
+              "line": 652,
+              "text": "\t\t\t\t_observerBib = require(\"ndb_observer.dlua\");"
+            },
+            {
+              "line": 653,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 654,
+              "text": "\t\t"
+            },
+            {
+              "line": 655,
+              "text": "\t\t\treturn _observerBib.newObserver(node.handle, nodeObj);"
+            },
+            {
+              "line": 656,
+              "text": "\t\tend;\t"
+            },
+            {
+              "line": 657,
+              "text": "\tend;"
+            },
+            {
+              "line": 658,
+              "text": "\t"
+            },
+            {
+              "line": 659,
+              "text": "\treturn nil;\t\t"
+            }
+          ]
+        },
+        {
+          "start": 662,
+          "end": 677,
+          "lines": [
+            {
+              "line": 662,
+              "text": "function ndb.setPermission(node, selKind, selId, permission, allowance)"
+            },
+            {
+              "line": 663,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 664,
+              "text": "\t\tlocal nodeObj = localNDB.getNodeObjectFromFacade(node);"
+            },
+            {
+              "line": 665,
+              "text": "\t\t"
+            },
+            {
+              "line": 666,
+              "text": "\t\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 667,
+              "text": "\t\t\treturn nodeObj:setPermission(tostring(selKind), tostring(selId), tostring(permission), allowance);\t\t\t"
+            },
+            {
+              "line": 668,
+              "text": "\t\tend;\t"
+            },
+            {
+              "line": 669,
+              "text": "\tend;"
+            },
+            {
+              "line": 670,
+              "text": "end;"
+            },
+            {
+              "line": 671,
+              "text": ""
+            },
+            {
+              "line": 672,
+              "text": "function ndb.getPermission(node, selKind, selId, permission)"
+            },
+            {
+              "line": 673,
+              "text": "\tif node ~= nil then"
+            },
+            {
+              "line": 674,
+              "text": "\t\tlocal nodeObj = localNDB.getNodeObjectFromFacade(node);"
+            },
+            {
+              "line": 675,
+              "text": "\t\t"
+            },
+            {
+              "line": 676,
+              "text": "\t\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 677,
+              "text": "\t\t\treturn nodeObj:getPermission(tostring(selKind), tostring(selId), tostring(permission));\t\t\t"
+            }
+          ]
+        },
+        {
+          "start": 738,
+          "end": 761,
+          "lines": [
+            {
+              "line": 738,
+              "text": "function ndb.pushTransaction(nodeObj, transaction)"
+            },
+            {
+              "line": 739,
+              "text": "\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 740,
+              "text": "\t\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 741,
+              "text": "\t\t"
+            },
+            {
+              "line": 742,
+              "text": "\t\tif node ~= nil then"
+            },
+            {
+              "line": 743,
+              "text": "\t\t\tlocal trHandle;"
+            },
+            {
+              "line": 744,
+              "text": "\t\t"
+            },
+            {
+              "line": 745,
+              "text": "\t\t\tif transaction ~= nil then"
+            },
+            {
+              "line": 746,
+              "text": "\t\t\t\ttrHandle = transaction.handle or 0;"
+            },
+            {
+              "line": 747,
+              "text": "\t\t\telse"
+            },
+            {
+              "line": 748,
+              "text": "\t\t\t\ttrHandle = 0;"
+            },
+            {
+              "line": 749,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 750,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 751,
+              "text": "\t\t\t_obj_invoke(node.handle, \"PushTransaction\", trHandle);\t\t\t"
+            },
+            {
+              "line": 752,
+              "text": "\t\tend;\t"
+            },
+            {
+              "line": 753,
+              "text": "\tend;"
+            },
+            {
+              "line": 754,
+              "text": "end;"
+            },
+            {
+              "line": 755,
+              "text": ""
+            },
+            {
+              "line": 756,
+              "text": "function ndb.popTransaction(nodeObj)"
+            },
+            {
+              "line": 757,
+              "text": "\tif nodeObj ~= nil then"
+            },
+            {
+              "line": 758,
+              "text": "\t\tlocal node = localNDB.getNodeObjectFromFacade(nodeObj);"
+            },
+            {
+              "line": 759,
+              "text": "\t\t"
+            },
+            {
+              "line": 760,
+              "text": "\t\tif node ~= nil then\t\t"
+            },
+            {
+              "line": 761,
+              "text": "\t\t\t_obj_invoke(node.handle, \"PopTransaction\");\t\t\t"
+            }
+          ]
+        },
+        {
+          "start": 805,
+          "end": 809,
+          "lines": [
+            {
+              "line": 805,
+              "text": "\t\t\tif loopBack == nil then"
+            },
+            {
+              "line": 806,
+              "text": "\t\t\t\tloopBack = false;"
+            },
+            {
+              "line": 807,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 808,
+              "text": "\t\t"
+            },
+            {
+              "line": 809,
+              "text": "\t\t\t_obj_invokeEx(node.handle, \"LUABroadcastMessage\", messageId, _Serializer.serialize(message), loopBack);\t\t\t"
+            }
+          ]
+        },
+        {
+          "start": 819,
+          "end": 837,
+          "lines": [
+            {
+              "line": 819,
+              "text": "\t\t\tlocal obj = objs.objectFromHandle(_obj_newObject(\"TLuaNDBBroadcastReceiver\"));"
+            },
+            {
+              "line": 820,
+              "text": "\t\t\tobj.eves = obj.eves or {};"
+            },
+            {
+              "line": 821,
+              "text": "\t\t\tobj.eves[\"onReceiveBroadcast\"] = \"sender, messageId, messageText\";\t"
+            },
+            {
+              "line": 822,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 823,
+              "text": "\t\t\t_obj_invoke(obj.handle, \"SetupReceiver\", node.handle, messageId or \"\");"
+            },
+            {
+              "line": 824,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 825,
+              "text": "\t\t\tobj.onReceiveBroadcast = function(sender, returnedMessageId, messageText)\t\t\t"
+            },
+            {
+              "line": 826,
+              "text": "\t\t\t\t\t\t\t\t\t\tif callback ~= nil then\t\t\t\t\t\t\t\t\t\t"
+            },
+            {
+              "line": 827,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tif _Serializer == nil then"
+            },
+            {
+              "line": 828,
+              "text": "\t\t\t\t\t\t\t\t\t\t\t\t_Serializer = require(\"utils.serializer.dlua\");"
+            },
+            {
+              "line": 829,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tend;\t\t\t\t\t\t\t\t\t\t"
+            },
+            {
+              "line": 830,
+              "text": "\t\t\t\t\t\t\t\t\t\t"
+            },
+            {
+              "line": 831,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tlocal success, message = pcall(_Serializer.deserialize, messageText);"
+            },
+            {
+              "line": 832,
+              "text": "\t\t\t\t\t\t\t\t\t\t\t"
+            },
+            {
+              "line": 833,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tif not success then"
+            },
+            {
+              "line": 834,
+              "text": "\t\t\t\t\t\t\t\t\t\t\t\tmessage = messageText;"
+            },
+            {
+              "line": 835,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tend;"
+            },
+            {
+              "line": 836,
+              "text": "\t\t\t\t\t\t\t\t\t\t"
+            },
+            {
+              "line": 837,
+              "text": "\t\t\t\t\t\t\t\t\t\t\tcallback(sender, returnedMessageId, message);"
+            }
+          ]
+        },
+        {
+          "start": 845,
+          "end": 864,
+          "lines": [
+            {
+              "line": 845,
+              "text": "function ndb.onReady(nodeObj, callback, failCallback)\t"
+            },
+            {
+              "line": 846,
+              "text": "\tlocal function scheduleFailReturn()"
+            },
+            {
+              "line": 847,
+              "text": "\t\tif failCallback ~= nil then"
+            },
+            {
+              "line": 848,
+              "text": "\t\t\tsetTimeout(failCallback, 1, nil);"
+            },
+            {
+              "line": 849,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 850,
+              "text": "\tend;"
+            },
+            {
+              "line": 851,
+              "text": "\t\t"
+            },
+            {
+              "line": 852,
+              "text": "\tif nodeObj == nil then"
+            },
+            {
+              "line": 853,
+              "text": "\t\tscheduleFailReturn();\t\t"
+            },
+            {
+              "line": 854,
+              "text": "\t\treturn;\t\t"
+            },
+            {
+              "line": 855,
+              "text": "\tend;\t"
+            },
+            {
+              "line": 856,
+              "text": "\t"
+            },
+            {
+              "line": 857,
+              "text": "\tlocal state = ndb.getState(nodeObj);"
+            },
+            {
+              "line": 858,
+              "text": "\t"
+            },
+            {
+              "line": 859,
+              "text": "\tif state == \"open\" then"
+            },
+            {
+              "line": 860,
+              "text": "\t\t-- Already loaded"
+            },
+            {
+              "line": 861,
+              "text": "\t\t"
+            },
+            {
+              "line": 862,
+              "text": "\t\tif callback ~= nil then"
+            },
+            {
+              "line": 863,
+              "text": "\t\t\tsetTimeout(callback, 1, nodeObj);"
+            },
+            {
+              "line": 864,
+              "text": "\t\tend;"
+            }
+          ]
+        },
+        {
+          "start": 876,
+          "end": 901,
+          "lines": [
+            {
+              "line": 876,
+              "text": "\tlocal function checkState()"
+            },
+            {
+              "line": 877,
+              "text": "\t\tif not jaNotificou then"
+            },
+            {
+              "line": 878,
+              "text": "\t\t\tstate = ndb.getState(nodeObj);"
+            },
+            {
+              "line": 879,
+              "text": "\t\t"
+            },
+            {
+              "line": 880,
+              "text": "\t\t\tif state == \"open\" then"
+            },
+            {
+              "line": 881,
+              "text": "\t\t\t\tjaNotificou = true;"
+            },
+            {
+              "line": 882,
+              "text": "\t\t\t\t"
+            },
+            {
+              "line": 883,
+              "text": "\t\t\t\tif callback ~= nil then"
+            },
+            {
+              "line": 884,
+              "text": "\t\t\t\t\tsetTimeout(callback, 1, nodeObj);"
+            },
+            {
+              "line": 885,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 886,
+              "text": "\t\t\telseif state == \"closed\" then"
+            },
+            {
+              "line": 887,
+              "text": "\t\t\t\tjaNotificou = true;\t\t\t\t\t"
+            },
+            {
+              "line": 888,
+              "text": "\t\t\t\tscheduleFailReturn();"
+            },
+            {
+              "line": 889,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 890,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 891,
+              "text": "\t\t\tif jaNotificou then"
+            },
+            {
+              "line": 892,
+              "text": "\t\t\t\tndbObj:removeEventListener(listenerProvider);"
+            },
+            {
+              "line": 893,
+              "text": "\t\t\t\tndbObj:removeEventListener(listenerLoaded);"
+            },
+            {
+              "line": 894,
+              "text": "\t\t\tend;\t\t\t\t\t\t"
+            },
+            {
+              "line": 895,
+              "text": "\t\tend;\t\t\t\t\t\t"
+            },
+            {
+              "line": 896,
+              "text": "\tend;"
+            },
+            {
+              "line": 897,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 898,
+              "text": "\tlistenerProvider = ndbObj:addEventListener(\"OnProviderStateChange\", checkState);"
+            },
+            {
+              "line": 899,
+              "text": "\tlistenerLoaded = ndbObj:addEventListener(\"OnLoaded\", checkState);"
+            },
+            {
+              "line": 900,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 901,
+              "text": "\tcheckState();\t"
+            }
+          ]
+        },
+        {
+          "start": 909,
+          "end": 944,
+          "lines": [
+            {
+              "line": 909,
+              "text": "local function _prepareNodeFacadePairsState(nodeFacade)"
+            },
+            {
+              "line": 910,
+              "text": "\tlocal node = nodeFacade.__node;"
+            },
+            {
+              "line": 911,
+              "text": "\tlocal state = node:getAllAttributes();\t"
+            },
+            {
+              "line": 912,
+              "text": "\t"
+            },
+            {
+              "line": 913,
+              "text": "\tlocal childs = node:getAllChilds();"
+            },
+            {
+              "line": 914,
+              "text": "\t"
+            },
+            {
+              "line": 915,
+              "text": "\tfor _, v in oldPairsFunc(childs) do"
+            },
+            {
+              "line": 916,
+              "text": "\t\tlocal name = v:getName();"
+            },
+            {
+              "line": 917,
+              "text": "\t\tlocal nodeForName = node:findChild(name);"
+            },
+            {
+              "line": 918,
+              "text": "\t\t"
+            },
+            {
+              "line": 919,
+              "text": "\t\tif nodeForName ~= nil then"
+            },
+            {
+              "line": 920,
+              "text": "\t\t\tstate[name] = nodeForName;"
+            },
+            {
+              "line": 921,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 922,
+              "text": "\tend;"
+            },
+            {
+              "line": 923,
+              "text": "\t"
+            },
+            {
+              "line": 924,
+              "text": "\treturn state;"
+            },
+            {
+              "line": 925,
+              "text": "end;"
+            },
+            {
+              "line": 926,
+              "text": ""
+            },
+            {
+              "line": 927,
+              "text": "function pairs(obj)"
+            },
+            {
+              "line": 928,
+              "text": "\tif (obj ~= nil) and rawget(obj, \"__nodeFacadeFlag\") then"
+            },
+            {
+              "line": 929,
+              "text": "\t\t-- Node Façade\t\t"
+            },
+            {
+              "line": 930,
+              "text": "\t\tlocal state = _prepareNodeFacadePairsState(obj);\t\t\t"
+            },
+            {
+              "line": 931,
+              "text": "\t\treturn oldPairsFunc(state);"
+            },
+            {
+              "line": 932,
+              "text": "\telse"
+            },
+            {
+              "line": 933,
+              "text": "\t\treturn oldPairsFunc(obj);"
+            },
+            {
+              "line": 934,
+              "text": "\tend;"
+            },
+            {
+              "line": 935,
+              "text": "end;"
+            },
+            {
+              "line": 936,
+              "text": ""
+            },
+            {
+              "line": 937,
+              "text": "function ipairs(obj)"
+            },
+            {
+              "line": 938,
+              "text": "\tif (obj ~= nil) and rawget(obj, \"__nodeFacadeFlag\") then"
+            },
+            {
+              "line": 939,
+              "text": "\t\t-- Node Façade\t\t"
+            },
+            {
+              "line": 940,
+              "text": "\t\tlocal state = _prepareNodeFacadePairsState(obj);\t\t\t"
+            },
+            {
+              "line": 941,
+              "text": "\t\treturn oldIPairsFunc(state);"
+            },
+            {
+              "line": 942,
+              "text": "\telse"
+            },
+            {
+              "line": 943,
+              "text": "\t\treturn oldIPairsFunc(obj);"
+            },
+            {
+              "line": 944,
+              "text": "\tend;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S2",
+      "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb_observer.dlua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00082",
+      "sha256": "c37111dcd48ec76e94f7b542c6f464879d6a8fdfbcd1f00afbcff6369755ddfd",
+      "size": 1747,
+      "lineCount": 51,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 7,
+          "end": 23,
+          "lines": [
+            {
+              "line": 7,
+              "text": "_observerProps[\"enabled\"] = {setter = \"setEnabled\", getter = \"getEnabled\", tipo=\"bool\"};\t\t"
+            },
+            {
+              "line": 8,
+              "text": ""
+            },
+            {
+              "line": 9,
+              "text": "_observerEves[\"onChildAdded\"] = \"node\";"
+            },
+            {
+              "line": 10,
+              "text": "_observerEves[\"onChildRemoved\"] = \"node\";"
+            },
+            {
+              "line": 11,
+              "text": "_observerEves[\"onDeepChildAdded\"] = \"node\";"
+            },
+            {
+              "line": 12,
+              "text": "_observerEves[\"onDeepChildRemoved\"] = \"node\";"
+            },
+            {
+              "line": 13,
+              "text": "_observerEves[\"onDeleted\"] = \"node\";"
+            },
+            {
+              "line": 14,
+              "text": "_observerEves[\"onChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 15,
+              "text": "_observerEves[\"onDeepChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 16,
+              "text": "_observerEves[\"onUserChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 17,
+              "text": "_observerEves[\"onDeepUserChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 18,
+              "text": "_observerEves[\"onPersistedChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 19,
+              "text": "_observerEves[\"onDeepPersistedChanged\"] = \"node, attribute, oldValue\";"
+            },
+            {
+              "line": 20,
+              "text": "_observerEves[\"onPermissionListChanged\"] = \"node\";"
+            },
+            {
+              "line": 21,
+              "text": "_observerEves[\"onDeepPermissionListChanged\"] = \"node\";"
+            },
+            {
+              "line": 22,
+              "text": "_observerEves[\"onFinalPermissionsCouldBeChanged\"] = \"node\";"
+            },
+            {
+              "line": 23,
+              "text": "_observerEves[\"onStateChanged\"] = \"node\";"
+            }
+          ]
+        },
+        {
+          "start": 35,
+          "end": 40,
+          "lines": [
+            {
+              "line": 35,
+              "text": "\tfunction obj:getEnabled() return _obj_getProp(self.handle, \"Enabled\"); end;"
+            },
+            {
+              "line": 36,
+              "text": "\tfunction obj:setEnabled(v) _obj_setProp(self.handle, \"Enabled\", v); end;"
+            },
+            {
+              "line": 37,
+              "text": "\t"
+            },
+            {
+              "line": 38,
+              "text": "\t"
+            },
+            {
+              "line": 39,
+              "text": "\tobj.props = _observerProps;"
+            },
+            {
+              "line": 40,
+              "text": "\tobj.eves = _observerEves;\t"
+            }
+          ]
+        },
+        {
+          "start": 44,
+          "end": 48,
+          "lines": [
+            {
+              "line": 44,
+              "text": "function nO.newObserver(nodeHandle, nodeObj)"
+            },
+            {
+              "line": 45,
+              "text": "\tlocal observer = _observerFromHandle(_obj_newObject(\"TLuaNodeObserver\"));"
+            },
+            {
+              "line": 46,
+              "text": "\t_obj_invokeEx(observer.handle, \"SetNodeHandle\", nodeHandle);"
+            },
+            {
+              "line": 47,
+              "text": "\trawset(observer, \"node\", nodeObj);"
+            },
+            {
+              "line": 48,
+              "text": "\treturn observer;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S3",
+      "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb_transaction.dlua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00083",
+      "sha256": "d0fc244e7b7675df764f3466aa718c2ce3170bd0e5cca9bbb02337a5da130ae6",
+      "size": 1342,
+      "lineCount": 53,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 8,
+          "end": 24,
+          "lines": [
+            {
+              "line": 8,
+              "text": "function _transactionMethods.commit(tr)"
+            },
+            {
+              "line": 9,
+              "text": "\t_obj_invoke(tr.handle, \"Commit\");"
+            },
+            {
+              "line": 10,
+              "text": "end;"
+            },
+            {
+              "line": 11,
+              "text": ""
+            },
+            {
+              "line": 12,
+              "text": "function _transactionMethods.rollback(tr)"
+            },
+            {
+              "line": 13,
+              "text": "\t_obj_invoke(tr.handle, \"Rollback\");"
+            },
+            {
+              "line": 14,
+              "text": "end;"
+            },
+            {
+              "line": 15,
+              "text": ""
+            },
+            {
+              "line": 16,
+              "text": "function _transactionMethods.createUndoData(tr)"
+            },
+            {
+              "line": 17,
+              "text": "\tlocal handle = _obj_invoke(tr.handle, \"CreateUndoData\");"
+            },
+            {
+              "line": 18,
+              "text": "\tlocal obj = objs.objectFromHandle(handle);"
+            },
+            {
+              "line": 19,
+              "text": "\tobjs.registerHandle(handle, obj);\t"
+            },
+            {
+              "line": 20,
+              "text": "\treturn obj;"
+            },
+            {
+              "line": 21,
+              "text": "end;"
+            },
+            {
+              "line": 22,
+              "text": ""
+            },
+            {
+              "line": 23,
+              "text": "function _transactionMethods.applyUndoData(tr, undoData)"
+            },
+            {
+              "line": 24,
+              "text": "\t_obj_invoke(tr.handle, \"ApplyUndoData\", undoData.handle);"
+            }
+          ]
+        },
+        {
+          "start": 46,
+          "end": 50,
+          "lines": [
+            {
+              "line": 46,
+              "text": "function nO.newTransaction(nodeHandle, nodeObj)"
+            },
+            {
+              "line": 47,
+              "text": "\tlocal transaction = _transactionFromHandle(_obj_newObject(\"TLuaNodeTransaction\"));"
+            },
+            {
+              "line": 48,
+              "text": "\t_obj_invokeEx(transaction.handle, \"InitializeFromNodeHandle\", nodeHandle);"
+            },
+            {
+              "line": 49,
+              "text": "\trawset(transaction, \"node\", nodeObj);"
+            },
+            {
+              "line": 50,
+              "text": "\treturn transaction;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S4",
+      "source": "complementosPadroes/rrpginlua.rpk!/FichaBasicaMultiPlataforma.lfm",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00006",
+      "sha256": "6f61d0b0872859cff3d91910c779df868aaf32cd9390c0eb2be3814e48169961",
+      "size": 755,
+      "lineCount": 26,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 9,
+          "end": 23,
+          "lines": [
+            {
+              "line": 9,
+              "text": "\t<tabControl align=\"client\">\t"
+            },
+            {
+              "line": 10,
+              "text": "\t\t<tab title=\"Atributos\">"
+            },
+            {
+              "line": 11,
+              "text": "\t\t\t<textEditor align=\"client\" field=\"atributosStr\" wordWrap=\"true\"/>"
+            },
+            {
+              "line": 12,
+              "text": "\t\t</tab>"
+            },
+            {
+              "line": 13,
+              "text": "\t\t"
+            },
+            {
+              "line": 14,
+              "text": "\t\t<tab title=\"Habilidades\">"
+            },
+            {
+              "line": 15,
+              "text": "\t\t\t<textEditor align=\"client\" field=\"habilidadesStr\" wordWrap=\"true\"/>"
+            },
+            {
+              "line": 16,
+              "text": "\t\t</tab>"
+            },
+            {
+              "line": 17,
+              "text": "\t\t"
+            },
+            {
+              "line": 18,
+              "text": "\t\t<tab title=\"Equipamentos\">"
+            },
+            {
+              "line": 19,
+              "text": "\t\t\t<textEditor align=\"client\" field=\"equipamentosStr\" wordWrap=\"true\"/>"
+            },
+            {
+              "line": 20,
+              "text": "\t\t</tab>\t\t"
+            },
+            {
+              "line": 21,
+              "text": "\t\t"
+            },
+            {
+              "line": 22,
+              "text": "\t\t<tab title=\"História\">"
+            },
+            {
+              "line": 23,
+              "text": "\t\t\t<textEditor align=\"client\" field=\"historiaStr\" wordWrap=\"true\"/>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S5",
+      "source": "complementosPadroes/rrpginlua.rpk!/NodeExplorer/PermissionsPopUp.lfm",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00062",
+      "sha256": "439d2a851149b1474833d641d9086642881e88e2a234eaf85a4f5657cf52ede5",
+      "size": 14363,
+      "lineCount": 425,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 19,
+          "end": 19,
+          "lines": [
+            {
+              "line": 19,
+              "text": "\t\tlocal permission_list = {\"read\", \"write\", \"createChild\", \"delete\", \"readPermissions\", \"writePermissions\", \"writeMetaPermissions\"};"
+            }
+          ]
+        },
+        {
+          "start": 113,
+          "end": 122,
+          "lines": [
+            {
+              "line": 113,
+              "text": "\t<event name=\"onShow\">"
+            },
+            {
+              "line": 114,
+              "text": "\t\tif sheet ~= nil then"
+            },
+            {
+              "line": 115,
+              "text": "\t\t\ttrPermissions = ndb.newTransaction(nodeRaiz);"
+            },
+            {
+              "line": 116,
+              "text": "\t\t\tnode = nodeRaiz;"
+            },
+            {
+              "line": 117,
+              "text": ""
+            },
+            {
+              "line": 118,
+              "text": "\t\t\tsheet.address = \"Raiz\";"
+            },
+            {
+              "line": 119,
+              "text": "\t\t\tdepth = 0;"
+            },
+            {
+              "line": 120,
+              "text": ""
+            },
+            {
+              "line": 121,
+              "text": "\t\t\tsheet.selKind = \"group\";"
+            },
+            {
+              "line": 122,
+              "text": "\t\t\tsheet.selId = \"jogadores\";"
+            }
+          ]
+        },
+        {
+          "start": 129,
+          "end": 140,
+          "lines": [
+            {
+              "line": 129,
+              "text": "\t\t\tif ndb.getState(node) == \"opening\" then"
+            },
+            {
+              "line": 130,
+              "text": "\t\t\t\tself:lockWithActivity(\"Carregando...\");"
+            },
+            {
+              "line": 131,
+              "text": "\t\t\t"
+            },
+            {
+              "line": 132,
+              "text": "\t\t\t\tself.nodeObserver = ndb.newObserver(node);"
+            },
+            {
+              "line": 133,
+              "text": "\t\t\t\tself.nodeObserver.onStateChanged = "
+            },
+            {
+              "line": 134,
+              "text": "\t\t\t\t\tfunction (theNode)"
+            },
+            {
+              "line": 135,
+              "text": "\t\t\t\t\t\tif ndb.getState(node) ~= \"opening\" then"
+            },
+            {
+              "line": 136,
+              "text": "\t\t\t\t\t\t\tself:unlockWithActivity();"
+            },
+            {
+              "line": 137,
+              "text": "\t\t\t\t\t\t\tgotoNode(nodeRaiz);"
+            },
+            {
+              "line": 138,
+              "text": "\t\t\t\t\t\t\tself.nodeObserver = nil;"
+            },
+            {
+              "line": 139,
+              "text": "\t\t\t\t\t\tend;\t\t\t\t\t\t"
+            },
+            {
+              "line": 140,
+              "text": "\t\t\t\t\tend;"
+            }
+          ]
+        },
+        {
+          "start": 147,
+          "end": 150,
+          "lines": [
+            {
+              "line": 147,
+              "text": "\t<event name=\"onHide\">"
+            },
+            {
+              "line": 148,
+              "text": "\t\tif sheet ~= nil then"
+            },
+            {
+              "line": 149,
+              "text": "\t\t\ttrPermissions:rollback();"
+            },
+            {
+              "line": 150,
+              "text": "\t\tend;"
+            }
+          ]
+        },
+        {
+          "start": 255,
+          "end": 267,
+          "lines": [
+            {
+              "line": 255,
+              "text": "\t\t<comboBox left=\"225\" top=\"70\" width=\"170\" height=\"25\" items=\"{'Permitido', 'Negado', 'Fortemente Permitido', 'Indefinido'}\"  values=\"{'allow', 'deny', 'strongAllow', ''}\" field=\"read\">"
+            },
+            {
+              "line": 256,
+              "text": "\t\t\t<event name=\"onChange\">"
+            },
+            {
+              "line": 257,
+              "text": "\t\t\t\tif sheet~= nil then"
+            },
+            {
+              "line": 258,
+              "text": "\t\t\t\t\tndb.pushTransaction(nodeRaiz, trPermissions);"
+            },
+            {
+              "line": 259,
+              "text": "\t\t\t\t\tif node==nil then"
+            },
+            {
+              "line": 260,
+              "text": "\t\t\t\t\t\tnode = sheet;"
+            },
+            {
+              "line": 261,
+              "text": "\t\t\t\t\tend;"
+            },
+            {
+              "line": 262,
+              "text": "\t\t\t\t\tif sheet.selKind==\"user\" then"
+            },
+            {
+              "line": 263,
+              "text": "\t\t\t\t\t\tndb.setPermission(node, \"user\", sheet.login, \"read\", sheet.read);"
+            },
+            {
+              "line": 264,
+              "text": "\t\t\t\t\telseif sheet.selKind==\"group\" then"
+            },
+            {
+              "line": 265,
+              "text": "\t\t\t\t\t\tndb.setPermission(node, \"group\", sheet.selId, \"read\", sheet.read);"
+            },
+            {
+              "line": 266,
+              "text": "\t\t\t\t\tend;"
+            },
+            {
+              "line": 267,
+              "text": "\t\t\t\t\tndb.popTransaction(nodeRaiz);"
+            }
+          ]
+        },
+        {
+          "start": 380,
+          "end": 405,
+          "lines": [
+            {
+              "line": 380,
+              "text": "\t\t<button left=\"125\" top=\"250\" width=\"80\" height=\"25\" text=\"Desfazer\">"
+            },
+            {
+              "line": 381,
+              "text": "\t\t\t<event name=\"onClick\">"
+            },
+            {
+              "line": 382,
+              "text": "\t\t\t\tif sheet~= nil then"
+            },
+            {
+              "line": 383,
+              "text": "\t\t\t\t\tDialogs.confirmOkCancel(\"Tem certeza que deseja desfazer as alterações?\","
+            },
+            {
+              "line": 384,
+              "text": "\t\t\t\t\t\tfunction (confirmado)"
+            },
+            {
+              "line": 385,
+              "text": "\t\t\t\t\t\t\tif confirmado then"
+            },
+            {
+              "line": 386,
+              "text": "\t\t\t\t\t\t\t\ttrPermissions:rollback();"
+            },
+            {
+              "line": 387,
+              "text": "\t\t\t\t\t\t\t\trefreshScreen();"
+            },
+            {
+              "line": 388,
+              "text": "\t\t\t\t\t\t\tend;"
+            },
+            {
+              "line": 389,
+              "text": "\t\t\t\t\tend);"
+            },
+            {
+              "line": 390,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 391,
+              "text": "\t\t\t</event>"
+            },
+            {
+              "line": 392,
+              "text": "\t\t</button>"
+            },
+            {
+              "line": 393,
+              "text": ""
+            },
+            {
+              "line": 394,
+              "text": "\t\t<button left=\"215\" top=\"250\" width=\"80\" height=\"25\" text=\"Salvar\">"
+            },
+            {
+              "line": 395,
+              "text": "\t\t\t<event name=\"onClick\">"
+            },
+            {
+              "line": 396,
+              "text": "\t\t\t\tif sheet~= nil then"
+            },
+            {
+              "line": 397,
+              "text": "\t\t\t\t\tDialogs.confirmOkCancel(\"Tem certeza que deseja salvar as alterações?\","
+            },
+            {
+              "line": 398,
+              "text": "\t\t\t\t\t\tfunction (confirmado)"
+            },
+            {
+              "line": 399,
+              "text": "\t\t\t\t\t\t\tif confirmado then"
+            },
+            {
+              "line": 400,
+              "text": "\t\t\t\t\t\t\t\ttrPermissions:commit();"
+            },
+            {
+              "line": 401,
+              "text": "\t\t\t\t\t\t\tend;"
+            },
+            {
+              "line": 402,
+              "text": "\t\t\t\t\tend);"
+            },
+            {
+              "line": 403,
+              "text": "\t\t\t\tend;"
+            },
+            {
+              "line": 404,
+              "text": "\t\t\t</event>"
+            },
+            {
+              "line": 405,
+              "text": "\t\t</button>"
+            }
+          ]
+        },
+        {
+          "start": 419,
+          "end": 425,
+          "lines": [
+            {
+              "line": 419,
+              "text": "\t\tfunction self:editar(ONodeRaiz) "
+            },
+            {
+              "line": 420,
+              "text": "\t\t\tnodeRaiz = ONodeRaiz;"
+            },
+            {
+              "line": 421,
+              "text": "\t\t\tself:setNodeObject(ndbTemporario);"
+            },
+            {
+              "line": 422,
+              "text": "\t\t\tself:show();"
+            },
+            {
+              "line": 423,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 424,
+              "text": "\t</script>"
+            },
+            {
+              "line": 425,
+              "text": "</popupForm>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S6",
+      "source": "complementosPadroes/rrpginlua.rpk!/NodeExplorer/explorerHost.lua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00061",
+      "sha256": "8bf21f80e972062c19fbe29f6389d8a75eb4558f54b3541fc8ede6a4cdcffb08",
+      "size": 753,
+      "lineCount": 33,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 14,
+          "end": 21,
+          "lines": [
+            {
+              "line": 14,
+              "text": "plugins.listenPM(\"ndbHost:editPermissions\","
+            },
+            {
+              "line": 15,
+              "text": "\tfunction(message)\t"
+            },
+            {
+              "line": 16,
+              "text": "\t\tlocal localNodeID = message.localNodeID;"
+            },
+            {
+              "line": 17,
+              "text": "\t\tlocal node = ndb.loadNodeFromLocalID(localNodeID);"
+            },
+            {
+              "line": 18,
+              "text": "\t\t"
+            },
+            {
+              "line": 19,
+              "text": "\t\tif node ~= nil then"
+            },
+            {
+              "line": 20,
+              "text": "\t\t\tpermissions.show(node);"
+            },
+            {
+              "line": 21,
+              "text": "\t\tend;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S7",
+      "source": "complementosPadroes/rrpginlua.rpk!/firedrive/firedriveNavigator.dlua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00017",
+      "sha256": "7e26321276979e2408e2028612c0109d5a9f0092afe5c151e95e4536e7097fc1",
+      "size": 19243,
+      "lineCount": 758,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 252,
+          "end": 259,
+          "lines": [
+            {
+              "line": 252,
+              "text": "\tlocal loadingCount = 0;"
+            },
+            {
+              "line": 253,
+              "text": "\tlocal scopeBox = ctrl;"
+            },
+            {
+              "line": 254,
+              "text": "\tlocal _wasRclFocused = false;"
+            },
+            {
+              "line": 255,
+              "text": "\tlocal sheet = ndb.newMemNodeDatabase();"
+            },
+            {
+              "line": 256,
+              "text": "\tlocal labErro = nil;"
+            },
+            {
+              "line": 257,
+              "text": "\tlocal labSpaceInfo;"
+            },
+            {
+              "line": 258,
+              "text": "\t"
+            },
+            {
+              "line": 259,
+              "text": "\tscopeBox.node = sheet;"
+            }
+          ]
+        },
+        {
+          "start": 326,
+          "end": 330,
+          "lines": [
+            {
+              "line": 326,
+              "text": "\trclItens = GUI.newGridRecordList();"
+            },
+            {
+              "line": 327,
+              "text": "\tctrl.rclItens = rclItens;"
+            },
+            {
+              "line": 328,
+              "text": "\trclItens.selectable = true;\t"
+            },
+            {
+              "line": 329,
+              "text": "\trclItens.parent = sbxItems;\t"
+            },
+            {
+              "line": 330,
+              "text": "\trclItens.field = \"itens\";"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S8",
+      "source": "complementosPadroes/rrpginlua.rpk!/sdk/fireDriveCore.dlua",
+      "packageSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+      "memberId": "ZIP-M00074",
+      "sha256": "df9a8226c1b9223e3a44215de71ac885dfa4d0050e72a06d4b6598019fe8a8d6",
+      "size": 6766,
+      "lineCount": 261,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 96,
+          "end": 114,
+          "lines": [
+            {
+              "line": 96,
+              "text": "local function fdExecuteUpload(params)"
+            },
+            {
+              "line": 97,
+              "text": "\tif type(params) ~= \"table\" then"
+            },
+            {
+              "line": 98,
+              "text": "\t\terror(\"fdExecuteUpload - params was not informed\");"
+            },
+            {
+              "line": 99,
+              "text": "\tend;"
+            },
+            {
+              "line": 100,
+              "text": ""
+            },
+            {
+              "line": 101,
+              "text": "\tif type(params.stream) ~= \"table\" then"
+            },
+            {
+              "line": 102,
+              "text": "\t\terror(\"fireDrive upload - stream was not informed\");"
+            },
+            {
+              "line": 103,
+              "text": "\tend;"
+            },
+            {
+              "line": 104,
+              "text": "\t"
+            },
+            {
+              "line": 105,
+              "text": "\tlocal metadata = {};"
+            },
+            {
+              "line": 106,
+              "text": "\tparams.stream.position = 0;"
+            },
+            {
+              "line": 107,
+              "text": "\t"
+            },
+            {
+              "line": 108,
+              "text": "\tif params.stream.size > 128 * 1024 * 1024 then"
+            },
+            {
+              "line": 109,
+              "text": "\t\tif params.onFailure then"
+            },
+            {
+              "line": 110,
+              "text": "\t\t\tparams.onFailure(\"FILE TOO BIG\");"
+            },
+            {
+              "line": 111,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 112,
+              "text": "\t"
+            },
+            {
+              "line": 113,
+              "text": "\t\treturn nil;"
+            },
+            {
+              "line": 114,
+              "text": "\tend;"
+            }
+          ]
+        },
+        {
+          "start": 118,
+          "end": 135,
+          "lines": [
+            {
+              "line": 118,
+              "text": "\tif params.isQuickUpload then"
+            },
+            {
+              "line": 119,
+              "text": "\t\tparams.destName = params.suggestedFileName;\t"
+            },
+            {
+              "line": 120,
+              "text": "\t\tmetadata.headers.operation = \"quickUpload\";"
+            },
+            {
+              "line": 121,
+              "text": "\telse\t"
+            },
+            {
+              "line": 122,
+              "text": "\t\tmetadata.headers.operation = \"create\";"
+            },
+            {
+              "line": 123,
+              "text": "\t\tmetadata.headers.kind = \"file\";\t"
+            },
+            {
+              "line": 124,
+              "text": "\tend;\t"
+            },
+            {
+              "line": 125,
+              "text": "\t"
+            },
+            {
+              "line": 126,
+              "text": "\tmetadata.blobs = {};"
+            },
+            {
+              "line": 127,
+              "text": "\tmetadata.blobs[1] = {name=\"content\", streamSharedId = params.stream:share(), mimeType = params.mimeType or tryGetMimeFromFileName(params.destName)};\t\t"
+            },
+            {
+              "line": 128,
+              "text": "\t"
+            },
+            {
+              "line": 129,
+              "text": "\tif params.isQuickUpload and not _util_isValidMimeType(metadata.blobs[1].mimeType) then"
+            },
+            {
+              "line": 130,
+              "text": "\t\terror(\"INVALID MIME TYPE: \" .. tostring(metadata.blobs[1].mimeType));"
+            },
+            {
+              "line": 131,
+              "text": "\tend;"
+            },
+            {
+              "line": 132,
+              "text": "\t"
+            },
+            {
+              "line": 133,
+              "text": "\tlocal ret = fdManageItem(params.destName, metadata, params.onSuccess, params.onProgress, params.onFailure);"
+            },
+            {
+              "line": 134,
+              "text": "\tmetadata.blobs[1].data = nil;"
+            },
+            {
+              "line": 135,
+              "text": "\treturn ret;"
+            }
+          ]
+        },
+        {
+          "start": 138,
+          "end": 147,
+          "lines": [
+            {
+              "line": 138,
+              "text": "function fireDrive.uploadFile(destName, stream, onSuccess, onProgress, onFailure, mimeType)"
+            },
+            {
+              "line": 139,
+              "text": "\tlocal params = {};"
+            },
+            {
+              "line": 140,
+              "text": "\tparams.destName = destName;"
+            },
+            {
+              "line": 141,
+              "text": "\tparams.stream = stream;"
+            },
+            {
+              "line": 142,
+              "text": "\tparams.onSuccess = onSuccess;"
+            },
+            {
+              "line": 143,
+              "text": "\tparams.onProgress = onProgress;"
+            },
+            {
+              "line": 144,
+              "text": "\tparams.onFailure = onFailure;"
+            },
+            {
+              "line": 145,
+              "text": "\tparams.mimeType = mimeType;"
+            },
+            {
+              "line": 146,
+              "text": ""
+            },
+            {
+              "line": 147,
+              "text": "\treturn fdExecuteUpload(params);"
+            }
+          ]
+        },
+        {
+          "start": 154,
+          "end": 164,
+          "lines": [
+            {
+              "line": 154,
+              "text": "function fireDrive.quickUpload(suggestedFileName, mimeType, stream, onSuccess, onProgress, onFailure)"
+            },
+            {
+              "line": 155,
+              "text": "\tlocal params = {};"
+            },
+            {
+              "line": 156,
+              "text": "\tparams.stream = stream;"
+            },
+            {
+              "line": 157,
+              "text": "\tparams.onSuccess = onSuccess;"
+            },
+            {
+              "line": 158,
+              "text": "\tparams.onProgress = onProgress;"
+            },
+            {
+              "line": 159,
+              "text": "\tparams.onFailure = onFailure;"
+            },
+            {
+              "line": 160,
+              "text": "\tparams.mimeType = mimeType;"
+            },
+            {
+              "line": 161,
+              "text": "\tparams.isQuickUpload = true;"
+            },
+            {
+              "line": 162,
+              "text": "\tparams.suggestedFileName = suggestedFileName;"
+            },
+            {
+              "line": 163,
+              "text": "\t"
+            },
+            {
+              "line": 164,
+              "text": "\treturn fdExecuteUpload(params);"
+            }
+          ]
+        },
+        {
+          "start": 201,
+          "end": 213,
+          "lines": [
+            {
+              "line": 201,
+              "text": "function fireDrive.getFiles(directory, callback, failureCallback)"
+            },
+            {
+              "line": 202,
+              "text": "\tplugins.sendPM(fdmodule, \"fireDrive:enumerateFiles\", {dir=directory},"
+            },
+            {
+              "line": 203,
+              "text": "\t\tfunction(r)"
+            },
+            {
+              "line": 204,
+              "text": "\t\t\tif callback ~= nil then"
+            },
+            {
+              "line": 205,
+              "text": "\t\t\t\tcallback(r);"
+            },
+            {
+              "line": 206,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 207,
+              "text": "\t\tend,"
+            },
+            {
+              "line": 208,
+              "text": "\t\t"
+            },
+            {
+              "line": 209,
+              "text": "\t\tfunction(r)"
+            },
+            {
+              "line": 210,
+              "text": "\t\t\tif failureCallback ~= nil then"
+            },
+            {
+              "line": 211,
+              "text": "\t\t\t\tfailureCallback(r);"
+            },
+            {
+              "line": 212,
+              "text": "\t\t\tend;"
+            },
+            {
+              "line": 213,
+              "text": "\t\tend);"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S9",
+      "source": "complementosPadroes/DnD5_SDK3.rpk!/fichaDnD5.lfm",
+      "packageSha256": "eb3ef2026bbf6abac89751f6d2aa9b511855f5bbf6c3927aff2731ef65bd49f5",
+      "memberId": "ZIP-M00009",
+      "sha256": "b4a89c0e2b3126c34368099d721dc8bb04a15e60b4591389fa3da70dcd2ff869",
+      "size": 6923,
+      "lineCount": 165,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 43,
+          "end": 75,
+          "lines": [
+            {
+              "line": 43,
+              "text": "\t\t\t<!-- Combobox de exportar ficha -->"
+            },
+            {
+              "line": 44,
+              "text": "\t\t\t<button left=\"0\" top=\"0\" width=\"150\" height=\"20\" text=\"@@Dnd5e.other.export\" >"
+            },
+            {
+              "line": 45,
+              "text": "\t\t\t\t<event name=\"onClick\">"
+            },
+            {
+              "line": 46,
+              "text": "\t\t\t\t\tlocal xml = NDB.exportXML(sheet);"
+            },
+            {
+              "line": 47,
+              "text": ""
+            },
+            {
+              "line": 48,
+              "text": "\t\t\t\t\tlocal export = {};"
+            },
+            {
+              "line": 49,
+              "text": "\t\t\t\t\tUtils.binaryEncode(export, \"utf8\", xml);"
+            },
+            {
+              "line": 50,
+              "text": ""
+            },
+            {
+              "line": 51,
+              "text": "\t\t\t\t\tlocal stream = Utils.newMemoryStream();"
+            },
+            {
+              "line": 52,
+              "text": "\t\t\t\t\tstream:write(export);"
+            },
+            {
+              "line": 53,
+              "text": ""
+            },
+            {
+              "line": 54,
+              "text": "\t\t\t\t\tDialogs.saveFile(LANG(\"Dnd5e.other.save\"), stream, \"sheet.xml\", \"application/xml\","
+            },
+            {
+              "line": 55,
+              "text": "\t\t\t\t\t\tfunction()"
+            },
+            {
+              "line": 56,
+              "text": "\t\t\t\t\t\t\tstream:close();"
+            },
+            {
+              "line": 57,
+              "text": "\t\t\t\t\t\t\tshowMessage(LANG(\"Dnd5e.other.exported\"));"
+            },
+            {
+              "line": 58,
+              "text": "\t\t\t\t\t\tend);"
+            },
+            {
+              "line": 59,
+              "text": "\t\t\t\t</event>"
+            },
+            {
+              "line": 60,
+              "text": "\t\t\t</button>"
+            },
+            {
+              "line": 61,
+              "text": "\t\t\t<!-- Combobox de importar ficha -->"
+            },
+            {
+              "line": 62,
+              "text": "\t\t\t<button left=\"0\" top=\"25\" width=\"150\" height=\"20\" text=\"@@Dnd5e.other.import\" >"
+            },
+            {
+              "line": 63,
+              "text": "\t\t\t\t<event name=\"onClick\">"
+            },
+            {
+              "line": 64,
+              "text": "\t\t\t\t\tDialogs.openFile(LANG(\"Dnd5e.other.import\"), \"application/xml\", false, "
+            },
+            {
+              "line": 65,
+              "text": "\t\t\t\t\t\tfunction(arquivos)"
+            },
+            {
+              "line": 66,
+              "text": "\t\t\t\t\t\t\tlocal arq = arquivos[1];"
+            },
+            {
+              "line": 67,
+              "text": ""
+            },
+            {
+              "line": 68,
+              "text": "\t\t\t\t\t\t\tlocal import = {};"
+            },
+            {
+              "line": 69,
+              "text": "\t\t\t\t\t\t\tarq.stream:read(import, arq.stream.size);"
+            },
+            {
+              "line": 70,
+              "text": ""
+            },
+            {
+              "line": 71,
+              "text": "\t\t\t\t\t\t\tlocal xml = Utils.binaryDecode(import, \"utf8\");"
+            },
+            {
+              "line": 72,
+              "text": ""
+            },
+            {
+              "line": 73,
+              "text": "\t\t\t\t\t\t\tNDB.importXML(sheet, xml);"
+            },
+            {
+              "line": 74,
+              "text": "\t\t\t\t\t\tend);"
+            },
+            {
+              "line": 75,
+              "text": "\t\t\t\t</event>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "NDB-S10",
+      "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/sceneInseridorFireDrive.lfm",
+      "packageSha256": "5578f18f6eedcc3322d19c081e8c8673fe6561ac4f9ad2b507cad9f9cd60cbfa",
+      "memberId": "ZIP-M00144",
+      "sha256": "d099331854f59909c906c9255820df43f90caf89c74484a53431a0d6a8e283d7",
+      "size": 50611,
+      "lineCount": 1305,
+      "crc32Matches": true,
+      "selections": [
+        {
+          "start": 1001,
+          "end": 1028,
+          "lines": [
+            {
+              "line": 1001,
+              "text": "\t\tfunction self:import()"
+            },
+            {
+              "line": 1002,
+              "text": "\t\t\tDialogs.openFile(lang(\"scene.inseridor.import\"), \"application/xml\", false, "
+            },
+            {
+              "line": 1003,
+              "text": "\t\t\t\tfunction(arquivos)"
+            },
+            {
+              "line": 1004,
+              "text": "\t\t\t\t\tlocal arq = arquivos[1];"
+            },
+            {
+              "line": 1005,
+              "text": ""
+            },
+            {
+              "line": 1006,
+              "text": "\t\t\t\t\tlocal import = {};"
+            },
+            {
+              "line": 1007,
+              "text": "\t\t\t\t\tarq.stream:read(import, arq.stream.size);"
+            },
+            {
+              "line": 1008,
+              "text": ""
+            },
+            {
+              "line": 1009,
+              "text": "\t\t\t\t\tlocal xml = Utils.binaryDecode(import, \"utf8\");"
+            },
+            {
+              "line": 1010,
+              "text": ""
+            },
+            {
+              "line": 1011,
+              "text": "\t\t\t\t\tNDB.importXML(sheet, xml);"
+            },
+            {
+              "line": 1012,
+              "text": "\t\t\t\tend);"
+            },
+            {
+              "line": 1013,
+              "text": "\t\tend;"
+            },
+            {
+              "line": 1014,
+              "text": ""
+            },
+            {
+              "line": 1015,
+              "text": "\t\tfunction self:export()"
+            },
+            {
+              "line": 1016,
+              "text": "\t\t\tlocal xml = NDB.exportXML(sheet);"
+            },
+            {
+              "line": 1017,
+              "text": ""
+            },
+            {
+              "line": 1018,
+              "text": "\t\t\tlocal export = {};"
+            },
+            {
+              "line": 1019,
+              "text": "\t\t\tUtils.binaryEncode(export, \"utf8\", xml);"
+            },
+            {
+              "line": 1020,
+              "text": ""
+            },
+            {
+              "line": 1021,
+              "text": "\t\t\tlocal stream = Utils.newMemoryStream();"
+            },
+            {
+              "line": 1022,
+              "text": "\t\t\tstream:write(export);"
+            },
+            {
+              "line": 1023,
+              "text": ""
+            },
+            {
+              "line": 1024,
+              "text": "\t\t\tDialogs.saveFile(lang(\"scene.inseridor.export\"), stream, \"tokens.xml\", \"application/xml\","
+            },
+            {
+              "line": 1025,
+              "text": "\t\t\t\tfunction()"
+            },
+            {
+              "line": 1026,
+              "text": "\t\t\t\t\tstream:close();"
+            },
+            {
+              "line": 1027,
+              "text": "\t\t\t\t\tshowMessage(lang(\"scene.inseridor.exported\"));"
+            },
+            {
+              "line": 1028,
+              "text": "\t\t\t\tend);"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "search": {
+    "scope": "All five shipped RPK members with lua/dlua/lfm/xml/txt extensions, literal exportXML/importXML/ExportToXMLString/ImportXMLString sites; no internet search",
+    "searchedMembers": 446,
+    "xmlCallSites": [
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 111,
+        "text": "function localNDB.Node:exportXML()"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 112,
+        "text": "return _obj_invoke(self.handle, \"ExportToXMLString\");"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 115,
+        "text": "function localNDB.Node:importXML(xmlString)"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 116,
+        "text": "return _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 534,
+        "text": "function ndb.exportXML(nodeObj)"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 543,
+        "text": "return node:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 550,
+        "text": "function ndb.importXML(nodeObj, xmlString)"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 553,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 559,
+        "text": "return node:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 562,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 583,
+        "text": "local xmlString = srcNode:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/AutoUpdater.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 584,
+        "text": "dstNode:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/fichaDnD5.lfm",
+        "sha256": "b4a89c0e2b3126c34368099d721dc8bb04a15e60b4591389fa3da70dcd2ff869",
+        "line": 46,
+        "text": "local xml = NDB.exportXML(sheet);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/fichaDnD5.lfm",
+        "sha256": "b4a89c0e2b3126c34368099d721dc8bb04a15e60b4591389fa3da70dcd2ff869",
+        "line": 73,
+        "text": "NDB.importXML(sheet, xml);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 111,
+        "text": "function localNDB.Node:exportXML()"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 112,
+        "text": "return _obj_invoke(self.handle, \"ExportToXMLString\");"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 115,
+        "text": "function localNDB.Node:importXML(xmlString)"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 116,
+        "text": "return _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 552,
+        "text": "function ndb.exportXML(nodeObj)"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 561,
+        "text": "return node:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 568,
+        "text": "function ndb.importXML(nodeObj, xmlString)"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 571,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 577,
+        "text": "return node:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 580,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 601,
+        "text": "local xmlString = srcNode:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 602,
+        "text": "dstNode:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/fichaDnD5.lfm.lua",
+        "sha256": "96b4c9604df537b7aad0bfb0efa80af88a0a8249cfc0300c52d5d3f5e2733cee",
+        "line": 12019,
+        "text": "local xml = NDB.exportXML(sheet);"
+      },
+      {
+        "source": "complementosPadroes/DnD5_SDK3.rpk!/fichaDnD5.lfm.lua",
+        "sha256": "96b4c9604df537b7aad0bfb0efa80af88a0a8249cfc0300c52d5d3f5e2733cee",
+        "line": 12045,
+        "text": "NDB.importXML(sheet, xml);"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/macros/RRPGSimpleMacros.lua",
+        "sha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+        "line": 271,
+        "text": "local savedXML = NDB.exportXML(localNDB);"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/macros/RRPGSimpleMacros.lua",
+        "sha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+        "line": 272,
+        "text": "NDB.importXML(remoteNDB, savedXML);"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 111,
+        "text": "function localNDB.Node:exportXML()"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 112,
+        "text": "return _obj_invoke(self.handle, \"ExportToXMLString\");"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 115,
+        "text": "function localNDB.Node:importXML(xmlString)"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 116,
+        "text": "return _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 552,
+        "text": "function ndb.exportXML(nodeObj)"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 561,
+        "text": "return node:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 568,
+        "text": "function ndb.importXML(nodeObj, xmlString)"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 571,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 577,
+        "text": "return node:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 580,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 601,
+        "text": "local xmlString = srcNode:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/rrpginlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 602,
+        "text": "dstNode:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/insert.lua",
+        "sha256": "0a6c4e04f21d0728bc629fe7177b8207461b5e811aa5099b54ba560f72a0a3df",
+        "line": 50,
+        "text": "local savedXML = NDB.exportXML(localNDB);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/insert.lua",
+        "sha256": "0a6c4e04f21d0728bc629fe7177b8207461b5e811aa5099b54ba560f72a0a3df",
+        "line": 51,
+        "text": "NDB.importXML(remoteNDB, savedXML);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/sceneInseridorFireDrive.lfm",
+        "sha256": "d099331854f59909c906c9255820df43f90caf89c74484a53431a0d6a8e283d7",
+        "line": 1011,
+        "text": "NDB.importXML(sheet, xml);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/sceneInseridorFireDrive.lfm",
+        "sha256": "d099331854f59909c906c9255820df43f90caf89c74484a53431a0d6a8e283d7",
+        "line": 1016,
+        "text": "local xml = NDB.exportXML(sheet);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 111,
+        "text": "function localNDB.Node:exportXML()"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 112,
+        "text": "return _obj_invoke(self.handle, \"ExportToXMLString\");"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 115,
+        "text": "function localNDB.Node:importXML(xmlString)"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 116,
+        "text": "return _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 552,
+        "text": "function ndb.exportXML(nodeObj)"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 561,
+        "text": "return node:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 568,
+        "text": "function ndb.importXML(nodeObj, xmlString)"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 571,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 577,
+        "text": "return node:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 580,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 601,
+        "text": "local xmlString = srcNode:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/sdk/ndb.lua",
+        "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+        "line": 602,
+        "text": "dstNode:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/sceneInseridorFireDrive.lfm.lua",
+        "sha256": "3d2bab73a3162c6feb2920e661f5c462ccdc9a11f207a6c1d9ea194b7e87139e",
+        "line": 2188,
+        "text": "NDB.importXML(sheet, xml);"
+      },
+      {
+        "source": "complementosPadroes/sceneinlua.rpk!/inseridortokens/sceneInseridorFireDrive.lfm.lua",
+        "sha256": "3d2bab73a3162c6feb2920e661f5c462ccdc9a11f207a6c1d9ea194b7e87139e",
+        "line": 2193,
+        "text": "local xml = NDB.exportXML(sheet);"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 111,
+        "text": "function localNDB.Node:exportXML()"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 112,
+        "text": "return _obj_invoke(self.handle, \"ExportToXMLString\");"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 115,
+        "text": "function localNDB.Node:importXML(xmlString)"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 116,
+        "text": "return _obj_invoke(self.handle, \"ImportXMLString\", (tostring(xmlString)) or \"\");"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 534,
+        "text": "function ndb.exportXML(nodeObj)"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 543,
+        "text": "return node:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 550,
+        "text": "function ndb.importXML(nodeObj, xmlString)"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 553,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 559,
+        "text": "return node:importXML(xmlString);"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 562,
+        "text": "error(aLocale.lang(\"sdk3.err.ndb.func.importXML.invalidPar\"));"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 583,
+        "text": "local xmlString = srcNode:exportXML();"
+      },
+      {
+        "source": "complementosPadroes/UniversalVTTImporter.rpk!/sdk/ndb.lua",
+        "sha256": "0b16716d210c59f5db3dcdb9209acdbbc9f876f5afe03bbedda9aa0e33fcf7a3",
+        "line": 584,
+        "text": "dstNode:importXML(xmlString);"
+      }
+    ]
+  },
+  "limitations": [
+    "Native _ndb_/_obj_ calls opaque; no XML schema or round-trip observed",
+    "No runtime observation, atomicity, durability, persistence or synchronization established",
+    "Literal call-site search is bounded and cannot exclude an unreferenced XML fixture or dynamic call",
+    "Not an upstream published specification; shipped version only"
+  ],
+  "integrity": {
+    "inputSha256After": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+    "selectedMemberErrors": 0
+  }
+}

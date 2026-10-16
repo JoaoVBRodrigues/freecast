@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="statusBarStyle" inherit="panelStyle text" 
+	
+		   background="frames/noFrame.xml" 			  		  
+		   		   		
+		   liquidMultiply="frames/statusBar/liquid1.png"
+		   liquidMultiplyQuality="high"
+		   
+		   particles="frames/statusBar/particles1.png" 
+		   particlesQuality="high"
+		   
+		   blik="frames/statusBar/blik1.png" 
+		   blikQuality="high"	
+		   
+		   fontSize="11"
+		   fontStyle=""
+		   
+		   />
+</group>

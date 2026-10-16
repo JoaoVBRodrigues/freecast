@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="32" height="32" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<ellipse left="1.5" top="1.5" right="29.5" bottom="29.5" zOrder="1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="#FFFFFF20" size="4" opacity="0.2"/>
+		</ellipse>			
+	</draw>
+</frame>

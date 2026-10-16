@@ -1,0 +1,3 @@
+import {readZip} from './zip-inventory.mjs';
+const r=readZip(process.argv[2]);
+for(const p of r.members.filter(m=>m.extension==='.rpk'))for(const m of readZip(p.payload).members){if(/\.(xml|lfm|lua|dlua|xlua)$/.test(m.name)){const t=m.payload.toString('utf8');if(t.includes('souMestre()')&&t.includes('ativarTurnoDe'))console.log(JSON.stringify({parent:p.name,member:m.name,sha256:m.sha256,masterProperty:t.includes('j.isMestre'),masterGuard:t.includes('if not self:souMestre() then'),clearTurn:t.includes('a.vez = false'),setTurn:t.includes('node.vez = true'),scroll:t.includes('scrollToNode(node)'),narration:t.includes('enviarNarracao(msg)')}));}}

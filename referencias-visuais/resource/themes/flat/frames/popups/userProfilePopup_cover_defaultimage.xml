@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="568" height="119" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<draw>
+	
+		<rectangle left="0" top="0" right="568" bottom="119" zOrder="1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			
+			<fill color="$(dominant_color_gradient)" color2="$(dominant_color)" kind="gradient"
+				  gradientStartX="0.0" gradientStartY="0.0" gradientEndX="1.0" gradientEndY="1.0"/>
+		</rectangle>		
+
+		<frame left="209" top="36.86" right="359" bottom="82.13" zOrder="2">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<source url="../../icons/d10_logo_firecasttext_facecolor.xml"/>
+		</frame>	
+	</draw>	
+		
+</frame>
+
+
+

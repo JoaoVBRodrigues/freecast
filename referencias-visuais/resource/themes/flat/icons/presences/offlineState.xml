@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="26" height="20" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<rectangle left="3" top="0" right="23" bottom="20" zOrder="0" xradius="3" yradius="3">			
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(offline_state_color)" opacity="1.0"/>
+		</rectangle>			
+	</draw>
+</frame>

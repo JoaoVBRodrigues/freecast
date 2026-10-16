@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="50" height="50" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<padding left="2" top="18" bottom="18" right="2"/>
+	<draw>
+		<rectangle left="0" top="0" right="50" bottom="50" zOrder="-1" xradius="6" yradius="6">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(radiocard_selected_focused_color)" size="1"/>
+		</rectangle>		
+
+		<path left="26" top="8" right="42" bottom="24" zOrder="1" mode="fit">
+			<pathData>M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z</pathData>
+			<anchors left="false" top="true" bottom="false" right="true"/>
+			<fill color="$(dominant_color)" opacity="0.9"/>
+		</path>	
+	</draw>
+</frame>

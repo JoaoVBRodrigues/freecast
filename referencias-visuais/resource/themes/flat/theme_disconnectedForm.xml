@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<!-- General -->
+	
+	<class name="disconnectedKeepMeSignedInCheckboxStyle" inherit="AltCheckboxStyle" fontStyle="" />
+	<class name="disconnectedKeepMeSignedInCenterCheckboxStyle" inherit="AltCenterCheckboxStyle" fontStyle="" />
+	
+	<class name="__disconnectedFloaterEffect" background="frames/disconnectedForm/disconnectedRoundContainer.xml" effect="shadow" effect_opacity="0.4" effect_softness="0.6"
+		    effect_color="black" effect_distance="10" effect_direction="90" />
+	
+	
+	<!-- Large Screen Size -->
+	<class name="disconnectedFloaterContainerPanelStyle" inherit="__disconnectedFloaterEffect panelstyle"/>			
+	<class name="disconnectedFloaterLeftPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedLeftFloater.xml"/>
+	<class name="disconnectedFloaterClientPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedClientFloater.xml"/>	
+	<class name="disconnectedFloaterBottomPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedBottomOfClientFloater.xml"/>		
+	
+	<!-- Medium Screen Size -->
+	
+	<class name="disconnectedMedFloaterContainerPanelStyle" inherit="__disconnectedFloaterEffect panelstyle"/>
+	<class name="disconnectedMedFloaterTopPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedMedTopOfFloater.xml"/>
+	<class name="disconnectedMedFloaterClientPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedMedClientFloater.xml"/>	
+	<class name="disconnectedMedFloaterBottomPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedMedBottomOfClient.xml"/>		
+	
+	<!-- Small Screen Size -->
+	
+	<class name="disconnectedSmallContainerPanelStyle" inherit="panelstyle" background="frames/panelStyle/transparent.xml"/>
+	<class name="disconnectedSmallTopPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedSmallTop.xml"/>
+	<class name="disconnectedSmallClientPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedSmallClient.xml"/>	
+	<class name="disconnectedSmallBottomPanelStyle" inherit="panelstyle" background="frames/disconnectedForm/disconnectedSmallBottom.xml"/>		
+	
+	
+	<class name="disconnectedImages" 		
+		   disconnected_floater_logo="frames/disconnectedForm/icon_quad_firecast.xml"
+		   disconnected_floater_med_logo="frames/disconnectedForm/icon_vertical_firecast.xml"
+		   disconnected_small_logo="frames/disconnectedForm/icon_vertical_firecast.xml"
+		   
+		   backImageCount="4"
+		   backImage0="frames/disconnectedForm/backgrounds/bkg1.jpg"
+		   backImage1="frames/disconnectedForm/backgrounds/bkg2.jpg"
+		   backImage2="frames/disconnectedForm/backgrounds/bkg3.jpg"
+		   backImage3="frames/disconnectedForm/backgrounds/bkg4.jpg"		   
+		   backImageOverlay="frames/disconnectedForm/backgrounds/overlay.xml"
+		   backImageOverlayMode="stretch"
+		   />
+		   
+	<!-- Registration Screen -->
+	<class name="regAcceptanceCheckboxStyle" inherit="AltVTopCheckboxStyle" fontStyle="" />
+	
+	<class name="loginEditStyle" inherit="__credentialEditStyle" background="frames/edit/credential_loginEdit.xml" backgroundFocused="frames/edit/credential_loginEdit_focused.xml" />
+	<class name="errorLoginEditStyle" inherit="__ErrorCredentialEditStyle" background="frames/edit/credential_loginEdit_error.xml" backgroundFocused="frames/edit/credential_loginEdit_error_focused.xml" />	
+	<class name="passwordEditStyle" inherit="__credentialEditStyle" background="frames/edit/credential_passwordEdit.xml" backgroundFocused="frames/edit/credential_passwordEdit_focused.xml" />
+	<class name="errorPasswordEditStyle" inherit="__ErrorCredentialEditStyle" background="frames/edit/credential_passwordEdit_error.xml" backgroundFocused="frames/edit/credential_passwordEdit_error_focused.xml"  />		
+	<class name="emailEditStyle" inherit="__credentialEditStyle" background="frames/edit/credential_emailEdit.xml" backgroundFocused="frames/edit/credential_emailEdit_focused.xml"  />	
+	<class name="errorEmailEditStyle" inherit="__ErrorCredentialEditStyle" background="frames/edit/credential_emailEdit_error.xml" backgroundFocused="frames/edit/credential_emailEdit_error_focused.xml"  />	
+	<class name="genericInfoEditStyle" inherit="__credentialEditStyle" background="frames/edit/credential_genericInfoEdit.xml" backgroundFocused="frames/edit/credential_genericInfoEdit_focused.xml"  />	
+	<class name="errorGenericInfoEditStyle" inherit="__ErrorCredentialEditStyle" background="frames/edit/credential_genericInfoEdit_error.xml" backgroundFocused="frames/edit/credential_genericInfoEdit_error_focused.xml"  />				
+	
+	
+	<class name="mediumPasswordEditStyle" inherit="mediumCredentialText passwordEditStyle" background="frames/edit/credential_medium_passwordEdit.xml" backgroundFocused="frames/edit/credential_medium_passwordEdit_focused.xml" />		
+	<class name="mediumErrorPasswordEditStyle" inherit="mediumCredentialErrorText errorPasswordEditStyle" background="frames/edit/credential_medium_passwordEdit_error.xml" backgroundFocused="frames/edit/credential_medium_passwordEdit_error_focused.xml"  />			
+	
+	<class name="_baseRegistrationComboboxStyle" inherit="comboboxstyle" dropDownIcon="frames/comboBox/reg_plurarity_dropDownArrow_normal.xml"/>
+	<class name="_baseRegistrationComboboxStyle_listitem" inherit="credentialText comboBoxStyle_listitem"/>
+	<class name="_baseRegistrationComboboxStyle_popup" inherit="comboBoxStyle_popup" background="frames/comboBox/reg_popup_background_normal.xml" verticalOffset="4"/>	
+	
+	
+	<class name="regPluralityComboBoxStyle" inherit="credentialText _baseRegistrationComboboxStyle" 
+			background="frames/comboBox/reg_plurality_normal.xml" 
+			backgroundFocused="frames/comboBox/reg_plurality_focused.xml" 
+			backgroundFocusedHover="frames/comboBox/reg_plurality_focused.xml" 
+			backgroundHover="frames/comboBox/reg_plurality_hover.xml"/>	
+			
+	<class name="regPluralityComboBoxStyle_listitem" inherit="_baseRegistrationComboboxStyle_listitem"/>
+			
+	<class name="regErrorPluralityComboBoxStyle" inherit="regPluralityComboBoxStyle" 
+			background="frames/comboBox/reg_plurality_error_normal.xml" 
+			backgroundFocused="frames/comboBox/reg_plurality_error_focused.xml"
+			backgroundFocusedHover="frames/comboBox/reg_plurality_error_focused.xml"
+			backgroundHover="frames/comboBox/reg_plurality_error_hover.xml"			
+			textPrompt_fontColor="$(alert_color)"
+			dropDownIcon="frames/comboBox/reg_plurarity_dropDownArrow_error.xml"/>
+			
+	<class name="regErrorPluralityComboBoxStyle_listitem" inherit="regPluralityComboBoxStyle_listitem" fontColor="$(alert_color)" fontColorSelected="$(alert_color)D3"/>
+</group>

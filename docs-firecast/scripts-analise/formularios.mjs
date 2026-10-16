@@ -1,0 +1,21 @@
+// Parser local independente do stream TPF0; não executa métodos/eventos.
+import fs from 'node:fs';
+import crypto from 'node:crypto';
+const evidence=JSON.parse(fs.readFileSync('docs-firecast/evidencias/rea-pe-firecast.json'));
+const file=fs.readFileSync(evidence.normalized_result.artifact.path);
+const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
+function parse(b){let p=4;const need=n=>{if(n<0||p+n>b.length)throw Error('out of bounds at '+p);};
+ const byte=()=>{need(1);return b[p++];};const n16=()=>{need(2);const v=b.readUInt16LE(p);p+=2;return v;};const n32=()=>{need(4);const v=b.readUInt32LE(p);p+=4;return v;};
+ const str=()=>{const n=byte();need(n);const s=b.toString('latin1',p,p+n);p+=n;return s;};
+ function value(){const t=byte();switch(t){case 0:return null;case 1:{const a=[];while(b[p]!==0)a.push(value());p++;return a;}case 2:{need(1);return b.readInt8(p++);}case 3:{need(2);const v=b.readInt16LE(p);p+=2;return v;}case 4:{need(4);const v=b.readInt32LE(p);p+=4;return v;}case 5:{need(10);const bytes=b.subarray(p,p+10).toString('hex');p+=10;return {extended80Hex:bytes};}case 6:case 7:return str();case 8:return false;case 9:return true;case 10:{const n=n32();need(n);const v={binaryBytes:n,sha256:hash(b.subarray(p,p+n))};p+=n;return v;}case 11:{const a=[];let s;while((s=str())!=='')a.push(s);return a;}case 12:case 20:{const n=n32();need(n);const s=b.toString(t===20?'utf8':'latin1',p,p+n);p+=n;return s;}case 13:return null;case 14:{const a=[];while(b[p]!==0){const itemType=byte();if(itemType!==1)throw Error('collection item type '+itemType);a.push(properties());}p++;return a;}case 15:{need(4);const v=b.readFloatLE(p);p+=4;return v;}case 16:case 17:case 21:{need(8);const v=t===16?{currencyInt64:b.readBigInt64LE(p).toString()}:b.readDoubleLE(p);p+=8;return v;}case 18:{const n=n32()*2;need(n);const s=b.toString('utf16le',p,p+n);p+=n;return s;}case 19:{need(8);const v=b.readBigInt64LE(p).toString();p+=8;return v;}default:throw Error('unsupported value tag '+t+' at '+(p-1));}}
+ function properties(){const a={};let name;while((name=str())!=='')a[name]=value();return a;}
+ function object(){let flags=0,childPosition;if((b[p]&0xf0)===0xf0){flags=byte()&0xf;if(flags&2)childPosition=value();}const className=str(),name=str(),props=properties(),children=[];while(b[p]!==0)children.push(object());p++;return {className,name,flags,childPosition,properties:props,children};}
+ const objectTree=object();return {objectTree,consumedBytes:p,totalBytes:b.length,complete:p===b.length};
+}
+const result=[];
+for(const r of evidence.normalized_result.resources){if(r.type.id!==10)continue;const loc=r.payload.location,b=file.subarray(loc.offset,loc.offset+loc.bytes);if(b.toString('ascii',0,4)!=='TPF0')continue;try{result.push({id:'FORM-'+String(r.index).padStart(3,'0'),resource:r.name.name,offset:loc.offset,bytes:loc.bytes,sha256:r.payload.sha256,...parse(b)});}catch(e){result.push({resource:r.name.name,error:e.message,complete:false});}}
+fs.writeFileSync('docs-firecast/inventarios/formularios.json',JSON.stringify({id:'LOCAL-FORMS-001',sourceEvidence:evidence.evidence_id,parser:'scripts-analise/formularios.mjs',forms:result,limitations:['Static serialized defaults only; no event bodies, runtime values or layout measurements.','Inherited base properties and programmatically created controls are not expanded.','Latin-1 represents legacy byte strings; original codepage not established.']},null,2));
+console.log(JSON.stringify({forms:result.length,complete:result.filter(r=>r.complete).length,errors:result.filter(r=>r.error)}));
+// Compact resource manifest retains source offsets and digests without copying payloads.
+const manifest=evidence.normalized_result.resources.map(r=>({id:'PE-'+String(r.index).padStart(3,'0'),source:'Firecast.exe',type:r.type.name??r.type.id,name:r.name.name??r.name.id,language:r.language.id??r.language.name,bytes:r.payload.location.bytes,offset:r.payload.location.offset,sha256:r.payload.sha256,format:r.type.id===3?'icon image candidate':r.type.id===10?'RCDATA':r.type.id===6?'RT_STRING':String(r.type.id??r.type.name),reuse:'desconhecida',license:null,extracted:false}));
+fs.writeFileSync('docs-firecast/inventarios/recursos-pe.json',JSON.stringify({sourceEvidence:evidence.evidence_id,resources:manifest},null,2));

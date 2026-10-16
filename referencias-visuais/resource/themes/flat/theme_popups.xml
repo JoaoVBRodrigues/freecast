@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<!-- Popups -->
+	<class name="popupStyle" inherit="_popupDropShadowEffect panelStyle" background="frames/popups/popupFrame.xml" />	
+	<class name="actionPopupStyle" inherit="popupStyle _popupDropShadowEffect _popupHidingEffect" background="frames/popups/actionPopupFrame.xml"/>
+	
+	<class name="contextPopupMenuStyle" inherit="_popupDropShadowEffect popupStyle" 
+			background="frames/popups/context_popupMenu_background_normal.xml" verticalOffset="3" />
+		   
+	<class name="contextPopupMenuItemStyle" inherit="panelstyle"
+		background="frames/popups/context_popupMenuItem_background_normal.xml"
+		backgroundHover="frames/popups/context_popupMenuItem_background_selected.xml"
+		backgroundDown="frames/popups/context_popupMenuItem_background_selected.xml" />
+				
+				
+	<class name="statusBarEditorPopupStyle" inherit="popupStyle" background="frames/popups/statusBarEditor_popupFrame.xml" />
+				
+	<class name="combopopupstyle" inherit="popupStyle"/> 
+				
+	<!-- Menus -->
+	<class name="popupMenuStyle" inherit="text popupStyle" fontColor="$(face_color)" fontColorHover="$(face_color_hover)"/>		
+	<class name="imageInspectorPopupStyle" inherit="transparentPanelStyle"/>		
+	
+	<!-- Auxiliar itens -->
+	<class name="contextPopupMenuSeparatorItemStyle" inherit="panelstyle"
+		background="frames/popups/context_popupMenuSeparatorItem_background_normal.xml"/>	
+</group>

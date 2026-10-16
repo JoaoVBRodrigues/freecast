@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="128" height="32" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<padding top="2" bottom="2"/>
+	
+	<draw>
+					
+	</draw>
+</frame>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="editStyle" inherit="text textPrompt" background="frames/edit/edit.xml" backgroundFocused="frames/edit/editFocused.xml"/>
+	<class name="errorEditStyle" inherit="editStyle" background="frames/edit/editError.xml" backgroundFocused="frames/edit/editError_focused.xml"/>
+	
+	<class name="noBackgroundEditStyle" inherit="editStyle"
+		 background="frames/edit/noBkgEdit_background_normal.xml"
+		 backgroundFocused="frames/edit/noBkgEdit_background_focused.xml" />
+
+	<class name="smallTextEditStyle" inherit="editStyle" fontSize="12"
+		    background="frames/edit/smallEdit_normal.xml"
+			backgroundFocused="frames/edit/smallEdit_focused.xml"/>
+	
+			
+	<class name="searchEditStyle" inherit="editStyle"/>
+	<class name="sideBarSearchEditStyle" inherit="searchEditStyle" background="frames/edit/sideBarSearchEditStyle.xml"/>
+	
+	<class name="cardSearchEditStyle" inherit="searchEditStyle" 
+		   background="frames/edit/cardSearchEditStyle.xml"
+		   backgroundFocused="frames/edit/cardSearchEditFocusedStyle.xml"/>
+
+
+		   			
+	<class name="richEditStyle" inherit="text textPrompt" background="frames/edit/edit.xml" textPrompt_fontColor="$(text_content_deempashized_foreground_color)"/>
+	<class name="customBkgColorRichEditStyle" inherit="richEditStyle" background="frames/noFrame.xml" enableCustomBkgColor="true"/>
+	<class name="taleMarkRichEditStyle" inherit="richEditStyle _baseTaleMarkStyleSheet"/>		
+		
+	<class name="highlightedTextRichEditStyle" inherit="richEditStyle" 
+		   vscroll_margins_top="1"
+		   vscroll_margins_right="2"
+		   vscroll_margins_bottom="1"/>
+	
+	<class name="highlightedTextCustomBkgColorRichEditStyle" inherit="highlightedTextRichEditStyle" 
+		background="frames/richEdit/customBkgColorRichEdit_normal.xml" 
+		bkgRadiusX="5" bkgRadiusY="5" enableCustomBkgColor="true"/>
+	
+	<class name="chatInputRichEditStyle" inherit="taleMarkRichEditStyle" fontSize="15" background="frames/chat/inputRichEdit.xml"
+		   backgroundDominantColor="$(short_content_bkg_color)"/>	
+		   
+	<class name="logRichEditStyle" inherit="taleMarkRichEditStyle" 
+		   background="frames/chat/logRichEdit.xml" 		   
+		   nick_fontColor="$(high_contrast_text_content_foreground_color)"	   
+		   timestamp_fontColor="$(low_contrast_text_content_foreground_color)"
+		   blockSepLine_color="$(low_contrast2_text_content_foreground_color)"		  
+		   blockSepLineDate_fontColor="$(state_text_content_foreground_color)"
+		   stateMessage_fontColor="$(state_text_content_foreground_color)"
+		   hotNewMessages_color="$(dominant_color_pale)A8"
+		   backgroundDominantColor="$(bkg_color)"
+		   hoveredMessageBkgColor="#0000001A"
+		   textStamp_fontFamily="$(default_font_name)"
+		   textStamp_fontSize="11"
+		   textStamp_fontColor="$(state_text_content_foreground_color)"
+		   />		   
+		   
+	<class name="consoleLogRichEditStyle" inherit="_consoleTalemarkStyleSheet logRichEditStyle"/>	
+	<class name="consoleInputRichEditStyle" inherit="_consoleTalemarkStyleSheet chatInputRichEditStyle"/>
+	
+	<class name="transparentSearchEditStyle" inherit="editStyle" 
+		    background="frames/edit/flatSearchEdit_bkg_normal.xml" 
+			backgroundFocused="frames/edit/flatSearchEdit_bkg_focused.xml" />
+			
+	<class name="transparentSearchErrorEditStyle" inherit="editStyle" 
+		    background="frames/edit/flatSearchEdit_error_bkg_normal.xml" 
+			backgroundFocused="frames/edit/flatSearchEdit_error_bkg_focused.xml"  />			
+			
+	<class name="smallFontTransparentSearchEditStyle" inherit="transparentSearchEditStyle" fontSize="12" />
+	<class name="smallFontTransparentSearchErrorEditStyle" inherit="transparentSearchErrorEditStyle" fontSize="12" />	
+			   
+	<class name="BibSearchStyle_edt" inherit="editStyle" 
+		   background="frames/edit/SearchBibEdt.xml"
+		   backgroundFocused="frames/edit/SearchBibEdt_Focused.xml" />
+
+	<class name="chatToolbarEditStyle" inherit="editStyle" 
+		   background="frames/edit/chat_toolbar_edit.xml" backgroundFocused="frames/edit/chat_toolbar_edit_focused.xml" 
+		   fontSize="12"
+		   textPrompt_fontSize="12"
+		   textPrompt_fontColor="$(sidebar_toolbar_label_font_color)" />
+		   
+		   
+	<class name="dateEditStyle" inherit="editStyle" dropDownIcon="frames/edit/dateedit_dropdow_arrow_normal.xml"/>
+	<class name="errorDateEditStyle" inherit="dateEditStyle" background="frames/edit/editError.xml" backgroundFocused="frames/edit/editError_focused.xml"/>
+	
+	<class name="timeEditStyle" inherit="editStyle" upButtonIcon="frames/edit/timeedit_up_button_normal.xml" downButtonIcon="frames/edit/timeedit_down_button_normal.xml"/>
+	<class name="errorTimeEditStyle" inherit="timeEditStyle" background="frames/edit/editError.xml" backgroundFocused="frames/edit/editError_focused.xml"/>
+	
+</group>

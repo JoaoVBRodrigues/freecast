@@ -1,0 +1,5471 @@
+{
+  "evidenceId": "F2-FONTES-TEMAS-001",
+  "method": "Independent read-only ZIP/SFNT parser and bounded textual class/constant inspection; font metadata only; no loading, rasterization or font export",
+  "nodeVersion": "v22.23.2",
+  "scriptSha256": "524fb8117c72e52b66b423dbf8788cf0a265f0e86615c0d3b4b8cfd201ae3414",
+  "archive": {
+    "path": "C:/Users/João/AppData/Local/Firecast/resource.zip",
+    "size": 21462948,
+    "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+    "eocdOffset": 21462926,
+    "centralOffset": 21329906,
+    "centralSize": 133020,
+    "memberCount": 1422
+  },
+  "fonts": [
+    {
+      "path": "themes/flat/fonts/Inconsolata-Bold.ttf",
+      "sha256": "512517cda8a0b8a1d5ba57814c116fe8a21e85e9be4e913d4f035ee7b047a63a",
+      "size": 66352,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 62000,
+        "length": 3075,
+        "format": 0,
+        "count": 23
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 62282,
+          "byteLength": 122,
+          "rawSha256": "0c8e0668060f1cb6570fc8af5adfb198df4b2c72a37b7a25a451281ca97f86e0",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Created by Raph Levien using his own tools and FontForge. Copyright 2006 Raph Levien. Released under the Apache 2 license."
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 62404,
+          "byteLength": 11,
+          "rawSha256": "b785e24c24e1a2b83b6fe6800540155e2bd0d36f5770ffa6707d3807af822e36",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 62415,
+          "byteLength": 4,
+          "rawSha256": "94fee62e68e257c0313bd832f6fbf6079c9055865f2fd34ed1fef130eac595e9",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Bold"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 62479,
+          "byteLength": 16,
+          "rawSha256": "c0c9026688244d970a1876067f817158b826b8c7db9d1b23086bd1d7f9f39984",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata Bold"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 62560,
+          "byteLength": 16,
+          "rawSha256": "b2113a0d4c4010b85bc3be001f96af9e2e56174a23731c3482e060b091ddc4a5",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata-Bold"
+        },
+        {
+          "record": 9,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 62615,
+          "byteLength": 551,
+          "rawSha256": "b95aece99fb1f465a2fec853afee69dac752588c3ce4351f26fc540f6a607137",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright 2011 Raph Levien\r\rLicensed under the Apache License, Version 2.0 (the \"License\");\ryou may not use this file except in compliance with the License.\rYou may obtain a copy of the License at\r\r    http://www.apache.org/licenses/LICENSE-2.0\r\rUnless required by applicable law or agreed to in writing, software\rdistributed under the License is distributed on an \"AS IS\" BASIS,\rWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\rSee the License for the specific language governing permissions and\rlimitations under the License."
+        },
+        {
+          "record": 10,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 63166,
+          "byteLength": 47,
+          "rawSha256": "4a219c2cfe732e14a4317f9098048fed4fec76c29e8df07a49eabf3a3961f162",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        {
+          "record": 12,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 63213,
+          "byteLength": 244,
+          "rawSha256": "61592ab6eacbcfc831297f986e98d74d62473909266ec374c8b48e093edb6590",
+          "decode": "UTF-16BE",
+          "value": "Created by Raph Levien using his own tools and FontForge. Copyright 2006 Raph Levien. Released under the Apache 2 license."
+        },
+        {
+          "record": 13,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 63457,
+          "byteLength": 22,
+          "rawSha256": "127e5e0326c5475c53228460e751bd3c508d89addcca13473500c2c319d27e68",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 14,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 63479,
+          "byteLength": 8,
+          "rawSha256": "a493abdfc35734aee85a7e0a10a94e595073ded925098315c72f608548dce3d7",
+          "decode": "UTF-16BE",
+          "value": "Bold"
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 63607,
+          "byteLength": 32,
+          "rawSha256": "ea9ade59b07590082b249edbd28a125f08bdc9bc85c7dc932bcfb23ad82a94c6",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata Bold"
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 63769,
+          "byteLength": 32,
+          "rawSha256": "cbd63594d4fbbd24f7e0e89127f1935a63d61106ef3793459b9084d45490ebcf",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata-Bold"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 63879,
+          "byteLength": 1102,
+          "rawSha256": "9eb317e9c867ffb6b1a573d38bba892accc28c7de06867036e0ff284425c2c6f",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Raph Levien\r\rLicensed under the Apache License, Version 2.0 (the \"License\");\ryou may not use this file except in compliance with the License.\rYou may obtain a copy of the License at\r\r    http://www.apache.org/licenses/LICENSE-2.0\r\rUnless required by applicable law or agreed to in writing, software\rdistributed under the License is distributed on an \"AS IS\" BASIS,\rWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\rSee the License for the specific language governing permissions and\rlimitations under the License."
+        },
+        {
+          "record": 22,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 64981,
+          "byteLength": 94,
+          "rawSha256": "4691dcbb9d0eff28c46ee8175c47751dfb58cbf827af084bab8e22b9faab5730",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Created by Raph Levien using his own tools and FontForge. Copyright 2006 Raph Levien. Released under the Apache 2 license."
+        },
+        {
+          "record": 9,
+          "nameID": 13,
+          "value": "Copyright 2011 Raph Levien\r\rLicensed under the Apache License, Version 2.0 (the \"License\");\ryou may not use this file except in compliance with the License.\rYou may obtain a copy of the License at\r\r    http://www.apache.org/licenses/LICENSE-2.0\r\rUnless required by applicable law or agreed to in writing, software\rdistributed under the License is distributed on an \"AS IS\" BASIS,\rWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\rSee the License for the specific language governing permissions and\rlimitations under the License."
+        },
+        {
+          "record": 10,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        {
+          "record": 12,
+          "nameID": 0,
+          "value": "Created by Raph Levien using his own tools and FontForge. Copyright 2006 Raph Levien. Released under the Apache 2 license."
+        },
+        {
+          "record": 21,
+          "nameID": 13,
+          "value": "Copyright 2011 Raph Levien\r\rLicensed under the Apache License, Version 2.0 (the \"License\");\ryou may not use this file except in compliance with the License.\rYou may obtain a copy of the License at\r\r    http://www.apache.org/licenses/LICENSE-2.0\r\rUnless required by applicable law or agreed to in writing, software\rdistributed under the License is distributed on an \"AS IS\" BASIS,\rWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\rSee the License for the specific language governing permissions and\rlimitations under the License."
+        },
+        {
+          "record": 22,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Inconsolata-Regular.ttf",
+      "sha256": "bfa7b821c4c2ff232f3be4cf968be5723127334498e513f90edef65c5df7747f",
+      "size": 82336,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 78844,
+        "length": 2157,
+        "format": 0,
+        "count": 28
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 79414,
+          "byteLength": 113,
+          "rawSha256": "d92bb928abc1b039e94094dc34d9becae9d08ebc525f8daece38eacf6f21bd89",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2006-2012, Raph Levien (firstname.lastname@gmail.com), Copyright (c) 2011-2012, Cyreal (cyreal.org)"
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 79552,
+          "byteLength": 11,
+          "rawSha256": "b785e24c24e1a2b83b6fe6800540155e2bd0d36f5770ffa6707d3807af822e36",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 79580,
+          "byteLength": 7,
+          "rawSha256": "b455784ab53072773e72df494aa4b12ac467976447e250c694c11b6f1268e235",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 79804,
+          "byteLength": 11,
+          "rawSha256": "b785e24c24e1a2b83b6fe6800540155e2bd0d36f5770ffa6707d3807af822e36",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 79898,
+          "byteLength": 19,
+          "rawSha256": "83017933745a3eb9a2c5d7b32d989dd493a15ceed8004e692e0ddf3664fc746d",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Inconsolata-Regular"
+        },
+        {
+          "record": 12,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 80775,
+          "byteLength": 144,
+          "rawSha256": "861d241e9afd5a890a5708077fe7d417e21f328761541dbe70fda0f25fd642ad",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 80974,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 14,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 79186,
+          "byteLength": 226,
+          "rawSha256": "c43dbddd65b485618d641614c860dd62e14a264d16c8759bb8589270a4df6ff9",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2006-2012, Raph Levien (firstname.lastname@gmail.com), Copyright (c) 2011-2012, Cyreal (cyreal.org)"
+        },
+        {
+          "record": 15,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 79528,
+          "byteLength": 22,
+          "rawSha256": "127e5e0326c5475c53228460e751bd3c508d89addcca13473500c2c319d27e68",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 79564,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 79780,
+          "byteLength": 22,
+          "rawSha256": "127e5e0326c5475c53228460e751bd3c508d89addcca13473500c2c319d27e68",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata"
+        },
+        {
+          "record": 20,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 79858,
+          "byteLength": 38,
+          "rawSha256": "044fa861790260e970b6dd28d205a0d7ff75243730a810b70885e53986a5cbbb",
+          "decode": "UTF-16BE",
+          "value": "Inconsolata-Regular"
+        },
+        {
+          "record": 26,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 80485,
+          "byteLength": 288,
+          "rawSha256": "8edae6bbc9eccaf9488905d070d40c6b84f8c2c10e630ec4b0cbe23eeeb2747d",
+          "decode": "UTF-16BE",
+          "value": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 27,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 80920,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2006-2012, Raph Levien (firstname.lastname@gmail.com), Copyright (c) 2011-2012, Cyreal (cyreal.org)"
+        },
+        {
+          "record": 12,
+          "nameID": 13,
+          "value": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 14,
+          "nameID": 0,
+          "value": "Copyright (c) 2006-2012, Raph Levien (firstname.lastname@gmail.com), Copyright (c) 2011-2012, Cyreal (cyreal.org)"
+        },
+        {
+          "record": 26,
+          "nameID": 13,
+          "value": "This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Bold.ttf",
+      "sha256": "bf1b8130069b44b9148eeece35e5423bedac49777ba746615b826b8276574a7b",
+      "size": 657188,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 431976,
+        "length": 5910,
+        "format": 0,
+        "count": 30
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 432342,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 432537,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 432541,
+          "byteLength": 4,
+          "rawSha256": "94fee62e68e257c0313bd832f6fbf6079c9055865f2fd34ed1fef130eac595e9",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Bold"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 432584,
+          "byteLength": 9,
+          "rawSha256": "391d051b96b41d6e126b8a7d4391faab9bf047af2e63ad58ecad6956c8259ffa",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Bold"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 432645,
+          "byteLength": 9,
+          "rawSha256": "1fc8b5e38c106824b3c9e4be1429859563d241897e300f4b00798b1bac048520",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Bold"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 433969,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 434164,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 434190,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 434580,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 434588,
+          "byteLength": 8,
+          "rawSha256": "a493abdfc35734aee85a7e0a10a94e595073ded925098315c72f608548dce3d7",
+          "decode": "UTF-16BE",
+          "value": "Bold"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 434674,
+          "byteLength": 18,
+          "rawSha256": "54721f75f79cb7247f091efd637b05b73afb8f70c5e7fa033f097beb055db9c8",
+          "decode": "UTF-16BE",
+          "value": "Lato Bold"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 434796,
+          "byteLength": 18,
+          "rawSha256": "27e59b5d2594634b6d1d4e5543dcf92b665b9bda8a692325a8a44d6f11243ef6",
+          "decode": "UTF-16BE",
+          "value": "Lato-Bold"
+        },
+        {
+          "record": 28,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 437444,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 29,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 437834,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 15,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 28,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-BoldItalic.ttf",
+      "sha256": "e2f9244fdcd20840f2480f91370cea885bf99230c49d153199fa64853ad74b69",
+      "size": 699008,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 474996,
+        "length": 5991,
+        "format": 0,
+        "count": 30
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 475362,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 475557,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 475561,
+          "byteLength": 11,
+          "rawSha256": "d5802f6ca504bf71d2bf0b4474b3a3130c4f2e189f2042220a06bb7b5c4542c4",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Bold Italic"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 475618,
+          "byteLength": 16,
+          "rawSha256": "0793ce0ca8aa779180a85f8e51f635c6d9806c44973f9a979e9946252b01237f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Bold Italic"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 475686,
+          "byteLength": 15,
+          "rawSha256": "2ddff654a5b4437e63bb0c8319cf99f262a32588c1f15cdbc32b296eff826e43",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-BoldItalic"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 477016,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 477211,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 477237,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 477627,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 477635,
+          "byteLength": 22,
+          "rawSha256": "b63693cca0df729368f74db01faf25a5b466b4601f4943df59794086059cb592",
+          "decode": "UTF-16BE",
+          "value": "Bold Italic"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 477749,
+          "byteLength": 32,
+          "rawSha256": "fd68a20cf944a67c99d7ca6b3625161d63f54875a094765df464e711a16303fc",
+          "decode": "UTF-16BE",
+          "value": "Lato Bold Italic"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 477885,
+          "byteLength": 30,
+          "rawSha256": "0e60a93e79bda7c1957c6b41d6fbf6d27385c1df25368ff41d02e3fe0089927d",
+          "decode": "UTF-16BE",
+          "value": "Lato-BoldItalic"
+        },
+        {
+          "record": 28,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 480545,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 29,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 480935,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 15,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 28,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Italic.ttf",
+      "sha256": "8c863f833b12bc8486671d26e3a58b13b0f9eaff1d6b10398e7c107a9b7ee05a",
+      "size": 723544,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 499444,
+        "length": 5934,
+        "format": 0,
+        "count": 30
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 499810,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 500005,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 500009,
+          "byteLength": 6,
+          "rawSha256": "9bf37cb58a69445600badcc2eee6d537f07a8cd8cfba0d60ced0cac7302b2765",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 500056,
+          "byteLength": 11,
+          "rawSha256": "623f30336a232022d5ee2f0d1aea70f5b1a68e3f3890a90f557da216588fbcff",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Italic"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 500119,
+          "byteLength": 11,
+          "rawSha256": "622e48c44086f8fce459d2a1e71698382f5d1419e096a2f1818f71663810d608",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Italic"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 501445,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 501640,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 501666,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 502056,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 502064,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 502158,
+          "byteLength": 22,
+          "rawSha256": "d3149d4d990fe259f82da57ddee9d050d0c283ad9cece336f84c2434bba9f6a5",
+          "decode": "UTF-16BE",
+          "value": "Lato Italic"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 502284,
+          "byteLength": 22,
+          "rawSha256": "75e5b14f6eb4b3a22f6945e03246ebea1100b046297c27b36b7e181bc4cdec04",
+          "decode": "UTF-16BE",
+          "value": "Lato-Italic"
+        },
+        {
+          "record": 28,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 504936,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 29,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 505326,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 15,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 28,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Light.ttf",
+      "sha256": "e9d59afb6d9cb9cf6e8d8159d4639d5b577e29efc64a15182f228659cfc1e818",
+      "size": 644556,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 419320,
+        "length": 6013,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 419734,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 419929,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 419933,
+          "byteLength": 5,
+          "rawSha256": "dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Light"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 419978,
+          "byteLength": 10,
+          "rawSha256": "8f3a852ee3319cdb3fd2a2e423733666b850157973a2e79188f667fa27a7a979",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Light"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 420040,
+          "byteLength": 10,
+          "rawSha256": "d3e05b22099738f7a8c60fafb7a8f7475af41a890a0f9e657951a46ebb8eb52b",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Light"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 421365,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 421560,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 421586,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 421590,
+          "byteLength": 5,
+          "rawSha256": "dbcd5e7bb7a0f538810de44c3efbd813037ee3fa358747bb71fa58e157af45f7",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Light"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 421595,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 421985,
+          "byteLength": 20,
+          "rawSha256": "b26f0a8d10ad470ecf0ed76932309b1a65f2c7d9229cb579b3d6c92b05a4b610",
+          "decode": "UTF-16BE",
+          "value": "Lato Light"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 422005,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 422099,
+          "byteLength": 20,
+          "rawSha256": "b26f0a8d10ad470ecf0ed76932309b1a65f2c7d9229cb579b3d6c92b05a4b610",
+          "decode": "UTF-16BE",
+          "value": "Lato Light"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 422223,
+          "byteLength": 20,
+          "rawSha256": "c96166889bace0dc623273340d54209fa970c213d999e09ac9f118e74299c07b",
+          "decode": "UTF-16BE",
+          "value": "Lato-Light"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 424873,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 425263,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 425315,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 425323,
+          "byteLength": 10,
+          "rawSha256": "b2b93247028cac87079b7be02f4e9b1cfaaa49d1082aff364d36adc4ba18c017",
+          "decode": "UTF-16BE",
+          "value": "Light"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-LightItalic.ttf",
+      "sha256": "8926c41622b7400d7f6f7dbf31cea50495f31230cf40904b8b83e634bf3cf6c6",
+      "size": 658212,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 434064,
+        "length": 6099,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 434478,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 434673,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 434677,
+          "byteLength": 12,
+          "rawSha256": "6f076146586cd692cfeb18872cd4c0379d77ee8cdaaa362b1956f48cf9fa3899",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Light Italic"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 434736,
+          "byteLength": 17,
+          "rawSha256": "93d01417dbecfe7e2a7fcd4ef50574406ca7d45242e36ba379199975aba2da22",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Light Italic"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 434805,
+          "byteLength": 16,
+          "rawSha256": "434137b232940f84e4ed8ce588a30300ad9db5f0b078d698f25e7833e509b792",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-LightItalic"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 436136,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 436331,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 436357,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 436361,
+          "byteLength": 12,
+          "rawSha256": "6f076146586cd692cfeb18872cd4c0379d77ee8cdaaa362b1956f48cf9fa3899",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Light Italic"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 436373,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 436763,
+          "byteLength": 20,
+          "rawSha256": "b26f0a8d10ad470ecf0ed76932309b1a65f2c7d9229cb579b3d6c92b05a4b610",
+          "decode": "UTF-16BE",
+          "value": "Lato Light"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 436783,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 436889,
+          "byteLength": 34,
+          "rawSha256": "29f3d20fc07a71048edeca013bbd0d10bc39b7c4f8d5709a73b81559789a98c6",
+          "decode": "UTF-16BE",
+          "value": "Lato Light Italic"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 437027,
+          "byteLength": 32,
+          "rawSha256": "793e93bd971c62598ba0ba239aae94184451b54f82366b894786cb5a3df9120d",
+          "decode": "UTF-16BE",
+          "value": "Lato-LightItalic"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 439689,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 440079,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 440131,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 440139,
+          "byteLength": 24,
+          "rawSha256": "4f4a214c935f76267caae0a2090718dd2ad9a4d14823df1b2b2321831eebcbf6",
+          "decode": "UTF-16BE",
+          "value": "Light Italic"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Medium.ttf",
+      "sha256": "be8bbf7105500e8fc1f9429307fb396905a0e6cff63fe1eb751bb319d0f1b0db",
+      "size": 637068,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 411500,
+        "length": 6028,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 411914,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 412109,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 412113,
+          "byteLength": 6,
+          "rawSha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Medium"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 412160,
+          "byteLength": 11,
+          "rawSha256": "e5645b6d247e841e1c0f2c170ad0f1ca39c8c428e0d120f251cb8815dfb6a9dd",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Medium"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 412223,
+          "byteLength": 11,
+          "rawSha256": "40b9ce50e6dd991460e68fb72542d41961c38ac3e8f500f4754189b2a5eb66d0",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Medium"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 413549,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 413744,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 413770,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 413774,
+          "byteLength": 6,
+          "rawSha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Medium"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 413780,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 414170,
+          "byteLength": 22,
+          "rawSha256": "0d14f56665d6ac9b0d4e546c89b66b73c58c8afc27c6a10d53604154af9ea4d3",
+          "decode": "UTF-16BE",
+          "value": "Lato Medium"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 414192,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 414288,
+          "byteLength": 22,
+          "rawSha256": "0d14f56665d6ac9b0d4e546c89b66b73c58c8afc27c6a10d53604154af9ea4d3",
+          "decode": "UTF-16BE",
+          "value": "Lato Medium"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 414414,
+          "byteLength": 22,
+          "rawSha256": "40f7a12c594a67d6ea2d2e7fcf72f4ec7b0b0d6bd9251f16debe78bb65b72c74",
+          "decode": "UTF-16BE",
+          "value": "Lato-Medium"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 417066,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 417456,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 417508,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 417516,
+          "byteLength": 12,
+          "rawSha256": "e29ec372f84e0e639ce92626df57c843569d0307ad34fe2af741b1d4b40a0852",
+          "decode": "UTF-16BE",
+          "value": "Medium"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-MediumItalic.ttf",
+      "sha256": "0739be048a122e3abb0cb731b49f6c07ac212a54eb182ebaa25a65829d5ac0cf",
+      "size": 695588,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 471204,
+        "length": 6114,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 471618,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 471813,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 471817,
+          "byteLength": 13,
+          "rawSha256": "4f05625aefb18d337aa426aa7e697600b21d6f44a2a5a0e3ca872505caed2526",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Medium Italic"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 471878,
+          "byteLength": 18,
+          "rawSha256": "e198b973a571f9561b1bc2e38b1a870aa39660daee61c7d195fd70946ee48a7e",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Medium Italic"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 471948,
+          "byteLength": 17,
+          "rawSha256": "6afcc134ee26db5712f9d43ed34d510bbe31755475977252bec3596d5125f373",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-MediumItalic"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 473280,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 473475,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 473501,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 473505,
+          "byteLength": 13,
+          "rawSha256": "4f05625aefb18d337aa426aa7e697600b21d6f44a2a5a0e3ca872505caed2526",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Medium Italic"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 473518,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 473908,
+          "byteLength": 22,
+          "rawSha256": "0d14f56665d6ac9b0d4e546c89b66b73c58c8afc27c6a10d53604154af9ea4d3",
+          "decode": "UTF-16BE",
+          "value": "Lato Medium"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 473930,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 474038,
+          "byteLength": 36,
+          "rawSha256": "7d4a59cdee22ee985135ebac64699c9bfff0cda2f4c77b6a732c641009bababc",
+          "decode": "UTF-16BE",
+          "value": "Lato Medium Italic"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 474178,
+          "byteLength": 34,
+          "rawSha256": "34268d40f672ae68742a55c19e898f0d5e75d2b033bc17cdced64304a5118b8b",
+          "decode": "UTF-16BE",
+          "value": "Lato-MediumItalic"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 476842,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 477232,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 477284,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 477292,
+          "byteLength": 26,
+          "rawSha256": "0d3f7f6fe27cac8bcbb549185dd86fae7fee599502218f0bb07caf8713d62bd2",
+          "decode": "UTF-16BE",
+          "value": "Medium Italic"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Regular.ttf",
+      "sha256": "6f6940be0835c3ddec9199e5fc42be4cbc61ebcfd58c623fdf719366253f1780",
+      "size": 657212,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 431352,
+        "length": 5946,
+        "format": 0,
+        "count": 30
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 431718,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 431913,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 431917,
+          "byteLength": 7,
+          "rawSha256": "b455784ab53072773e72df494aa4b12ac467976447e250c694c11b6f1268e235",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 431966,
+          "byteLength": 12,
+          "rawSha256": "b6ecbf2e247e93be26ce7f8a2f491c8301b10b91298a6a9308727a7635eddff2",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Regular"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 432030,
+          "byteLength": 12,
+          "rawSha256": "b9cf30917f0085e77d877907edca9c5dd1338f6599cc164a8fc857a8514de1f1",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Regular"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 433357,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 433552,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 433578,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 16,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 433968,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 433976,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 434074,
+          "byteLength": 24,
+          "rawSha256": "70cb58e7bef859fe6f282fdb78bff8ed2c3dba10170edb0f210a96a3e225d77f",
+          "decode": "UTF-16BE",
+          "value": "Lato Regular"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 434202,
+          "byteLength": 24,
+          "rawSha256": "4126692b32096ce960ad116d9a546be5961e4f04b2c33c5c197b9df47dacae6a",
+          "decode": "UTF-16BE",
+          "value": "Lato-Regular"
+        },
+        {
+          "record": 28,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 436856,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 29,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 437246,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 15,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 28,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-Semibold.ttf",
+      "sha256": "2dc5d31e2cf1e29f3430eb2dfa1ba9911e08ee401b61dd12f40e0acb047a17a3",
+      "size": 669228,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 443364,
+        "length": 6058,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 443778,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 443973,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 443977,
+          "byteLength": 8,
+          "rawSha256": "d442655c06432445e59f8d4adb74293de74818cc6584ec27c09dc1f34d7213a0",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Semibold"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 444028,
+          "byteLength": 13,
+          "rawSha256": "2b21af8ea96e1a54ae02520757ead85eaa61280b7c1372dda1853f6a0955d2ed",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Semibold"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 444093,
+          "byteLength": 13,
+          "rawSha256": "988bf152ce3f7834853111551f1bca69b0c2f2d3bf80581f561b753c39ad59af",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-Semibold"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 445421,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 445616,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 445642,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 445646,
+          "byteLength": 8,
+          "rawSha256": "d442655c06432445e59f8d4adb74293de74818cc6584ec27c09dc1f34d7213a0",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Semibold"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 445654,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 446044,
+          "byteLength": 26,
+          "rawSha256": "0b953c1fc66a65cc57b9273d01f4a916288bcbcc0262433c1714ce7d95b5a5c5",
+          "decode": "UTF-16BE",
+          "value": "Lato Semibold"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 446070,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 446170,
+          "byteLength": 26,
+          "rawSha256": "0b953c1fc66a65cc57b9273d01f4a916288bcbcc0262433c1714ce7d95b5a5c5",
+          "decode": "UTF-16BE",
+          "value": "Lato Semibold"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 446300,
+          "byteLength": 26,
+          "rawSha256": "b021581b67aef5dbcb3c95b16ad9e202f8928549516fa1bc8a93376fc1d33f05",
+          "decode": "UTF-16BE",
+          "value": "Lato-Semibold"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 448956,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 449346,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 449398,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 449406,
+          "byteLength": 16,
+          "rawSha256": "8f5348de977832a22c6bea220f36059efd8c52848c2b15a262401c227195ffe6",
+          "decode": "UTF-16BE",
+          "value": "Semibold"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Lato-SemiboldItalic.ttf",
+      "sha256": "0aa594079c213d1dba417a2fc34b8170445d0f03af02a3b35f16b9b775eef398",
+      "size": 698028,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 473476,
+        "length": 6144,
+        "format": 0,
+        "count": 34
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 0,
+          "fileOffset": 473890,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 1,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 1,
+          "fileOffset": 474085,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 2,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 2,
+          "fileOffset": 474089,
+          "byteLength": 15,
+          "rawSha256": "792bd9eb699939097f37c599a3750d6ed2848a024e1b00a473930429d36c9377",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Semibold Italic"
+        },
+        {
+          "record": 4,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 4,
+          "fileOffset": 474154,
+          "byteLength": 20,
+          "rawSha256": "dd35c857705e3b2bf842cfc7da50951fc60ca82368b6a1b73e76ba5015fcd376",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato Semibold Italic"
+        },
+        {
+          "record": 6,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 6,
+          "fileOffset": 474226,
+          "byteLength": 19,
+          "rawSha256": "e6f619b07ddd76183b5b50cf707114da47e8af26da3774e775f23eff6c3bda62",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato-SemiboldItalic"
+        },
+        {
+          "record": 13,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 13,
+          "fileOffset": 475560,
+          "byteLength": 195,
+          "rawSha256": "91f2713d1a611b6b26b3d19c40182eb71dd3ddf944f7607d54ed92289b607b2f",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 14,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 14,
+          "fileOffset": 475755,
+          "byteLength": 26,
+          "rawSha256": "d11553a8dfa9e40f66096df3075f7ce013e00813783cec31f873f5a825489632",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 15,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 16,
+          "fileOffset": 475781,
+          "byteLength": 4,
+          "rawSha256": "22ab4cafea0cdc327c6361a2d918db0dafbda0b732d90feed747bfc919e6d9bf",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Lato"
+        },
+        {
+          "record": 16,
+          "platform": 1,
+          "encoding": 0,
+          "language": 0,
+          "nameID": 17,
+          "fileOffset": 475785,
+          "byteLength": 15,
+          "rawSha256": "792bd9eb699939097f37c599a3750d6ed2848a024e1b00a473930429d36c9377",
+          "decode": "Latin-1 approximation; Macintosh encoding not fully implemented",
+          "value": "Semibold Italic"
+        },
+        {
+          "record": 17,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 475800,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 18,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 476190,
+          "byteLength": 26,
+          "rawSha256": "0b953c1fc66a65cc57b9273d01f4a916288bcbcc0262433c1714ce7d95b5a5c5",
+          "decode": "UTF-16BE",
+          "value": "Lato Semibold"
+        },
+        {
+          "record": 19,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 476216,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 21,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 476328,
+          "byteLength": 40,
+          "rawSha256": "f34a6552fa989206b20877f929ac5401627470c80f4ccf8fe3536590eaffb08a",
+          "decode": "UTF-16BE",
+          "value": "Lato Semibold Italic"
+        },
+        {
+          "record": 23,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 476472,
+          "byteLength": 38,
+          "rawSha256": "38b1c67c5e5b131339414c6b4e7f8b01134620995d95e2baaa060723dbf387af",
+          "decode": "UTF-16BE",
+          "value": "Lato-SemiboldItalic"
+        },
+        {
+          "record": 30,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 13,
+          "fileOffset": 479140,
+          "byteLength": 390,
+          "rawSha256": "cc59dd41f3042866c494692e236606a75f7a502ea3f9d859a24754df0da7226b",
+          "decode": "UTF-16BE",
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 31,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 479530,
+          "byteLength": 52,
+          "rawSha256": "a2bdbc6b27ca3cfc00aac086caee01c9c6a921b24d95388457b0e3d9e38e5503",
+          "decode": "UTF-16BE",
+          "value": "http://scripts.sil.org/OFL"
+        },
+        {
+          "record": 32,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 16,
+          "fileOffset": 479582,
+          "byteLength": 8,
+          "rawSha256": "79f61936ad288407516c6ab8694ee7ad66f003423262f8cf25cddafe3d810131",
+          "decode": "UTF-16BE",
+          "value": "Lato"
+        },
+        {
+          "record": 33,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 17,
+          "fileOffset": 479590,
+          "byteLength": 30,
+          "rawSha256": "8041a71148cc1ef522d39d147ea7654646fc3ad9f5879d11e32476f105082457",
+          "decode": "UTF-16BE",
+          "value": "Semibold Italic"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 13,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 17,
+          "nameID": 0,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        },
+        {
+          "record": 30,
+          "nameID": 13,
+          "value": "Copyright (c) 2011-2015 by tyPoland Lukasz Dziedzic (http://www.typoland.com/) with Reserved Font Name \"Lato\". Licensed under the SIL Open Font License, Version 1.1 (http://scripts.sil.org/OFL). "
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Black.ttf",
+      "sha256": "635169fa970894187399a4b0a2b64df16b92eea1eabce45b1c680ac11546ec0a",
+      "size": 170740,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 138280,
+        "length": 380,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 138382,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 138476,
+          "byteLength": 24,
+          "rawSha256": "58361ea24fe8caf4d36b60d6d85d4fb83c78e31789f987c92955f5ba0016e7bc",
+          "decode": "UTF-16BE",
+          "value": "Roboto Black"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 138500,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 138476,
+          "byteLength": 24,
+          "rawSha256": "58361ea24fe8caf4d36b60d6d85d4fb83c78e31789f987c92955f5ba0016e7bc",
+          "decode": "UTF-16BE",
+          "value": "Roboto Black"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 138552,
+          "byteLength": 24,
+          "rawSha256": "aada37bb30b5a9906739a0031f01b83e5d125aadcb2e01d1674f28f3bb7e6ecf",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Black"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 138576,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-BlackItalic.ttf",
+      "sha256": "907336add160ab1ca211dc2bd51e48b6db6ec2186163b966dfe768a81ebd6e4b",
+      "size": 176772,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 144264,
+        "length": 428,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 144366,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 144460,
+          "byteLength": 24,
+          "rawSha256": "58361ea24fe8caf4d36b60d6d85d4fb83c78e31789f987c92955f5ba0016e7bc",
+          "decode": "UTF-16BE",
+          "value": "Roboto Black"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 144484,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 144496,
+          "byteLength": 38,
+          "rawSha256": "0fac65855a8794debe65cc7c39d119aaa7d4ea4fb4934d5c28d1d49a0ec967c1",
+          "decode": "UTF-16BE",
+          "value": "Roboto Black Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 144572,
+          "byteLength": 36,
+          "rawSha256": "33aeaac97a575ceb1e41036e5d49d48000fc2a43a54ac0422c0c60a6b3bbe427",
+          "decode": "UTF-16BE",
+          "value": "Roboto-BlackItalic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 144608,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Bold.ttf",
+      "sha256": "a073f449858a3f0389b2378c8a7c6011bc37065c9147e661b33bbe8180a53150",
+      "size": 170064,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 137600,
+        "length": 382,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 137702,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 137796,
+          "byteLength": 12,
+          "rawSha256": "a3c58e7308ecf0f3c2c75c3bcb34f61703b4aa93dd540bbfd877ed0b1b4cfbf9",
+          "decode": "UTF-16BE",
+          "value": "Roboto"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 137808,
+          "byteLength": 8,
+          "rawSha256": "a493abdfc35734aee85a7e0a10a94e595073ded925098315c72f608548dce3d7",
+          "decode": "UTF-16BE",
+          "value": "Bold"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 137816,
+          "byteLength": 22,
+          "rawSha256": "55b029c04ca38d6f51a1d8a5364047f0143b7e521b6abed8dd167ef3dfaefa1d",
+          "decode": "UTF-16BE",
+          "value": "Roboto Bold"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 137876,
+          "byteLength": 22,
+          "rawSha256": "2adb54f7398c5e97df6ffa2133a75016acabd41b6b43bb52511ad70e8e92e865",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Bold"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 137898,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-BoldItalic.ttf",
+      "sha256": "cea5a021aa2abe724eb88abd9b3cfe063f25acb2ae7917c6be9d3896aaf88830",
+      "size": 174236,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 141732,
+        "length": 422,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 141834,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 141928,
+          "byteLength": 12,
+          "rawSha256": "a3c58e7308ecf0f3c2c75c3bcb34f61703b4aa93dd540bbfd877ed0b1b4cfbf9",
+          "decode": "UTF-16BE",
+          "value": "Roboto"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 141940,
+          "byteLength": 22,
+          "rawSha256": "b63693cca0df729368f74db01faf25a5b466b4601f4943df59794086059cb592",
+          "decode": "UTF-16BE",
+          "value": "Bold Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 141962,
+          "byteLength": 36,
+          "rawSha256": "bd0bd15cf40ab83f4dfa6a65c46a62555c9d25c383cc47a64653050083dae69c",
+          "decode": "UTF-16BE",
+          "value": "Roboto Bold Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 142036,
+          "byteLength": 34,
+          "rawSha256": "8e9b42475f7e6123002971f1776089c1381b3614df931afc001fc7f0683686fd",
+          "decode": "UTF-16BE",
+          "value": "Roboto-BoldItalic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 142070,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Italic.ttf",
+      "sha256": "e9752dfd8f46cad1e80888c169fe58cd0cc34edcd21524902939402abe5e0e57",
+      "size": 173232,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 142648,
+        "length": 394,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 142750,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 142844,
+          "byteLength": 12,
+          "rawSha256": "a3c58e7308ecf0f3c2c75c3bcb34f61703b4aa93dd540bbfd877ed0b1b4cfbf9",
+          "decode": "UTF-16BE",
+          "value": "Roboto"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 142856,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 142868,
+          "byteLength": 26,
+          "rawSha256": "82548db17a460358088a2871343c5abe8a43efd69589bbf9531b701302b2fef4",
+          "decode": "UTF-16BE",
+          "value": "Roboto Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 142932,
+          "byteLength": 26,
+          "rawSha256": "816d5eedc065bd1856c240f2cc7e1f03057393322fe654b1582cd572b0fe2b37",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Italic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 142958,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Light.ttf",
+      "sha256": "4359a05d11e2ac35c326468f7da142e7ea53996d97751ba5eff6df2f2b1f08a7",
+      "size": 169680,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 139112,
+        "length": 380,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 139214,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 139308,
+          "byteLength": 24,
+          "rawSha256": "eee76200375d3096eb0d4f3d5efcda619f3a88668eabc72d721356d595eb5fd5",
+          "decode": "UTF-16BE",
+          "value": "Roboto Light"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 139332,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 139308,
+          "byteLength": 24,
+          "rawSha256": "eee76200375d3096eb0d4f3d5efcda619f3a88668eabc72d721356d595eb5fd5",
+          "decode": "UTF-16BE",
+          "value": "Roboto Light"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 139384,
+          "byteLength": 24,
+          "rawSha256": "0db5afa957149619007834986f3431003df22a438053635b5edb00e9edea9081",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Light"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 139408,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-LightItalic.ttf",
+      "sha256": "0900f9fe0cf387f4676284f45f02111d5cc51c893fe03ce5b542563eabac3345",
+      "size": 175836,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 145220,
+        "length": 428,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 145322,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 145416,
+          "byteLength": 24,
+          "rawSha256": "eee76200375d3096eb0d4f3d5efcda619f3a88668eabc72d721356d595eb5fd5",
+          "decode": "UTF-16BE",
+          "value": "Roboto Light"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 145440,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 145452,
+          "byteLength": 38,
+          "rawSha256": "c4d795702d2b27b816c834cee19f4ea099cca9831472614d481d0061c7472d89",
+          "decode": "UTF-16BE",
+          "value": "Roboto Light Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 145528,
+          "byteLength": 36,
+          "rawSha256": "eba7977ab67c47d7fbe7c3f785417d09e8714c47141ca39b1d3c409d790ba089",
+          "decode": "UTF-16BE",
+          "value": "Roboto-LightItalic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 145564,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Medium.ttf",
+      "sha256": "176e8a248c20794bff8b040ab7797c151eea019e6a2b301c9f850897e6bc14f3",
+      "size": 171320,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 138856,
+        "length": 384,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 138958,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 139052,
+          "byteLength": 26,
+          "rawSha256": "83e575a8e1d1c88f0ac435f2ada294242e3659045ff083feff05096e5a54a36b",
+          "decode": "UTF-16BE",
+          "value": "Roboto Medium"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 139078,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 139052,
+          "byteLength": 26,
+          "rawSha256": "83e575a8e1d1c88f0ac435f2ada294242e3659045ff083feff05096e5a54a36b",
+          "decode": "UTF-16BE",
+          "value": "Roboto Medium"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 139130,
+          "byteLength": 26,
+          "rawSha256": "752851af8aaa9e4ddee4d44437f5e9c16b9b1285c31bfbaa962592848028cdf0",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Medium"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 139156,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-MediumItalic.ttf",
+      "sha256": "6e85099d8ddd93dd83b854dd6be9b8eaeb3261daf337a7b071d97a39d58bdbd8",
+      "size": 176080,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 143564,
+        "length": 434,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 143666,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 143760,
+          "byteLength": 26,
+          "rawSha256": "83e575a8e1d1c88f0ac435f2ada294242e3659045ff083feff05096e5a54a36b",
+          "decode": "UTF-16BE",
+          "value": "Roboto Medium"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 143786,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 143798,
+          "byteLength": 40,
+          "rawSha256": "2854f24159a61a0a7159422c3184dc149127f5d1abd61c7e01d5981a1ea3884c",
+          "decode": "UTF-16BE",
+          "value": "Roboto Medium Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 143876,
+          "byteLength": 38,
+          "rawSha256": "29092b216a2f9468e4fe4beeba6ece35680ec6b8e29e2c61391b3c901728af51",
+          "decode": "UTF-16BE",
+          "value": "Roboto-MediumItalic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 143914,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Regular.ttf",
+      "sha256": "9e79eaebefe9cb1188defba9413ad6d383cff1f0b4334f0b878634648fb70322",
+      "size": 170984,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 140424,
+        "length": 372,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 140526,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 140620,
+          "byteLength": 12,
+          "rawSha256": "a3c58e7308ecf0f3c2c75c3bcb34f61703b4aa93dd540bbfd877ed0b1b4cfbf9",
+          "decode": "UTF-16BE",
+          "value": "Roboto"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 140632,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 140620,
+          "byteLength": 12,
+          "rawSha256": "a3c58e7308ecf0f3c2c75c3bcb34f61703b4aa93dd540bbfd877ed0b1b4cfbf9",
+          "decode": "UTF-16BE",
+          "value": "Roboto"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 140684,
+          "byteLength": 28,
+          "rawSha256": "010946be5cf8e6353036416515574de134feb5b37ce0a9e0c0a4530a823b5960",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Regular"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 140712,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-Thin.ttf",
+      "sha256": "57d7a66a60523e4b5275179ba5ed76f8f2419f468c04bd632414aa387944d318",
+      "size": 171168,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 140596,
+        "length": 376,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 140698,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 140792,
+          "byteLength": 22,
+          "rawSha256": "6100d4fa38afcf1bc83f3ba7db47f2ef8daecb2a860842214ec565ba15086766",
+          "decode": "UTF-16BE",
+          "value": "Roboto Thin"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 140814,
+          "byteLength": 14,
+          "rawSha256": "603c8beb99ba70976ff530c83dc90c83681fbf947e23c6a7cf60f7f4e46a5334",
+          "decode": "UTF-16BE",
+          "value": "Regular"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 140792,
+          "byteLength": 22,
+          "rawSha256": "6100d4fa38afcf1bc83f3ba7db47f2ef8daecb2a860842214ec565ba15086766",
+          "decode": "UTF-16BE",
+          "value": "Roboto Thin"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 140866,
+          "byteLength": 22,
+          "rawSha256": "cca8fdaa4b7ea5436f8f9b35998bd9fd0b40f11ec4b505f31e441b3913369ebd",
+          "decode": "UTF-16BE",
+          "value": "Roboto-Thin"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 140888,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    },
+    {
+      "path": "themes/flat/fonts/Roboto-ThinItalic.ttf",
+      "sha256": "7d92de0bfe6f6774952bbd94efe6a7461c746f913c4776b18d1d24293cae646d",
+      "size": 175528,
+      "crc32Matches": true,
+      "sfntVersion": "00010000",
+      "nameTable": {
+        "tag": "name",
+        "offset": 144908,
+        "length": 422,
+        "format": 0,
+        "count": 8
+      },
+      "names": [
+        {
+          "record": 0,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 0,
+          "fileOffset": 145010,
+          "byteLength": 94,
+          "rawSha256": "6e9b5364c5bb5fafe8348b7c5fa7bb05738e67caa6aab23b6904c5c79e545f56",
+          "decode": "UTF-16BE",
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 1,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 1,
+          "fileOffset": 145104,
+          "byteLength": 22,
+          "rawSha256": "6100d4fa38afcf1bc83f3ba7db47f2ef8daecb2a860842214ec565ba15086766",
+          "decode": "UTF-16BE",
+          "value": "Roboto Thin"
+        },
+        {
+          "record": 2,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 2,
+          "fileOffset": 145126,
+          "byteLength": 12,
+          "rawSha256": "55ff3d8f29cd51de8e5c4d66c9a72c4682a4912a43ce1c3165aaa02ca58d571c",
+          "decode": "UTF-16BE",
+          "value": "Italic"
+        },
+        {
+          "record": 4,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 4,
+          "fileOffset": 145138,
+          "byteLength": 36,
+          "rawSha256": "32f3996f0a919b9a5b76806b0063f6291e0dbe00c504c9eb078f28804c2b9f43",
+          "decode": "UTF-16BE",
+          "value": "Roboto Thin Italic"
+        },
+        {
+          "record": 6,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 6,
+          "fileOffset": 145212,
+          "byteLength": 34,
+          "rawSha256": "c28376f54a3f5202dc73f932a7f35e67fd85208be9c5d54c7ca69d2f996cf18a",
+          "decode": "UTF-16BE",
+          "value": "Roboto-ThinItalic"
+        },
+        {
+          "record": 7,
+          "platform": 3,
+          "encoding": 1,
+          "language": 1033,
+          "nameID": 14,
+          "fileOffset": 145246,
+          "byteLength": 84,
+          "rawSha256": "dba00e738fe2a5ba4b9894b4cea91905f722bbb68401edd7384cba75ebda8100",
+          "decode": "UTF-16BE",
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseMarkers": [
+        {
+          "record": 0,
+          "nameID": 0,
+          "value": "Copyright 2011 Google Inc. All Rights Reserved."
+        },
+        {
+          "record": 7,
+          "nameID": 14,
+          "value": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+      ],
+      "licenseAssessment": "metadata declarations only; redistribution authorization not established"
+    }
+  ],
+  "theme": {
+    "sources": [
+      {
+        "path": "themes/flat/consts.xml",
+        "sha256": "d8a97455929eff1a948399211e40c9270e99737fb2827be451849f46b1f802c0",
+        "size": 9472,
+        "crc32Matches": true,
+        "lineCount": 186
+      },
+      {
+        "path": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "size": 3162,
+        "crc32Matches": true,
+        "lineCount": 54
+      },
+      {
+        "path": "themes/flat/theme_buttons.xml",
+        "sha256": "3e59732aa59cacd8c586784234e98b27001effdcd3849a479c0a0fb79c9b0367",
+        "size": 14317,
+        "crc32Matches": true,
+        "lineCount": 243
+      },
+      {
+        "path": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "size": 4824,
+        "crc32Matches": true,
+        "lineCount": 86
+      },
+      {
+        "path": "themes/flat/theme_labels.xml",
+        "sha256": "04587e6e329a337e194143c645f901b60da98bd0589fbd6d56fd7c979cb5d372",
+        "size": 6206,
+        "crc32Matches": true,
+        "lineCount": 97
+      }
+    ],
+    "constants": [
+      {
+        "name": "null_color",
+        "raw": "#00000000",
+        "line": 3,
+        "resolved": "#00000000",
+        "kind": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "name": "default_font_name",
+        "raw": "Roboto",
+        "line": 5,
+        "resolved": "Roboto",
+        "kind": "font family declaration"
+      },
+      {
+        "name": "title_font_name",
+        "raw": "Lato",
+        "line": 6,
+        "resolved": "Lato",
+        "kind": "font family declaration"
+      },
+      {
+        "name": "console_font_name",
+        "raw": "Inconsolata",
+        "line": 7,
+        "resolved": "Inconsolata",
+        "kind": "font family declaration"
+      },
+      {
+        "name": "initial_cap_font_name",
+        "raw": "Times New Roman",
+        "line": 8,
+        "resolved": "Times New Roman",
+        "kind": "font family declaration"
+      },
+      {
+        "name": "color0",
+        "raw": "#F2F2F2",
+        "line": 11,
+        "resolved": "#F2F2F2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_hover",
+        "raw": "#D2D2D2",
+        "line": 12,
+        "resolved": "#D2D2D2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_down",
+        "raw": "#ADADAD",
+        "line": 13,
+        "resolved": "#ADADAD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_down_deemphasized",
+        "raw": "#BDBDBD",
+        "line": 14,
+        "resolved": "#BDBDBD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_state",
+        "raw": "#DDDDDD",
+        "line": 15,
+        "resolved": "#DDDDDD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_online_state",
+        "raw": "#A6FFA9",
+        "line": 16,
+        "resolved": "#A6FFA9",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color0_little_deemphasized",
+        "raw": "#C1C1C1",
+        "line": 17,
+        "resolved": "#C1C1C1",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1",
+        "raw": "#EB3449",
+        "line": 20,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_gradient",
+        "raw": "#F45C43",
+        "line": 21,
+        "resolved": "#F45C43",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_hover",
+        "raw": "#EE3C48",
+        "line": 22,
+        "resolved": "#EE3C48",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_down",
+        "raw": "#F59388",
+        "line": 23,
+        "resolved": "#F59388",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_bright",
+        "raw": "#F6493C",
+        "line": 24,
+        "resolved": "#F6493C",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_dark",
+        "raw": "#C5293B",
+        "line": 25,
+        "resolved": "#C5293B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_pale",
+        "raw": "#F35644",
+        "line": 26,
+        "resolved": "#F35644",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_pale_transparent",
+        "raw": "$(color1_pale)70",
+        "line": 27,
+        "resolved": "#F3564470",
+        "kind": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "name": "color1_regular_text_contrasted",
+        "raw": "#EE4E60",
+        "line": 28,
+        "resolved": "#EE4E60",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_hover_regular_text_contrasted",
+        "raw": "#F27D8B",
+        "line": 29,
+        "resolved": "#F27D8B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_focused_regular_text_contrasted",
+        "raw": "#F0909A",
+        "line": 30,
+        "resolved": "#F0909A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color1_background_regular_text_contrasted",
+        "raw": "#CD3143",
+        "line": 31,
+        "resolved": "#CD3143",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color2",
+        "raw": "#212121",
+        "line": 34,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color3",
+        "raw": "#363B45",
+        "line": 36,
+        "resolved": "#363B45",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color4",
+        "raw": "#272727",
+        "line": 38,
+        "resolved": "#272727",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color5",
+        "raw": "#333333",
+        "line": 40,
+        "resolved": "#333333",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color6",
+        "raw": "#36393E",
+        "line": 44,
+        "resolved": "#36393E",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color7",
+        "raw": "#424242",
+        "line": 45,
+        "resolved": "#424242",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color8",
+        "raw": "#B9BABC",
+        "line": 46,
+        "resolved": "#B9BABC",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color8_deemphasized",
+        "raw": "#757D81",
+        "line": 47,
+        "resolved": "#757D81",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color9",
+        "raw": "#5B5E62",
+        "line": 48,
+        "resolved": "#5B5E62",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color10",
+        "raw": "white",
+        "line": 49,
+        "resolved": "white",
+        "kind": "other literal or reference"
+      },
+      {
+        "name": "color11",
+        "raw": "#474A4F",
+        "line": 50,
+        "resolved": "#474A4F",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color12",
+        "raw": "#949494",
+        "line": 51,
+        "resolved": "#949494",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color13",
+        "raw": "#2F3136",
+        "line": 52,
+        "resolved": "#2F3136",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color14",
+        "raw": "#68696D",
+        "line": 53,
+        "resolved": "#68696D",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color15",
+        "raw": "#26272B",
+        "line": 54,
+        "resolved": "#26272B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color16",
+        "raw": "#42464D",
+        "line": 55,
+        "resolved": "#42464D",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color17",
+        "raw": "#65666A",
+        "line": 56,
+        "resolved": "#65666A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color18",
+        "raw": "#F04747",
+        "line": 57,
+        "resolved": "#F04747",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color19",
+        "raw": "#0D0F12",
+        "line": 58,
+        "resolved": "#0D0F12",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color20",
+        "raw": "#7F8185",
+        "line": 59,
+        "resolved": "#7F8185",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color21",
+        "raw": "#161616",
+        "line": 60,
+        "resolved": "#161616",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color22",
+        "raw": "#333333",
+        "line": 61,
+        "resolved": "#333333",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color23",
+        "raw": "#FF1744",
+        "line": 62,
+        "resolved": "#FF1744",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color24",
+        "raw": "#181818",
+        "line": 63,
+        "resolved": "#181818",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "color25",
+        "raw": "#2F2F2F",
+        "line": 64,
+        "resolved": "#2F2F2F",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "yellow_warning_color",
+        "raw": "#FFAE00",
+        "line": 66,
+        "resolved": "#FFAE00",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "warning_color",
+        "raw": "$(yellow_warning_color)",
+        "line": 67,
+        "resolved": "#FFAE00",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "online_state_color",
+        "raw": "#65CB00",
+        "line": 69,
+        "resolved": "#65CB00",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "busy_state_color",
+        "raw": "red",
+        "line": 70,
+        "resolved": "red",
+        "kind": "other literal or reference"
+      },
+      {
+        "name": "offline_state_color",
+        "raw": "#828282",
+        "line": 71,
+        "resolved": "#828282",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "mobile_state_color",
+        "raw": "$(yellow_warning_color)",
+        "line": 72,
+        "resolved": "#FFAE00",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color",
+        "raw": "$(color0)",
+        "line": 76,
+        "resolved": "#F2F2F2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_hover",
+        "raw": "$(color0_hover)",
+        "line": 77,
+        "resolved": "#D2D2D2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_down",
+        "raw": "$(color0_down)",
+        "line": 78,
+        "resolved": "#ADADAD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_selection_color",
+        "raw": "$(color1_pale_transparent)",
+        "line": 79,
+        "resolved": "#F3564470",
+        "kind": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "name": "face_glow_color",
+        "raw": "$(color1_bright)",
+        "line": 80,
+        "resolved": "#F6493C",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_little_deemphasized",
+        "raw": "$(color0_little_deemphasized)",
+        "line": 81,
+        "resolved": "#C1C1C1",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_deemphasized",
+        "raw": "$(color17)",
+        "line": 82,
+        "resolved": "#65666A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_down_deemphasized",
+        "raw": "$(color0_down_deemphasized)",
+        "line": 83,
+        "resolved": "#BDBDBD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_state",
+        "raw": "$(color0_state)",
+        "line": 84,
+        "resolved": "#DDDDDD",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "face_color_online_state",
+        "raw": "$(color0_online_state)",
+        "line": 85,
+        "resolved": "#A6FFA9",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color",
+        "raw": "$(color1)",
+        "line": 87,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_gradient",
+        "raw": "$(color1_background_regular_text_contrasted)",
+        "line": 88,
+        "resolved": "#CD3143",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_hover",
+        "raw": "$(color1_hover)",
+        "line": 89,
+        "resolved": "#EE3C48",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_down",
+        "raw": "$(color1_down)",
+        "line": 90,
+        "resolved": "#F59388",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_pale",
+        "raw": "$(color1_pale)",
+        "line": 91,
+        "resolved": "#F35644",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_dark",
+        "raw": "$(color1_dark)",
+        "line": 92,
+        "resolved": "#C5293B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_regular_text_contrast",
+        "raw": "$(color1_regular_text_contrasted)",
+        "line": 93,
+        "resolved": "#EE4E60",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_hover_regular_text_contrasted",
+        "raw": "$(color1_hover_regular_text_contrasted)",
+        "line": 94,
+        "resolved": "#F27D8B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_focused_regular_text_contrasted",
+        "raw": "$(color1_focused_regular_text_contrasted)",
+        "line": 95,
+        "resolved": "#F0909A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dominant_color_background_regular_text_contrasted",
+        "raw": "$(color1_background_regular_text_contrasted)",
+        "line": 96,
+        "resolved": "#CD3143",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "preponent_color_background_regular_text_contrasted",
+        "raw": "#54AB58",
+        "line": 98,
+        "resolved": "#54AB58",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "bkg_color",
+        "raw": "$(color2)",
+        "line": 100,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "dark_bkg_color",
+        "raw": "$(color21)",
+        "line": 101,
+        "resolved": "#161616",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "secondary_bkg_color",
+        "raw": "$(color4)",
+        "line": 102,
+        "resolved": "#272727",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emphasized_secondary_bkg_color",
+        "raw": "$(color25)",
+        "line": 103,
+        "resolved": "#2F2F2F",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "tertiary_bkg_color",
+        "raw": "$(color5)",
+        "line": 104,
+        "resolved": "#333333",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "content_bkg_color",
+        "raw": "$(color3)",
+        "line": 105,
+        "resolved": "#363B45",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "quaternary_bkg_color",
+        "raw": "$(color24)",
+        "line": 106,
+        "resolved": "#181818",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "long_content_bkg_color",
+        "raw": "$(color6)",
+        "line": 108,
+        "resolved": "#36393E",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "short_content_bkg_color",
+        "raw": "$(color7)",
+        "line": 109,
+        "resolved": "#424242",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "short_content_error_bkg_color",
+        "raw": "#743F3E",
+        "line": 110,
+        "resolved": "#743F3E",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "hover_short_content_error_bkg_color",
+        "raw": "#8B4C4B",
+        "line": 111,
+        "resolved": "#8B4C4B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "pressed_content_error_bkg_color",
+        "raw": "#5B3333",
+        "line": 112,
+        "resolved": "#5B3333",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "text_content_foreground_color",
+        "raw": "$(color8)",
+        "line": 113,
+        "resolved": "#B9BABC",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "text_content_deempashized_foreground_color",
+        "raw": "$(color8_deemphasized)90",
+        "line": 114,
+        "resolved": "#757D8190",
+        "kind": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "name": "low_contrast_text_content_foreground_color",
+        "raw": "$(color9)",
+        "line": 115,
+        "resolved": "#5B5E62",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "high_contrast_text_content_foreground_color",
+        "raw": "$(color10)",
+        "line": 116,
+        "resolved": "white",
+        "kind": "other literal or reference"
+      },
+      {
+        "name": "low_contrast2_text_content_foreground_color",
+        "raw": "$(color11)",
+        "line": 117,
+        "resolved": "#474A4F",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "state_text_content_foreground_color",
+        "raw": "$(color12)",
+        "line": 118,
+        "resolved": "#949494",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "sidebar_content_bkg_color",
+        "raw": "$(color13)",
+        "line": 120,
+        "resolved": "#2F3136",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "sidebar_toolbar_label_font_color",
+        "raw": "$(color14)",
+        "line": 121,
+        "resolved": "#68696D",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "sidebar_search_edit_bkg_color",
+        "raw": "$(color15)",
+        "line": 122,
+        "resolved": "#26272B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "listview_selection_bkg_color",
+        "raw": "$(color16)",
+        "line": 124,
+        "resolved": "#42464D",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "listview_font_color",
+        "raw": "$(color17)",
+        "line": 125,
+        "resolved": "#65666A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "listview_notification_badge_color",
+        "raw": "$(color18)",
+        "line": 126,
+        "resolved": "#F04747",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "bright_alert_color",
+        "raw": "$(color1_bright)",
+        "line": 128,
+        "resolved": "#F6493C",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "alert_color",
+        "raw": "$(bright_alert_color)",
+        "line": 129,
+        "resolved": "#F6493C",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "scrollbar_track_color",
+        "raw": "$(color22)",
+        "line": 131,
+        "resolved": "#333333",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "scrollbar_thumb_color",
+        "raw": "$(bkg_color)",
+        "line": 132,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "scrollbar_thumb_hover_color",
+        "raw": "$(bkg_color)90",
+        "line": 133,
+        "resolved": "#21212190",
+        "kind": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "name": "progressbar_track_color",
+        "raw": "$(face_color)",
+        "line": 135,
+        "resolved": "#F2F2F2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "progressbar_indicator_color",
+        "raw": "$(dominant_color_pale)",
+        "line": 136,
+        "resolved": "#F35644",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "chat_toolbar_icon_color",
+        "raw": "$(color20)",
+        "line": 138,
+        "resolved": "#7F8185",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emoji_white_eye",
+        "raw": "white",
+        "line": 142,
+        "resolved": "white",
+        "kind": "other literal or reference"
+      },
+      {
+        "name": "emoji_face_color",
+        "raw": "#ffdd67",
+        "line": 143,
+        "resolved": "#ffdd67",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emoji_glasses_color",
+        "raw": "$(face_glow_color)",
+        "line": 144,
+        "resolved": "#F6493C",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emoji_iris_color",
+        "raw": "$(bkg_color)",
+        "line": 145,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emoji_mouth_color",
+        "raw": "$(bkg_color)",
+        "line": 146,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "emoji_eyebrow_color",
+        "raw": "$(bkg_color)",
+        "line": 147,
+        "resolved": "#212121",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "plurality_color_0_deemphasized",
+        "raw": "#43B8BC",
+        "line": 149,
+        "resolved": "#43B8BC",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "plurality_color_1_deemphasized",
+        "raw": "#C96E7F",
+        "line": 150,
+        "resolved": "#C96E7F",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "plurality_color_2_deemphasized",
+        "raw": "#A9C56A",
+        "line": 151,
+        "resolved": "#A9C56A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_text_color",
+        "raw": "$(face_color)",
+        "line": 153,
+        "resolved": "#F2F2F2",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_focused_color",
+        "raw": "#F3B6AC",
+        "line": 154,
+        "resolved": "#F3B6AC",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_background_color_1",
+        "raw": "$(dominant_color)",
+        "line": 155,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_background_color_2",
+        "raw": "$(dominant_color_gradient)",
+        "line": 156,
+        "resolved": "#CD3143",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_background_hover_color",
+        "raw": "$(dominant_color_dark)",
+        "line": 157,
+        "resolved": "#C5293B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_background_down_color",
+        "raw": "$(dominant_color)",
+        "line": 158,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_2_background_normal_color",
+        "raw": "$(dominant_color)",
+        "line": 160,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_2_background_hover_color",
+        "raw": "#FF2D45",
+        "line": 161,
+        "resolved": "#FF2D45",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "action_button_2_background_down_color",
+        "raw": "#AA2635",
+        "line": 162,
+        "resolved": "#AA2635",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "small_action_button_background_color_1",
+        "raw": "$(action_button_background_color_1)",
+        "line": 164,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "small_action_button_background_color_2",
+        "raw": "$(action_button_background_color_2)",
+        "line": 165,
+        "resolved": "#CD3143",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "small_action_button_background_color_dark",
+        "raw": "#AE2A39",
+        "line": 167,
+        "resolved": "#AE2A39",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "small_action_button_background_color_even_darker",
+        "raw": "#922330",
+        "line": 168,
+        "resolved": "#922330",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "secondary_action_button_color",
+        "raw": "$(dominant_color_regular_text_contrast)",
+        "line": 171,
+        "resolved": "#EE4E60",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "secondary_action_button_focused_color",
+        "raw": "$(color1_focused_regular_text_contrasted)",
+        "line": 172,
+        "resolved": "#F0909A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "radiocard_selected_focused_color",
+        "raw": "#EF757B",
+        "line": 174,
+        "resolved": "#EF757B",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "alt1_card_color",
+        "raw": "#0060F0",
+        "line": 176,
+        "resolved": "#0060F0",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "alt2_card_color",
+        "raw": "#C2003A",
+        "line": 177,
+        "resolved": "#C2003A",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "alt3_card_color",
+        "raw": "#0076A8",
+        "line": 178,
+        "resolved": "#0076A8",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "alt4_card_color",
+        "raw": "#8000FF",
+        "line": 179,
+        "resolved": "#8000FF",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "premium_silver_color",
+        "raw": "#C4C4C4",
+        "line": 182,
+        "resolved": "#C4C4C4",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "premium_gold_color",
+        "raw": "#FFC700",
+        "line": 183,
+        "resolved": "#FFC700",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "premium_platinum_color",
+        "raw": "#FFFFFF",
+        "line": 184,
+        "resolved": "#FFFFFF",
+        "kind": "six-hex color"
+      },
+      {
+        "name": "premium_ruby_color",
+        "raw": "$(color1)",
+        "line": 185,
+        "resolved": "#EB3449",
+        "kind": "six-hex color"
+      }
+    ],
+    "classes": [
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 3,
+        "lineEnd": 3,
+        "attributes": {
+          "name": "text",
+          "fontColor": "$(face_color)",
+          "fontFamily": "$(default_font_name)",
+          "fontStyle": "",
+          "selectionColor": "$(face_selection_color)",
+          "fontSize": "14"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 4,
+        "lineEnd": 4,
+        "attributes": {
+          "name": "textBig",
+          "inherit": "text",
+          "fontSize": "17",
+          "fontStyle": "bold"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 6,
+        "lineEnd": 8,
+        "attributes": {
+          "name": "textPrompt",
+          "textPrompt_fontColor": "$(face_color)",
+          "textPrompt_fontFamily": "$(default_font_name)",
+          "textPrompt_fontSize": "14",
+          "textPrompt_trimming": "character"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 10,
+        "lineEnd": 10,
+        "attributes": {
+          "name": "focused",
+          "focusedGlow": "$(face_glow_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 11,
+        "lineEnd": 11,
+        "attributes": {
+          "name": "invertedColorText",
+          "inherit": "text",
+          "fontColor": "$(tertiary_bkg_color)",
+          "fontColorDown": "$(bkg_color)",
+          "fontColorHover": "$(bkg_color)",
+          "fontColorFocused": "$(bkg_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 12,
+        "lineEnd": 12,
+        "attributes": {
+          "name": "invertedFocused",
+          "inherit": "invertedColorText",
+          "focusedGlow": "$(tertiary_bkg_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 14,
+        "lineEnd": 16,
+        "attributes": {
+          "name": "hoverGlow",
+          "effect0": "glow",
+          "effect0_trigger": "IsHover=True",
+          "effect0_opacity": "0.7",
+          "effect0_softness": "0.2",
+          "effect0_color": "$(face_color_deemphasized)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 19,
+        "lineEnd": 19,
+        "attributes": {
+          "name": "errorText",
+          "inherit": "text",
+          "fontColor": "$(alert_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 20,
+        "lineEnd": 20,
+        "attributes": {
+          "name": "errorTextPrompt",
+          "inherit": "textPrompt",
+          "textPrompt_fontColor": "$(alert_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 22,
+        "lineEnd": 22,
+        "attributes": {
+          "name": "credentialText",
+          "inherit": "text textPrompt",
+          "fontSize": "15",
+          "textPrompt_fontSize": "15",
+          "fontStyle": ""
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 23,
+        "lineEnd": 23,
+        "attributes": {
+          "name": "credentialErrorText",
+          "inherit": "credentialText",
+          "fontColor": "$(alert_color)",
+          "textPrompt_fontColor": "$(alert_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 25,
+        "lineEnd": 25,
+        "attributes": {
+          "name": "mediumCredentialText",
+          "inherit": "credentialText",
+          "fontSize": "14",
+          "textPrompt_fontSize": "14"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 26,
+        "lineEnd": 26,
+        "attributes": {
+          "name": "mediumCredentialErrorText",
+          "inherit": "mediumCredentialText",
+          "fontColor": "$(alert_color)",
+          "textPrompt_fontColor": "$(alert_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 28,
+        "lineEnd": 28,
+        "attributes": {
+          "name": "__credentialEditStyle",
+          "inherit": "credentialText editStyle",
+          "background": "frames/edit/credentialEdit.xml"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 29,
+        "lineEnd": 29,
+        "attributes": {
+          "name": "__ErrorCredentialEditStyle",
+          "inherit": "credentialErrorText __credentialEditStyle",
+          "background": "frames/edit/credentialEditError.xml"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 32,
+        "lineEnd": 32,
+        "attributes": {
+          "name": "_popupDropShadowEffect",
+          "effect": "shadow",
+          "effect_opacity": "0.3",
+          "effect_softness": "1.2",
+          "effect_color": "black",
+          "effect_distance": "10",
+          "effect_direction": "90"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 33,
+        "lineEnd": 33,
+        "attributes": {
+          "name": "_popupHidingEffect",
+          "hidingColor": "$(quaternary_bkg_color)",
+          "hidingOpacity": "0.9"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 35,
+        "lineEnd": 35,
+        "attributes": {
+          "name": "_popupSmallDropShadowEffect",
+          "effect": "shadow",
+          "effect_opacity": "0.25",
+          "effect_softness": "0.25",
+          "effect_color": "black",
+          "effect_distance": "4",
+          "effect_direction": "90"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 36,
+        "lineEnd": 36,
+        "attributes": {
+          "name": "_aroundControlSmallDropShadowEffect",
+          "effect": "shadow",
+          "effect_opacity": "0.25",
+          "effect_softness": "0.1",
+          "effect_color": "black",
+          "effect_distance": "0.1",
+          "effect_direction": "90"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 40,
+        "lineEnd": 47,
+        "attributes": {
+          "name": "_baseTaleMarkStyleSheet",
+          "fontFamily": "$(default_font_name)",
+          "fontSize": "15",
+          "body_fontColor": "$(text_content_foreground_color)",
+          "heading_fontFamily": "$(title_font_name)",
+          "initialCap_fontFamily": "$(initial_cap_font_name)",
+          "initialCap_fontSize": "40",
+          "textPrompt_fontSize": "15"
+        }
+      },
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 49,
+        "lineEnd": 52,
+        "attributes": {
+          "name": "_consoleTalemarkStyleSheet",
+          "inherit": "_baseTaleMarkStyleSheet",
+          "fontFamily": "$(console_font_name)",
+          "fontSize": "16",
+          "regularTextContrast": "5",
+          "largeTextContrast": "3.5",
+          "optmizeContrast": "true"
+        }
+      },
+      {
+        "file": "themes/flat/theme_buttons.xml",
+        "sha256": "3e59732aa59cacd8c586784234e98b27001effdcd3849a479c0a0fb79c9b0367",
+        "lineStart": 215,
+        "lineEnd": 215,
+        "attributes": {
+          "name": "_BaseButtonNavStyle",
+          "fontStyle": "",
+          "fontSize": "16",
+          "horizontalAlign": "center",
+          "fontName": "$(title_font_name)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 26,
+        "lineEnd": 26,
+        "attributes": {
+          "name": "taleMarkRichEditStyle",
+          "inherit": "richEditStyle _baseTaleMarkStyleSheet"
+        }
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 40,
+        "lineEnd": 53,
+        "attributes": {
+          "name": "logRichEditStyle",
+          "inherit": "taleMarkRichEditStyle",
+          "background": "frames/chat/logRichEdit.xml",
+          "nick_fontColor": "$(high_contrast_text_content_foreground_color)",
+          "timestamp_fontColor": "$(low_contrast_text_content_foreground_color)",
+          "blockSepLine_color": "$(low_contrast2_text_content_foreground_color)",
+          "blockSepLineDate_fontColor": "$(state_text_content_foreground_color)",
+          "stateMessage_fontColor": "$(state_text_content_foreground_color)",
+          "hotNewMessages_color": "$(dominant_color_pale)A8",
+          "backgroundDominantColor": "$(bkg_color)",
+          "hoveredMessageBkgColor": "#0000001A",
+          "textStamp_fontFamily": "$(default_font_name)",
+          "textStamp_fontSize": "11",
+          "textStamp_fontColor": "$(state_text_content_foreground_color)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 55,
+        "lineEnd": 55,
+        "attributes": {
+          "name": "consoleLogRichEditStyle",
+          "inherit": "_consoleTalemarkStyleSheet logRichEditStyle"
+        }
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 56,
+        "lineEnd": 56,
+        "attributes": {
+          "name": "consoleInputRichEditStyle",
+          "inherit": "_consoleTalemarkStyleSheet chatInputRichEditStyle"
+        }
+      },
+      {
+        "file": "themes/flat/theme_labels.xml",
+        "sha256": "04587e6e329a337e194143c645f901b60da98bd0589fbd6d56fd7c979cb5d372",
+        "lineStart": 6,
+        "lineEnd": 11,
+        "attributes": {
+          "name": "talemarktextstyle",
+          "inherit": "_baseTaleMarkStyleSheet",
+          "body_fontColor": "$(face_color)",
+          "backgroundDominantColor": "$(bkg_color)",
+          "optmizeContrast": "true",
+          "regularTextContrast": "5",
+          "largeTextContrast": "3.5",
+          "characterQuotedSpeechFontStyle": "italic",
+          "characterQuotedSpeechFontColor": "$(face_color_down_deemphasized)",
+          "heading_topLeading": "10"
+        }
+      },
+      {
+        "file": "themes/flat/theme_labels.xml",
+        "sha256": "04587e6e329a337e194143c645f901b60da98bd0589fbd6d56fd7c979cb5d372",
+        "lineStart": 39,
+        "lineEnd": 39,
+        "attributes": {
+          "name": "smallDeemphasizedTitleLabelStyle",
+          "inherit": "smallDeemphasizedLabelStyle",
+          "fontFamily": "$(title_font_name)"
+        }
+      },
+      {
+        "file": "themes/flat/theme_labels.xml",
+        "sha256": "04587e6e329a337e194143c645f901b60da98bd0589fbd6d56fd7c979cb5d372",
+        "lineStart": 53,
+        "lineEnd": 53,
+        "attributes": {
+          "name": "formTitleLabelStyle",
+          "inherit": "labelStyle",
+          "fontFamily": "$(title_font_name)",
+          "fontStyle": "bold",
+          "fontSize": "24"
+        }
+      },
+      {
+        "file": "themes/flat/theme_labels.xml",
+        "sha256": "04587e6e329a337e194143c645f901b60da98bd0589fbd6d56fd7c979cb5d372",
+        "lineStart": 95,
+        "lineEnd": 95,
+        "attributes": {
+          "name": "compactRoomNavTargetLabelStyle",
+          "inherit": "labelStyle",
+          "fontSize": "15",
+          "fontName": "$(title_font_name)"
+        }
+      }
+    ],
+    "classEightHex": [
+      {
+        "file": "themes/flat/theme_baseDefinitions.xml",
+        "sha256": "47a612bdead926d240d66b0d46ae23802229626717e3cb4298ae2066ee77e941",
+        "lineStart": 3,
+        "lineEnd": 3,
+        "attribute": "selectionColor",
+        "raw": "$(face_selection_color)",
+        "resolved": "#F3564470",
+        "interpretation": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 40,
+        "lineEnd": 53,
+        "attribute": "hotNewMessages_color",
+        "raw": "$(dominant_color_pale)A8",
+        "resolved": "#F35644A8",
+        "interpretation": "eight-hex literal; alpha order not interpreted"
+      },
+      {
+        "file": "themes/flat/theme_edits.xml",
+        "sha256": "3dce3ef3a8a075e32c230e1fbaab5717b61ba223f7692e1a26acecc8249b4ca7",
+        "lineStart": 40,
+        "lineEnd": 53,
+        "attribute": "hoveredMessageBkgColor",
+        "raw": "#0000001A",
+        "resolved": "#0000001A",
+        "interpretation": "eight-hex literal; alpha order not interpreted"
+      }
+    ],
+    "resolution": "Simple recursive substitution only; native theme engine inheritance/loading/effective precedence not executed"
+  },
+  "limitations": [
+    "Independent local evidence ID, not a REA ledger record",
+    "SFNT records retain exact byte ranges and raw-string hashes; Macintosh strings approximated as Latin-1",
+    "Only name IDs 0,1,2,4,6,13,14,16,17 selected; no font glyphs or hinting instructions analyzed",
+    "Source XML lines count CRLF/LF UTF-8 text with BOM retained",
+    "No screenshot pixel measurement, installed fallback check or confirmation that bundled theme is active",
+    "License strings/URLs are declarations from metadata, not a redistribution approval",
+    "Eight-hex values preserved without determining alpha channel order; no CSS conversion",
+    "No external URL accessed; HTML uses system sans-serif and direct six-hex constants only"
+  ]
+}

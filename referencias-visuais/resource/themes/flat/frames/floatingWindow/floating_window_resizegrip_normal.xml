@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="10" height="10" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<margins right="5" bottom="5"/>
+		
+	<draw>
+		<path left="-3" top="-3" right="10" bottom="10" zOrder="1" mode="original">
+			<pathData>M1 17L17 1</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(bkg_color)" size="1.5"/>
+		</path>				
+	
+		<path left="-3" top="-3" right="10" bottom="10" zOrder="1" mode="original">
+			<pathData>M8 17L17 8</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(bkg_color)" size="1.5"/>
+		</path>		
+		
+		<path left="-3" top="-3" right="10" bottom="10" zOrder="1" mode="original">
+			<pathData>M14 17L17 14</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(bkg_color)" size="1.5"/>
+		</path>				
+	</draw>
+</frame>

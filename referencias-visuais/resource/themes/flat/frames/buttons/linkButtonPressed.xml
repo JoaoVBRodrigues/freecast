@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="221" height="100" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<borders left="12" top="5" bottom="5" right="12" />
+	<draw>
+		<rectangle left="0" top="0" right="221" bottom="100" xradius="5" yradius="5">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color_down)"/>
+		</rectangle>	
+	</draw>
+</frame>

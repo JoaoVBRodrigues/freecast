@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="325" height="40"  >
+	<import file="../../consts.xml"/>
+	<padding left="14" top="3" bottom="3" right="4"/>
+	<draw>
+		<rectangle left="0" top="0" right="325" bottom="40" xradius="3" yradius="3" zOrder="-20">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(hover_short_content_error_bkg_color)" kind="solid"/>
+			<stroke color="$(alert_color)" kind="solid"/>
+		</rectangle>		
+	</draw>
+</frame>

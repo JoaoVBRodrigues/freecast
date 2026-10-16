@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="compactRoomNavGroupPanelStyle" inherit="panelstyle" background="frames/panelStyle/compact_room_nav_group_normal.xml"/>	
+	<class name="compactRoomNavUnselectedTargetPanelStyle" inherit="panelstyle" background="frames/panelStyle/compact_room_nav_unselected_target_normal.xml" />
+	<class name="compactRoomNavSelectedTargetPanelStyle" inherit="panelstyle" background="frames/panelStyle/compact_room_nav_selected_target_normal.xml" />	
+	
+	
+	<class name="pageNavigatorLayoutStyle" navButtonStyle="pageNavigatorNavButtonStyle" 
+		   selectedJmpButtonStyle="pageNavigatorSelectedJmpButtonStyle" 
+		   unselectedJmpButtonStyle="pageNavigatorUnselectedJmpButtonStyle"/>
+</group>

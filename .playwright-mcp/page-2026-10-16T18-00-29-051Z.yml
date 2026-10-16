@@ -1,0 +1,136 @@
+- generic [ref=f7e3]:
+  - banner [ref=f7e4]:
+    - link "Freecast, início" [ref=f7e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f7e9]: Freecast
+      - generic [ref=f7e10]: · mesa virtual
+    - generic [ref=f7e11]:
+      - generic [ref=f7e13]: Theo Arantes
+      - button "Sair da conta" [ref=f7e14] [cursor=pointer]
+  - generic [ref=f7e18]:
+    - complementary "Navegação principal" [ref=f7e19]:
+      - navigation [ref=f7e20]:
+        - link "Início" [ref=f7e21] [cursor=pointer]:
+          - /url: /
+        - link "Mesas online" [ref=f7e25] [cursor=pointer]:
+          - /url: /mesas
+        - link "Favoritas" [ref=f7e28] [cursor=pointer]:
+          - /url: /mesas?section=favoritas
+        - link "Perfil" [ref=f7e31] [cursor=pointer]:
+          - /url: /profile
+      - link "Perfil de Theo Arantes" [ref=f7e35] [cursor=pointer]:
+        - /url: /profile
+        - text: T
+    - generic [ref=f7e36]:
+      - navigation "Abas abertas" [ref=f7e37]:
+        - link "Início" [ref=f7e38] [cursor=pointer]:
+          - /url: /
+        - 'link "Mesa: A Cripta das Marés" [ref=f7e43] [cursor=pointer]':
+          - /url: /mesas/1
+          - generic [aria-hidden] [ref=f7e46]: ×
+        - link "Criar mesa" [ref=f7e47] [cursor=pointer]:
+          - /url: /mesas/nova
+        - generic [ref=f7e49]:
+          - button "Exibir painéis" [ref=f7e51] [cursor=pointer]:
+            - generic [ref=f7e54]: Painéis
+          - button "Sair da mesa" [ref=f7e57] [cursor=pointer]
+          - link "Explorar mesas" [ref=f7e62] [cursor=pointer]:
+            - /url: /mesas
+          - link "Preferências" [ref=f7e68] [cursor=pointer]:
+            - /url: /profile
+      - main [ref=f7e72]:
+        - generic [ref=f7e74]:
+          - complementary [ref=f7e75]:
+            - generic [ref=f7e76]:
+              - generic [ref=f7e77]:
+                - heading "Biblioteca" [level=2] [ref=f7e78]
+                - button "Adicionar item à biblioteca" [ref=f7e81] [cursor=pointer]:
+                  - generic [ref=f7e82]: +
+              - textbox "Procurar na biblioteca" [ref=f7e87]
+              - generic [ref=f7e88]:
+                - button "Regras da mesa" [ref=f7e89] [cursor=pointer]
+                - button "Guia do aventureiro" [ref=f7e94] [cursor=pointer]
+                - button "Cenário" [ref=f7e97] [cursor=pointer]
+                - button "Encontro na cripta" [ref=f7e102] [cursor=pointer]
+            - generic [ref=f7e112]:
+              - generic [ref=f7e113]:
+                - heading "Macros" [level=2] [ref=f7e114]
+                - button "Gerenciar macros" [ref=f7e118] [cursor=pointer]
+              - button "Gerenciar Macros" [ref=f7e123] [cursor=pointer]
+              - button "/r 1d20" [ref=f7e127] [cursor=pointer]
+              - button "Teste" [ref=f7e132] [cursor=pointer]
+              - button "Iniciativa" [ref=f7e137] [cursor=pointer]
+            - generic [ref=f7e142]:
+              - generic [ref=f7e143]:
+                - heading "Combate" [level=2] [ref=f7e144]
+                - button "Opções de combate" [ref=f7e154] [cursor=pointer]
+              - generic [ref=f7e159]:
+                - button "Teste" [ref=f7e160] [cursor=pointer]
+                - button "Init" [ref=f7e161] [cursor=pointer]
+                - button "A/H" [ref=f7e162] [cursor=pointer]
+              - generic [ref=f7e163]: Aguardando iniciativa
+              - generic [ref=f7e165]:
+                - button "Próx. turno" [ref=f7e166] [cursor=pointer]
+                - generic [ref=f7e167]:
+                  - text: Rodada
+                  - strong [ref=f7e168]: "1"
+          - region "Conversa da mesa" [ref=f7e169]:
+            - generic [ref=f7e170]:
+              - heading "Conversa" [level=2] [ref=f7e171]
+              - button "Opções da conversa" [ref=f7e174] [cursor=pointer]
+            - generic [ref=f7e179]:
+              - generic [ref=f7e180]: Hoje
+              - article [ref=f7e182]:
+                - generic [ref=f7e183]: "N"
+                - generic [ref=f7e184]:
+                  - generic [ref=f7e185]:
+                    - strong [ref=f7e186]: Nara Vale
+                    - time [ref=f7e187]: 14:53
+                  - paragraph [ref=f7e188]: As lanternas tremem quando a porta de pedra se abre.
+              - article [ref=f7e189]:
+                - generic [ref=f7e190]: T
+                - generic [ref=f7e191]:
+                  - generic [ref=f7e192]:
+                    - strong [ref=f7e193]: Theo Arantes
+                    - time [ref=f7e194]: 14:53
+                  - paragraph [ref=f7e195]: Theo observa as marcas no arco antes de entrar.
+            - generic [ref=f7e196]:
+              - textbox "Digite uma mensagem" [ref=f7e197]:
+                - /placeholder: Digite uma mensagem...
+              - generic [ref=f7e198]:
+                - generic [ref=f7e199]:
+                  - button "Negrito" [ref=f7e200] [cursor=pointer]:
+                    - strong [ref=f7e201]: B
+                  - button "Itálico" [ref=f7e202] [cursor=pointer]: I
+                  - button "Sublinhado" [ref=f7e203] [cursor=pointer]: U
+                  - button "Anexar arquivo" [ref=f7e205] [cursor=pointer]
+                  - button "Inserir rolagem" [ref=f7e208] [cursor=pointer]
+                  - button "Opções de áudio" [ref=f7e212] [cursor=pointer]
+                - button "Enviar mensagem" [disabled] [ref=f7e217]
+          - complementary [ref=f7e221]:
+            - generic [ref=f7e222]:
+              - heading "Participantes 3" [level=2] [ref=f7e223]:
+                - text: Participantes
+                - generic [ref=f7e229]: "3"
+              - button "Opções de participantes" [ref=f7e230] [cursor=pointer]
+            - generic [ref=f7e235]: Mestre
+            - article [ref=f7e238]:
+              - generic [ref=f7e239]: "N"
+              - generic [ref=f7e240]:
+                - strong [ref=f7e241]: Nara Vale
+                - generic [ref=f7e242]: Proprietário · Mestre
+                - generic [ref=f7e249]: Presente na mesa
+            - generic [ref=f7e250]: Jogadores
+            - article [ref=f7e253]:
+              - generic [ref=f7e254]: T
+              - generic [ref=f7e255]:
+                - strong [ref=f7e256]: Theo Arantes
+                - generic [ref=f7e257]: Jogador
+                - generic [ref=f7e262]: Conectado à aventura
+            - article [ref=f7e263]:
+              - generic [ref=f7e264]: L
+              - generic [ref=f7e265]:
+                - strong [ref=f7e266]: Lia Monte
+                - generic [ref=f7e267]: Jogador
+                - generic [ref=f7e272]: Conectado à aventura
+            - generic [ref=f7e273]: Apenas participantes veem esta mesa.

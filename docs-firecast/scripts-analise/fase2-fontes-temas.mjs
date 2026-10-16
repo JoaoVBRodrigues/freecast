@@ -1,0 +1,37 @@
+// Independent static SFNT/XML metadata inspection; no font loading or target execution.
+import fs from 'node:fs';
+import path from 'node:path';
+import {readZip,sha256} from './zip-inventory.mjs';
+const root=path.resolve(import.meta.dirname,'..');
+const z=readZip(JSON.parse(fs.readFileSync(path.join(root,'inventarios/resource-zip.json'),'utf8')).archive.path);
+const ensure=(yes,msg)=>{if(!yes)throw Error(msg);};
+function font(m){
+ const b=m.payload;ensure(b&&m.crc32Matches,'Invalid font member');const n=b.readUInt16BE(4);ensure(12+n*16<=b.length,'SFNT directory bounds');
+ const tables=[];for(let i=0;i<n;i++){const p=12+i*16;const t={tag:b.toString('ascii',p,p+4),offset:b.readUInt32BE(p+8),length:b.readUInt32BE(p+12)};ensure(t.offset+t.length<=b.length,'SFNT table bounds');tables.push(t);}
+ const t=tables.find(t=>t.tag==='name');ensure(t,'Missing SFNT name table');let p=t.offset;const format=b.readUInt16BE(p),count=b.readUInt16BE(p+2),strings=p+b.readUInt16BE(p+4);ensure(p+6+count*12<=p+t.length,'SFNT name records bounds');
+ const names=[];for(let i=0;i<count;i++){const q=p+6+i*12,platform=b.readUInt16BE(q),encoding=b.readUInt16BE(q+2),language=b.readUInt16BE(q+4),nameID=b.readUInt16BE(q+6),length=b.readUInt16BE(q+8),offset=strings+b.readUInt16BE(q+10);ensure(offset+length<=p+t.length,'SFNT name string bounds');if(![0,1,2,4,6,13,14,16,17].includes(nameID))continue;const raw=b.subarray(offset,offset+length);let value=null,decode='unsupported';if(platform===0||platform===3){ensure(length%2===0,'UTF16 string length');value=Buffer.from(raw).swap16().toString('utf16le');decode='UTF-16BE';}else if(platform===1){value=raw.toString('latin1');decode='Latin-1 approximation; Macintosh encoding not fully implemented';}names.push({record:i,platform,encoding,language,nameID,fileOffset:offset,byteLength:length,rawSha256:sha256(raw),decode,value});}
+ return {path:m.name,sha256:m.sha256,size:m.size,crc32Matches:m.crc32Matches,sfntVersion:b.subarray(0,4).toString('hex'),nameTable:{...t,format,count},names,licenseMarkers:names.filter(n=>n.value&&/licen[cs]e|copyright|reserved font|apache|open font|public domain/i.test(n.value)).map(n=>({record:n.record,nameID:n.nameID,value:n.value})),licenseAssessment:'metadata declarations only; redistribution authorization not established'};
+}
+const fonts=z.members.filter(m=>/\.ttf$/i.test(m.name)).map(font);
+const themeNames=['themes/flat/consts.xml','themes/flat/theme_baseDefinitions.xml'];
+// Select class declarations directly referencing the four font constants, or inherited base sheets.
+const textCandidates=z.members.filter(m=>/^themes\/flat\/.*\.xml$/.test(m.name)&&!m.name.includes('/frames/'));
+const sourceFor=m=>({path:m.name,sha256:m.sha256,size:m.size,crc32Matches:m.crc32Matches,lineCount:m.payload.toString('utf8').split(/\r?\n/).length});
+const constantsMember=z.members.find(m=>m.name===themeNames[0]);const constText=constantsMember.payload.toString('utf8');
+const lineAt=(s,offset)=>s.slice(0,offset).split(/\r?\n/).length;
+const constants=[...constText.matchAll(/<const\s+name="([^"]+)"\s*>([^<]*)<\/const>/g)].map(m=>({name:m[1],raw:m[2],line:lineAt(constText,m.index)}));
+const dict=Object.fromEntries(constants.map(c=>[c.name,c.raw]));
+function resolve(value,seen=[]){return value.replace(/\$\(([^)]+)\)/g,(_,k)=>seen.includes(k)||!(k in dict)?`$(${k})`:resolve(dict[k],[...seen,k]));}
+for(const c of constants){c.resolved=resolve(c.raw);c.kind=/^#[\da-f]{6}$/i.test(c.resolved)?'six-hex color':/^#[\da-f]{8}$/i.test(c.resolved)?'eight-hex literal; alpha order not interpreted':c.name.includes('font_name')?'font family declaration':'other literal or reference';}
+const classes=[];const relevantSources=new Map();
+for(const m of textCandidates){const text=m.payload.toString('utf8');const matches=[...text.matchAll(/<class\b[^>]*>/gs)];for(const match of matches){const attrs=Object.fromEntries([...match[0].matchAll(/([\w_]+)="([^"]*)"/g)].map(a=>[a[1],a[2]]));if(m.name===themeNames[1]||Object.values(attrs).some(a=>/\$\((?:default|title|console|initial_cap)_font_name\)|_baseTaleMarkStyleSheet|_consoleTalemarkStyleSheet/.test(a))){classes.push({file:m.name,sha256:m.sha256,lineStart:lineAt(text,match.index),lineEnd:lineAt(text,match.index+match[0].length),attributes:attrs});relevantSources.set(m.name,sourceFor(m));}}}
+const baseSources=themeNames.map(n=>sourceFor(z.members.find(m=>m.name===n)));
+const classEightHex=classes.flatMap(c=>Object.entries(c.attributes).map(([attribute,raw])=>({file:c.file,sha256:c.sha256,lineStart:c.lineStart,lineEnd:c.lineEnd,attribute,raw,resolved:resolve(raw),interpretation:'eight-hex literal; alpha order not interpreted'})).filter(v=>/^#[\da-f]{8}$/i.test(v.resolved)));
+const outDir=path.join(root,'evidencias/fase2');fs.mkdirSync(outDir,{recursive:true});
+const e={evidenceId:'F2-FONTES-TEMAS-001',method:'Independent read-only ZIP/SFNT parser and bounded textual class/constant inspection; font metadata only; no loading, rasterization or font export',nodeVersion:process.version,scriptSha256:sha256(fs.readFileSync(import.meta.filename)),archive:z.archive,fonts,theme:{sources:[...new Map([...baseSources,...relevantSources.values()].map(s=>[s.path,s])).values()],constants,classes,classEightHex,resolution:'Simple recursive substitution only; native theme engine inheritance/loading/effective precedence not executed'},limitations:['Independent local evidence ID, not a REA ledger record','SFNT records retain exact byte ranges and raw-string hashes; Macintosh strings approximated as Latin-1','Only name IDs 0,1,2,4,6,13,14,16,17 selected; no font glyphs or hinting instructions analyzed','Source XML lines count CRLF/LF UTF-8 text with BOM retained','No screenshot pixel measurement, installed fallback check or confirmation that bundled theme is active','License strings/URLs are declarations from metadata, not a redistribution approval','Eight-hex values preserved without determining alpha channel order; no CSS conversion','No external URL accessed; HTML uses system sans-serif and direct six-hex constants only']};
+fs.writeFileSync(path.join(outDir,'fontes-temas.json'),JSON.stringify(e,null,2)+'\n');
+const esc=s=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const colors=constants.filter(c=>/^#[\da-f]{6}$/i.test(c.raw));
+fs.writeFileSync(path.join(root,'fase2/04-swatches.html'),'<!doctype html><html lang="pt-BR"><meta charset="utf-8"><title>Constantes de cor: tema flat</title><style>body{font:16px sans-serif;margin:2rem;background:#fafafa;color:#202020}main{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}article{border:1px solid #bbb;padding:1rem}i{display:block;height:72px;border:1px solid #888}code{overflow-wrap:anywhere}</style><h1>Constantes de cor: tema flat</h1><p>Referência estática; apenas literais de seis dígitos. Fonte do sistema, sem assets originais. Não é captura do Firecast.</p><main>'+colors.map(c=>`<article><i style="background:${c.raw}"></i><p><code>${esc(c.name)}</code></p><p>${c.raw} · consts.xml:${c.line}</p></article>`).join('')+'</main></html>');
+const families=[...new Set(fonts.flatMap(f=>f.names.filter(n=>[1,16].includes(n.nameID)&&n.platform===3).map(n=>n.value)))];
+console.log(JSON.stringify({evidenceId:e.evidenceId,fonts:fonts.length,families,constants:constants.length,classes:classes.length,themeSources:e.theme.sources.length,eightHex:constants.filter(c=>c.kind.startsWith('eight')).length,swatches:colors.length}));

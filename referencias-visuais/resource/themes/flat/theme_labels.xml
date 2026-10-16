@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<!-- Texts UI -->
+	<class name="labelStyle" inherit="text"/>
+	
+	<class name="talemarktextstyle" inherit="_baseTaleMarkStyleSheet" body_fontColor="$(face_color)" 
+		   backgroundDominantColor="$(bkg_color)" optmizeContrast="true" regularTextContrast="5"
+		   largeTextContrast="3.5"
+		   characterQuotedSpeechFontStyle="italic"
+		   characterQuotedSpeechFontColor="$(face_color_down_deemphasized)"
+		   heading_topLeading="10"/>
+		   
+	<class name="deemphasizedTalemarkTextStyle" inherit="talemarktextstyle"
+		  defaultFontColor="$(face_color_down_deemphasized)"
+		  characterQuotedSpeechFontColor="$(face_color)"/>
+			
+	<class name="tinyLabelStyle" inherit="labelStyle" fontSize="9"/>				
+	<class name="tinyWarningLabelStyle" inherit="tinyLabelStyle" fontColor="$(warning_color)"/>			
+	
+	<class name="smallLabelStyle" inherit="labelStyle" fontSize="11"/>	
+	<class name="smallWarningLabelStyle" inherit="smallLabelStyle" fontColor="$(warning_color)"/>	
+	<class name="mediumToSmallLabelStyle" inherit="labelStyle" fontSize="13"/>	
+	<class name="mediumToSmallWarningLabelStyle" inherit="mediumToSmallLabelStyle" fontColor="$(warning_color)"/>			
+	<class name="errorLabelStyle" inherit="labelStyle" fontColor="$(alert_color)" fontSize="12"/>		
+		
+	<class name="popupTitleLabelStyle" inherit="labelStyle" fontSize="15" fontStyle="bold"/>
+	<class name="toolbarlabelstyle" inherit="labelStyle" fontStyle="bold"/>	
+	<class name="detailLabelStyle" inherit="labelStyle" fontColor="$(face_color_hover)"/>
+	<class name="contentTitleLabelStyle" inherit="toolbarlabelstyle" fontSize="17" fontStyle="bold"/>
+	<class name="mediumContentTitleLabelStyle" inherit="contentTitleLabelStyle" fontSize="16" fontStyle="semibold"/>
+	<class name="toolbarSubtitleLabelStyle" inherit="labelstyle" fontColor="$(face_color_down_deemphasized)" fontSize="14" fontStyle=""/>		
+		
+	<class name="strongLabelStyle" inherit="labelStyle" fontStyle="bold"/>
+	<class name="strongUnderlinedLabelStyle" inherit="labelStyle" fontStyle="bold underline"/>		
+	
+	<class name="deemphasizedLabelStyle" inherit="labelStyle" fontColor="$(face_color_deemphasized)"/>	
+	<class name="smallDeemphasizedLabelStyle" inherit="deemphasizedLabelStyle" fontSize="12" fontColor="$(face_color_down_deemphasized)"/>	
+	<class name="smallDeemphasizedDetailLabelStyle" inherit="smallDeemphasizedLabelStyle" fontColor="$(face_color_deemphasized)"/>	
+	<class name="smallDeemphasizedTitleLabelStyle" inherit="smallDeemphasizedLabelStyle" fontFamily="$(title_font_name)"/>
+	
+	<class name="sidebarToolbarLabelStyle" inherit="labelstyle" fontStyle="bold" fontSize="17" fontColor="$(sidebar_toolbar_label_font_color)"/>
+	<class name="leftSidebarToolbarLabelStyle" inherit="sidebarToolbarLabelStyle"/>	
+	
+	<class name="stateLabelStyle" inherit="labelStyle" fontColor="$(face_color_state)"/>
+	<class name="mediumSmallStateLabelStyle" inherit="stateLabelStyle" fontSize="13"/>	
+	<class name="mediumSmallOnlineStateLabelStyle" inherit="mediumSmallStateLabelStyle" fontColor="$(face_color_online_state)" />		
+	
+	
+	<class name="chatToolbarLabelStyle" inherit="labelStyle" fontColor="$(chat_toolbar_icon_color)"/>		
+	
+	<!-- Forms -->
+
+	<class name="formTitleLabelStyle" inherit="labelStyle" fontFamily="$(title_font_name)" fontStyle="bold" fontSize="24"/>	
+	<class name="formTitle2LabelStyle" inherit="formTitleLabelStyle" fontSize="20"/>	
+
+	<class name="formFieldGroupTitleLabelStyle" inherit="labelStyle" fontStyle="bold" fontSize="19"/>
+	<class name="formFieldTitleLabelStyle" inherit="labelStyle" fontStyle="bold" fontSize="15"/>
+	<class name="formFieldLabelValueStyle" inherit="labelStyle" fontColor="$(face_color_down_deemphasized)" fontStyle=""/>
+	<class name="errorFormFieldLabelValueStyle" inherit="formFieldLabelValueStyle" fontColor="$(alert_color)"/>	
+	
+	<class name="formSmallTitleLabelStyle" inherit="formTitleLabelStyle" fontSize="15"/>		
+	<class name="formSmallFieldTitleLabelStyle" inherit="formFieldTitleLabelStyle" fontSize="11"/>	
+	
+	<class name="formMediumTitleLabelStyle" inherit="formTitleLabelStyle" fontSize="18"/>		
+	<class name="formMediumFieldTitleLabelStyle" inherit="formFieldTitleLabelStyle" fontSize="13"/>		
+	
+	<class name="formHugeTitleLabelStyle" inherit="formTitleLabelStyle" fontSize="55"/>	
+	<class name="formHugeFieldLabelValueStyle" inherit="formFieldLabelValueStyle" fontSize="20"/>
+	
+	<!-- Specific labels -->		
+	
+	<class name="systemHistoryTaleMarkTextStyle" inherit="talemarktextstyle" justify="true"/>
+	<class name="chatTalemarkTextStyle" inherit="talemarktextstyle" regularTextContrast="" largeTextContrast=""/>
+	<class name="mediumFontSizeTalemarkTextStyle" inherit="talemarktextstyle" fontSize="14"/>
+	
+	
+	<class name="notificationBadgeLabelStyle" inherit="listviewstyle_detaillabelstyle" 
+		   fontColor="$(face_color)" fontSize="9" fontStyle="bold" 
+		   background="frames/listView/contactsUnseenMessageCountFrame.xml"/>	
+
+	<class name="smallNotificationBadgeLabelStyle" inherit="notificationBadgeLabelStyle" fontSize="8"/>
+		   
+	<class name="badgeLabelStyle" inherit="labelStyle" fontColor="$(face_color)" background="frames/labels/badgeBackground.xml"/>			   
+	<class name="secondaryBadgeLabelStyle" inherit="labelStyle" fontColor="$(face_color)" background="frames/labels/secondaryBadgeBackground.xml"/>			   
+		   
+	<class name="smallBadgeLabelStyle" inherit="badgeLabelStyle" fontSize="12"/>			   
+	<class name="mediumToSmallBadgeLabelStyle" inherit="badgeLabelStyle" fontSize="13"/>
+	
+	<class name="smallSecondaryBadgeLabelStyle" inherit="secondaryBadgeLabelStyle" fontSize="12"/>			   	
+	<class name="mediumToSmallSecondaryBadgeLabelStyle" inherit="secondaryBadgeLabelStyle" fontSize="13"/>			
+
+	<class name="layoutEditionZoneTitleLabelStyle" inherit="labelStyle" fontColor="$(face_color_little_deemphasized)" fontStyle="bold" fontSize="13"/>
+	
+		   	
+	<class name="compactRoomNavTargetLabelStyle" inherit="labelStyle" fontSize="15" fontName="$(title_font_name)" />
+	<class name="compactRoomNavGroupLabelStyle" inherit="compactRoomNavTargetLabelStyle" fontStyle="bold" />	
+</group>

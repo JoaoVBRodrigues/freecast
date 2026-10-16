@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="302" height="270"  >
+	<import file="../../consts.xml"/>
+	
+	<padding left="12" top="8" right="12" bottom="8"/>
+	
+	<draw>
+		
+	</draw>
+</frame>

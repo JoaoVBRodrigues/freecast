@@ -1,0 +1,977 @@
+{
+  "evidenceId": "F2-MACROS",
+  "method": "Independent readZip static inspection; in-memory decompression only; no target/Lua execution, no full source export",
+  "toolVersion": "v22.23.2",
+  "outer": {
+    "path": "C:/Users/João/AppData/Local/Firecast/resource.zip",
+    "size": 21462948,
+    "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+    "eocdOffset": 21462926,
+    "centralOffset": 21329906,
+    "centralSize": 133020,
+    "memberCount": 1422
+  },
+  "package": {
+    "id": "ZIP-M00003",
+    "name": "complementosPadroes/rrpginlua.rpk",
+    "extension": ".rpk",
+    "centralOffset": 21330066,
+    "localOffset": 785573,
+    "dataOffset": 785636,
+    "compressedSize": 327387,
+    "size": 327387,
+    "compression": 0,
+    "flags": 2048,
+    "crc32": "e81f4f8b",
+    "compressedSha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+    "sha256": "64dbda95c73dffe6ae3284f87cf2ce3b479e2c2ada6b6efc4ce33ff8db6bb4a4",
+    "error": null,
+    "format": null,
+    "width": null,
+    "height": null,
+    "origin": "bundled resource; authorship unverified",
+    "license": null,
+    "reuse": "unknown",
+    "association": "unverified",
+    "crc32Calculated": "e81f4f8b",
+    "crc32Matches": true
+  },
+  "offsetConvention": "Package offsets relative to uncompressed RPK; byte ranges relative to uncompressed UTF-8 member, zero based; lines one based including BOM",
+  "members": [
+    {
+      "id": "ZIP-M00051",
+      "name": "macros/icons/scriptIcon.xml",
+      "extension": ".xml",
+      "centralOffset": 319817,
+      "localOffset": 111633,
+      "dataOffset": 111690,
+      "compressedSize": 536,
+      "size": 1192,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "383c3e5d",
+      "compressedSha256": "cfacf4f25a3b6d9a200e1479eb0b5d92560c266fdce65b9f28fc570857a28ea2",
+      "sha256": "073360fe5f763bc5fd7a3e26e32a02ca223c34c147a24f67457f1f602d88d91a",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "383c3e5d",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00052",
+      "name": "macros/macros.lang",
+      "extension": ".lang",
+      "centralOffset": 319890,
+      "localOffset": 112226,
+      "dataOffset": 112274,
+      "compressedSize": 1265,
+      "size": 4507,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "9b0352cb",
+      "compressedSha256": "5a31ec969b0dcce611c1a235ad966a57a42ceaaa8872278c56284025b5c55749",
+      "sha256": "09e6c5b3bb5c45e8de38489133b730edbf9290c6d7500462a0c0a289dd2f9a35",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "9b0352cb",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00053",
+      "name": "macros/rrpgMacros.dlua",
+      "extension": ".dlua",
+      "centralOffset": 319954,
+      "localOffset": 113539,
+      "dataOffset": 113591,
+      "compressedSize": 6223,
+      "size": 29002,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "ad139289",
+      "compressedSha256": "e8adfab8965435a7091eaefb036946082148b488a78fb695f606870d050f7782",
+      "sha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "ad139289",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00054",
+      "name": "macros/RRPGSimpleMacroGenItem.lfm",
+      "extension": ".lfm",
+      "centralOffset": 320022,
+      "localOffset": 119814,
+      "dataOffset": 119877,
+      "compressedSize": 627,
+      "size": 1211,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "87d47a1e",
+      "compressedSha256": "f1e7b857af3a45e7c4600bbfa3f28fc7d381cf874f7d4a16f468dded97481aac",
+      "sha256": "9e9445e41375576ef320f33ac2a2ebee94306f03841227127fb0cedfbf7534fd",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "87d47a1e",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00055",
+      "name": "macros/RRPGSimpleMacros.lua",
+      "extension": ".lua",
+      "centralOffset": 320101,
+      "localOffset": 120504,
+      "dataOffset": 120561,
+      "compressedSize": 3391,
+      "size": 12975,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "eb6e7451",
+      "compressedSha256": "4319920d0d1fdf2db173ec9194851c5e25db444c82900bafacd2b9b145d14512",
+      "sha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "eb6e7451",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00056",
+      "name": "macros/RRPGSimpleMacrosGerenciar.lfm",
+      "extension": ".lfm",
+      "centralOffset": 320174,
+      "localOffset": 123952,
+      "dataOffset": 124018,
+      "compressedSize": 2360,
+      "size": 8376,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "bc482800",
+      "compressedSha256": "143544abfe7e8e42452cb6d7ba28d378137cfd21fea86f4fe7de2ff85e600762",
+      "sha256": "90b8ec58825d37b2a464f63846e1ab270ad30f6ad422ccaac3663cc1564a07d3",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "bc482800",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00057",
+      "name": "macros/TablesDockMacros.lfm",
+      "extension": ".lfm",
+      "centralOffset": 320256,
+      "localOffset": 126378,
+      "dataOffset": 126435,
+      "compressedSize": 1639,
+      "size": 6028,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "2f2a53d3",
+      "compressedSha256": "b6793c0313cb403795f50ec77847ae775c104eb8a24b2a21dc84db28016eda4f",
+      "sha256": "555ef1dc3c37b1dcdf5d938757f8c09749d66fe87545e6300f3d26dab68f9d80",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "2f2a53d3",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00058",
+      "name": "macros/TablesDockMacrosItem.lfm",
+      "extension": ".lfm",
+      "centralOffset": 320329,
+      "localOffset": 128074,
+      "dataOffset": 128135,
+      "compressedSize": 522,
+      "size": 1026,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "750f7f1f",
+      "compressedSha256": "4c3fe7c807ebfeb114ae6c2519193981f68bb467c3209315de6412c70fbd7199",
+      "sha256": "7761d2de048a198a500d140ac8e3909709bbbad5f9eac29050fa3e335d8e5ffd",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "750f7f1f",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00147",
+      "name": "macros/RRPGSimpleMacroGenItem.lfm.lua",
+      "extension": ".lua",
+      "centralOffset": 326383,
+      "localOffset": 273991,
+      "dataOffset": 274058,
+      "compressedSize": 1400,
+      "size": 4978,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "fdae2669",
+      "compressedSha256": "6f0e3a9a2b3acf8648c2f88e672bd88c8b3f45d3e3b4811b5a29f21ae242b0ce",
+      "sha256": "ad52db4c78a36f9520b8cba50aa45e9a992528bbdd663a1936b54a088ff5d71e",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "fdae2669",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00148",
+      "name": "macros/RRPGSimpleMacrosGerenciar.lfm.lua",
+      "extension": ".lua",
+      "centralOffset": 326466,
+      "localOffset": 275458,
+      "dataOffset": 275528,
+      "compressedSize": 4545,
+      "size": 27388,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "9864878d",
+      "compressedSha256": "90459f1eb00d77fefc0f8965895cd2c3fa5c928960e0c05a0944306f5e7f7434",
+      "sha256": "123ac845616742c3f44783a4196b18c563ce7c6d2b743bbab2c532aadcf70020",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "9864878d",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00149",
+      "name": "macros/TablesDockMacros.lfm.lua",
+      "extension": ".lua",
+      "centralOffset": 326552,
+      "localOffset": 280073,
+      "dataOffset": 280134,
+      "compressedSize": 2396,
+      "size": 10437,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "fa2c70ef",
+      "compressedSha256": "1474ee59a87e823d4695d4f06a3e5479d7e98790e6f36d8229fa89eeb32e0ae2",
+      "sha256": "9abe542ccf789aaccd68c5bcd5b48f0ffb1f2d2e0dafda056d7f688c7202d9ac",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "fa2c70ef",
+      "crc32Matches": true
+    },
+    {
+      "id": "ZIP-M00150",
+      "name": "macros/TablesDockMacrosItem.lfm.lua",
+      "extension": ".lua",
+      "centralOffset": 326629,
+      "localOffset": 282530,
+      "dataOffset": 282595,
+      "compressedSize": 1187,
+      "size": 3952,
+      "compression": 8,
+      "flags": 2048,
+      "crc32": "1849b2c2",
+      "compressedSha256": "ff14f01cb96779edefe954b2167ff374125b1f6b2d6673ef6d1d059bf26f6706",
+      "sha256": "92fb9763847f9df5b73a637901579a359fecb94080b15b6f23fd0bcdd3b6b0dc",
+      "error": null,
+      "format": null,
+      "width": null,
+      "height": null,
+      "origin": "bundled resource; authorship unverified",
+      "license": null,
+      "reuse": "unknown",
+      "association": "unverified",
+      "crc32Calculated": "1849b2c2",
+      "crc32Matches": true
+    }
+  ],
+  "spans": [
+    {
+      "evidenceId": "MAC-001",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Name normalization and prepared fields",
+      "startLine": 24,
+      "endLine": 48,
+      "byteStart": 597,
+      "byteEndExclusive": 1432,
+      "spanSha256": "9c7fe437c574c07bdc547e81f3722ec462891593be1767fd2a572e3269c4b7ae",
+      "samples": [
+        {
+          "line": 26,
+          "text": "\t\treturn string.gsub(name, \"([ /.]+)\", \"\");\t\t"
+        },
+        {
+          "line": 33,
+          "text": "\treturn string.upper(Utils.removerAcentos(name));"
+        },
+        {
+          "line": 46,
+          "text": "\t\t\tmacroPreparado.acoes = macroNode.acoes or \"\";"
+        },
+        {
+          "line": 47,
+          "text": "\t\t\tmacroPreparado.tipoMacro = macroNode.tipoMacro or \"S\";"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-002",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "User schema: global and room branches",
+      "startLine": 53,
+      "endLine": 80,
+      "byteStart": 1455,
+      "byteEndExclusive": 2297,
+      "spanSha256": "4977871daefbd8307b7a7096f4a50e4eeff932c9ad379b1e09354bb527f8b6ae",
+      "samples": [
+        {
+          "line": 60,
+          "text": "\tif globalSimpleMacrosNDB.global ~= nil then"
+        },
+        {
+          "line": 62,
+          "text": "\t\t\tprepareNodeDeMacrosEm(globalSimpleMacrosNDB.global.macros, macrosPreparado.global);"
+        },
+        {
+          "line": 75,
+          "text": "\t\t\t\tmacrosPreparado.mesas[NDB.getNodeName(nodoDaMesa)] = macrosPreparadosDeUmaMesa;"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-003",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Lookup priority: user room, user global, shared room",
+      "startLine": 142,
+      "endLine": 187,
+      "byteStart": 3605,
+      "byteEndExclusive": 4630,
+      "spanSha256": "78c7da8448586ade6ec20d6b39915d0895890df295ebe4e9a81f3636f53f4afe",
+      "samples": [
+        {
+          "line": 155,
+          "text": "\t\t\tlocal macrosDaMesa = macrosPreparado.mesas[codigoAsStr];"
+        },
+        {
+          "line": 158,
+          "text": "\t\t\t\tmacroAchado = macrosDaMesa[comando];"
+        },
+        {
+          "line": 167,
+          "text": "\tmacroAchado = macrosPreparado.global[comando];"
+        },
+        {
+          "line": 179,
+          "text": "\t\t\tmacroAchado = oM:acharMacro(comando);"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-004",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Simple line dispatch and Lua branch; execution guard",
+      "startLine": 192,
+      "endLine": 242,
+      "byteStart": 4669,
+      "byteEndExclusive": 6034,
+      "spanSha256": "e43728491dded6df3257b74aa80f5249bb7b0fff45fe4f31f2901c5138b28a9d",
+      "samples": [
+        {
+          "line": 194,
+          "text": "\tif macro.tipoMacro == \"L\" then"
+        },
+        {
+          "line": 197,
+          "text": "\t\tmacroBootstrap({parametro=message.parameter or message.parametro});\t\t"
+        },
+        {
+          "line": 199,
+          "text": "\t\tfor linha in string.gmatch(macro.acoes, \"[^\\n\\r]+\") do"
+        },
+        {
+          "line": 203,
+          "text": "\t\t\t\tmessage.chat:enviarMensagem(linha);"
+        },
+        {
+          "line": 220,
+          "text": "\tif executingMacros[macroIdentifier] ~= nil then"
+        },
+        {
+          "line": 237,
+          "text": "\texecutingMacros[macroIdentifier] = nil;\t"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-005",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Local XML migration, backup and memory fallback",
+      "startLine": 248,
+      "endLine": 298,
+      "byteStart": 6168,
+      "byteEndExclusive": 7773,
+      "spanSha256": "c7e3822fe75070d26aa6439ea35b844071babc00e18a52d26490113fe86a46a5",
+      "samples": [
+        {
+          "line": 254,
+          "text": "\t\tlocal bkpFileName = localFileName .. \".bkp\";"
+        },
+        {
+          "line": 258,
+          "text": "\t\t\tVHD.copyFile(localFileName, bkpFileName);"
+        },
+        {
+          "line": 263,
+          "text": "\t\tif not remoteNDB.__migratedFromLocal then"
+        },
+        {
+          "line": 271,
+          "text": "\t\t\t\t\tlocal savedXML = NDB.exportXML(localNDB);"
+        },
+        {
+          "line": 272,
+          "text": "\t\t\t\t\tNDB.importXML(remoteNDB, savedXML);"
+        },
+        {
+          "line": 275,
+          "text": "\t\t\tremoteNDB.__migratedFromLocal = true;"
+        },
+        {
+          "line": 296,
+          "text": "\t\treturn NDB.newMemNodeDatabase();"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-006",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Command listener and advertised /macros command",
+      "startLine": 324,
+      "endLine": 361,
+      "byteStart": 8471,
+      "byteEndExclusive": 9630,
+      "spanSha256": "76ea8cc33f32aca5f2cb9c372b099f06712fe4e45eb6f3a2e40fed4693e5de68",
+      "samples": [
+        {
+          "line": 324,
+          "text": "Firecast.Messaging.listen(\"HandleChatCommand\","
+        },
+        {
+          "line": 329,
+          "text": "\t\tif comando == \"MACROS\" then"
+        },
+        {
+          "line": 332,
+          "text": "\t\telseif comando == \"RESETMIGRATION\" then"
+        },
+        {
+          "line": 349,
+          "text": "\t\t\tlocal macro = globalFindMacro(comando, message.room);"
+        },
+        {
+          "line": 353,
+          "text": "\t\t\t\tmessage.response = {handled = true};"
+        },
+        {
+          "line": 360,
+          "text": "\t\tmessage.response = {{command=\"/macros\", description=\"@@macros.command.description\"}};"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-007",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "User NDB loading, invalidation and lifecycle",
+      "startLine": 379,
+      "endLine": 475,
+      "byteStart": 9919,
+      "byteEndExclusive": 12402,
+      "spanSha256": "5b03525a29bf39326fa04b9fb63605e0127408ecc210473831e6d2414f642755",
+      "samples": [
+        {
+          "line": 386,
+          "text": "\t__remoteSimpleMacrosNDBObserver.onDeepChildAdded = function(x)"
+        },
+        {
+          "line": 390,
+          "text": "\t__remoteSimpleMacrosNDBObserver.onDeepChildRemoved = function(x)"
+        },
+        {
+          "line": 394,
+          "text": "\t__remoteSimpleMacrosNDBObserver.onDeepChanged = function(node, attr, oldV)\t\t\t\t\t\t\t\t\t"
+        },
+        {
+          "line": 415,
+          "text": "\tFirecast.asyncOpenUserNDB(\"macros\", {create=true}):thenDo("
+        },
+        {
+          "line": 453,
+          "text": "Firecast.Messaging.listen(\"SessionLogin\","
+        },
+        {
+          "line": 458,
+          "text": "Firecast.Messaging.listen(\"SessionLost\","
+        },
+        {
+          "line": 463,
+          "text": "\tFirecast.Messaging.listen(\"MesaJoined\","
+        },
+        {
+          "line": 472,
+          "text": "Firecast.Messaging.listen(\"MesaParted\","
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-008",
+      "member": "macros/RRPGSimpleMacrosGerenciar.lfm",
+      "memberSha256": "90b8ec58825d37b2a464f63846e1ab270ad30f6ad422ccaac3663cc1564a07d3",
+      "description": "Management scopes and visibility",
+      "startLine": 153,
+      "endLine": 207,
+      "byteStart": 6805,
+      "byteEndExclusive": 8348,
+      "spanSha256": "44973b5fc6c83411d225c7f6b360a959d126ba09e53a2a573bfe9754ca3ded2b",
+      "samples": [
+        {
+          "line": 160,
+          "text": "\t\tself:setNodeObject(globalSimpleMacrosNDB.global);"
+        },
+        {
+          "line": 169,
+          "text": "\t\t\tif globalSimpleMacrosNDB.mesas[self._mesa.codigoInterno] == nil then"
+        },
+        {
+          "line": 173,
+          "text": "\t\t\tself.dsbMacrosDaMesa.node = globalSimpleMacrosNDB.mesas[self._mesa.codigoInterno];"
+        },
+        {
+          "line": 179,
+          "text": "\t\t\topcoes.criar = true;"
+        },
+        {
+          "line": 185,
+          "text": "\t\t\tself._mesa:abrirNDBDeMesa(\"RRPG_Macros\", "
+        },
+        {
+          "line": 192,
+          "text": "\t\t\t\t\t\tself.dsbMacrosMesaGlobal.node = nG;"
+        },
+        {
+          "line": 194,
+          "text": "\t\t\t\t\t\tself.tabMacroMesa.visible = false;"
+        },
+        {
+          "line": 199,
+          "text": "\t\t\tself.tabMacrosDaMesa.visible = false;"
+        },
+        {
+          "line": 201,
+          "text": "\t\t\tself.tabMacroMesa.visible = false;"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-009",
+      "member": "macros/RRPGSimpleMacrosGerenciar.lfm",
+      "memberSha256": "90b8ec58825d37b2a464f63846e1ab270ad30f6ad422ccaac3663cc1564a07d3",
+      "description": "Editor fields and normalization binding",
+      "startLine": 28,
+      "endLine": 77,
+      "byteStart": 1102,
+      "byteEndExclusive": 3664,
+      "spanSha256": "230ff381a828d7b9636847a929a69d9a745c2089f2565fea228e4f4a52b0ffd8",
+      "samples": [
+        {
+          "line": 32,
+          "text": "\t\t\t\t<edit g=\"col\" name=\"edtNomeDaMacro\" field=\"macro\" textPrompt=\"@@macros.ui.macroName.example\" g-margin-top=\"6\""
+        },
+        {
+          "line": 37,
+          "text": "\t\t\t\t<radioButton g=\"block\" class=\"dynSize\" groupName=\"tipoMacro\" field=\"tipoMacro\" fieldValue=\"S\" text=\"@@macros.ui.macroType.simple\"/>"
+        },
+        {
+          "line": 38,
+          "text": "\t\t\t\t<radioButton g=\"block\" class=\"dynSize\" groupName=\"tipoMacro\" field=\"tipoMacro\" fieldValue=\"L\" text=\"@@macros.ui.macroType.lua\" margins=\"{right=8}\"/>"
+        },
+        {
+          "line": 69,
+          "text": "\t\t<dataLink fields=\"{'macro', 'acoes'}\" onChange=\"globalMacrosInvalido = true;\"/>\t\t"
+        },
+        {
+          "line": 71,
+          "text": "\t\t<dataLink field=\"tipoMacro\" defaultValue=\"S\">"
+        },
+        {
+          "line": 77,
+          "text": "\t\t<dataLink field=\"macro\" onChange=\"self.popEditMacro:getNodeObject().macro = globalPrepareMacroName(self.popEditMacro:getNodeObject().macro);\"/>"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-010",
+      "member": "macros/TablesDockMacros.lfm",
+      "memberSha256": "555ef1dc3c37b1dcdf5d938757f8c09749d66fe87545e6300f3d26dab68f9d80",
+      "description": "Dock enumeration includes all scopes",
+      "startLine": 19,
+      "endLine": 57,
+      "byteStart": 553,
+      "byteEndExclusive": 1732,
+      "spanSha256": "741d6bca7bf5ad205dbd979a84c93196dcd7cc2970e96f4a76447f8d3fdf7d3b",
+      "samples": [
+        {
+          "line": 26,
+          "text": "\t\t\t\t\tlocal nome = globalPrepareMacroNameForFind(globalPrepareMacroName(c.macro));"
+        },
+        {
+          "line": 28,
+          "text": "\t\t\t\t\tif type(nome) == \"string\" and nome ~= \"\" and c.acoes ~= \"\" then"
+        },
+        {
+          "line": 30,
+          "text": "\t\t\t\t\t\to.macro = \"/\" .. c.macro;"
+        },
+        {
+          "line": 31,
+          "text": "\t\t\t\t\t\to.acoes = c.acoes or \"\";"
+        },
+        {
+          "line": 32,
+          "text": "\t\t\t\t\t\to.tipoMacro = c.tipoMacro or \"S\";"
+        },
+        {
+          "line": 46,
+          "text": "\t\t\t\tdoEnumMIn(remoteNDB.macros, m);\t\t\t"
+        },
+        {
+          "line": 50,
+          "text": "\t\t\t\tdoEnumMIn(minhasMacrosGlobaisNDB.macros, m);\t\t"
+        },
+        {
+          "line": 54,
+          "text": "\t\t\t\tdoEnumMIn(minhasMacrosDaMesaNDB.macros, m);\t\t"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-011",
+      "member": "macros/TablesDockMacrosItem.lfm",
+      "memberSha256": "7761d2de048a198a500d140ac8e3909709bbbad5f9eac29050fa3e335d8e5ffd",
+      "description": "Dock click invokes copied node directly",
+      "startLine": 5,
+      "endLine": 21,
+      "byteStart": 169,
+      "byteEndExclusive": 816,
+      "spanSha256": "7ae90cc1e58ea969f6b75f3676c6ec36d3a3b309384b536cc5286882ac2e8939",
+      "samples": [
+        {
+          "line": 8,
+          "text": "\t\t\tmsg.parametro = \"\";"
+        },
+        {
+          "line": 9,
+          "text": "\t\t\tmsg.chat = self.mesa.activeChat;"
+        },
+        {
+          "line": 10,
+          "text": "\t\t\tglobalExecutarMacro(sheet, msg);"
+        },
+        {
+          "line": 21,
+          "text": "\t\t   onMouseLeave=\"self.labMacro.fontStyle = '';\" onClick=\"executarMacro()\" fontSize=\"13\"/>"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-012",
+      "member": "macros/rrpgMacros.dlua",
+      "memberSha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "description": "Parameter alias and whitespace-only argument splitting",
+      "startLine": 438,
+      "endLine": 453,
+      "byteStart": 10215,
+      "byteEndExclusive": 10502,
+      "spanSha256": "55e32c9c8f7d2e1bf9884dccb10bd67068f08ba9ff48b38e1e22ebaaff694c7d",
+      "samples": [
+        {
+          "line": 439,
+          "text": "\t\tlocal str = env.parametro or \"\";"
+        },
+        {
+          "line": 442,
+          "text": "\t\tfor w in string.gmatch(str, \"[^%s]+\") do"
+        },
+        {
+          "line": 452,
+          "text": "\t\treturn env.parametro;"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-013",
+      "member": "macros/rrpgMacros.dlua",
+      "memberSha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "description": "Lua text compilation and coroutine bootstrap",
+      "startLine": 1102,
+      "endLine": 1142,
+      "byteStart": 27832,
+      "byteEndExclusive": 28978,
+      "spanSha256": "377630d2637d0910b4a86dd9765ed83e93ff0931c62b99b954abcecbc10c06fc",
+      "samples": [
+        {
+          "line": 1104,
+          "text": "\t\tlocal ambiente = createMacroEnvTable(chat);"
+        },
+        {
+          "line": 1114,
+          "text": "\t\tlocal f, errorMsg = load(body, \"/\" .. string.lower(macroName), \"t\", ambiente);"
+        },
+        {
+          "line": 1117,
+          "text": "\t\t\terror(lang(\"macros.error.compilingError\") .. \":\\n\\n\" .. errorMsg);"
+        },
+        {
+          "line": 1134,
+          "text": "\t\tlocal co = coroutine.create(macroLauncher);\t\t"
+        },
+        {
+          "line": 1139,
+          "text": "\t\thandleCoResume(co);"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-014",
+      "member": "macros/rrpgMacros.dlua",
+      "memberSha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "description": "Chat and dice wrappers delegate core behavior",
+      "startLine": 507,
+      "endLine": 561,
+      "byteStart": 11791,
+      "byteEndExclusive": 13244,
+      "spanSha256": "9903ddea1f0592208184007ba732306f645c6ab9b75f36bd43fc293f19836c4f",
+      "samples": [
+        {
+          "line": 508,
+          "text": "\t\tchat:escrever(texto, quebrarLinha, permitirSmileys);"
+        },
+        {
+          "line": 514,
+          "text": "\t\treturn env.await(chat:asyncSendStd(text, params));\t\t"
+        },
+        {
+          "line": 520,
+          "text": "\t\treturn env.await(chat:asyncRoll(rolagem, msgAdicional, params));\t\t"
+        },
+        {
+          "line": 526,
+          "text": "\t\tlocal rolagemObj = rrpg.interpretarRolagem(rolagem);"
+        },
+        {
+          "line": 527,
+          "text": "\t\trolagemObj:rolarLocalmente();"
+        },
+        {
+          "line": 546,
+          "text": "\t\treturn env.await(chat:asyncSendAction(acao, params));\t\t"
+        },
+        {
+          "line": 552,
+          "text": "\t\treturn coroutine.yield(_MACRO_CALL_CO_FUNCTION_RET, 'yChatSendMessageAndWait', chat, 'enviarNarracao', narracao);\t"
+        },
+        {
+          "line": 558,
+          "text": "\t\treturn coroutine.yield(_MACRO_CALL_CO_FUNCTION_RET, 'yChatSendMessageAndWait', chat, 'enviarMensagemNPC', npc, msg);\t\t\t"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-015",
+      "member": "macros/rrpgMacros.dlua",
+      "memberSha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "description": "Environment construction; sandbox guarantees unknown",
+      "startLine": 1037,
+      "endLine": 1099,
+      "byteStart": 26117,
+      "byteEndExclusive": 27824,
+      "spanSha256": "2726d31f7570e4cdd1c9a2817b380878a1862930293dd3107150b224aa17a3e1",
+      "samples": [
+        {
+          "line": 1048,
+          "text": "\tenv.table = cloneTable(table);"
+        },
+        {
+          "line": 1053,
+          "text": "\tenv.ndb = cloneTable(NDB);"
+        },
+        {
+          "line": 1057,
+          "text": "\tif type(_obj_getSystemGlobalSymbols) == 'function' then"
+        },
+        {
+          "line": 1061,
+          "text": "\t\t\tenv[k] = v;"
+        },
+        {
+          "line": 1077,
+          "text": "\t\t\t      return originalLoad(chunk, chunkname, mode, env);"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-016",
+      "member": "macros/RRPGSimpleMacros.lua",
+      "memberSha256": "78399488b494de2a605fdfafdbd27f53468facefa93edf03faa55694fd001bed",
+      "description": "Shared room NDB and observer invalidation",
+      "startLine": 83,
+      "endLine": 138,
+      "byteStart": 2356,
+      "byteEndExclusive": 3569,
+      "spanSha256": "04083b2052f8acd90774dd7b6f28d1d3f652396d8f8b30099b75adb373eabe4e",
+      "samples": [
+        {
+          "line": 88,
+          "text": "\tmesa:abrirNDBDeMesa(\"RRPG_Macros\","
+        },
+        {
+          "line": 100,
+          "text": "\t\t\t\tobs.onDeepChildAdded = function(x)"
+        },
+        {
+          "line": 104,
+          "text": "\t\t\t\tobs.onDeepChildRemoved = function(x)"
+        },
+        {
+          "line": 108,
+          "text": "\t\t\t\tobs.onDeepChanged = function(node, attr, oldV)\t\t\t\t\t\t\t\t\t"
+        },
+        {
+          "line": 112,
+          "text": "\t\t\t\tobs.onStateChanged = function ()"
+        },
+        {
+          "line": 116,
+          "text": "\t\tend, {criar=true});"
+        }
+      ]
+    },
+    {
+      "evidenceId": "MAC-017",
+      "member": "macros/rrpgMacros.dlua",
+      "memberSha256": "eee6b0c2d46c2b5ca219103ce55c0effe94f9ce057aed261a01e97a102c09911",
+      "description": "Nested macro lookup and missing macro error",
+      "startLine": 227,
+      "endLine": 247,
+      "byteStart": 5241,
+      "byteEndExclusive": 5893,
+      "spanSha256": "578e5e7e8d0d0debe7d45c4266faa10952d6e38192f005a3580207c803cb4b99",
+      "samples": [
+        {
+          "line": 231,
+          "text": "\t\tfoundMacro = globalFindMacro(macroName, rrpg.getMesaDe(chat));"
+        },
+        {
+          "line": 238,
+          "text": "\t\t\tglobalExecutarMacro(foundMacro, {chat=chat, "
+        },
+        {
+          "line": 245,
+          "text": "\t\thandleCoResume(co, false, \"Macro not found: \" .. (tostring(macroName) or \"\"));"
+        }
+      ]
+    }
+  ],
+  "boundedSearch": {
+    "pattern": "permission|isMestre|souMestre|export|importXML|maxLength|readOnly",
+    "scope": "all 12 members under macros/ only",
+    "hits": [
+      {
+        "member": "macros/rrpgMacros.dlua",
+        "line": 638,
+        "text": "\t\t\t\tif left.isMestre and not right.isMestre then"
+      },
+      {
+        "member": "macros/rrpgMacros.dlua",
+        "line": 640,
+        "text": "\t\t\t\telseif not left.isMestre and right.isMestre then"
+      },
+      {
+        "member": "macros/RRPGSimpleMacros.lua",
+        "line": 271,
+        "text": "\t\t\t\t\tlocal savedXML = NDB.exportXML(localNDB);"
+      },
+      {
+        "member": "macros/RRPGSimpleMacros.lua",
+        "line": 272,
+        "text": "\t\t\t\t\tNDB.importXML(remoteNDB, savedXML);"
+      }
+    ]
+  },
+  "limitations": [
+    "Static packaged logic does not establish runtime use or server enforcement",
+    "NDB native implementation, actual persisted XML, network and runtime not observed",
+    "Generated .lfm.lua members inventoried; findings use readable .lfm and non-generated Lua",
+    "No target code or assets exported; only minimal selected evidence snippets"
+  ]
+}

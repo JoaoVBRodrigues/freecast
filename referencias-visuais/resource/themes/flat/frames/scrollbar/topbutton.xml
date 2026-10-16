@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="221" height="100" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	
+	<draw>
+		<rectangle left="0" top="0" right="221" bottom="100" xradius="5" yradius="5">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(dominant_color_gradient)" color2="$(dominant_color)" kind="gradient"/>
+		</rectangle>	
+	</draw>
+</frame>

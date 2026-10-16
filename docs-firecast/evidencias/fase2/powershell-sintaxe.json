@@ -1,0 +1,30 @@
+﻿[
+    {
+        "File":  "fase2-acao-janela.ps1",
+        "Valid":  true,
+        "Errors":  [
+
+                   ]
+    },
+    {
+        "File":  "fase2-captura-janela.ps1",
+        "Valid":  true,
+        "Errors":  [
+
+                   ]
+    },
+    {
+        "File":  "fase2-janela.ps1",
+        "Valid":  true,
+        "Errors":  [
+
+                   ]
+    },
+    {
+        "File":  "versoes.ps1",
+        "Valid":  true,
+        "Errors":  [
+
+                   ]
+    }
+]

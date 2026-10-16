@@ -1,0 +1,1580 @@
+﻿[en-us]
+countryName=United States
+
+[en]
+languageName=English
+
+sentence.andJunction=and
+sentence.fromRangeJunction=From
+sentence.toRangeJunction=To
+sentence.loading=Loading
+sentence.back=Back
+sentence.secondsCount.int.shortFmt=%d s
+sentence.dateTime.untilFmt=Until %s
+sentence.rpg.juggernaut.presentContinuous=Juggernaut
+sentence.rpg.juggernaut.adjective/singular=Juggernaut
+sentence.rpg.juggernaut.adjective/plural=Juggernauts
+sentence.rpg.GM.adjective/singular=GM
+sentence.rpg.GM.adjective/plural=GMs
+sentence.rpg.GM.presentContinuous=GM-ing
+sentence.rpg.player.adjective/singular=Player
+sentence.rpg.player.adjective/plural=Players
+sentence.rpg.player.presentContinuous=Playing
+sentence.rpg.spectator.adjective/singular=Spectator
+sentence.rpg.spectator.adjective/plural=Spectators
+sentence.rpg.spectator.presentContinuous=Watching
+sentence.rpg.npc.adjective/singular=NPC
+sentence.rpg.npc.adjective/plural=NPCs
+sentence.rpg.unknown.adjective=Unknown
+sentence.rpg.adjectiveOrPresentContinuousAtRoom=in the room
+sentence.presence.mode.gm=GM
+sentence.presence.mode.mute=Mute
+sentence.presence.mode.blind=Blind
+sentence.presence.mode.voice=Voice
+sentence.presence.mode.juggernaut=Juggernaut
+sentence.presence.mode.player=Player
+sentence.noName=No name
+sentence.openArtifactVerb=Open
+sentence.remove.verb=Remove
+sentence.unban.verb=Unban
+sentence.export.verb=Export
+sentence.chatLog=Log
+sentence.copyLinkAddress=Copy link address
+sentence.selectAll=Select all
+sentence.selectAllPeople=Select all
+
+abbreviation.noCharacter=N/C
+
+word.line=Line
+word.programming_function=Function
+
+symbol.back=◀
+symbol.next=▶
+
+genericErrors.requiredField=This field is required.
+genericErrors.imageLoadError=Error loading image
+genericErrors.unknownError=An unknown error has occurred
+genericErrors.sessionReset=The user session was reset
+genericErrors.neededReferenceLost=The reference to an object has been lost
+genericErrors.room.notFoundByIDFmt=Firecast Bug - Unknown Room Id: %d
+genericErrors.room.notFoundByPresenceIDFmt=Firecast Bug - Unknown Room Presence: %s
+genericErrors.room.notFoundByMediumFmt=Firecast Bug - Unknown Room Medium: %s
+genericErrors.room.userPresence.notFound=Could not find player
+genericErrors.room.userPresence.notFoundFmt=Could not find player "%s"
+genericErrors.artifact.readAttributes.failFmt=Failed to load data: %s
+genericErrors.opsErrorFmt=Oops, %s
+genericErrors.couldNotFindFmt=Could not find "%s"
+genericErros.onlyGM.operation/singular=Only the GM can perform this operation.
+genericErros.onlyGM.operation/plural=Only the GMs can perform this operation.
+generic.changesSavedSuccessfully=Changes have been saved
+generic.selectImageURL.dialogPrompt=Select image
+generic.editableImage.defaultPrompt=Click to define
+generic.emptyMenuNotShown.toastMessage=There are no accessible options for you here
+generic.gui.fileNameField.emptyStr=<< Not defined >>
+generic.gui.fileNameField.button.defaultHint=Define file
+
+internalText.userWord=User
+internalText.emailWord=Email
+internalText.emailHifenWord=E-mail
+internalText.userAccountWord=Account
+internalText.passwordWord=Password
+
+connection.error.prematureDisconnect=The connection was interrupted prematurely
+
+connection.reconciliationForm.title=The adventurer has lost the connection
+connection.reconciliationForm.withProblemState=Under their master's order, the goblins plot to retrieve the connection as fast as possible!
+connection.reconciliationForm.nextAttemptIn=The next attempt will occur in:
+connection.reconciliationForm.attemptStarted=Small goblins fight fiercely for the connection of their master...
+connection.reconciliationForm.attemptSuccess.title=The connection is recovered!
+connection.reconciliationForm.attemptSuccess.state/masculine=His stinky little goblins emerge victorious and regain the connection.
+connection.reconciliationForm.attemptSuccess.state/feminine=Her stinky little goblins emerge victorious and regain the connection.
+connection.reconciliationForm.attemptSuccess.state/neuter=Their stinky little goblins emerge victorious and regain the connection.
+connection.reconciliationForm.failure.cantRetryAnymore=Oh no =/ The goblins were decimated and the connection was lost.
+connection.reconciliationForm.tryAgainButton=Try now
+connection.reconciliationForm.cancelReconciliation=Give up
+
+loginForm.shortWelcomeMessage=The adventurer arrives
+loginForm.userAccountOrEmail=User account or e-mail address
+loginForm.passsword=Password
+loginForm.keepLoggedIn=Keep me logged in
+loginForm.login=Log in
+loginForm.forgotPasswordAction=Forgot password?
+loginForm.registerAction=Don't have an account? Sign up.
+loginForm.problem.ConnectionProblemTitle=Connection Problems
+
+registerForm.cancelAction=Already have an account? Log in.
+registerForm.shortRegisterWelcomeMessage=Create an account
+registerForm.nameFieldPrompt=Your name
+registerForm.emailAddressFieldPrompt=Your e-mail address
+registerForm.usernameFieldPrompt=Desired username
+registerForm.continueToStep2.text=Continue
+registerForm.step2.shortWelcomeMessage=Adventures in sight!
+registerForm.step2.password.prompt=Choose a password
+registerForm.step2.confirmPassword.prompt=Confirm password
+registerForm.step2.wantPromoMail.text=Receive tips and promotionals emails.
+registerForm.step2.acceptTDU.text=I agree with the terms of use.
+registerForm.step2.viewTDU.text=Terms of use
+registerForm.tduURL=http://firecast.app/tdu/en_us.pdf
+registerForm.registerFinalStepAction.text=Register
+registerForm.grammaticalGender.prompt=What pronoun do you prefer?
+registerForm.grammaticalGender.masculineOption=His adventure began (He/His)
+registerForm.grammaticalGender.feminineOption=Her adventure began (She/Her)
+registerForm.grammaticalGender.neutralOption=Their adventure began (They/Their)
+registerForm.error.grammaticalGender.fieldRequired=Please, select what pronoun do you prefer
+registerForm.error.email.fieldRequired=Please fill in a valid email address.
+registerForm.error.account.fieldRequired=Please fill in a valid username.
+registerForm.error.account.invalid.msg.title=Invalid username
+registerForm.error.account.invalid.msg.firstLineFmt="%s" is not a valid username.
+registerForm.error.password.emptyPassword=Fill in a valid password with at least 5 characters.
+registerForm.error.confirmPassword.difference=The password confirmation does not match the password.
+registerForm.error.tduMustBeAccepted.title=Terms of Use
+registerForm.error.tduMustBeAccepted.text=Sorry, but, to use Firecast, it is necessary to read and accept the terms of use of the service.
+registerForm.error.registrationFailureMessage.title=Ops!
+registerForm.error.registrationFailureMessage.unknownReason=For some unknown reason, the creation of the new user failed =/.
+
+registerForm.error.account.invalid.msg.contentFmt='''* The first character must be a letter (A-Z) or underline;
+* The following characters must be alphanumeric (A-Z or 0-9) or underlines'''
+
+emailValidation.popup.sendEmailAgain=Resend the e-mail
+emailValidation.popup.chooseAnotherEmailAddress=Change email address
+emailValidation.popup.emailWasSentAgainFmt/neuter=The adventurer will receive another activation email soon at "%s"
+emailValidation.popup.changeEmailAddressPageTitle=Change email address
+emailValidation.popup.currentEmailTitle=Current email address:
+emailValidation.popup.newEmailAddressTitle=New email address:
+emailValidation.popup.confirmNewEmailAddressTitle=Re-enter the email address, please:
+emailValidation.popup.confirmationEmailDoesNotMatch=The email confirmation does not match the email. Make sure there is no typing error =)
+emailValidation.popup.unknownReasonForChangeMailFailure=For some unknown reason, the email address change failed =/
+emailValidation.popup.emailValidated.closeButton=Proceed
+
+tduAcceptance.popup.title=Terms of Use
+tduAcceptance.popup.viewTDU=View terms of use
+tduAcceptance.popup.disconnect=Disconnect
+tduAcceptance.popup.continueButton.accept=Accept
+tduAcceptance.popup.continueButton.refuse=Refuse
+tduAcceptance.popup.acceptedToastMsg=The terms of use have been accepted!
+tduAcceptance.popup.error.informYourDecision=Please inform your decision
+tduAcceptance.popup.radio.accept=I have READ and ACCEPT the terms of use.
+tduAcceptance.popup.radio.refuse=I REFUSE the terms of use and I will immediately TERMINATE my account.
+
+tduAcceptance.popup.termsChangedInfo='''The Firecast's _terms of use_ have changed.
+You _must_ __read and accept__ the new terms to use the service.''' 
+
+messageDialog.OKButton=Ok
+messageDialog.OhNoText=Oh, no!
+messageDialog.closeHint=Close
+messageDialog.yesButton=Yes
+messageDialog.noButton=No
+messageDialog.changeButton=Change
+messageDialog.addButton=Add
+messageDialog.cancelButton=Cancel
+messageDialog.closeButton=Close
+messageDialog.allRight=All Right!
+messageDialog.cancelAlert.prompt=Do you really want to cancel?
+messageDialog.createButton=Create
+messageDialog.defineButton=Define
+messageDialog.discardChanges=Discard changes
+messageDialog.saveChanges=Save
+
+actionCancelDialog.cancel=Cancel
+
+selectLanguagePopup.title=Select a translation
+
+mainLogged.contacts.header=Friend List
+mainLogged.contacts.topMenu.start=Home
+mainLogged.contacts.topMenu.rooms=Rooms
+mainLogged.contacts.topMenu.profile=Profile
+mainLogged.contacts.topMenu.settings=Settings
+mainLogged.contacts.addContact=Add friend
+mainLogged.contacts.searchContact=Search friend
+mainLogged.contacts.haveNoContacts=You do not have any friend yet
+mainLogged.contacts.searchPromptText=Search friends...
+
+mainLogged.appNav.dashboardHint=Dashboard
+mainLogged.appNav.roomsButtonHint=RPG Rooms
+mainLogged.appNav.contactListButtonHint=Your friend list
+mainLogged.appNav.fireDriveButtonHint=FireDrive
+mainLogged.appNav.settingsButtonHint=Firecast's settings
+mainLogged.appNav.roomName.hintFmt=%s
+
+fireDrive.stateForm.title=FireDrive
+
+contacts.recentMessagesGroup.title=Recent Messages
+contacts.friendListGroup.title=Friend List
+contacts.newMessagesBalloonText=New messages
+contacts.actions.addFriend=Add a friend
+contacts.actions.viewPendingRequests=Friendship requests
+contacts.actions.acceptRequest=Accept
+contacts.actions.rejectRequest=Refuse
+contacts.actions.BlockList=Blocked Users
+contacts.actions.BlockListEmpty=No Blocked Users
+contacts.pendingRequests.noPendingRequests=No pending friend requests
+contacts.add.form.title=Add friend
+contacts.add.form.user.title=User you want to add:
+contacts.add.form.user.prompt=Account name or email address
+contacts.add.form.message.title=A message to help recognize you:
+contacts.add.error.notValidUserAccount=Please enter a valid account name or a valid email address.
+contacts.add.success.infoToastFmt="%s" has been added to your friends list.
+contacts.contextMenu.remove.hideFromContactListAction=Hide from the friends list
+contacts.contextMenu.remove.success.infoToastFmt=User "%s" has been hidden from your friends list.
+contacts.contextMenu.remove.failureFmt=Could not hide user "%s" from your friends list.
+contacts.contextMenu.block.blockUser=Block
+contacts.contextMenu.block.success.infoToastFmt=User "%s" has been blocked
+contacts.contextMenu.block.labeltitle=List of blocked users
+contacts.contextMenu.block.failureFmt=Could not block user "%s".
+contacts.contextMenu.unblock.unblockUser=Unblock
+contacts.contextMenu.unblock.success.infoToastFmt=User "%s" has been unblocked
+contacts.contextMenu.unblock.failureFmt=Unable to unblock user "%s".
+contacts.contextMenu.add.title=Add to friend list
+contacts.contextMenu.add.failureFmt=Unable to add friend "%s".
+
+chat.sendFailureReason.title=The message could not be sent
+chat.input.textPrompt=Type a message...
+chat.input.sendMessageHint=Send message
+
+chat.input.toolButton.sendFileHint=Send file
+chat.input.toolButton.colorHint=Text color
+chat.input.toolButton.boldHint=Bold
+chat.input.toolButton.italicHint=Italic
+chat.input.toolButton.underlineHint=Underline
+chat.input.toolButton.dice.d4.hint=D4 (4 sided)
+chat.input.toolButton.dice.d6.hint=D6 (6 sided)
+chat.input.toolButton.dice.d8.hint=D8 (8 sided)
+chat.input.toolButton.dice.d10.hint=D10 (10 sided)
+chat.input.toolButton.dice.d12.hint=D12 (12 sided)
+chat.input.toolButton.dice.d20.hint=D20 (20 sided)
+chat.input.toolButton.dice.d100.hint=D100 (100 sided)
+chat.input.toolButton.impersonation.noOne.hint=Impersonating no one...
+chat.input.toolButton.impersonation.narrator.hint=Impersonating the narrator...
+chat.input.toolButton.impersonation.npc.hint=Impersonating an NPC...
+
+chat.command.help.avaliableCommands=Available commands:
+chat.command.help.trigger=help
+chat.command.help.desc=Show this text
+
+chat.command.rir.trigger=lol
+chat.command.rir.desc=Send a chuckle
+
+chat.command.me.trigger=me
+chat.command.me.desc=Describes an action
+chat.command.me.title=/me <ACTION>
+
+chat.command.rolar.trigger=roll
+chat.command.rolar.desc.0=Perform the desired roll. Samples:
+chat.command.rolar.desc.1= /r 2d6+5
+chat.command.rolar.desc.2= /r 4d10 > 7 (Storyteller roll com dififculty 7)
+chat.command.rolar.desc.3= /r ord 4d6 (Sorted roll)
+chat.command.rolar.desc.4= /r 4dF (Fudge/Fate roll)
+chat.command.rolar.desc.5= /r 1d20 + 5: Longsword attack     (Roll with descriptive text)
+
+chat.command.smileys.desc=Displays the list of smileys that Firecast supports
+chat.command.smileys.avaliableSmileys=Avaliable smileys
+chat.command.memes.desc=Displays the list of memes that Firecast supports
+chat.command.memes.avaliableMemes=Avaliable memes
+chat.command.console.desc=Show the Firecast debug console
+
+chat.command.extended.plugins=plugins
+chat.command.extended.plugins.desc=Manage the installed plugins
+chat.command.nick.desc=/nick <NEW NICK> — changes your nick on the room
+
+chat.command.clearScreen.trigger=cls
+chat.command.clearScreen.desc=\"Clear the screen\" by hiding the old log
+
+chat.command.fillScreen.trigger=fls
+chat.command.fillScreen.desc=\"Fill the screen\" displaying the old log
+
+chat.command.prink.trigger=prink
+chat.command.prink.desc=Polish the log, hiding some system messages
+
+chat.command.reload.trigger=reload
+chat.command.reload.desc=Reload the log messages, undo the /prink command to some extent
+
+chat.command.audit.trigger=audit
+chat.command.audit.desc=Enable/disable log message auditing mode (allows you to view deleted messages)
+
+chat.command.part.trigger=leave
+chat.command.part.desc=/leave <MESSAGE> — Leaves the room with a goodbye message
+
+chat.command.statusBar.manualFmt.line0=/%s <EMPTY, LOGIN or NICK> <+VALUE, -VALUE, VALUE or =VALUE>. Change the status bar "%s" to the specified value
+chat.command.statusBar.error.invalidCommandFmt=The command must be in the format /%s <EMPTY, LOGIN or NICK> <+VALUE, -VALUE, VALUE or =VALUE>
+chat.command.statusBar.error.targetDontHaveCharacter=The user has no character
+chat.command.statusBar.error.yourSelf.targetDontHaveCharacter=You have no character
+chat.command.statusBar.error.targetDontHaveTheBar/masculine=The user does not have this status bar. He must be a room Player to have status bars!
+chat.command.statusBar.error.targetDontHaveTheBar/feminine=The user does not have this status bar. She must be a room Player to have status bars!
+chat.command.statusBar.error.targetDontHaveTheBar/neuter=The user does not have this status bar. They must be a room Player to have status bars!
+chat.command.statusBar.error.yourSelf.targetDontHaveTheBar=You don't have this status bar. You must be a room Player to have status bars!
+chat.command.statusBar.error.noChange=There was no change.
+
+chat.typingStatus.msg.andJunction=and
+chat.typingStatus.msg.endingPart.singular=is typing a message
+chat.typingStatus.msg.endingPart.plural=are typing a message
+
+chat.seenStatus.seenLabel=Seen
+chat.seenStatus.seenByLabel=Seen by
+
+chat.log.blocked= Blocked user message 🔏
+chat.log.expression.rolou=rolled
+chat.log.expression.highlightedText=highlighted the excerpt
+chat.log.presenceMode.change.singular=%s (%s) set the mode %s on %s (%s)
+chat.log.presenceMode.change.plural=%s (%s) set the modes %s on %s (%s)
+chat.log.presenceNick.changeFmt/masculine=%s (%s) changed his nick to %s
+chat.log.presenceNick.changeFmt/feminine=%s (%s) changed her nick to %s
+chat.log.presenceNick.changeFmt/neuter=%s (%s) changed their nick to %s
+chat.log.moderatedMedium.activatedByFmt=%s (%s)%s has enabled chat _moderation_
+chat.log.moderatedMedium.deactivatedByFmt=%s (%s)%s has disabled chat _moderation_
+chat.log.moderatedMedium.isActive=Chat _moderation_ is on
+chat.log.mediumPassword.activatedByFmt=%s (%s)%s changed the room _password_
+chat.log.mediumPassword.deactivatedByFmt=%s (%s)%s removed the room _password_
+chat.log.welcomeMsg.changedByFmt=%s (%s)%s changed the _welcome message_:
+chat.log.mediumName.changedByFmt=%s (%s)%s changed the room _name_ to %s
+chat.log.mediumStatusMessage.changedByFmt=%s (%s)%s changed the room _status message_ to %s
+chat.log.mediumStatusMessage.removedByFmt=%s (%s)%s removed the room _status message_
+chat.log.tags.changedByFmt=%s (%s)%s changed the room _tags_ to
+chat.log.tags.removedByFmt=%s (%s)%s removed all room _tags_
+chat.log.unhandledMessage.informative=Message that your version of Firecast is unable to display. Is there an update to be done?
+chat.log.impersonation.narratorNick=Narrator
+chat.log.impersonation.impersonatedByFmt=impersonated by %s
+chat.log.impersonation.narratedByByFmt=narrated by %s
+chat.log.presenceStatusBar.barName.noName=Bar without name
+chat.log.presenceStatusBar.barName.fromIndexFmt=%s bar
+chat.log.presenceStatusBar.currentValue.changeFmt=%1:s's %:0s: %2:s
+chat.log.presenceStatusBar.currentValue.ineffablePercentageIncrease=Ineffable increase
+chat.log.presenceStatusBar.currentValue.ineffablePercentageDecrease=Ineffable decrease
+chat.log.presenceStatusBar.maxValue.changeFmt=%1:s's max %:0s: %2:s
+chat.log.menu.deleteLogRec=Delete message
+chat.log.menu.editLogRec=Edit message
+chat.log.menu.inspectUpdates=Show message edits
+chat.log.menu.exportLog=Export Log
+chat.log.export.popup.input.title=Source:
+chat.log.export.popup.input.loaded=Log that is loaded on the screen
+chat.log.export.popup.input.date=Log that is in a date range
+chat.log.export.popup.input.all=All the stored log
+chat.log.export.popup.dateRange.title=Date Range
+chat.log.export.popup.dateRange.invalidDateRangeError=Choose a valid date range
+chat.log.export.popup.options.title=Options
+chat.log.export.popup.options.sysMsgs=Include system messages
+chat.log.export.popup.format.title=Output file format
+chat.log.export.popup.format.bson=BSON (Expert)
+chat.log.export.popup.format.json=JSON (Expert)
+chat.log.export.popup.format.html=HTML (Web page)
+chat.log.export.popup.format.text=TXT (Plain text)
+chat.log.export.popup.format.emptyError=Define the file format
+chat.log.export.success=Log exported successfully!
+chat.log.export.fileSave.prompt=Save exported log
+chat.log.export.errorFmt=Unable to export: %s
+chat.log.export.loaded.chatNotFound=Chat not found
+chat.log.export.progress.downloadingLog=Downloading Log
+chat.log.export.progress.downloadingLog.qtyFmt=Downloading Log (%s - %d msgs)
+chat.log.export.progress.filtering=Filtering Log
+chat.log.export.progress.formatting=Formatting Log
+chat.log.export.progress.formatting.json=Formatting Log (JSON)
+chat.log.export.progress.formatting.bson.qtFmt=Formatting Log (BSON %d / %d)
+chat.log.export.progress.formatting.bson.savingToBytes=Saving BSON
+chat.log.export.progress.formatting.html.preparing=Preparing to format HTML
+chat.log.export.progress.formatting.html.qtFmt=Formatting Log (HTML %d / %d)
+chat.log.export.progress.formatting.html.grouppingFmt=Grouping messages (%d / %d)
+chat.log.deleteLogRec.confirmDialog.title=Delete message
+chat.log.deleteLogRec.confirmDialog.prompt=Do you really want to delete the message?
+chat.log.deleteLogRec.successMessage=Message deleted successfully
+chat.log.deleteLogRec.failedFmt=Could not delete message: %s
+chat.log.deleteLogRec.deletedTextStamp.text=(deleted)
+chat.log.deleteLogRec.deletedTextStamp.hintFmt=Deleted by "%s" on "%s"
+chat.log.auditMode.enteredAuditMode=Audit Mode ENABLED
+chat.log.auditMode.leftAuditMode=Audit Mode DISABLED
+chat.log.editLogRec.failedFmt=Could not edit message: %s
+chat.log.editLogRec.popup.title=Edit message
+chat.log.editLogRec.editingInfo.general=Editing message
+chat.log.editLogRec.editingInfo.diceDesc=Editing dice roll description
+chat.log.editLogRec.editingInfo.cancelHint=Cancel edit
+chat.log.editLogRec.updatedTextStamp.text=(edited)
+chat.log.editLogRec.updatedTextStamp.hintFmt=Edited by "%s" on "%s"
+chat.log.logRecUpdates.inspect.title=Message edits
+
+chat.join.system.userJoinedFmt=%s (%s) just joined
+chat.join.system.userJoinedAddedByFmt=%s (%s) just joined (invited by %s)
+chat.join.system.userPartedFmt=%s (%s) just parted
+chat.join.system.userPartedWithMsgFmt=%s (%s) just parted (%s)
+chat.join.system.userKickedFmt=%s (%s) was kicked by %s (%s)
+chat.join.system.userCreatedMedium.roomFmt=%s (%s) created the room
+chat.join.system.userCreatedMedium.groupPvtFmt=%s (%s) created the group chat
+chat.join.system.userCreatedMedium.genericFmt=%s (%s) created the chat
+chat.state.logBOF=This is the beginning of the conversation history.
+chat.state.logBOF.withErrorFmt=Error loading conversation history: %s
+chat.state.logBOF.rangeStart=The previous conversation history is hidden.
+chat.state.loadingLogs=Loading...
+chat.state.loadingMoreLogs=Loading more...
+chat.state.newMessagesSeparationTitle=NEW MESSAGES
+
+chat.impersonation.toolbar.title=Impersonate:
+chat.impersonation.toolbar.menu.noOne=No one (F5)
+chat.impersonation.toolbar.menu.narrator=Narrator (F6)
+chat.impersonation.toolbar.menu.npc=NPC (F7)
+chat.impersonation.toolbar.menu.npc.textPrompt=NPC name
+chat.impersonation.toolbar.menu.npc.default.noNameNPC=Someone
+
+chat.fileBox.downloadHint=Download file
+
+chat.error.impersonification.emptyCharNick=The name is required to impersonate a character
+chat.error.impersonification.gmOnly=Only GMs can impersonate messages
+chat.error.impersonification.notPossible=It is not possible to use impersonations in this chat
+chat.error.emptyMessage=Message cannot be empty
+chat.error.roll.emptyExpression=Dice roll expression cannot be empty
+
+dice.storyteller.oneSuccess=1 Success
+dice.storyteller.NSuccesses=%d Successes
+dice.storyteller.failure=Failure
+dice.storyteller.criticalFailure=Critical Failure
+dice.error.parser.maxOneComparator=There can only be 1 comparator in the dice roll.
+dice.error.parser.missingDieFace=The face of the die was not informed (d20, d8, d6, etc.)
+dice.error.parser.unknownOperatorFmt=Unknown operator for dice rolling: "%s"
+dice.error.parser.unknownComparatorFmt=Unknown comparator for dice roll: "%s"
+dice.error.parser.unknownComparator=Unknown comparator for dice roll.
+dice.error.parser.unknownCharacterFmt=Unknown character for dice roll: "%s"
+dice.error.parser.unknownRoll=Unknown dice roll
+dice.error.parser.unexpectedEnd=Unexpected end of dice roll expression
+dice.error.parser.minOneDie=There must be at least 1 die in the dice roll expression
+dice.error.parser.encapsulatedErrorFmt=Failed to interpret expression "%s" ‐ %s
+
+dateTime.todayAndTimeFormat="Today," h:nn AMPM
+dateTime.yesterdayAndTimeFormat="Yesterday," h:nn AMPM
+dateTime.tomorrowAndTimeFormat="Tomorrow," hh:nn
+dateTime.weekDayAndTimeFormat=ddd h:nn AMPM
+dateTime.longWeekDayAndTimeFormat=dddd h:nn AMPM
+dateTime.monthAndDayFormat=mmmm d
+dateTime.monthDayAndYearFormat=mmmm d, yyyy
+dateTime.minutesAgo.pluralFmt=%d minutes ago
+dateTime.minutesAgo.singularFmt=%d min ago
+dateTime.hoursAgo.pluralFmt=%dhrs ago
+dateTime.hoursAgo.singularFmt=%dhr ago
+dateTime.hoursAndMinutesAgo.plural.plural.Fmt=%dhrs and %d minutes ago
+dateTime.hoursAndMinutesAgo.plural.singular.Fmt=%dhrs and %d min ago
+dateTime.hoursAndMinutesAgo.singular.plural.Fmt=%dhr and %d minutes ago
+dateTime.hoursAndMinutesAgo.singular.singular.Fmt=%dhr and %d min ago
+dateTime.aFewMinutesAgoForm=a few minutes ago
+
+imageInspector.showOnBrowser=Show on browser
+imageInspector.copyLink=Copy link
+imageInspector.copyLink.success=The link was copied to clipboard
+imageInspector.copyLink.fail=I was not possible to copy the link
+
+
+plugins.fail.accessDenied.readOnly=Cannot open the file "%s" for write
+
+sdk3.persist.needNewVersion=The plug-in could not be installed because a newer version of Firecast is required. Update your program!
+sdk3.load.needNewerVersionToRun=The module "%s" requires a newer SDK 3 version (%s). Please update your Firecast
+sdk3.load.mismatchModuleIdFileName=The installed module file "%s" has a name inconsistent with its ModuleID "%s"
+sdk3.toast.installedFromRDK=The plugin "%s" was installed.
+sdk3.basicLuaModule.notLoaded=The basic Firecast plugin was not loaded successfully. Reinstall the application, please.
+sdk3.rpk.install.prompt.pluginNameFmt=Plugin name: %s
+sdk3.rpk.install.prompt.authorFmt=Author: %s
+sdk3.rpk.install.prompt.descriptionFmt=%s
+sdk3.rpk.install.prompt.confirmRPKInstallHeader=Do you want to install this plugin in the Firecast?
+sdk3.rpk.install.prompt.title=Install plugin
+
+connection.computerInfo.timeout=Details of your computer could not be obtained to connect to the Firecast server.
+
+mimeType.genericImageMime.description=Image
+mimeType.genericVideoMime.description=Video
+mimeType.genericAudioMime.description=Audio
+mimeType.genericTextMime.description=Text
+mimeType.genericMime.description=File
+mimeType.desc.application.x-rrpg-bib-save=Firecast Library Archive
+mimeType.desc.application.x-rrpg-plugin-package=Firecast SDK3 Plugin
+
+quickUpload.cancelConfirmation.title=Cancel Upload
+quickUpload.cancelConfirmation.question=Do you really want to cancel the upload?
+quickUpload.processingState=Processing...
+quickUpload.failureMessagePrefix=Upload failure
+quickUpload.retryUpload.hint=Retry upload
+quickUpload.dropLimitCountReached=Only %d files will be uploaded
+quickUpload.confirmDialog.title=Confirm upload
+quickUpload.confirmDialog.sendButton=Upload
+quickUpload.confirmDialog.addFile=Add file
+quickUpload.confirmDialog.singleFileInterface.addFile=Add more files
+quickUpload.confirmDialog.selFileDialog.title=Select files for upload
+quickUpload.popup.item.removeItemButton=Remove
+quickUpload.popup.singleFile.title=Upload file
+quickUpload.popup.singleFile.commentaryPrompt=Add a message about the file
+quickUpload.popup.multiFile.titleFmt=Upload %d files
+quickUpload.popup.noFile.hugeTitle=Upload files
+quickUpload.popup.noFile.information=You can send all kinds of files that an adventurer needs.
+quickUpload.popup.noFile.guide=(Drag, paste or select files to upload)
+
+openFileDialog.allFiles=All files
+
+trayIcon.showApp=Show
+trayIcon.disconnect=Logout
+trayIcon.quit=Shutdown Firecast
+trayIcon.quitConfirmationMessage=Do you really want to shutdown Firecast?
+trayIcon.windows.hintAppMinimizedToTray=Hey, I'm still running. You can find me here, near the Windows clock.
+
+settings.navigation.general=General
+settings.navigation.plugins=Plugins
+settings.navigation.textPreferences=Text Preferences
+settings.navigation.conference=Conference
+settings.navigation.notifications=Notifications
+settings.navigation.locale=Language and Region
+settings.navigation.advanced=Advanced
+settings.navigation.account=Your Account
+settings.navigation.profile=Your Profile
+settings.navigation.utility=Utility
+settings.navigation.autoUpdate.install=Install Updates
+
+settings.notifications.soundNotifications.title=Sound notifications
+settings.notifications.soundNotifications.playDiceSound=Play sound of dice rolls
+settings.notifications.soundNotifications.playRirSound=Playing sounds of laughters
+settings.notifications.soundNotifications.playMentionSound=Play sound when mentioning your nick
+settings.notifications.soundNotifications.playKickSound=Play sound when someone is kicked
+settings.notifications.soundNotifications.playOpenPVTSound=Play sound when a new conversation is started
+settings.notifications.soundNotifications.playIncomingMessagesSound.title=Play sounds of new messages:
+settings.notifications.soundNotifications.playIncomingMessagesSound.never=Never
+settings.notifications.soundNotifications.playIncomingMessagesSound.withoutAttention=At unfocused chats
+settings.notifications.soundNotifications.playIncomingMessagesSound.always=Always
+settings.notifications.visualNotifications.title=Visual notifications
+settings.notifications.visualNotifications.requestUserAttentionNewMessages="Flash" when new messages arrive
+
+settings.text.myText.title=My text
+settings.text.myText.detectHorizontalLines=Parse horizontal lines
+settings.text.myText.detectSmileys=Parse smileys and memes
+settings.text.myText.detectHeadings=Parse headings
+settings.text.myText.detectInitialcaps=Parse initialcaps
+
+settings.talemark.all.textForegroundColor.title=Text color
+settings.talemark.all.textBackgroundColor.title=Background color
+settings.talemark.all.textStyle.bold=Bold
+settings.talemark.all.textStyle.underline=Underline
+settings.talemark.all.textStyle.italic=Italic
+settings.talemark.all.textStyle.strikeout=Strikeout
+settings.talemark.standard.title=Standard text
+settings.talemark.charAction.activableTitle=Parse character actions
+settings.talemark.quotedSpeech.activableTitle=Parse quotation mark speeches
+settings.talemark.emDashSpeech.activableTitle=Parse dash speeches
+settings.talemark.ooc.activableTitle=Parse out of character (OOC) text
+settings.talemark.color.defaultColor=Not defined
+settings.talemark.color.paletteIndexFmt=Color No. %d
+settings.talemark.preview.title=Preview
+settings.talemark.preview.whatYouType=What you type
+settings.talemark.preview.whatYouGet=What you get
+
+settings.general.app.title=Application settings
+settings.general.app.systemLocaleTitle=Language
+settings.general.app.chatTextSize.title=Chat text size
+settings.general.app.chatTextSize.original=Original
+settings.general.app.chatTextSize.zoomFmt=Zoom %d
+settings.general.app.chatTextLineSpacing.title=Spacing between chat lines
+settings.general.app.startWithOS=Start Firecast when my computer starts
+settings.general.app.show3DRolls=Show 3D dice rolls
+settings.general.app.customize3DDicesSkins=Customize your 3D dice
+settings.general.app.autoUpdate.title=Application update
+settings.general.app.autoUpdate.mode.none=Do not update automatically
+settings.general.app.autoUpdate.mode.stableline=Update with stable versions
+settings.general.app.autoUpdate.mode.devline=Update with beta versions
+settings.general.app.autoUpdate.checkForUpdate=Check for updates now
+settings.general.app.autoUpdate.checkForUpdate.inProcess=Checking for updates...
+settings.general.app.autoUpdate.checkForUpdate.errorMsgFmt=Error checking for updates: %s
+settings.general.app.autoUpdate.checkForUpdate.alreadyUpToDate=You are up to date!
+settings.general.app.autoUpdate.inProcess.buttonText=Wait
+settings.general.app.autoUpdate.download.inProcess.stateText=Downloading updates...
+settings.general.app.autoUpdate.download.errorMsgFmt=Error downloading updates: %s
+settings.general.app.autoUpdate.install.buttonText=Install updates now!!!
+settings.general.app.autoUpdate.install.stateText=Updates are ready to be installed.
+settings.general.app.autoUpdate.install.inProcess.stateText=Installing updates...
+settings.general.app.autoUpdate.install.success=Updates have been installed
+settings.general.app.autoUpdate.install.errorMsgFmt=Error installing updates: %s
+settings.general.app.autoUpdate.install.firecastIsInstallingUpdateMsg=Firecast is installing updates...
+
+settings.preferences.r18RoomsFilterMode.title=Content filter
+settings.preferences.r18RoomsFilterMode.item.0=Restrict sensitive content
+settings.preferences.r18RoomsFilterMode.item.2=Do not restrict content
+settings.preferences.r18RoomsFilterMode.restrictedContentInfo=The room have sensitive content
+
+settings.accountAndProfile.myAccountMgrTitle=Account management
+settings.accountAndProfile.changeEmailAddress=Change email address
+settings.accountAndProfile.changePassword=Change my password
+settings.accountAndProfile.cancelAccount=Cancel my account
+settings.accountAndProfile.openMyProfileWindow=View your profile
+settings.accountAndProfile.myPremiumState.title=Current subscription
+settings.accountAndProfile.myPremiumState.visitWebStore=Visit store
+settings.accountAndProfile.myPremiumState.viewSubscriptionDifferences=Compare subscriptions
+settings.accountAndProfile.myPremiumState.compareSubscriptionsURL=https://firecast.app/en_us/pricing/
+
+settings.changePasswordPopup.currentPassword=Current password
+settings.changePasswordPopup.newPassword=New password
+settings.changePasswordPopup.confirmNewPassword=Confirm the new password
+settings.changePasswordPopup.currentPassword.emptyError=Please enter your current password
+settings.changePasswordPopup.passwordChangeConfirmation=Your password has been successfully changed 😀
+
+settings.cancelAccount.title=Do not end your adventure now, fighter!
+settings.cancelAccount.cancelInfo1=You are about to leave the battlefield and __leave behind all your legacy__. Are you sure you want to do this? __It is a path with no return__.
+settings.cancelAccount.cancelInfo2=Your account will be disabled and our contract will be terminated, but we will keep some records.
+settings.cancelAccount.continueWithCancelButton=Deactivate account
+settings.cancelAccount.password=Enter your password
+settings.cancelAccount.emptyPassword=Please enter your password to proceed with account cancellation.
+settings.cancelAccount.confirmDialog.title=Account deactivation!
+settings.cancelAccount.confirmDialog.message=Do you really want to DEACTIVATE your ACCOUNT FOREVER?
+settings.cancelAccount.success=Your account has been successfully disabled.
+
+settings.plugins.pluginsTitle=Installed plugin list
+settings.plugins.noInstalledPlugins=There is no plugin currently installed. This may mean that Firecast installation have problems = /
+settings.plugins.removePluginDialog.title=Remove Plugin
+settings.plugins.removePluginDialog.textFmt=Do you really want to uninstall "%s" plugin?
+settings.plugins.addPlugin.buttonText=+ Install plugin
+settings.plugins.addPlugin.promptText=Select the plugins to install
+settings.plugins.explorePlugins.buttonText=View available plugins
+settings.plugins.gitRepo.openButton.text=Open-source Firecast plugins repository
+settings.plugins.gitRepo.url=https://github.com/rrpgfirecast/firecast
+
+settings.account.nickNameTitle=Nickname
+settings.account.status.title=Status
+settings.account.status.online=Online
+settings.account.status.away=Away
+settings.account.status.offline=Invisible
+settings.account.profile.changeAvatarAction=Change my avatar
+settings.account.profile.changeAvatarAction.accountInstructed=Change my account avatar
+settings.account.profile.changeAvatar.title=Select your avatar
+settings.account.profile.changeCoverAction=Change my cover image
+settings.account.profile.changeCoverAction.accountInstructed=Change my account cover image
+settings.account.profile.changeCover.title=Choose your cover image
+settings.account.profile.biography.title=A short text about you
+settings.account.profile.rpgPreferences.title=Systems and/or scenarios you like
+settings.account.profile.timePreferences.title=When you prefer to play / GM
+settings.account.profile.contactsForm.title=Other ways to contact you
+settings.account.profile.site.title=A site that belongs to you
+settings.account.profile.avatar.title=Avatar
+settings.account.profile.avatar.prompt=Click to define your avatar image
+settings.account.profile.avatar.dialogPrompt=Choose your avatar image
+settings.account.profile.cover.title=Cover
+settings.account.profile.cover.prompt=Click to define your cover image
+settings.account.profile.cover.dialogPrompt=Choose your cover image
+
+settings.utility.troubleshooting.title=Troubleshooting
+settings.utility.troubleshooting.disableLightingDice3D=3D dice are too green or too dark
+settings.utility.troubleshooting.avoidGPUAccel=Avoid GPU acceleration
+settings.utility.troubleshooting.restartFirecastInstruction=Restart the Firecast so the workaround can take effect!
+
+settings.utility.obs.win64.title=OBS Studio (64-bits)
+settings.utility.obs.win32.title=OBS Studio (32-bits)
+settings.utility.obs.mac64.title=OBS Studio (Intel)
+settings.utility.obs.titleFmt=Plugin for %s
+settings.utility.obs.autoInstallButton=Try to install automatically
+settings.utility.obs.showMeFileButton.windows=Reveal the plugin file in Explorer
+settings.utility.obs.showMeFileButton.mac=Reveal the plugin file in Finder
+settings.utility.obs.showMeFileButton.other=Reveal the plugin file
+settings.utility.obs.manualInstall.fileFmt=Manually search "%s" executable path and install plugin
+settings.utility.obs.manualInstall.appFmt=Manually search "%s" path and install plugin
+settings.utility.obs.couldNotRevealFile=Could not reveal file "%s"
+settings.utility.obs.dialog.manual.file.title=Select the "%s" executable file
+settings.utility.obs.dialog.manual.app.title=Select the "%s" directory
+settings.utility.obs.install.failFmt=Error installing the plugin: "%s"
+settings.utility.obs.install.failToAutoLocate=Could not find OBS Studio installation in default directories
+settings.utility.obs.install.fail.pluginsDirDoesNotExists=OBS plugin directory does not exist: "%s"
+settings.utility.obs.install.fail.unknownError=Installation failed, check the error log to identify the reason
+settings.utility.obs.install.success=The plugin has been installed! Restart OBS Studio.
+
+settings.utility.debug.title=Help the programmer
+settings.utility.debug.saveLogErrors.button=Export app logs
+settings.utility.debug.saveLogErrors.prompt=Save Firecast logs to zip file
+settings.utility.debug.saveLogErrors.success=Logs were exported successfully
+
+settings.conference.device.groupTitle=Communication devices
+settings.conference.device.playout=Play on
+settings.conference.device.recording=Record from
+
+p2p.device.name.defaultComm=Default communication device
+p2p.device.name.default=Default device
+p2p.error.noService=There is no service code loaded for P2P
+p2p.error.defaultFactory.promiseFailedFmt=Error accessing default P2P engine: %s
+p2p.error.device.setPlayoutFailedFmt=Failed to set playout device: %s
+p2p.error.device.setRecordingFailedFmt=Failed to set recording device: %s
+
+dialogs.file.filesOfExtFmt=%s files
+dialogs.file.supportedFiled=Supported files
+dialogs.file.allFiles=All files
+
+select.talemarkcolor.title=Select a color
+select.talemarkcolor.none=Not defined
+select.talemarkcolor.fromPalette=A palette color
+select.talemarkcolor.fromRGB=A custom color
+
+console.error.noConsoleService=Could not find a console service
+console.command.help.desc=Show this text
+
+commandMgr.error.notExecuted=Command not executed
+commandMgr.error.unknownCommand=Unknown command
+commandMgr.error.unknownCommand.foldedHelpInfo=Use "%s" to see the available commands.
+commandMgr.error.foldedCommand.invalidUsage=Action for command "%s" was not specified. Use "%s help" for more information.
+commandMgr.error.commandEnv.notImplementEnvWithManualOutput=The command environment does not support output of helps / manuals
+commandMgr.error.errorWithEmptyMessageReplacementStrFmt=The command "%s" failed, but no error message was provided.
+
+userprofile.userSinceFmt=Since %s
+userprofile.contextMenu.title=Show profile
+userprofile.userKind.title=User type
+userprofile.userKind.ruby.title=Ruby
+userprofile.userKind.platinum.title=Platinum
+userprofile.userKind.gold.title=Gold
+userprofile.userKind.silver.title=Silver
+userprofile.connectedFrequency.title=Frequency
+userprofile.approval.title=Approvals
+userprofile.disapproval.title=Disapprovals
+userprofile.ban.title=Banishment
+userprofile.reputation.title=Reputation
+userprofile.badges.title=Badges
+userprofile.ranking.title=Users ranking
+userprofile.ranking.notYetCalculated=Not yet calculated
+userprofile.ranking.positionFmt=%s PLACE
+userprofile.ranking.pointsFmt=%1.1f points
+userprofile.biography.title=About the user
+userprofile.addContact.title=Add to friend list
+userprofile.likeButton.title=I approve
+userprofile.likeButton.hint/masculine=Click if you approve his behavior
+userprofile.likeButton.hint/feminine=Click if you approve her behavior
+userprofile.likeButton.hint/neuter=Click if you approve their behavior
+userprofile.dislikeButton.hint/masculine=If you disapprove his behavior, click to indicate that he is a "toxic" user.
+userprofile.dislikeButton.hint/feminine=If you disapprove her behavior, click to indicate that she is a "toxic" user.
+userprofile.dislikeButton.hint/neuter=If you disapprove their behavior, click to indicate that they is a "toxic" user.
+userprofile.viewFakes.load=Load
+userprofile.viewFakes.loading=Loading...
+userprofile.viewFakes.title=Possible fakes
+userprofile.viewFakes.errorWhileLoading.talemarkFmt=[§K4]Ops =/ %s
+userprofile.viewFakes.noFake=No fake ;)
+userprofile.viewFakes.probability.1=Very low probability
+userprofile.viewFakes.probability.2=Low probability
+userprofile.viewFakes.probability.3=Medium probability
+userprofile.viewFakes.probability.4=High probability
+userprofile.viewFakes.probability.5=Very high probability
+userprofile.rpgPreferences.title=Favorite Systems and Scenarios
+userprofile.timePreferences.title=Preferred times
+userprofile.site.title=Website
+userprofile.contactsForm.title/masculine=Ways to contact him
+userprofile.contactsForm.title/feminine=Ways to contact her
+userprofile.contactsForm.title/neuter=Ways to contact them
+userprofile.lastSeen.title=Last seen
+userprofile.generic.levelFmt=Level %d
+userprofile.generic.timesFmt=%d times
+
+dashboard.title=Dashboard
+exploreRooms.searchPage.navButtonText=Search
+exploreRooms.searchPage.title=Search rooms
+exploreRooms.recentPage.navButtonText=Recent
+exploreRooms.recentPage.title=Recently visited rooms
+exploreRooms.favoritesPage.navButtonText=Favorite
+exploreRooms.favoritesPage.title=Favorite rooms
+exploreRooms.myRoomsPage.navButtonText=Mine
+exploreRooms.myRoomsPage.title=My rooms
+exploreRooms.featuredPage.navButtonText=Recommended
+exploreRooms.featuredPage.title=Recommended rooms
+exploreRooms.discoverPage.navButtonText=Discover
+exploreRooms.discoverPage.title=Discover rooms
+exploreRooms.onlinePage.title=Online rooms
+exploreRooms.onlinePage.navButtonText=Online
+exploreRooms.createRoomPage.navButtonText=New room
+
+exploreRooms.overview.recentsRoomsGroup.title=Recent
+exploreRooms.overview.favoriteRoomsGroup.title=Favorite
+exploreRooms.overview.myRoomsGroup.title=Mine
+exploreRooms.overview.featuredGroup.title=Recommendations
+exploreRooms.overview.dashAction.findARoom.title=Explore rooms
+exploreRooms.overview.dashAction.findARoom.description=Explore online tabletop rpg rooms, talk to the GM, and have fun!
+exploreRooms.overview.dashAction.createARoom.title=Create room
+exploreRooms.overview.dashAction.createARoom.description=Is it time to be a GM? You will need a room for your adventure.
+exploreRooms.overview.dashAction.contacts.title=Chat with friends
+exploreRooms.overview.dashAction.contacts.description=Has anyone invited you to Firecast? Here you can find your friends.
+exploreRooms.overview.dashAction.settings.title=Customize account
+exploreRooms.overview.dashAction.settings.description=Your account also deserves to be customized and receive your own touch.
+exploreRooms.overview.quad.online.pluralFmt=%d online users
+exploreRooms.overview.quad.online.singularFmt=%d online user
+exploreRooms.overview.quad.online.none=0 online users
+exploreRooms.overview.quad.gmOnlineState=GM online
+exploreRooms.overview.quad.gmOfflineState=GM offline
+exploreRooms.overview.quad.havePasswordState=Requires password
+exploreRooms.overview.quad.myRoomState=My room
+exploreRooms.overview.quad.haveVacanciesLabel=Open seats
+exploreRooms.overview.rpgSystem.title=System
+exploreRooms.overview.lastAccess.title=Last access
+exploreRooms.overview.creatorLogin.title=Room's owner
+exploreRooms.overview.creationDate.title=Creation date
+exploreRooms.overview.welcomeMessage.title=Description
+exploreRooms.overview.onlineUsersInfo.title=Online users
+exploreRooms.overview.joinAction.title=Join room
+exploreRooms.overview.passwordForJoin.promptText=Room's password
+exploreRooms.overview.passwordForJoin.passwordSkip.promptText=Password not required
+exploreRooms.overview.passwordForJoin.needPasswordInfo=Password is required to join the room
+
+exploreRooms.searchPage.wordsToSearch.promptText=Enter here a name, system, GM name, status and/or description
+exploreRooms.searchPage.filter.withoutPassword=Only rooms without password
+exploreRooms.searchPage.filter.withPlayersOnline=Only rooms with online users
+exploreRooms.searchPage.filter.withGMOnline=Only rooms with online GM
+exploreRooms.searchPage.searchActionText=Search
+exploreRooms.searchPage.requiredTagsExpander=Wanted tags
+exploreRooms.searchPage.notTagsExpander=Unwanted tags
+
+exploreRooms.createRoom.popup.title=Create a new virtual room
+exploreRooms.createRoom.popup.roomNameTitle=Room's name
+exploreRooms.createRoom.popup.roomNamePrompt=Choose a cool name!
+exploreRooms.createRoom.popup.rpgSystem.title=System you will GM
+exploreRooms.createRoom.popup.rpgSystemCompl.title=Additional description of the system you will use
+exploreRooms.createRoom.popup.rpgSystemCompl.prompt=Edition, scenario, etc...
+exploreRooms.createRoom.popup.rpgTags.title=Select some room tags
+exploreRooms.createRoom.popup.password.needPasswordText=Require password to enter
+exploreRooms.createRoom.popup.password.passwordPrompt=Password
+exploreRooms.createRoom.popup.error.invalidRoomName=The name of the virtual room must contain at least 5 characters
+
+exploreRooms.emptyState.noRecordsFound=No rooms were found
+exploreRooms.emptyState.roomNotFound=The room was not found
+exploreRooms.emptyState.errorFmt=Oops, %s
+
+exploreRooms.contextMenu.likeRoom=I think this room is interesting
+exploreRooms.contextMenu.dislikeRoom=I DON'T think this room is interesting
+exploreRooms.contextMenu.removeFromFavorites=Remove room from favorites list
+exploreRooms.contextMenu.addToFavorites=Add room to favorites list
+exploreRooms.contextMenu.showWebSite=Show more information in browser
+exploreRooms.contextMenu.showRoomInfoForJoin=Overview
+exploreRooms.contextMenu.leaveRoomSession=Leave room
+exploreRooms.contextMenu.closeRoomSessionWindow=Close
+exploreRooms.contextMenu.joinAgain=Join the room again
+exploreRooms.contextMenu.joinAgain.successToast=You are in the room again
+
+exploreRooms.tools.sortMode.hintFmt=Sort mode (current: %s)
+exploreRooms.tools.sortMode.chooseTitle=Sort rooms...
+exploreRooms.tools.sortMode.recommendation=By recommendation
+exploreRooms.tools.sortMode.onlinePlayersQty=By online users
+
+exploreRooms.tools.copyURIToClipboard=Copy room link address
+
+pagenav.previousButton=Previous
+pagenav.nextButton=Next
+
+generics.error.requiredField=This field is required.
+generics.error.needToBeLoggedIn=You must be logged in to perform this action.
+generics.error.roomNotFound=The room was not found
+generics.error.notInRoom=You are not in the room
+generics.error.alreadyInRoom=You are already in the room
+generics.error.libItemNotFound=Library item not found
+generics.error.libItemEmpty=Empty library
+generics.error.selectAtLeastOnePlayer=Select someone to continue
+generics.error.selectAtLeastOneItem=Select an option to proceed
+
+library.guide.search.textPrompt=Search the library
+library.guide.search.tooManyResults=Too many results found, refine your search.
+
+library.menu.itemMenuButton.hint=Show item menu
+library.menu.ItemOpen=Open
+library.menu.ItemOpen.newSheet=Open in new sheet
+library.menu.ItemCreate=New item
+library.menu.ItemRename=Rename
+library.menu.ItemVisibility=Make visible to everyone
+library.menu.ItemInvisibility=Make invisible
+library.menu.ItemDelete=Delete Item
+library.menu.character.lock=Prevent changes by players
+library.menu.character.unlock=Allow changes by players
+library.menu.character.changeAvatar=Change character avatar
+library.menu.editNodePermissions=Edit permissions (expert)
+library.menu.itemOwner.giverCharToPlayer=Give the character to someone
+library.menu.itemOwner.giverCharToPlayer.promptText=Choose who will own the character
+library.menu.itemOwner.changeOwner=Set a new owner for the character
+library.menu.itemOwner.changeOwner.promptText=Choose who will be the new owner of the character
+library.menu.itemOwner.clearOwner/singular=Take the character to the GM
+library.menu.itemOwner.clearOwner/plural=Take the character to the GMs
+library.menu.itemOwner.dialog.emptyState=There is no one at the room
+library.menu.export=Export...
+library.menu.import=Import...
+library.menu.copyURIToClipboard.character=Copy character link address
+library.menu.copyURIToClipboard.scene=Copy grid link address
+library.createItem.title=New item
+library.createItem.type.character.title=Character
+library.createItem.type.directory.title=Directory
+library.createItem.type.scene.title=Grid
+library.createItem.name.title=Name
+library.createItem.name.prompt=New item name
+library.createItem.name.character.prompt=New character name
+library.createItem.name.directory.prompt=New directory name
+library.createItem.name.scene.prompt=New grid name
+library.createItem.visible.title=Visible to everyone
+library.createItem.dataType.title=Sheet model
+library.createItem.dataType.exploreMorePlugins=Explore more sheet models
+library.createItem.owner.title=Character owner
+library.createItem.owner.gmOptionFmt=<< %s / %s >>
+library.createItem.createButton.title=Create
+library.createItem.successToastMessage=The item was created successfully
+library.createItem.successToastMessage.character=The character was created successfully
+library.createItem.successToastMessage.directory=The directory was created successfully
+library.createItem.successToastMessage.scene=The grid was successfully created
+
+library.export.popup.title=Export library
+library.export.popup.src.title=What will be exported
+library.export.popup.src.characterFmt=Character "%s"
+library.export.popup.src.directoryFmt=Directory "%s" and its contents
+library.export.popup.src.gridFmt=Grid "%s"
+library.export.popup.src.rootFmt=The entire library
+library.export.popup.src.undefinedFmt=%s
+library.export.saveFileDialog.prompt=Save exported library
+library.export.errorFmt=Unable to export: %s
+library.export.success=Library exported successfully!
+library.export.state.title=Exporting library
+library.export.state.planning=Planning...
+library.export.state.packing=Packing...
+library.export.state.compressing=Compressing...
+library.export.state.savingItensFmt=Saving (%d of %d)
+
+library.import.queryFile.title=Select the file to import
+library.import.errorFmt=Could not import: %s
+library.import.success=The library was successfully imported!
+library.import.importing=Importing library...
+library.import.invalidFormat=This file does not appear to be a Firecast library file
+library.import.invalidCompressFormat=OFile is compressed in an unknown format
+library.import.corruptedData=Library file compression appears to be corrupt
+
+library.Dialog.ItemDelete=Delete library item
+library.Dialog.WantDeleteItem=Do you really want to delete the item "%s"?
+library.Dialog.WantDeleteItens=Do you really want to delete the item "%s"? All contents of the folder will be deleted.
+
+room.error.bug.couldNotMediumSessionWithOwnerSeek=This looks like a Firecast bug - Could not get information of the room through the UI hierarchy
+room.error.bug.couldNotFindTJogoObject=This looks like a Firecast bug - It was not possible to find the room's TJogo object.
+room.error.bug.couldNotFindTBibliotecaItem=This looks like a Firecast bug - It was not possible to find the TBibliotecaItem object.
+room.error.desktop.maxNumberReached=The maximum number of windows has been reached for this room
+room.error.desktop.secondary.closeQuery.title=Close window
+room.error.desktop.secondary.closeQuery.confirmation=Do you really want to close this window?
+
+room.presence.transformToGM=Transform to GM
+room.presence.transformToPlayer=Transform to Player
+room.presence.transformToSpectator=Transform to Spectator
+room.presence.transform.errorFmt=It was not possible transform "%s" to %s: %s
+room.presence.changeMode.addVoice=Allow to speak in moderated chat
+room.presence.changeMode.removeVoice=Do not allow speaking in moderated chat
+room.presence.changeMode.addBlind=Turn blind
+room.presence.changeMode.removeBlind=Remove blindness
+room.presence.changeMode.addMute=Do not allow speech
+room.presence.changeMode.removeMute=Allow to speech
+room.presence.changeMode.errorFmt=It was not possible to apply the "%s" mode to %s: %s
+room.presence.kick.action=Kick
+room.presence.ban.action=Ban
+room.presence.ban.action.confirm.title=Ban user
+room.presence.ban.action.confirm.promptFmt=Do you really want to ban %s?
+room.presence.mainChar.edtLine.emptyLineText=<line>
+room.presence.character.open=Open character sheet
+room.presence.character.open.selChar.promptText=Select the character to open
+room.presence.character.open.selChar.empty=This player has no characters
+room.presence.character.changeMainChar=Define the main character
+room.presence.character.changeMainChar.promptText=Choose the player's main character
+room.presence.character.changeMainChar.changeErrorFmt=Error defining the main character for "%s": %s
+room.presence.character.createForPlayer.newCharacter/masculine=Create a character for him
+room.presence.character.createForPlayer.newCharacter/feminine=Create a character for her
+room.presence.character.createForPlayer.newCharacter/neuter=Create a character for them
+room.presence.character.createForPlayer.anotherNewCharacter/masculine=Create another character for him
+room.presence.character.createForPlayer.anotherNewCharacter/feminine=Create another character for her
+room.presence.character.createForPlayer.anotherNewCharacter/neuter=Create another character for them
+room.presence.character.changeCharAvatar=Change character avatar
+room.presence.character.changeCharAvatar.dialogPrompt=Choose character avatar
+room.presence.character.changeCharAvatar.success=Character avatar successfully changed
+room.presence.character.changeCharAvatar.failFmt=Failed to change character avatar: %s
+room.presence.pvt.openPVT=Open private chat
+room.presence.groupPvt.createGroupPVT=Create private group chat
+room.presence.error.kickErrorFmt=Couldn't kick "%s": "%s"
+room.presence.conference.musicVolume.menuText/masculine/singular=His music
+room.presence.conference.musicVolume.menuText/feminine/singular=Her music
+room.presence.conference.musicVolume.menuText/neuter/singular=Their music
+room.presence.conference.musicVolume.menuText/plural=Their music
+room.presence.conference.local.musicVolume.menuText=My music
+room.presence.conference.voiceVolume.menuText/masculine/singular=His voice
+room.presence.conference.voiceVolume.menuText/feminine/singular=Her voice
+room.presence.conference.voiceVolume.menuText/neuter/singular=Their voice
+room.presence.conference.voiceVolume.menuText/plural=Their voice
+room.presence.conference.local.voiceVolume.menuText=My voice
+room.presence.conference.volumeMuted.text=mute
+
+room.presence.state.hint.blind/masculine=He's blind and cannot see messages
+room.presence.state.hint.blind/feminine=She's blind and cannot see messages
+room.presence.state.hint.blind/neuter=They're blind and cannot see messages
+room.presence.state.hint.muted/masculine=He's mute and unable to send messages
+room.presence.state.hint.muted/feminine=She's mute and unable to send messages
+room.presence.state.hint.muted/neuter=They're mute and unable to send messages
+room.presence.state.hint.voice/masculine=He has +voice and can speak when the chat is moderated
+room.presence.state.hint.voice/feminine=Se has +voice and can speak when the chat is moderated
+room.presence.state.hint.voice/neuter=They have +voice and can speak when the chat is moderated
+room.presence.state.hint.busy/masculine=He's away
+room.presence.state.hint.busy/feminine=She's away
+room.presence.state.hint.busy/neuter=They're away
+room.presence.state.hint.cnxBroken/masculine=His connection to the server is unstable
+room.presence.state.hint.cnxBroken/feminine=Her connection to the server is unstable
+room.presence.state.hint.cnxBroken/neuter=Their connection to the server is unstable
+room.presence.state.hint.musicActivity/masculine=He's streaming music
+room.presence.state.hint.musicActivity/feminine=She's streaming music
+room.presence.state.hint.musicActivity/neuter=They're streaming music
+room.presence.state.hint.usingRRPGClassic/masculine=He's connected using RRPG Classic
+room.presence.state.hint.usingRRPGClassic/feminine=She's connected using RRPG Classic
+room.presence.state.hint.usingRRPGClassic/neuter=They're connected using RRPG Classic
+room.presence.state.hint.usingMobile/masculine=He's connected using RRPG Mobile
+room.presence.state.hint.usingMobile/feminine=She's connected using RRPG Mobile
+room.presence.state.hint.usingMobile/neuter=They're connected using RRPG Mobile
+room.presence.state.hint.notConnected/masculine=He's not in the room at the moment
+room.presence.state.hint.notConnected/feminine=She's not in the room at the moment
+room.presence.state.hint.notConnected/neuter=They're not in the room at the moment
+room.presence.state.hint.typing/masculine=He's typing
+room.presence.state.hint.typing/feminine=She's typing
+room.presence.state.hint.typing/neuter=They're typing
+room.presence.state.hint.p2p.connecting/masculine=We are establishing a direct connection with him
+room.presence.state.hint.p2p.connecting/feminine=We are establishing a direct connection with her
+room.presence.state.hint.p2p.connecting/neuter=We are establishing a direct connection with them
+room.presence.state.hint.p2p.connected/masculine=We have a direct connection to him
+room.presence.state.hint.p2p.connected/feminine=We have a direct connection to her
+room.presence.state.hint.p2p.connected/neuter=We have a direct connection to them
+room.presence.state.hint.p2p.disconnected/masculine=We lost direct connection with him
+room.presence.state.hint.p2p.disconnected/feminine=We lost direct connection with her
+room.presence.state.hint.p2p.disconnected/neuter=We lost direct connection with them
+room.presence.state.hint.p2p.failed/masculine=There's a failure with the direct connection to him
+room.presence.state.hint.p2p.failed/feminine=There's a failure with the direct connection to her
+room.presence.state.hint.p2p.failed/neuter=There's a failure with the direct connection to them
+room.presence.state.hint.voip.remoteOnly/masculine=He's on the voice conference, but you're not
+room.presence.state.hint.voip.remoteOnly/feminine=She's on the voice conference, but you're not
+room.presence.state.hint.voip.remoteOnly/neuter=They're on the voice conference, but you're not
+room.presence.state.hint.voip.noActivity/masculine=He's on the voice conference (not speaking)
+room.presence.state.hint.voip.noActivity/feminine=She's on the voice conference (not speaking)
+room.presence.state.hint.voip.noActivity/neuter=They're on the voice conference (not speaking)
+room.presence.state.hint.voip.activity/masculine=He's speaking over the voice conference
+room.presence.state.hint.voip.activity/feminine=She's speaking over the voice conference
+room.presence.state.hint.voip.activity/neuter=They're speaking over the voice conference
+
+room.desktop.sheet.noNameSheet=<Unnamed sheet>
+room.desktop.sheet.mainSheetFallbackTitle=Room
+room.desktop.sheet.action.deleteSheet=Close sheet
+room.desktop.sheet.action.deleteSheetToRight=Close all sheets to the right
+room.desktop.sheet.action.renameSheet=Rename sheet
+room.desktop.sheet.action.renameSheet.prompt=Enter the new sheet name
+room.desktop.sheet.action.cloneSheet=Clone sheet
+room.desktop.sheet.action.resetToDefaultMainSheet=Reset sheet layout
+room.desktop.sheet.newSheetHint=Create sheet
+room.desktop.sheet.newSheet.groupPVT=Private group chat
+room.desktop.sheet.newSheet.empty=Empty sheet
+room.desktop.sheet.newSheet.settings=Room settings
+room.desktop.sheet.newSheet.sendToNewWindow=Send sheet to new window
+room.desktop.menuButton.layout.editionMode.enter=Edit screen layout
+room.desktop.menuButton.layout.editionMode.leave=Leave layout edition
+room.desktop.menuButton.layout.reset=Reset the entire screen layout
+room.desktop.menuButton.layout.newWindow=New Window
+room.desktop.menuButton.hint=Room menu
+room.desktop.menuButton.showRoomOverview=Room overview
+room.desktop.menuButton.showRoomSettings=Show Room settings
+room.desktop.menuButton.showRoomMusicPlayer=Show Music player
+room.desktop.menuButton.showRoomSFXPlayer=Show SFX player
+room.desktop.menuButton.showRoomLibrary=Show Room library
+room.desktop.menuButton.showTablesDockFmt=Show %s
+room.desktop.conference.cfg.hint=Voice conference
+room.desktop.layout.editionButton.enter.hint=Edit screen layout
+room.desktop.layout.editionButton.leave.hint=Leave layout edition
+room.desktop.layout.module.dragHandle.hint=Move
+room.desktop.layout.module.dragCopyHandle.hint=Drag to clone
+room.desktop.layout.module.dragCopyHandle.clickMessage=Grab and drag with the mouse to clone
+room.desktop.layout.module.remove.hint=Remove
+room.desktop.layout.module.error.classNotFoundFmt=Unknown RoomUIModuleClass Class: "%s"
+room.desktop.layout.module.add.libraryModule=Room library
+room.desktop.layout.module.add.roomMainChat=Room chat
+room.desktop.layout.module.add.vertPlayerList=User list
+room.desktop.roomSettings.title=Room settings
+room.desktop.roomSettings.vertNav.roomProfile=Profile
+room.desktop.roomSettings.vertNav.gameSettings=Game
+room.desktop.roomSettings.vertNav.permissions=Permissions
+room.desktop.roomSettings.vertNav.system=System
+room.desktop.roomSettings.roomProfile.title=Room profile
+room.desktop.roomSettings.roomProfile.rpgSystem.title=System used
+room.desktop.roomSettings.roomProfile.rpgSystemCompl.title=Additional description of the system used
+room.desktop.roomSettings.roomProfile.rpgTags.title=Room tags
+room.desktop.roomSettings.roomProfile.statusMessage.title=Status message
+room.desktop.roomSettings.roomProfile.statusMessage.prompt=Example: "2 open seats, evening sessions"
+room.desktop.roomSettings.roomProfile.site.title=Room website
+room.desktop.roomSettings.roomProfile.site.prompt=http://www.example.com
+room.desktop.roomSettings.roomProfile.logo.title=Room logo
+room.desktop.roomSettings.roomProfile.logo.prompt=Click to define the room logo
+room.desktop.roomSettings.roomProfile.logo.dialogPrompt=Choose the image that will be the room logo
+room.desktop.roomSettings.roomProfile.cover.title=Room cover image
+room.desktop.roomSettings.roomProfile.cover.prompt=Click to define the room cover image
+room.desktop.roomSettings.roomProfile.cover.dialogPrompt=Choose the image that will be the room cover
+room.desktop.roomSettings.roomProfile.welcomeMessage.title=Description and welcome message
+room.desktop.roomSettings.roomPermissions.title=Room permissions
+room.desktop.roomSettings.roomPermissions.needPassword.title=Password to enter the room
+room.desktop.roomSettings.roomPermissions.needPassword.notRequired=Not required
+room.desktop.roomSettings.roomPermissions.needPassword.required=Required
+room.desktop.roomSettings.roomPermissions.needPassword.setPassword.hint=Define password to enter the room
+room.desktop.roomSettings.roomPermissions.needPassword.setPassword.dialogCaption=Room password
+room.desktop.roomSettings.roomPermissions.needPassword.setPassword.dialogPrompt=Enter the password to enter the room
+room.desktop.roomSettings.roomPermissions.needPassword.clearPassword.hint=Remove password requirement
+room.desktop.roomSettings.roomPermissions.logAccessModel.title=Users can read from the log:
+room.desktop.roomSettings.roomPermissions.logAccessModel.receipt=Only messages from when they were present
+room.desktop.roomSettings.roomPermissions.logAccessModel.everyone=All messages, even when they were away
+room.desktop.roomSettings.gameSettings.title=Room game settings
+room.desktop.roomSettings.gameSettings.bars.count.title=Number of status bars
+room.desktop.roomSettings.gameSettings.bars.id.titleFmt=Status bar %d
+room.desktop.roomSettings.gameSettings.bars.name.title=Name
+room.desktop.roomSettings.gameSettings.bars.color.title=Color
+room.desktop.roomSettings.gameSettings.bars.visibility.title=Values visibility
+room.desktop.roomSettings.gameSettings.bars.visibility.public=Public
+room.desktop.roomSettings.gameSettings.bars.visibility.protected=Protected
+room.desktop.roomSettings.gameSettings.bars.displayMode.title=Display mode
+room.desktop.roomSettings.gameSettings.bars.displayMode.flatNumbers=Numeric value
+room.desktop.roomSettings.gameSettings.bars.displayMode.percentage=Percentage value
+room.desktop.roomSettings.gameSettings.editableLines.count.title=Number of editable lines
+room.desktop.roomSettings.system.title=Room system
+room.desktop.roomSettings.system.auxGM.title=Auxiliary GMs
+room.desktop.roomSettings.system.auxGM.emptyStateStr=There are no auxiliary GMs
+room.desktop.roomSettings.system.auxGM.addButton.text=+ Add
+room.desktop.roomSettings.system.auxGM.confirmRemove.title=Remove Auxiliary GM
+room.desktop.roomSettings.system.auxGM.confirmRemove.promptFmt=Do you really want to remove the auxiliary GM "%s"?
+room.desktop.roomSettings.system.auxGM.add.title=Add auxiliary GM
+room.desktop.roomSettings.system.auxGM.add.prompt=Username of the new auxiliary GM
+room.desktop.roomSettings.system.auxGM.add.successFmt="%s" has been added to the rooms's auxiliary GM list
+room.desktop.roomSettings.system.auxGM.add.failureFmt=Could not add "%s" to list: %s
+room.desktop.roomSettings.system.auxGM.remove.successFmt="%s" has been removed from the room's auxiliary GM list
+room.desktop.roomSettings.system.auxGM.remove.failureFmt=Could not remove "%s" from list: %s
+room.desktop.roomSettings.system.bannedUsers.title=Banned Users
+room.desktop.roomSettings.system.bannedUsers.emptyStateStr=There are no banned users
+room.desktop.roomSettings.system.bannedUsers.addButton.text=+ Ban
+room.desktop.roomSettings.system.bannedUsers.confirmRemove.title=Unban user
+room.desktop.roomSettings.system.bannedUsers.confirmRemove.promptFmt=Do you really want to unban user "%s"?
+room.desktop.roomSettings.system.bannedUsers.add.title=Ban user
+room.desktop.roomSettings.system.bannedUsers.add.prompt=Username of who you want to ban
+room.desktop.roomSettings.system.bannedUsers.add.successFmt="%s" has been banned from the room
+room.desktop.roomSettings.system.bannedUsers.add.failureFmt=Unable to ban "%s": %s
+room.desktop.roomSettings.system.bannedUsers.remove.successFmt="%s" has been unbanned
+room.desktop.roomSettings.system.bannedUsers.remove.failureFmt=Unable to unban "%s": %s
+room.desktop.roomSettings.system.other.title=Other actions
+room.desktop.roomSettings.system.other.deleteRoom.button=Delete room
+
+room.desktop.info.notInRoomAnymore=You are no longer in this room
+
+room.module.baseSDK3.unknownReasonForEmptyState=This looks like a Firecast bug =/
+room.module.baseSDK3.pluginNotFoundFmt=The plug-in "%s" was not found
+room.module.baseSDK3.registeredFormOfPluginNotFoundFmt=The form "%s" was not found in the plug-in "%s"
+room.module.character.classTitle=Character Sheet
+room.module.character.charNotFound=Character not found
+room.module.character.dataTypeNotFoundFmt=You need to install the correct plugin to show this custom sheet, internally identified by "%s"
+room.module.character.blockedState=Players cannot change this character
+room.module.tablesDock.classTitle=Dock window
+room.module.tablesDock.dataTypeNotFoundFmt=You need to install the correct plugin to show this dock, internally identified by "%s"
+
+room.module.pvtChat.classTitle=Private chat
+room.module.pvtChat.pvtSheetTitleFmt=%s (private)
+room.module.groupPvtChat.classTitle=Private group chat
+room.module.groupPvtChat.chooseUsersToInvite.newGroup.title=Create private group chat
+room.module.groupPvtChat.chooseUsersToInvite.newGroup.emptyList=No one available for private group chat
+room.module.groupPvtChat.chooseUsersToInvite.newGroup.action=Create chat
+room.module.groupPvtChat.chooseUsersToInvite.inviteMore.title=Invite to private group chat
+room.module.groupPvtChat.chooseUsersToInvite.inviteMore.emptyList=Everyone is already in the chat
+room.module.groupPvtChat.chooseUsersToInvite.inviteMore.action=Invite
+room.module.groupPvtChat.sheetTitle=Group chat
+room.module.groupPvtChat.inviteMoreButton.text=Invite more people
+room.module.groupPvtChat.stdVertUserList.classTitle=User list (Group PVT)
+room.module.groupPvtChat.stdVertUserList.targetNav.title=Users in group PVT
+
+room.module.scene.classTitle=Grid
+room.module.scene.sceneNotFound=Board not found
+
+room.module.roomContext.classTile=Room UI Context
+room.module.mainRoomChat.classTile=Room chat
+room.module.roomDesktop.classTitle=Desktop
+room.module.mainRoomDesktop.classTitle=Main desktop
+room.module.secondaryRoomDesktop.classTitle=Secondary desktop
+room.module.sheet.classTitle=Desktop sheet
+room.module.dockNode.classTitle=DockNode
+room.module.dockSite.classTitle=DockSite
+room.module.stdVertUserList.classTitle=User list
+room.module.stdVertUserList.targetNav.title=Users in the room
+room.module.roomLibrary.classTitle=Library
+room.module.roomLibrary.targetNav.title=Room library
+room.module.roomSettings.classTitle=Settings
+room.module.roomSettings.targetNav.title=Room settings
+room.module.singleUserPresence.classTitle=User in the room
+room.module.musicPlayer.classTitle=Music Player
+room.module.sfxPlayer.classTitle=SFX Player
+
+room.module.highlight.character.hint=Highlight this character for everyone
+room.module.highlight.scene.hint=Highlight this grid for everyone
+room.module.highlight.genericModule.hint=Highlight this module for everyone
+room.module.highlight.sent=Highlight sent!
+room.module.highlight.receive.cantOpenFmt=Failed to display highlight sent by %s: %s
+room.module.highlight.receive.successOpenFmt=Highlight from %s
+room.module.highlight.text=Highlight excerpt for all
+room.module.highlight.text.failFmt=Failed to highlight text: %s
+room.module.highlight.text.unhandledContent=Unhandled content
+room.module.highlight.text.title.fromFmt=Highlight from "%s"
+room.module.highlight.unhandledVerb=Unknown Highlight
+room.module.highlight.couldNotPresentHighlight=Highlight presentation failed
+
+uri.invalidFormat=Invalid URI
+uri.unhandledSchemeFmt=URI scheme unknown: "%s"
+uri.unhandledAuthorityFmt=URI authority unknown: "%s"
+uri.firecast.error.unknown=Unknown Firecast URI
+uri.firecast.error.libraryItem.unhandledLibItemType=I don't know how to open the item "%s"
+uri.firecast.error.tablesDock.exclusiveFeature=This feature is exclusive to Firecast Gold subscribers
+uri.firecast.error.generic.couldNotOpen=Could not open "%s"
+uri.firecast.error.generic.notOpenModule="%s" is not open
+uri.firecast.libraryItem.characterHumanDescFmt=Character "%s"
+uri.firecast.libraryItem.sceneHumanDescFmt=Grid "%s"
+uri.firecast.libraryItem.genericHumanDescFmt=Library item "%s"
+uri.open.confirmDialog.title=Confirm open
+uri.open.confirmDialog.text=Do you want to open this URI?
+
+room.deleteRoom.confirm.title=Delete room
+room.deleteRoom.confirm.deleteInfo1=You are about to delete the room and __all its contents__. Are you sure you want to do this? __It's a way of no return__.
+room.deleteRoom.confirm.deleteInfo2=There is no way to recover them later.
+room.deleteRoom.confirm.confirmWord=Confirm
+room.deleteRoom.confirm.confirmWord.instruction=Type "Confirm" to continue
+room.deleteRoom.confirm.confirmWord.notEqual=Fill in the field properly to proceed.
+room.deleteRoom.confirm.continueButton=Delete room
+room.deleteRoom.confirm.success=The room has been successfully deleted
+room.deleteRoom.confirm.subDialog.title=Room removal
+room.deleteRoom.confirm.subDialog.message=Do you really want to DELETE the room FOREVER?
+
+mediumSession.contextMenu.moderation.activate=Activate chat moderation
+mediumSession.contextMenu.moderation.deactivate=Deactivate chat moderation
+mediumSession.contextMenu.moderation.changeErrorFmt=Could not change chat moderation: %s
+
+statusBarEditor.currentValue.title=Curr:
+statusBarEditor.maxValue.title=Max:
+
+knowPremium.exclusiveFeature.title=Exclusive feature
+knowPremium.exclusiveFeature.info.gold=This feature is exclusive to [§B][§K #FFC700]Firecast Gold[§R], a premium subscription that level up the RPG gaming here.
+knowPremium.exclusiveFeature.info2.gold=It definitely pays off! Check out our awesome prices.
+knowPremium.exclusiveFeature.info.ruby=This feature is exclusive to [§B][§K #EB3449]Firecast Ruby[§R], a premium subscription that level up the RPG gaming here.
+knowPremium.exclusiveFeature.info2.ruby=Made for those who like to impress.
+knowPremium.exclusiveFeature.checkPremium=Go to store
+
+ims.source.dice.nameFmt=3D Dice - %s
+ims.source.dice.name.suffix.roomIDFmt=Room %d chats
+ims.source.scene.name.specificFmt=Grid - ID "%s"
+ims.source.scene.name.lastFocused=Grid - Last focused
+ims.source.scene.name.lastFocused.perRoomFmt=Grid - Last focused in room %d
+ims.source.avatar.nameFmt=Avatar - room %d, user "%s"
+ims.source.guiPart.name.withDataKeyRoomFmt=Room %d/%s - "%s"
+ims.source.guiPart.name.roomFmt=Room %d/%s
+ims.source.guiPart.logOfChatPart=Log
+
+ims.source.guiPart.image.name.scope.app=Image - Shown anywhere
+ims.source.guiPart.image.name.scope.roomFmt=Image - Shown in room  %d
+ims.source.guiPart.image.name.scope.mediumFmt=Image - Shown in chat "%s"
+
+lib.ndb.invalidAttrNameFmt=Invalid attribute name: "%s"
+lib.ndb.readOnlyNDB=Read-only NodeDatabase
+lib.ndb.providerOpenFailedFmt=Open NodeDatabase fail: %s
+lib.ndb.beingDestroyed=NodeDatabase is closing
+
+richEdit.toolbar.url.dialog.title=Enter the link address
+richEdit.toolbar.url.dialog.prompt=Address
+richEdit.toolbar.url.dialog.invalidURIFmt="%s" is not a valid link address
+richedit.toolbar.style.paragraphSpacing=Set vertical spacing
+richedit.error.readOnly=Read-only text
+richEdit.vertSpacing.title=Vertical Spacing
+richEdit.vertSpacing.lineSpacing.title=Spacing between lines
+richEdit.vertSpacing.lineSpacing.1=Single
+richEdit.vertSpacing.lineSpacing.1.15=1.15
+richEdit.vertSpacing.lineSpacing.1.5=1.5
+richEdit.vertSpacing.lineSpacing.2=Double
+richEdit.vertSpacing.paraLeading.groupTitle=Spacing between paragraphs (px)
+richEdit.vertSpacing.paraLeading.before=before
+richEdit.vertSpacing.paraLeading.after=after
+
+rtc.error.noP2PEngine=There is no P2P engine loaded on Firecast. Was the app installed correctly?
+
+musicPlayer.currentTrack.noTrack=No track is being played
+musicPlayer.currentTrack.noName=Untitled track
+musicPlayer.currentTrack.pausedFmt=Paused: "%s"
+musicPlayer.ctrl.previousTrack.hint=Previous track
+musicPlayer.ctrl.nextTrack.hint=Next track
+musicPlayer.ctrl.play.hint=Play
+musicPlayer.ctrl.pause.hint=Pause
+musicPlayer.ctrl.stop.hint=Stop
+musicPlayer.ctrl.resume.hint=Resume
+musicPlayer.ctrl.volume.hint=Volume of the music you stream
+musicPlayer.ctrl.volume.mutedShortText=m
+musicPlayer.ctrl.position.hint=Position of the music you stream
+musicPlayer.tracks.state.emptyPlaylist=The playlist is empty
+musicPlayer.tracks.addMusic.hint=Add tracks to playlist
+musicPlayer.tracks.addMusic.prompt=Select music files
+musicPlayer.tracks.addMusic.file=Add local music files
+musicPlayer.tracks.removeMusic.hint=Remove selected tracks
+musicPlayer.tracks.removeMusic.confirm.title=Remove tracks
+musicPlayer.tracks.removeMusic.confirm.prompt=Do you want to remove the selected tracks?
+musicPlayer.tracks.clearPlaylist.hint=Clear the playlist
+musicPlayer.tracks.clearPlaylist.confirm.title=Clear the playlist
+musicPlayer.tracks.clearPlaylist.confirm.prompt=Do you really want to remove all tracks from the playlist?
+musicPlayer.tracks.repeat.none.hint=Repeat (Current: Do not repeat tracks)
+musicPlayer.tracks.repeat.all.hint=Repeat (Current: Repeat the entire playlist)
+musicPlayer.tracks.repeat.one.hint=Repeat (Current: Repeat 1 track)
+musicPlayer.error.jumpToTrack.failFmt=Unable to play the track "%s": %s
+musicPlayer.error.invalidPlaylistIdFmt=Invalid playlist ID: "%s"
+musicPlayer.error.playlistNotFoundFmt=Playlist not found: "%s"
+musicPlayer.error.invalidTrackIdFmt=Invalid track ID: "%s"
+musicPlayer.error.trackNotFoundFmt=Track not found: "%s"
+musicPlayer.error.unhandledTrackTypeFmt=Unknown track type: "%s"
+musicPlayer.error.fileNotFoundFmt=Music file not found on device: "%s"
+musicPlayer.error.couldNotOpenFileFmt=Could not open music file: "%s"
+musicPlayer.error.emptyPlaylist=The playlist is empty
+
+sfxPlayer.track.remove.hint=Remove sound from list
+sfxPlayer.track.remove.confirm=Do you really want to remove the sound from the list?
+sfxPlayer.track.add.hint=Add to list
+sfxPlayer.track.add.fileTrack=Add sound files
+sfxPlayer.track.add.fileTrack.query.prompt=Add sound files
+sfxPlayer.track.add.downloadTrack=Add by downloading from Youtube/Internet
+sfxPlayer.track.add.downloadTrack.query.title=URL. E.g.: https://www.youtube.com/watch?v=Ckom3gf57Yw
+sfxPlayer.track.add.downloadTrack.query.prompt=Paste the internet address:
+sfxPlayer.track.add.downloadTrack.dirNameFmt=Download %s
+sfxPlayer.track.add.directory=Add a new folder
+sfxPlayer.track.add.directory.query.title=New folder
+sfxPlayer.track.add.directory.query.prompt=Give the folder a name
+sfxPlayer.track.rename.query.title=Rename
+sfxPlayer.track.rename.query.prompt=New name:
+sfxPlayer.track.relay.resume.hint=Resume relay
+sfxPlayer.track.relay.play.hint=Relay audio
+sfxPlayer.track.relay.help.hint=Click to learn how relayer integration works
+sfxPlayer.track.loop.enabled.hint=Loop enabled. Click to disable loop
+sfxPlayer.track.loop.disabled.hint=Click to enable loop
+sfxPlayer.track.volume.labelFmt=Volume: %s
+sfxPlayer.track.position.hint=Position of the audio you stream
+sfxPlayer.track.dir.collapse.hint=Close the folder
+sfxPlayer.track.dir.expand.hint=Open the folder
+sfxPlayer.track.dir.remove.hint=Remove folder from list
+sfxPlayer.track.dir.remove.confirm=Do you really want to remove the folder from the list?
+sfxPlayer.track.process.remove.hint=Abort process
+sfxPlayer.track.process.remove.confirm=Do you really want to abort the process?
+sfxPlayer.track.process.aborting=Aborting...
+sfxPlayer.track.menu.rename=Rename
+sfxPlayer.masterVolume.hint=Master volume of the SFX you stream
+sfxPlayer.tracks.state.emptyList=Your SFX list is empty. add something to get started =)
+sfxPlayer.error.track.notPlaying=The track is not being played
+
+youtube.dl.task.errorFmt=Failed to download the sound file: %s
+youtube.dl.task.title=Sound download
+youtube.dl.task.status.initializing=Starting download
+youtube.dl.task.ydlwork.preparing=Preparing YT-DLP
+youtube.dl.task.ydlwork.updating=Updating YT-DLP
+youtube.dl.task.ydlwork.starting=Starting the downloader...
+youtube.dl.task.ydlwork.aborting=Aborting...
+youtube.dl.task.ydlwork.aborted=Aborted
+youtube.dl.task.ydlwork.done=Download completed
+youtube.dl.task.ydlwork.noFilesDownloaded=No files have been downloaded
+youtube.dl.task.ydlwork.errorExitCodeFmt=YT-DLP failed: (Code %d) %s
+
+soundAmbience.error.gmAndPlayersOnly=Only GMs and players can stream sounds and music
+soundAmbience.error.moderatedMedium=Moderated chat. Only those who have a voice can transmit sounds and music
+soundAmbience.error.cantSendWhileMuted=Cannot stream sounds and music while muted
+conference.control.wantSendVoice.join.title=Join conference
+conference.control.wantSendVoice.leave.title=Leave conference
+conference.control.sendVoice.title=Stream my voice
+conference.control.loopback.title=Hear my voice (loopback + 3s delay)
+conference.control.devices.showCfg.title=Devices
+conference.control.devices.hideCfg.title=Hide devices
+conference.control.device.playout.compactTitle=Play voices on
+conference.control.device.record.compactTitle=Record my voice from
+conference.control.voiceEffect.title=Voice effect
+conference.control.voiceVolume.title=Volume of my voice (dB)
+conference.voiceEffect.none=< None >
+conference.voiceEffect.pitch=Change Pitch
+conference.voiceEffect.pitch.halftones=Halftones
+conference.voiceEffect.goliath=Goliath Mecha
+conference.voiceEffect.demon=Demon
+conference.voiceEffect.dragon=Dragon
+conference.voiceEffect.grievous=Cyborg Commander
+conference.voiceEffect.robot=Robot
+conference.voiceEffect.common.variation=Variation
+conference.voiceEffect.business.requireRuby=(Ruby)
+conference.voiceEffect.business.requireGold=(Gold)
+conference.error.localPresenceNotFound=Local presence at conference not found
+conference.permission.recordAudio.educationalReason=Firecast needs access to your microphone to join conferences
+
+accordion.menuButton.hint=Show menu
+accordion.backButton.hint=Back
+
+permissions.educationalMessage.title=Permission Request
+permissions.deniedFmt=Permission denied (%s)
+permissions.description.recordAudio=Record audio
+
+suggestPlugin.pluginNotFound=I couldn't find the plugin in Firecast's open-source repository =/
+suggestPlugin.searching=Searching for the plugin in the Firecast's open-source repository....
+suggestPlugin.installButton=Install plugin
+suggestPlugin.found.name.fieldTitle=Plugin
+suggestPlugin.found.author.fieldTitle=Author
+suggestPlugin.installed=The plugin was installed successfully!
+
+registration.ok.checkEmailTaleMarkTextFmt/masculine='''# Welcome!
+## To the inbox
+
+Long awaited, the hero "[§K14](ACCOUNT)[§R]" receives a confirmation __e-mail__ at address [§B][§K14](EMAIL)[§R]. He must read the message and __click__ on the activation link to have his passage granted.
+
+The news quickly reaches the Internet's illusion architect, who may move the important message to the adventurer's [§K4]__spam__[§R] box.'''
+
+registration.ok.checkEmailTaleMarkTextFmt/feminine='''# Welcome!
+## To the inbox
+
+Long awaited, the heroine "[§K14](ACCOUNT)[§R]" receives a confirmation __e-mail__ at address [§B][§K14](EMAIL)[§R]. She must read the message and __click__ on the activation link to have her passage granted.
+
+The news quickly reaches the Internet's illusion architect, who may move the important message to the adventurer's [§K4]__spam__[§R] box.'''
+
+registration.ok.checkEmailTaleMarkTextFmt/neuter='''# Welcome!
+## To the inbox
+
+Long awaited, the hero "[§K14](ACCOUNT)[§R]" receives a confirmation __e-mail__ at address [§B][§K14](EMAIL)[§R]. They must read the message and __click__ on the activation link to have their passage granted.
+
+The news quickly reaches the Internet's illusion architect, who may move the important message to the adventurer's [§K4]__spam__[§R] box.'''
+
+
+registration.ok.emailValidatedTaleMarkText/masculine='''## The Passage
+
+Determined, the adventurer _successfully_ performed the task given to him. The reward is the passage to countless worlds, where heroism must be his sextant.'''
+
+registration.ok.emailValidatedTaleMarkText/feminine='''## The Passage
+
+Determined, the adventurer _successfully_ performed the task given to her. The reward is the passage to countless worlds, where heroism must be her sextant.'''
+
+registration.ok.emailValidatedTaleMarkText/neuter='''## The Passage
+
+Determined, the adventurer _successfully_ performed the task given to them. The reward is the passage to countless worlds, where heroism must be their sextant.'''
+
+settings.talemark.preview.text='''# Everlasting sleep forest
+## The beginning of problems
+
+{A}fter 2 days of travel, the adventurers arrive in the forest. -- Have we arrived? -- asks the anxious barbarian. While the wizard thinks "we should not be here", the rogue of the group sees figures in the distance.
+
+* Turek takes out his short sword *
+
+*****
+
+(( Roll for initiative! =) :like: ))'''
+
+
+settings.accountAndProfile.emailChangeProcess.waitingForActivationClick/masculine='''# Changing the email address
+## Back to the inbox
+
+Firecast is ready to change the email address of the adventurer "[§K14](ACCOUNT)[§R]", but he needs to access his new email address, [§B][§K14](EMAIL)[§R], and __click__ on the activation link for the change to complete.
+
+It is necessary to remember that the important message may end up getting in the [§K4]__spam__[§R] box of the hero.'''
+
+settings.accountAndProfile.emailChangeProcess.waitingForActivationClick/feminine='''# Changing the email address
+## Back to the inbox
+
+Firecast is ready to change the email address of the adventurer "[§K14](ACCOUNT)[§R]", but she needs to access her new email address, [§B][§K14](EMAIL)[§R], and __click__ on the activation link for the change to complete.
+
+It is necessary to remember that the important message may end up getting in the [§K4]__spam__[§R] box of the heroine.'''
+
+settings.accountAndProfile.emailChangeProcess.waitingForActivationClick/neuter='''# Changing the email address
+## Back to the inbox
+
+Firecast is ready to change the email address of the adventurer "[§K14](ACCOUNT)[§R]", but they need to access their new email address, [§B][§K14](EMAIL)[§R], and __click__ on the activation link for the change to complete.
+
+It is necessary to remember that the important message may end up getting in the [§K4]__spam__[§R] box of the hero.'''
+
+
+settings.accountAndProfile.subscriptionUpgrade.forSilver/masculine='''Realizing that he does not have access to the unique features of __Firecast__ like so many others, the adventurer initiates a search for information and finds a store exposing in a panel:
+
+### [§T]<GOLD_COLOR>Gold[§R][§T] Subscription
+[§T]1 month   <TAB><GOLD_1>
+12 months<TAB><GOLD_12>
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>
+
+[§R]There is much to **gain**. Cheaper than a stew from the _Hungry Orc Tavern_.
+What will the adventurer do?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forSilver/feminine='''Realizing that she does not have access to the unique features of __Firecast__ like so many others, the adventurer initiates a search for information and finds a store exposing in a panel:
+
+### [§T]<GOLD_COLOR>Gold[§R][§T] Subscription
+[§T]1 month   <TAB><GOLD_1>
+12 months<TAB><GOLD_12>
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>
+
+[§R]There is much to **gain**. Cheaper than a stew from the _Hungry Orc Tavern_.
+What will the adventurer do?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forSilver/neuter='''Realizing that they does not have access to the unique features of __Firecast__ like so many others, the adventurer initiates a search for information and finds a store exposing in a panel:
+
+### [§T]<GOLD_COLOR>Gold[§R][§T] Subscription
+[§T]1 month   <TAB><GOLD_1>
+12 months<TAB><GOLD_12>
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>
+
+[§R]There is much to **gain**. Cheaper than a stew from the _Hungry Orc Tavern_.
+What will the adventurer do?'''
+
+
+settings.accountAndProfile.subscriptionUpgrade.forGold/masculine='''The adventurer is equipped with __Firecast__'s unique great features!
+His equipment is great to play with, but there is one item that can be very useful for him _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives his players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in his rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forGold/feminine='''The adventurer is equipped with __Firecast__'s unique great features!
+Her equipment is great to play with, but there is one item that can be very useful for her _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives her players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in her rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forGold/neuter='''The adventurer is equipped with __Firecast__'s unique great features!
+Their equipment is great to play with, but there is one item that can be very useful for them _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives their players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in their rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+### <PLATINUM_COLOR>Platinum[§R][§T] Subscription
+[§T]1 month   <TAB><PLATINUM_1>
+12 months<TAB><PLATINUM_12>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+
+settings.accountAndProfile.subscriptionUpgrade.forGold.platinumUpgradeAvaliable/masculine='''The adventurer is equipped with __Firecast__'s unique great features!
+His equipment is great to play with, but there is one item that can be very useful for him _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives his players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in his rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+<TAB>[§T]Upgrade subscription:<TAB><PLATINUM_UPGRADE_PRICE>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forGold.platinumUpgradeAvaliable/feminine='''The adventurer is equipped with __Firecast__'s unique great features!
+Her equipment is great to play with, but there is one item that can be very useful for her _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives her players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in her rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+<TAB>[§T]Upgrade subscription:<TAB><PLATINUM_UPGRADE_PRICE>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forGold.platinumUpgradeAvaliable/neuter='''The adventurer is equipped with __Firecast__'s unique great features!
+Their equipment is great to play with, but there is one item that can be very useful for them _GM_ adventures.
+
+GMing equipped with a **<PLATINUM_COLOR>Platinum Subscription[§R]** gives their players the _buff_ <PLATINUM_COLOR>Platinum Aura[§R]
+which, in their rooms, allows everyone to access some of the unique features for <GOLD_COLOR>Gold Subscribers[§R] even though they are not.
+
+<TAB>[§T]Upgrade subscription:<TAB><PLATINUM_UPGRADE_PRICE>[§R]
+
+Is it time for the adventurer to be a _GM_?'''
+
+settings.accountAndProfile.subscriptionUpgrade.forPlatinum/masculine='''The adventurer is equipped with __Firecast__'s unique great features!
+All he needs to know is if he longs for the _legendary_ <RUBY_COLOR>_Ruby_[§R] subscription.'''
+
+settings.accountAndProfile.subscriptionUpgrade.forPlatinum/feminine='''The adventurer is equipped with __Firecast__'s unique great features!
+All she needs to know is if she longs for the _legendary_ <RUBY_COLOR>_Ruby_[§R] subscription.'''
+
+settings.accountAndProfile.subscriptionUpgrade.forPlatinum/neuter='''The adventurer is equipped with __Firecast__'s unique great features!
+All they needs to know is if they longs for the _legendary_ <RUBY_COLOR>_Ruby_[§R] subscription.'''
+
+settings.accountAndProfile.subscriptionUpgrade.forRuby=The adventurer is equipped with the best of __Firecast__!

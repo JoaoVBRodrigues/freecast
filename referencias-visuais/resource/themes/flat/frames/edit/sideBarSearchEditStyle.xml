@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="302" height="270"  >
+	<import file="../../consts.xml"/>
+	<padding left="3" top="3" bottom="3" right="3"/>
+	<draw>
+		<rectangle left="0" top="0" right="302" bottom="270" xradius="5" yradius="5" zOrder="-20">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(sidebar_search_edit_bkg_color)" kind="solid"/>
+		</rectangle>			
+	</draw>
+</frame>

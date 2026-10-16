@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="571" height="119" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<draw>
+	
+		<path left="0" top="0" right="571" bottom="119" zOrder="1" mode="stretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<borders left="120" top="0" right="0" bottom="0"/>
+			
+			<pathData>M565 -2.47111e-07C568.314 -1.10635e-07 571 2.68629 571 6L571 119L-5.52072e-06 119L-2.78356e-07 5.99998C-1.24624e-07 2.68627 2.68629 -2.34061e-05 6 -2.32696e-05L565 -2.47111e-07Z</pathData>
+			<fill color="white"/>
+		</path>				
+	</draw>
+</frame>

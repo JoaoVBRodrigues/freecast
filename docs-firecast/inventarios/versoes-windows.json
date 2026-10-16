@@ -1,0 +1,186 @@
+﻿[
+    {
+        "File":  "avcodec-57.dll",
+        "FileVersion":  "57.107.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg codec library"
+    },
+    {
+        "File":  "avdevice-57.dll",
+        "FileVersion":  "57.10.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg device handling library"
+    },
+    {
+        "File":  "avfilter-6.dll",
+        "FileVersion":  "6.107.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg audio/video filtering library"
+    },
+    {
+        "File":  "avformat-57.dll",
+        "FileVersion":  "57.83.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg container format library"
+    },
+    {
+        "File":  "avutil-55.dll",
+        "FileVersion":  "55.78.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg utility library"
+    },
+    {
+        "File":  "fcwebrtc_win_x64.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "ffmpeg.exe",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "ffprobe.exe",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "Firecast.exe",
+        "FileVersion":  "8.0.0.0",
+        "ProductVersion":  "1.0.0.0",
+        "ProductName":  "Firecast",
+        "CompanyName":  "",
+        "Description":  "Firecast"
+    },
+    {
+        "File":  "libeay32.dll",
+        "FileVersion":  "1.0.2o",
+        "ProductVersion":  "1.0.2o",
+        "ProductName":  "The OpenSSL Toolkit",
+        "CompanyName":  "The OpenSSL Project, http://www.openssl.org/",
+        "Description":  "OpenSSL Shared Library"
+    },
+    {
+        "File":  "libfftw3f-3.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "lua53x64.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "lua54x64.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "postproc-54.dll",
+        "FileVersion":  "54.7.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg postprocessing library"
+    },
+    {
+        "File":  "rrpgcpp64.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "sk4d.dll",
+        "FileVersion":  null,
+        "ProductVersion":  null,
+        "ProductName":  null,
+        "CompanyName":  null,
+        "Description":  null
+    },
+    {
+        "File":  "ssleay32.dll",
+        "FileVersion":  "1.0.2o",
+        "ProductVersion":  "1.0.2o",
+        "ProductName":  "The OpenSSL Toolkit",
+        "CompanyName":  "The OpenSSL Project, http://www.openssl.org/",
+        "Description":  "OpenSSL Shared Library"
+    },
+    {
+        "File":  "swresample-2.dll",
+        "FileVersion":  "2.9.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg audio resampling library"
+    },
+    {
+        "File":  "swscale-4.dll",
+        "FileVersion":  "4.8.100",
+        "ProductVersion":  "n3.4.11",
+        "ProductName":  "FFmpeg",
+        "CompanyName":  "FFmpeg Project",
+        "Description":  "FFmpeg image rescaling library"
+    },
+    {
+        "File":  "unins000.exe",
+        "FileVersion":  "51.1052.0.0",
+        "ProductVersion":  "8.13                                              ",
+        "ProductName":  "Firecast                                                    ",
+        "CompanyName":  "Firecast                                                    ",
+        "Description":  "Setup/Uninstall"
+    },
+    {
+        "File":  "yt-dlp.exe",
+        "FileVersion":  "2022.05.18",
+        "ProductVersion":  "2022.05.18 on Python 3.8.10",
+        "ProductName":  "yt-dlp",
+        "CompanyName":  "https://github.com/yt-dlp",
+        "Description":  "yt-dlp"
+    },
+    {
+        "File":  "obsFirecast\\obsFirecast32.dll",
+        "FileVersion":  "1.0.0.0",
+        "ProductVersion":  "1.0.0.0",
+        "ProductName":  "obsFirecast",
+        "CompanyName":  "",
+        "Description":  "obsFirecast"
+    },
+    {
+        "File":  "obsFirecast\\obsFirecast64.dll",
+        "FileVersion":  "1.0.0.0",
+        "ProductVersion":  "1.0.0.0",
+        "ProductName":  "obsFirecast",
+        "CompanyName":  "",
+        "Description":  "obsFirecast"
+    }
+]

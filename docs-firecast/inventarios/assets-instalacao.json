@@ -1,0 +1,78 @@
+{
+  "id": "LOCAL-ASSETS-PE-001",
+  "assets": [
+    {
+      "id": "INSTALL-ASSET-001",
+      "name": "FirecastPlugin.ico",
+      "sourcePath": "C:/Users/João/AppData/Local/Firecast/FirecastPlugin.ico",
+      "format": "ICO",
+      "bytes": 366015,
+      "sha256": "0850f7820dfdc91dd83b9042ee6e6e1e96a1dfccc9c0910d2701df297968896b",
+      "images": [
+        {
+          "width": 16,
+          "height": 16,
+          "bitCount": 32,
+          "bytes": 1128,
+          "offset": 134
+        },
+        {
+          "width": 24,
+          "height": 24,
+          "bitCount": 32,
+          "bytes": 2440,
+          "offset": 1262
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "bitCount": 32,
+          "bytes": 4264,
+          "offset": 3702
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "bitCount": 32,
+          "bytes": 9640,
+          "offset": 7966
+        },
+        {
+          "width": 64,
+          "height": 64,
+          "bitCount": 32,
+          "bytes": 16936,
+          "offset": 17606
+        },
+        {
+          "width": 96,
+          "height": 96,
+          "bitCount": 32,
+          "bytes": 38056,
+          "offset": 34542
+        },
+        {
+          "width": 128,
+          "height": 128,
+          "bitCount": 32,
+          "bytes": 67624,
+          "offset": 72598
+        },
+        {
+          "width": 256,
+          "height": 256,
+          "bitCount": 32,
+          "bytes": 225793,
+          "offset": 140222
+        }
+      ],
+      "durationSeconds": null,
+      "method": "ICO directory only, no rendering or extraction",
+      "origin": "Distribuído na instalação; autoria não determinada",
+      "screenAssociation": "Associação de plugin sugerida pelo nome, não verificada",
+      "license": null,
+      "reuse": "desconhecida",
+      "extracted": false
+    }
+  ]
+}

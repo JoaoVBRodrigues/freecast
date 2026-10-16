@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="floatingWindowStyle" inherit="popupStyle"
+		   background="frames/floatingWindow/floating_window_outermost_background.xml"/>						   
+		   
+	<class name="floatingWindowStyle_top" inherit="panelstyle"
+		   background="frames/floatingWindow/floating_window_top_background.xml"/>
+		   
+	<class name="floatingWindowStyle_content" inherit="panelstyle"
+		   background="frames/floatingWindow/floating_window_content_background.xml"/>		   
+		   
+	<class name="floatingWindowStyle_titleLabel" inherit="formTitleLabelStyle" fontSize="15" 
+	       background="frames/floatingWindow/floating_window_titlelabel_background_normal.xml"/>				   
+	
+	<class name="floatingWindowStyle_closeButton" inherit="buttonStyle"
+		   background="frames/floatingWindow/floating_window_closebutton_normal.xml"
+		   backgroundHover="frames/floatingWindow/floating_window_closebutton_hover.xml"
+		   backgroundDown="frames/floatingWindow/floating_window_closebutton_down.xml"/>
+
+	<class name="floatingWindowStyle_resizeGrip" inherit="buttonStyle"
+		   background="frames/floatingWindow/floating_window_resizegrip_normal.xml"
+		   backgroundDown="frames/floatingWindow/floating_window_resizegrip_normal.xml"
+		   backgroundHover="frames/floatingWindow/floating_window_resizegrip_normal.xml"/>				
+</group>

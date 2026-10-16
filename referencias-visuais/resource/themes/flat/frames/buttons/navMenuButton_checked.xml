@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="56" height="47" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<borders left="10" top="10" right="10" bottom="10"/>
+	<draw>
+		<rectangle left="0" top="0" right="56" bottom="47" xradius="0" yradius="0">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(dark_bkg_color)"/>
+		</rectangle>	
+		
+		<rectangle left="-6" top="0" right="6" bottom="47" xradius="0" yradius="0">
+			<anchors left="true" top="true" bottom="true" right="false"/>
+			<fill color="$(dominant_color_gradient)" color2="$(dominant_color)" kind="gradient"
+				  gradientStartX="0.0" gradientStartY="0.0" gradientEndX="1.0" gradientEndY="1.0"/>
+		</rectangle>			
+	</draw>
+</frame>

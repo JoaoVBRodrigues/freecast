@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<!-- Base Style Definitions -->
+	
+	<class name="_defaultRadioButtonStyle" inherit="__defaultCheckboxesFontColors text"
+			checkedFrame="frames/radioButton/radiobutton_checked.xml"
+			uncheckedFrame="frames/radioButton/radiobutton_unchecked.xml" />
+
+	<!-- Standard RadioButtons -->
+	<class name="radiobuttonstyle" inherit="_defaultRadioButtonStyle" markLayoutSize="20" markDrawSize="15" />				
+
+	<class name="chatToolbarRadioButtonStyle" inherit="radiobuttonstyle" fontColor="$(chat_toolbar_icon_color)"
+		   checkedFrame="frames/radioButton/chattoolbar_radiobutton_checked.xml"
+		   uncheckedFrame="frames/radioButton/chattoolbar_radiobutton_unchecked.xml"
+		   fontSize="12"
+		   markLayoutSize="16" markDrawSize="12" />
+</group>

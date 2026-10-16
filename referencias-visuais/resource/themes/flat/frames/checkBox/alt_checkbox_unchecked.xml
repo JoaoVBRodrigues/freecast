@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="15" height="15" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<margins right="6"/>
+	<draw>
+		<!-- BOX -->
+		<path left="0" top="0" right="15" bottom="15" zOrder="-2">
+			<pathData>M 20 2 L 1 2 L 1 22 L 20 22 Z </pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color)" size="1.2"/>
+		</path>								
+	</draw>
+</frame>

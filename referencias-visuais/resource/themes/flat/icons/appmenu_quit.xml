@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="28" height="28" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<draw>				
+		<path left="5" top="5" right="23" bottom="23" zOrder="1" mode="original">
+			<pathData>M10 0H8V10H10V0ZM14.83 2.17L13.41 3.59C14.99 4.86 16 6.81 16 9C16 12.87 12.87 16 9 16C5.13 16 2 12.87 2 9C2 6.81 3.01 4.86 4.58 3.58L3.17 2.17C1.23 3.82 0 6.26 0 9C0 13.97 4.03 18 9 18C13.97 18 18 13.97 18 9C18 6.26 16.77 3.82 14.83 2.17Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(dominant_color_gradient)" color2="$(dominant_color)" kind="gradient"
+				  gradientStartX="0.0" gradientStartY="0.0" gradientEndX="0.0" gradientEndY="1.0"/>
+		</path>				
+	</draw>
+</frame>

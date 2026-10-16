@@ -1,0 +1,14 @@
+{
+  "id": "USR-001",
+  "date": "2026-10-16",
+  "source": "Mensagem do usuário nesta conversa após os testes da fase 2",
+  "reportedRestriction": "Macros dependem de Gold/gasto; criação de mapas e pastas também tem restrições segundo o usuário.",
+  "classification": "relato do usuário; critérios comerciais não verificados independentemente",
+  "limitations": [
+    "Não foi observada tela de compra/assinatura ou política comercial.",
+    "Resposta comando desconhecido não comprova sozinha uma causa de licença.",
+    "Não foram medidos preços, cotas, planos ou requisitos por papel."
+  ],
+  "investigationDecision": "Não comprar acesso nem alterar licenciamento; manter testes afetados pendentes e continuar com evidências acessíveis.",
+  "proposedProductDecision": "Macros, mapas e pastas no núcleo independente sem cobrança por desbloqueio, preservando autorização por sala/papel."
+}

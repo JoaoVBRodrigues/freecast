@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="19" height="19" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<margins right="2"/>
+	<draw>				
+		<!-- Outer Ellipse -->		
+		<ellipse left="0" top="0" right="19" bottom="19" zOrder="-2">
+			<anchors left="true" top="true" bottom="true" right="true" aspectFromMin="true"/>
+			<stroke color="$(chat_toolbar_icon_color)"/>
+		</ellipse>
+		
+		<!-- Check Mark -->
+		<ellipse left="4" top="4" right="15" bottom="15" zOrder="1">
+			<anchors left="true" top="true" bottom="true" right="true" aspectFromMin="true"/>					
+			<fill color="$(chat_toolbar_icon_color)" />
+		</ellipse>						
+	</draw>
+</frame>

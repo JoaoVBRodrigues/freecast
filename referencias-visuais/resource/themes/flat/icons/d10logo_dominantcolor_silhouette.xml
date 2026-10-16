@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="137" height="136" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<draw>				
+		<path left="3" top="4" right="137" bottom="136" zOrder="1" mode="fitStretch">
+			<pathData>M2.05015 81.2761L68.2305 134.597L68.3875 135.372L68.8107 135.064L69.1955 135.374L69.0708 134.876L132.892 88.5671L133.055 88.5399L136.237 46.0465L70.0845 0.0902751L70.046 0L69.9757 0.150782L0 43.6966L1.99019 81.2051L1.94558 81.1918L1.99145 81.2288L1.99255 81.2495L2.05015 81.2761ZM64.9139 118.326L64.9381 118.345L64.9388 118.348L64.9378 118.343L64.9139 118.326Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(dominant_color)"/>
+		</path>					
+	</draw>
+</frame>

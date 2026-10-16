@@ -1,0 +1,27 @@
+# Lacunas e experimentos de continuação
+
+A primeira etapa alcançou inventário, identidade, formatos e referências visuais. Na [fase 2](fase2/README.md), E01, E04 e E12 avançaram parcialmente: versão/mesa confirmadas, texto e rolagens enviados, erro e comando `/macros` desconhecido observados, fontes/constantes verificadas estaticamente. A investigação funcional continua parcial. Os demais procedimentos abaixo permanecem planejados; resultados esperados não são alegações de execução.
+
+O usuário autorizou a sessão já aberta e a mesa Creator's Game. Os testes realizados e seus efeitos estão em [05-testes-na-mesa.md](fase2/05-testes-na-mesa.md). Essa autorização não fornece uma segunda conta nem abrange conversas/mesas alheias.
+
+| ID | Pergunta / procedimento com dados de teste | Evidência a guardar | Dependência e limite |
+|---|---|---|---|
+| E01 — parcial | Título8.13, nome da mesa e arquivo do caminho do processo confirmados; falta baseline completo e janela Sobre se necessária | S09/S10 e F2-RUNTIME-001; recortes com dimensões/hash | Sessão existente expressamente autorizada; hash de memória não comparado |
+| E02 | Login, cadastro e recuperação: observar formulário vazio, input inválido, falha e sucesso com conta de teste | Passos, textos de erro sanitizados, estados habilitados e tempo de resposta | Conta de teste e acesso normal; não registrar senhas/tokens |
+| E03 | Criar sala sintética, entrar com dois jogadores; comparar ações do mestre, membro e visitante; testar convite, senha, remoção e reentrada | Matriz ação×papel, resposta visual e persistência | Não criar/alterar mesas pessoais; começar com criação não destrutiva |
+| E04 — parcial | Texto e rolagens testados; falta mídia/privadas/formatos/macros e reentrada | S11–S16; usuário informa exigência de Gold | Macros pendentes de acesso; não diagnosticar como defeito ou causa de licença comprovada; erro com * não prova ausência geral de multiplicação |
+| E05 | Ficha mínima sintética: dois campos, campo calculado, alteração e reentrada; exportar por mecanismo normal | Antes/depois, export sanitizado, schema real e vínculo visual | Separar dados de ficha, template e runtime; não executar plugin desconhecido |
+| E06 | Biblioteca: pasta, upload próprio, busca, renomear, permissões, leitura por outro cliente e exclusão de item sintético | Tipos/tamanhos aceitos, erros e referências persistidas | Usar imagem e som de autoria própria; registrar cotas somente se observadas |
+| E07 | Cena/mapa e players: recurso próprio, token, movimento, camadas, volume, iniciar/parar faixa, voz se disponível | Escala, atalhos, papéis, sincronização e falhas | Ainda falta catálogo visual desses módulos; não inferir funcionamento de nomes de scripts |
+| E08 | Concorrência: duas contas enviam mensagens e editam campos iguais/diferentes; observar estados e, se necessário, captura mínima suportada | Ordem, duplicatas, confirmação, conflitos, snapshot e projeção sanitizada de tráfego | Endpoint e protocolo desconhecidos; não executar requisições recuperadas automaticamente |
+| E09 | Desconectar/restaurar apenas cliente de teste; tentar enviar mensagem e editar ficha offline | Indicador, fila/perda/reenvio, tempo até convergência, sessão expirada | Interromper somente processo/conexão de teste, nunca rede do usuário inteiro |
+| E10 | Importação/exportação/backup: exportar mesa/ficha sintética e importar em ambiente vazio | Identidade e schema de cada artefato, roundtrip e falhas | Disponibilidade do fluxo ainda não confirmada |
+| E11 | Plugins: inspecionar SDK/API já inventariado, escolher exemplo mínimo confiável, medir eventos e efeitos de arquivo/rede em ambiente isolado | Versão de runtime, chamadas expostas, restrições e dependências | Executar plugins legados é meta separada; não iniciar por pacote arbitrário |
+| E12 — parcial |24 TTF,141 constantes,30 classes e66 cores confirmados estaticamente; ainda falta medir aplicação efetiva do tema | F2-FONTES-TEMAS-001; catálogo de swatches e recortes runtime | Declarações de licença não equivalem a reutilização confirmada; fontes/assets não extraídos |
+| E13 | Se uma regra concreta continuar inexplicada: delimitar handler pelos recursos/símbolos e abrir cópia privada no provider nativo disponível | Evidence, endereço/offset, pseudocódigo rotulado e limite de cobertura | Provider não foi preparado para este alvo; reparar somente o bloqueio observado, fechar sessão ao fim |
+
+O usuário informou em 16/10/2026 que macros exigem Gold/gasto e há restrições também para criar mapas e pastas. Os critérios comerciais e sua relação causal com a resposta de /macros não foram verificados independentemente. Fonte: [USR-001](evidencias/relato-gold.json).
+
+Retomada recomendada: completar os cenários acessíveis de E04 e obter ficha/exportação sintéticas em E05/E10 quando disponíveis. Macros, criação de mapas e pastas ficam pendentes se exigirem gasto. Não comprar acesso nem alterar licenciamento. A meta funcional da implementação independente permanece; E02/E03 e E08–E10 ainda exigem cenários próprios de contas, permissões, consistência e recuperação.
+
+Agora existem oito recortes locais com hashes e uma mesa autorizada em execução. Ainda faltam baseline visual completo sanitizado, segunda conta de teste, exportação real de ficha, persistência/reconexão e regras efetivas do servidor. Não é possível declarar alta fidelidade com os casos atuais. O inventário e os contratos estáticos podem ser reutilizados sem repetir análises idênticas.

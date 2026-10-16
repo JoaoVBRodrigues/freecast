@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+
+	<padding left="12" top="5" bottom="5" right="12" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="10" yradius="10">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(action_button_background_color_1)" color2="$(action_button_background_color_2)" kind="gradient"
+				  gradientStartX="0.0" gradientStartY="0.0" gradientEndX="1.0" gradientEndY="1.0"/>
+		</rectangle>	
+	</draw>
+</frame>

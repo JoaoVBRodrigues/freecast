@@ -1,0 +1,23 @@
+﻿{
+    "Id":  "LOCAL-WINDOW-002",
+    "CollectedAtUtc":  "2026-10-16T03:01:26.2710041Z",
+    "AgentSessionId":  1,
+    "Processes":  [
+                      {
+                          "ProcessId":  39312,
+                          "Path":  "C:\\Users\\João\\AppData\\Local\\Firecast\\Firecast.exe",
+                          "SessionId":  1,
+                          "MainWindowHandle":  0,
+                          "VisibleWindowHandles":  [
+                                                       3016692
+                                                   ],
+                          "ExactTestRoomMatches":  [
+
+                                                   ]
+                      }
+                  ],
+    "ReadOnly":  true,
+    "ScreenshotsTaken":  0,
+    "ActionsPerformed":  0,
+    "Limitation":  "Observação do desktop acessível a este processo; ausência de handle não prova que a aplicação está fechada."
+}

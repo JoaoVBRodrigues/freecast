@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<padding left="12" top="5" bottom="5" right="12" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="10" yradius="10" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(action_button_background_hover_color)"/>
+		</rectangle>			
+	</draw>
+</frame>

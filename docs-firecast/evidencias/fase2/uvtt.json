@@ -1,0 +1,403 @@
+{
+  "evidenceId": "F2-UVTT-001",
+  "method": "Node ZIP parser; store/deflate decompression in memory; line-numbered static reading; no target execution, payload export, login or network",
+  "nodeVersion": "v22.23.2",
+  "scriptSha256": "4aa5cc3f734f49e659f940c9e9691946c533d3cd91e953d4c683b5e709ee16c9",
+  "archive": {
+    "path": "C:/Users/João/AppData/Local/Firecast/resource.zip",
+    "size": 21462948,
+    "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+    "eocdOffset": 21462926,
+    "centralOffset": 21329906,
+    "centralSize": 133020,
+    "memberCount": 1422
+  },
+  "rpk": {
+    "name": "complementosPadroes/UniversalVTTImporter.rpk",
+    "size": 103380,
+    "sha256": "b6d36cc71a23871c700172d6fe48201fd5c41aed4265640ac167eb8e5b049e33",
+    "crc32Matches": true,
+    "members": 55
+  },
+  "sources": [
+    {
+      "name": "module.xml",
+      "sha256": "80dee3b8030e7d622626cf7195e786911265f64b0db5289fe9975dac077fcf02",
+      "size": 1321,
+      "lines": 20,
+      "crc32Matches": true
+    },
+    {
+      "name": "uvtt.lua",
+      "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c",
+      "size": 7739,
+      "lines": 219,
+      "crc32Matches": true
+    },
+    {
+      "name": "jsonparser.lua",
+      "sha256": "72c0966c1f1ccab232a00648c9e9358275b0a9872eb0d2356e2c6faae9ab1cbb",
+      "size": 6421,
+      "lines": 260,
+      "crc32Matches": true
+    },
+    {
+      "name": "base64.lua",
+      "sha256": "05e0a6de8b281cac7e8571c17def507d7c657f8e4a58b37c539676c6e02645ae",
+      "size": 7379,
+      "lines": 201,
+      "crc32Matches": true
+    },
+    {
+      "name": "sdk/scene.lua",
+      "sha256": "2315a77fe4eb2a222a2d5ce79ecb34464b223b137eb3da6cac9ee5024feb2ae7",
+      "size": 361,
+      "lines": 14,
+      "crc32Matches": true
+    },
+    {
+      "name": "sdk/sceneCore.dlua",
+      "sha256": "e783707c397b9b20ccfd712ecbf65120773fe6573718d3dee7d8ac6cd74817de",
+      "size": 3305,
+      "lines": 146,
+      "crc32Matches": true
+    },
+    {
+      "name": "sdk/sceneWrappers.dlua",
+      "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb",
+      "size": 40332,
+      "lines": 1123,
+      "crc32Matches": true
+    },
+    {
+      "name": "sdk/fireDriveCore.dlua",
+      "sha256": "df9a8226c1b9223e3a44215de71ac885dfa4d0050e72a06d4b6598019fe8a8d6",
+      "size": 6766,
+      "lines": 261,
+      "crc32Matches": true
+    },
+    {
+      "name": "sdk/internetCore.dlua",
+      "sha256": "a89bee85c75a1d03a2fe5b728d73c296b8817c313b1bdac1ac6fbff397cf75ae",
+      "size": 5719,
+      "lines": 188,
+      "crc32Matches": true
+    }
+  ],
+  "claims": [
+    {
+      "id": "UVTT-01",
+      "classification": "observed-static",
+      "claim": "Plugin Ambesek.dd2vtt version 1.2; SDK 3.7, API 88.1.",
+      "evidence": [
+        {
+          "file": "module.xml",
+          "lineStart": 2,
+          "lineEnd": 18,
+          "sha256": "80dee3b8030e7d622626cf7195e786911265f64b0db5289fe9975dac077fcf02"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-02",
+      "classification": "observed-static",
+      "claim": "Tool button Gerador / Importar dd2vtt; callback returns when scene.isGM is false, then offers single dd2vtt file selection and UTF-8 JSON decode.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 87,
+          "lineEnd": 104,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        },
+        {
+          "file": "sdk/sceneWrappers.dlua",
+          "lineStart": 62,
+          "lineEnd": 75,
+          "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-03",
+      "classification": "observed-static",
+      "claim": "World width and height = resolution.map_size x/y times existing grid.cellSize. Image decoded from dg.image into memory and uploaded as arq.name + .png.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 104,
+          "lineEnd": 143,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-04",
+      "classification": "observed-static",
+      "claim": "Each adjacent line_of_sight pair becomes opaque quadrilateral: dominant x extends y by +/-0.05 grid units, otherwise extends x. Coordinates multiply cellSize.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 145,
+          "lineEnd": 172,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-05",
+      "classification": "observed-static",
+      "claim": "Each portal bounds[1..2] becomes same opaque quadrilateral; no open/closed branch. Any wall/portal enables fog and sets full world rectangle explorable.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 174,
+          "lineEnd": 206,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-06",
+      "classification": "observed-static",
+      "claim": "Each light creates a background token at (position-0.5)*cellSize, intense range=range*cellSize, angle=360.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 208,
+          "lineEnd": 215,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-07",
+      "classification": "observed-static",
+      "claim": "PNG upload failure offers local save or TinyPNG compression/JPEG conversion. Basic auth config key is base64(api:input). 401 exact error string clears key.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 6,
+          "lineEnd": 85,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        },
+        {
+          "file": "uvtt.lua",
+          "lineStart": 124,
+          "lineEnd": 143,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-08",
+      "classification": "observed-static",
+      "claim": "SDK upload checks stream table, resets stream position to zero, rejects size strictly above 128 MiB; delegates to RRPG.FIRECAST.FMXModule using plugin messages.",
+      "evidence": [
+        {
+          "file": "sdk/fireDriveCore.dlua",
+          "lineStart": 1,
+          "lineEnd": 5,
+          "sha256": "df9a8226c1b9223e3a44215de71ac885dfa4d0050e72a06d4b6598019fe8a8d6"
+        },
+        {
+          "file": "sdk/fireDriveCore.dlua",
+          "lineStart": 22,
+          "lineEnd": 77,
+          "sha256": "df9a8226c1b9223e3a44215de71ac885dfa4d0050e72a06d4b6598019fe8a8d6"
+        },
+        {
+          "file": "sdk/fireDriveCore.dlua",
+          "lineStart": 96,
+          "lineEnd": 151,
+          "sha256": "df9a8226c1b9223e3a44215de71ac885dfa4d0050e72a06d4b6598019fe8a8d6"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-09",
+      "classification": "inference-static",
+      "claim": "No schema/version/range validation, rollback, scene clear, portal state conversion, map-origin or pixel-scale conversion appears in complete 219-line importer. Missing/malformed fields can fail after prior changes; repeats can append walls/lights.",
+      "evidence": [
+        {
+          "file": "uvtt.lua",
+          "lineStart": 87,
+          "lineEnd": 219,
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-10",
+      "classification": "observed-static",
+      "claim": "JSON decode rejects trailing garbage, reports line/column; null becomes nil. Arrays use numeric indices, objects assignment permits duplicate-key overwrite.",
+      "evidence": [
+        {
+          "file": "jsonparser.lua",
+          "lineStart": 33,
+          "lineEnd": 37,
+          "sha256": "72c0966c1f1ccab232a00648c9e9358275b0a9872eb0d2356e2c6faae9ab1cbb"
+        },
+        {
+          "file": "jsonparser.lua",
+          "lineStart": 48,
+          "lineEnd": 59,
+          "sha256": "72c0966c1f1ccab232a00648c9e9358275b0a9872eb0d2356e2c6faae9ab1cbb"
+        },
+        {
+          "file": "jsonparser.lua",
+          "lineStart": 159,
+          "lineEnd": 219,
+          "sha256": "72c0966c1f1ccab232a00648c9e9358275b0a9872eb0d2356e2c6faae9ab1cbb"
+        },
+        {
+          "file": "jsonparser.lua",
+          "lineStart": 250,
+          "lineEnd": 260,
+          "sha256": "72c0966c1f1ccab232a00648c9e9358275b0a9872eb0d2356e2c6faae9ab1cbb"
+        }
+      ]
+    },
+    {
+      "id": "UVTT-11",
+      "classification": "observed-static",
+      "claim": "SDK scene, fog and lighting operations delegate to native object calls/properties; semantics, authorization and replication beyond wrappers not established.",
+      "evidence": [
+        {
+          "file": "sdk/sceneCore.dlua",
+          "lineStart": 25,
+          "lineEnd": 106,
+          "sha256": "e783707c397b9b20ccfd712ecbf65120773fe6573718d3dee7d8ac6cd74817de"
+        },
+        {
+          "file": "sdk/sceneWrappers.dlua",
+          "lineStart": 62,
+          "lineEnd": 75,
+          "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb"
+        },
+        {
+          "file": "sdk/sceneWrappers.dlua",
+          "lineStart": 550,
+          "lineEnd": 552,
+          "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb"
+        },
+        {
+          "file": "sdk/sceneWrappers.dlua",
+          "lineStart": 718,
+          "lineEnd": 720,
+          "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb"
+        },
+        {
+          "file": "sdk/sceneWrappers.dlua",
+          "lineStart": 1003,
+          "lineEnd": 1011,
+          "sha256": "faca773fa32d0c706c611582edd3a2eace3d64c7db8ac30ee2746e6ea06b64cb"
+        }
+      ]
+    }
+  ],
+  "synthetic": {
+    "classification": "independent handwritten contract examples; not executed against Lua or Firecast",
+    "cellSize": 50,
+    "input": {
+      "resolution": {
+        "map_size": {
+          "x": 4,
+          "y": 3
+        }
+      },
+      "image": "<base64 of an independently authored PNG; placeholder, not importable>",
+      "line_of_sight": [
+        [
+          {
+            "x": 0,
+            "y": 1
+          },
+          {
+            "x": 2,
+            "y": 1
+          }
+        ]
+      ],
+      "portals": [
+        {
+          "bounds": [
+            {
+              "x": 2,
+              "y": 1
+            },
+            {
+              "x": 2,
+              "y": 2
+            }
+          ],
+          "closed": false
+        }
+      ],
+      "lights": [
+        {
+          "position": {
+            "x": 1.5,
+            "y": 2.5
+          },
+          "range": 3
+        }
+      ]
+    },
+    "derivedByArithmetic": {
+      "worldWidth": 200,
+      "worldHeight": 150,
+      "wallPolygon": [
+        {
+          "x": 0,
+          "y": 47.5
+        },
+        {
+          "x": 100,
+          "y": 47.5
+        },
+        {
+          "x": 100,
+          "y": 52.5
+        },
+        {
+          "x": 0,
+          "y": 52.5
+        }
+      ],
+      "portalPolygon": [
+        {
+          "x": 97.5,
+          "y": 50
+        },
+        {
+          "x": 97.5,
+          "y": 100
+        },
+        {
+          "x": 102.5,
+          "y": 100
+        },
+        {
+          "x": 102.5,
+          "y": 50
+        }
+      ],
+      "light": {
+        "x": 50,
+        "y": 100,
+        "lightIntenseRange": 150,
+        "lightAngle": 360
+      },
+      "fogEnabled": true,
+      "portalClosedFieldIgnored": true
+    }
+  },
+  "limitations": [
+    "Not a REA MCP Evidence ID; independent reproducible evidence supplement to prior REA inventory",
+    "Source lines are UTF-8 text split on CRLF/LF; BOM retained in line 1",
+    "No dynamic import, parser execution, uploads, endpoint access, role tests or server validation",
+    "Contract reflects shipped importer version 1.2 only, not whole Universal VTT specification",
+    "Malformed JSON/schema failures are predictions from static control flow; native API coercion and exceptions remain unknown",
+    "Base64 image placeholder is deliberately not a complete import fixture"
+  ]
+}

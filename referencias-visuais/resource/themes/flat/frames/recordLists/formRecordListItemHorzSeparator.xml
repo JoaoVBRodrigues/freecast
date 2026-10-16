@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="50" height="1" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>	
+	<margins right="30"/>
+	<draw>
+		<path left="0" top="0" right="50" bottom="1" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(dark_bkg_color)" size="0.25"/>
+			<pathData>M 0 0.5 L 50 0.5</pathData>			
+		</path>					
+	</draw>
+</frame>

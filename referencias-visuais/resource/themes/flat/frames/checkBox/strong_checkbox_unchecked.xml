@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="17" height="17" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<margins right="6"/>
+	<draw>				
+		<!-- BOX -->		
+		<rectangle left="0" top="0" right="17" bottom="17" xradius="3" yradius="3" zOrder="-2">
+			<anchors left="true" top="true" bottom="true" right="true" aspectFromMin="true"/>
+			<stroke color="$(short_content_bkg_color)" size="2"/>
+		</rectangle>									
+	</draw>
+</frame>

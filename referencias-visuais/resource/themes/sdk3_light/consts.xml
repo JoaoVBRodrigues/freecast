@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<const name="null_color">#00000000</const> 
+	
+	<const name="bkg_color">#F0F0F0</const>		
+	<const name="bkg_color_outline">#D6D6D6</const>	
+	<const name="bkg_color_highlight">#C0C0C0</const>	
+	<const name="secondary_bkg_color">#F0F0F0</const>
+		
+	<const name="action_button_2_background_normal_color">#EB3449</const>		
+	<const name="action_button_2_background_hover_color">#FF2D45</const>	
+	<const name="action_button_2_background_down_color">#AA2635</const>
+	
+	<const name="action_button_2_text_color">black</const>
+	
+	<const name="face_color">#A1A1A1</const>	
+	<const name="face_color_hover">#969696</const>		
+	
+	
+	<const name="scrollbar_track_color">#C8C8C8</const>
+	<const name="scrollbar_thumb_color">$(bkg_color)</const>
+	<const name="scrollbar_thumb_hover_color">$(bkg_color)90</const>
+</group>

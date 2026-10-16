@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="9" height="20" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<margins left="2" right="10" top="2" bottom="2"/>
+	
+	<draw>				
+		<!-- Drop Down Mark 9x4 -->	
+		
+		<path left="0" top="6" right="9" bottom="10" zOrder="-2" mode="fit">
+			<pathData>M1 -2L5.5 -6L10 -2 </pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color_down_deemphasized)" size="3"/>
+		</path>												
+	</draw>
+</frame>

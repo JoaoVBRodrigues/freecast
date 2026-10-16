@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="12" height="24" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<rectangle left="3" top="2" right="9" bottom="23" zOrder="0">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="black"/>
+		</rectangle>		
+	
+		<path left="0" top="0" right="12" bottom="24" zOrder="1" mode="fit">
+			<pathData>M16,18H7V4H16M11.5,22A1.5,1.5 0 0,1 10,20.5A1.5,1.5 0 0,1 11.5,19A1.5,1.5 0 0,1 13,20.5A1.5,1.5 0 0,1 11.5,22M15.5,1H7.5A2.5,2.5 0 0,0 5,3.5V20.5A2.5,2.5 0 0,0 7.5,23H15.5A2.5,2.5 0 0,0 18,20.5V3.5A2.5,2.5 0 0,0 15.5,1Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color_deemphasized)"/>
+		</path>					
+	</draw>
+</frame>

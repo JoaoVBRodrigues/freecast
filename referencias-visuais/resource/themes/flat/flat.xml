@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<import file="consts.xml"/>
+	
+  		   	
+	<!-- Backgrounds -->
+	<class name="backgroundStyle" background="frames/background.xml"/>	
+																															  
+	<!-- Inputs -->
+	<class name="listboxstyle"/>
+	<class name="listboxitemstyle" inherit="text" fontColorSelected="$(face_color_hover)"/>			
+				
+	<class name="comboBoxStyle" inherit="textPrompt _aroundControlSmallDropShadowEffect" 
+			background="frames/comboBox/combobox_normal.xml" 
+			backgroundFocused="frames/comboBox/combobox_focused.xml"
+			backgroundFocusedHover="frames/comboBox/combobox_focused_hover.xml"
+			backgroundHover="frames/comboBox/combobox_hover.xml"
+			dropDownIcon="frames/comboBox/dropDownArrow_normal.xml"/>
+			
+	<class name="comboBoxStyle_popup" inherit="_popupSmallDropShadowEffect popupStyle" background="frames/comboBox/popup_background_normal.xml" verticalOffset="3"/>
+	<class name="comboBoxStyle_listbox" inherit="listboxstyle" background="frames/comboBox/listbox_background_normal.xml"/>
+	
+	<class name="comboBoxStyle_listitem" inherit="listboxitemstyle" 
+		  fontColor="$(face_color_down_deemphasized)"
+		  fontSize="15"
+		  textPrompt_fontSize="15"
+		  fontStyle=""
+	      background="frames/comboBox/item_background_normal.xml" 
+		  backgroundSelected="frames/comboBox/item_background_selected.xml"/>	
+		  
+	<class name="colorcomboboxstyle" inherit="comboBoxStyle" />
+	<class name="colorcomboboxstyle_listitem" inherit="comboBoxStyle_listitem" markStrokeColor="$(null_color)"/>
+	
+	<class name="iconcomboboxstyle" inherit="comboBoxStyle" />
+	<class name="iconcomboboxstyle_listitem" inherit="comboBoxStyle_listitem" iconWidth="16"/>
+
+	<class name="errorComboBoxStyle" inherit="comboBoxStyle"
+			background="frames/comboBox/error_combobox_normal.xml" 
+			backgroundFocused="frames/comboBox/error_combobox_focused.xml"
+			backgroundFocusedHover="frames/comboBox/error_combobox_focused_hover.xml"
+			backgroundHover="frames/comboBox/error_combobox_hover.xml" />
+	
+	<!-- Chat -->
+	
+	<class name="entireChatPanelStyle" inherit="panelStyle" background="frames/chat/entireChatPanelFrame.xml"/>
+	<class name="chatInputPanelStyle" inherit="panelStyle" background="frames/chat/chatInputPanelStyle.xml"/>
+	<class name="typingChatStatusLabelStyle" inherit="labelStyle" fontColor="$(state_text_content_foreground_color)" fontStyle="bold"/>	
+	
+
+		   
+	<class name="transparentChatInputRichEditStyle" inherit="chatInputRichEditStyle" 
+		   background="frames/noFrame.xml"
+		   backgroundDominantColor="$(bkg_color)"/>		   
+		   
+	<class name='formInputRichEditStyle' inherit="chatInputRichEditStyle" 
+  		   body_fontColor="$(face_color)"
+		   background="frames/richEdit/roundInputRichEdit.xml" 
+		   backgroundFocused="frames/richEdit/roundInputRichEdit_focused.xml"
+		   vscroll_margins_top="1"
+		   vscroll_margins_right="2"
+		   vscroll_margins_bottom="1"/>
+	
+	<class name="errorFormInputRichEditStyle" inherit="formInputRichEditStyle"
+		   background="frames/richEdit/roundInputRichEdit_error_normal.xml" 
+		   backgroundFocused="frames/richEdit/roundInputRichEdit_error_focused.xml"/>
+				
+	<class name="chatLogElementPanelStyle" inherit="panelStyle" background="frames/panelStyle/roundPanelStyleFrame.xml"/>
+				
+	<class name="directMessageWindowToolbarStyle" inherit="titledPageToolbarStyle" 
+		   background="frames/chat/directMessage_toolbar_background.xml"
+		   coverClippingMask="frames/chat/directMessageUserCoverImageMask.xml" coverClippingMaskMode="stretch"/>		
+
+	<class name="directMessageWindowToolbarWithBackBtnStyle" inherit="directMessageWindowToolbarStyle" 
+		   background="frames/chat/directMessage_toolbar_background_backbtn.xml"/>	
+		   
+	<class name="directMessageWindowPanelStyle" inherit="titledPageWindowStyle"/>
+	<class name="directMessageWindowTopNickStyle" inherit="contentTitleLabelStyle"/>
+	
+	<!-- Titled State Pages -->
+	
+	<class name="titledPageWindowStyle" inherit="contentWindowPanelStyle" />	
+	<class name="titledPageToolbarStyle" inherit="contentToolbarStyle" background="frames/panelStyle/titledPage_toolbar_background.xml"/>
+	<class name="titledPageTitleLabelStyle" inherit="contentTitleLabelStyle" fontSize="20" fontStyle="semibold" />	
+	<class name="titledPageContentStyle" inherit="panelStyle" background="frames/panelStyle/titledPage_content_background.xml"/>		
+		
+	<class name="titledPageToolbarWithBackBtnStyle" inherit="titledPageToolbarStyle" background="frames/panelStyle/titledPage_toolbar_background_back_btn.xml"/>		
+		
+				
+	<!-- Panels -->				
+	<class name="panelStyle" background="frames/panelStyle/panelStyleFrame.xml"/>	
+	<class name="transparentPanelStyle"/>	
+	
+	<class name="scrollboxstyle" vscrollbar_width="12" hscrollbar_height="12" small_vscrollbar_width="8" small_hscrollbar_height="8"/>
+	<class name="groupPanelStyle" inherit="panelStyle" background="frames/panelStyle/groupPanelFrame.xml"/>	
+	<class name="deemphasizedGroupPanelStyle" inherit="groupPanelStyle" background="frames/panelStyle/deemphasizedGroupPanelFrame.xml"/>	
+
+	<class name="radioCardUnselectedPanelStyle" inherit="deemphasizedGroupPanelStyle" 
+		background="frames/panelStyle/radiocard_unselected_normal.xml"
+		backgroundHover="frames/panelStyle/radiocard_unselected_hover.xml"
+		backgroundDown="frames/panelStyle/radiocard_unselected_down.xml"
+		backgroundFocused="frames/panelStyle/radiocard_unselected_focused.xml"
+		backgroundFocusedHover="frames/panelStyle/radiocard_unselected_focused_hover.xml"
+		backgroundFocusedDown="frames/panelStyle/radiocard_unselected_focused_down.xml"		/>	
+		
+	<class name="radioCardSelectedPanelStyle" inherit="radioCardUnselectedPanelStyle" 
+		background="frames/panelStyle/radiocard_selected_normal.xml"
+		backgroundHover="frames/panelStyle/radiocard_selected_hover.xml"
+		backgroundDown="frames/panelStyle/radiocard_selected_down.xml"
+		backgroundFocused="frames/panelStyle/radiocard_selected_focused.xml"
+		backgroundFocusedHover="frames/panelStyle/radiocard_selected_focused_hover.xml"
+		backgroundFocusedDown="frames/panelStyle/radiocard_selected_focused_down.xml"		/>		
+		
+	
+	<class name="toolbarstyle" background="frames/panelStyle/toolbarPanelStyleFrame.xml"/>
+	<class name="contactstoolbarstyle" inherit="toolbarstyle"/>
+	<class name="appNavigationPanelStyle" inherit="panelStyle" background="frames/panelStyle/appNavigationPanelStyleFrame.xml"/>	
+	<class name="topToolBarStyle" inherit="toolbarstyle" background="frames/panelStyle/topToolbarStyleFrame.xml"/>	
+	<class name="contentToolbarStyle" inherit="toolbarstyle" background="frames/panelStyle/contentTopPanelStyle.xml"  backgroundEffect="dropShadow"/>
+	
+	<class name="contentWindowPanelStyle" inherit="panelStyle" background="frames/panelStyle/contentWindowPanelStyle.xml"/>	
+	
+	<class name="sideBarWindowPanelStyle" inherit="panelstyle"/>
+	<class name="leftSideBarWindowPanelStyle" inherit="sideBarWindowPanelStyle" background="frames/panelStyle/leftSideBarWindowPanelStyle.xml"/>
+	
+	<class name="sideBarToolbarStyle" inherit="toolbarstyle"/>
+	<class name="leftSideBarToolbarStyle" inherit="sideBarToolbarStyle" background="frames/panelStyle/leftSideBarToolbarStyle.xml"  backgroundEffect="dropShadow"/>
+	
+	<class name="cardToolbarStyle" inherit="toolbarstyle" background="frames/panelStyle/cardToolbarStyle.xml"/>
+	
+	<class name="toastPanelStyle" inherit="panelStyle" background="frames/panelStyle/toastPanelBackground.xml"/>
+	<class name="toastLabelStyle" inherit="labelStyle" fontColor="$(bkg_color)"/>	
+	
+	<class name="recordItemPanelStyle" inherit="panelStyle" background="frames/panelStyle/recordItemPanel.xml" backgroundDominantColor="$(short_content_bkg_color)"/>
+	
+	<class name="loggedInWindowStyle" background="frames/panelStyle/loggedInWindowStyle.xml"/>		
+	
+	<class name="userProfileAvatarHolderPanelStyle" inherit="panelStyle" background="frames/popups/userProfilePopup_avatarHolder_background.xml"/>
+	<class name="imageOverlayPanelStyle" inherit="panelStyle" background="frames/panelStyle/imageOverlayPanelStyle_background.xml"/>
+	
+	<!-- Cards -->
+	
+	<class name="cardPanelStyle" inherit="panelstyle" background="frames/panelStyle/cardPanelStyle.xml" 
+				backgroundEffect="shadow" backgroundEffect_color="black" backgroundEffect_opacity="0.25"
+				backgroundEffect_distance="0" backgroundEffect_direction="90" backgroundEffect_softness="0.25"/>
+	
+	
+	<class name="alt1CardPanelStyle" inherit="cardPanelStyle" background="frames/panelStyle/alt1CardPanelStyle.xml"/>
+	<class name="alt2CardPanelStyle" inherit="cardPanelStyle" background="frames/panelStyle/alt2CardPanelStyle.xml"/>	
+	<class name="alt3CardPanelStyle" inherit="cardPanelStyle" background="frames/panelStyle/alt3CardPanelStyle.xml"/>	
+	<class name="alt4CardPanelStyle" inherit="cardPanelStyle" background="frames/panelStyle/alt4CardPanelStyle.xml"/>		
+	
+	<class name="leftCardPanelStyle" inherit="cardPanelStyle"/>		
+	<class name="secondaryLeftCardPanelStyle" inherit="leftCardPanelStyle" background="frames/panelStyle/secondaryCardPanelStyle.xml"/>	
+
+	<class name="contactListCardPanelStyle" inherit="leftCardPanelStyle"/>		
+
+	
+	<!-- Lists -->
+	<class name="listviewstyle" inherit="text" 
+		background="frames/panelStyle/transparent.xml"
+	    selectionColor="$(listview_selection_bkg_color)" 
+		fontColorHover="$(face_color)"  
+		fontColorDown="$(face_color)"
+		selectionBackground="frames/listView/listViewSelectionFrame.xml"/>
+		
+	<class name="listviewstyle_detaillabelstyle" inherit="detaillabelstyle" fontColor="$(listview_font_color)"/>
+	<class name="listviewstyle_headerlabelstyle" inherit="labelstyle" fontColor="$(face_color)" fontSize="16" fontStyle="bold"/>
+	
+	<class name="_commonListViewStyleForChat" inherit="listviewstyle"
+		   background="frames/panelStyle/panelStyleFrame.xml"
+		   fontColor="$(listview_font_color)"		   
+		   fontSize="18"
+		   />
+	
+	<class name="contactsListViewStyle" inherit="_commonListViewStyleForChat" fontStyle="bold"
+		   background="frames/panelStyle/transparent.xml"
+		   headerBackground="frames/panelStyle/contactListHeaderBackground.xml"		
+		   itemBackground="frames/panelStyle/contactListItemBackground.xml"
+		   actionItemBackground="frames/panelStyle/contactList_actionItem_background.xml"
+		   selectionBackground="frames/panelStyle/contactListSelectionBackground.xml"
+		   avatarBackground="frames/avatarBotons/avatarBackground.xml" 		  	
+		   avatarClippingMask="frames/avatarBotons/whiteCircle.xml"		
+		   avatarQuality="high"
+		   />
+		   
+	<class name="contactsListViewStyle_detaillabelstyle" inherit="listviewstyle_detaillabelstyle"/>
+	<class name="contactsListViewStyle_headerlabelstyle" inherit="listviewstyle_headerlabelstyle"/>	
+	
+	<class name="contactsListViewStyle_actionlabelstyle" inherit="contactsListViewStyle_detaillabelstyle" 
+			fontSize="14" fontStyle="semibold" 
+			fontColor="$(face_color_down_deemphasized)"
+			fontColorHover="$(face_color)"/>
+	
+	<class name="contactsListViewStyle_unseenMessageCountLabelStyle" inherit="notificationBadgeLabelStyle" />
+		
+	<class name="singleCompactLineListViewStyle" inherit="listviewstyle"
+		   itemBackground="frames/listView/singleCompactLineListItemBackground.xml"
+			/>
+		
+	<class name="playlistMusicPlayerTracksListViewStyle" inherit="singleCompactLineListViewStyle"		   
+		   fontColor="$(face_color_state)"	
+		   />
+		
+	<!-- Splitters -->	
+	<class name="splitterstyle" splittingIndicatorColor1="$(face_color)" splittingIndicatorColor2="$(face_color_deemphasized)"/>
+	
+	<!-- Scrollbars -->
+	<class name="scrollbarstyle" background="frames/panelStyle/transparent.xml"/>
+	<class name="scrollbarstyle_vtrack" background="frames/scrollbar/vtrack.xml"/>
+	<class name="scrollbarstyle_vtrack_thumb" background="frames/scrollbar/vthumb.xml" backgroundHover="frames/scrollbar/vthumb_hover.xml"/>
+	<class name="scrollbarstyle_topbutton" visible="false" background="frames/scrollbar/topbutton.xml"/>
+	<class name="scrollbarstyle_bottombutton" visible="false"/>
+	<class name="scrollbarstyle_htrack" background="frames/scrollbar/htrack.xml"/>
+	<class name="scrollbarstyle_htrack_thumb" background="frames/scrollbar/hthumb.xml" backgroundHover="frames/scrollbar/hthumb_hover.xml"/>
+	<class name="scrollbarstyle_leftbutton" visible="false"/>
+	<class name="scrollbarstyle_rightbutton" visible="false"/>	
+	
+	<class name="smallscrollbarstyle" inherit="scrollbarstyle"/>	
+	
+	<!-- ProgressBars -->
+	<class name="progressbarstyle"/>
+	<class name="progressbarstyle_htrack" background="frames/progressbar/htrack.xml"/>
+	<class name="progressbarstyle_hindicator" background="frames/progressbar/hindicator.xml"/>
+	<class name="progressbarstyle_vtrack" background="frames/progressbar/vtrack.xml"/>
+	<class name="progressbarstyle_vindicator" background="frames/progressbar/vindicator.xml"/>
+	
+	<!-- TrackBars -->
+	<class name="trackbarstyle" 
+		   vtrack="frames/trackBar/vtrack.xml"
+		   vtrackFocused="frames/trackBar/vtrack_focused.xml"
+		   htrack="frames/trackBar/htrack.xml"
+		   htrackFocused="frames/trackBar/htrack_focused.xml"
+		   vthumb="frames/trackBar/thumb_normal.xml"
+		   vthumbHover="frames/trackBar/thumb_hover.xml"
+		   vthumbDown="frames/trackBar/thumb_down.xml"
+		   hthumb="frames/trackBar/thumb_normal.xml"
+		   hthumbHover="frames/trackBar/thumb_hover.xml"
+		   hthumbDown="frames/trackBar/thumb_down.xml"/>
+	
+
+	<!-- record lists -->
+	<class name="formRecordListStyle" inherit="panelstyle _aroundControlSmallDropShadowEffect" 
+		background="frames/recordLists/formRecordList.xml"
+		horzItemSeparator="frames/recordLists/formRecordListItemHorzSeparator.xml"/>
+		
+	<class name="formRecordListItemStyle" inherit="panelstyle" background="frames/recordLists/formRecordListItem.xml"/>
+	
+	<class name="choiceRecordListStyle" inherit="panelstyle" background="frames/panelStyle/transparent.xml"/>
+	
+	<class name="choiceRecordListItemStyle" inherit="panelstyle" 			
+		   background="frames/panelStyle/transparent.xml"
+		   backgroundFocused="frames/recordLists/choiceRecordListItem_focused.xml"
+		   backgroundFocusedHover="frames/recordLists/choiceRecordListItem_focused_hover.xml"
+		   backgroundHover="frames/recordLists/choiceRecordListItem_hover.xml"/>
+	
+	<!-- Other Controls -->
+	
+	<class name="horzSeparatorStyle" inherit="panelstyle" background="frames/separators/horzSeparator_background.xml"/>
+	<class name="warningHorzSeparatorStyle" inherit="panelstyle" background="frames/separators/horzSeparator_warning_background.xml"/>
+	<class name="vertSeparatorStyle" inherit="panelstyle" background="frames/separators/vertSeparator_background.xml"/>	
+	<class name="vertChatToolbarSeparatorStyle" inherit="panelstyle" background="frames/separators/chatToolbar_vertSeparator_background.xml"/>	
+
+	<class name="imagestyle"/>
+	<class name="framedimagestyle" inherit="imagestyle"/>
+	
+	<class name="formImageStyle" inherit="textPrompt framedimagestyle" 
+			textPrompt_opacity="0.5"
+			background="frames/images/form_image.xml" 
+		    backgroundHover="frames/images/form_image_hover.xml"		    
+		    backgroundFocused="frames/images/form_image_focused.xml"
+		    backgroundFocusedHover="frames/images/form_image_focused_hover.xml"/>
+			
+	<class name="errorFormImageStyle" inherit="errorTextPrompt formImageStyle" 
+			textPrompt_opacity="0.8"
+			background="frames/images/form_image_error.xml"
+		    backgroundHover="frames/images/form_image_error_hover.xml"		    
+		    backgroundFocused="frames/images/form_image_error_focused.xml"
+		    backgroundFocusedHover="frames/images/form_image_error_focused_hover.xml"/>
+	
+	<class name="layoutEditionZoneStyle" inherit="panelstyle"
+		   background="frames/layoutEdition/layout_edition_zone_normal.xml"
+		   backgroundHover="frames/layoutEdition/layout_edition_zone_hover.xml"	
+		   backgroundDown="frames/layoutEdition/layout_edition_zone_down.xml"   />
+		   
+	<class name="layoutEditionModuleHeaderStyle" inherit="panelstyle"
+		   background="frames/layoutEdition/layout_edition_moduleheader_normal.xml" />		   
+		   
+	<class name="dockQuickMenuLayoutStyle" inherit="panelstyle" 
+		   background="frames/panelStyle/dock_quickmenu_bkg_normal.xml"
+		   backgroundHover="frames/panelStyle/dock_quickmenu_bkg_hover.xml"/>
+	
+	<!-- Colors -->
+	
+	<class name="colors"
+	    	chat_toolbutton_icon_flatColor="$(chat_toolbar_icon_color)"
+			bkg_color="$(bkg_color)"			
+			face_color="$(face_color)"
+			face_color_deemphasized="$(face_color_down_deemphasized)"
+			default_hiding_color="$(quaternary_bkg_color)"
+			default_hiding_opacity="0.9"
+			
+			highlight_presentation_color="$(bright_alert_color)"
+			
+			default_premium_silver_color="$(premium_silver_color)"
+			default_premium_gold_color="$(premium_gold_color)"
+			default_premium_platinum_color="$(premium_platinum_color)"
+			default_premium_ruby_color="$(premium_ruby_color)" />
+	
+	<!-- Icons -->
+	
+	<class name="icons" 	
+	
+		   disconnected_state_firecast_logo="icons/d10_logo_firecasttext.xml"
+		   
+		   appmenu_dashboard_icon="icons/d10logo_facecolor.xml"
+		   appmenu_rooms_icon="icons/groupWork.xml"
+		   appmenu_friendlist_icon="icons/appmenu_friendlist.xml"
+		   appmenu_settings_icon="icons/appmenu_settings.xml"
+		   appmenu_quit_icon="icons/appmenu_quit.xml"
+		   appmenu_defaultRoomAvatarImage="icons/default_room_avatar_appmenu.xml"
+		   appmenu_firedrive="icons/appmenu_firedrive.xml"
+		   
+		   accordion_back_button="icons/arrow_back.xml"
+		   accordion_menu_button="icons/menu.xml"		   		   
+		   
+		   avatar_on_64="icons/emoji.nerd.xml"   	   
+		   avatar_off_64="icons/avatar64off.png"
+		   add_contact_64="icons/addUserIcon.xml"
+		   search_contact_64="icons/whiteLoupe.xml"
+		   		   
+		   contact_state_online_mark="icons/contactOnlineMark.xml"
+		   contact_state_offline_mark="icons/contactOfflineMark.xml"
+		   contact_state_busy_mark="icons/contactBusyMark.xml"
+		   contact_state_mobile_mark="icons/contactMobileMark.xml"
+		   contact_state_room_with_password_10="icons/smallerkeyicon.png"
+		   contact_add_friend="icons/contact_add_friend.xml"
+		   contact_block_user="icons/BlockUserIcon.xml"
+		   contact_add_friend_width_stretched="icons/contact_add_friend_width_stretched.xml"		   
+		   contact_view_pending_friend_requests=""
+			
+		   premium_silver_mark="icons/premium/silver_mark.xml"		   		   
+		   premium_gold_mark="icons/premium/gold_mark.xml"		   
+		   premium_platinum_mark="icons/premium/platinum_mark.xml"
+		   premium_ruby_mark="icons/premium/ruby_mark.xml"		 
+		
+		   chat_sendFailureIcon="icons/warning.xml"	
+		   chat_sendMessageIcon="icons/send.xml"
+		   chat_defaultFallbackAvatar="icons/emoji.nerd.xml"
+		   
+		   chat_avatarClippingMask="/frames/avatarBotons/whiteCircle.xml"
+		   chat_avatarBackground="frames/avatarBotons/avatarBackground.xml"
+		   chat_avatarBlockedOverlay="icons/blockedOverlay.xml"
+		   chat_avatarQuality="high"
+		   
+		   chat_fileIcon="icons/fileIcon.xml"
+		   chat_fileDownloadIcon="icons/downloadIcon.xml"
+		   chat_fileDownloadCopyLink="icons/copyLinkToClipboard.xml"
+		   chat_playAnimatedMovieOverlay="icons/playOverlay.xml"
+		   
+		   chat_logDiceIcon="icons/chat/dice2x.png"
+		   chat_logJoinIcon="icons/chat/join.png"
+		   chat_logPartIcon="icons/chat/part.png"
+		   chat_logKickedIcon="icons/chat/kick.png"
+		   chat_logNickChangeIcon="icons/chat/nick.png"
+		   chat_logUnkownMessageIcon="icons/chat/unkownSymbol.png"		   
+		   chat_logModeratedIcon="icons/chat/moderatedicon.png"		   
+		   chat_logMediumPasswordIcon="icons/chat/medium_password.png"		   
+		   chat_logNarratorImpersonationAvatar="icons/chat/narrator_impersonation_avatar.xml"	
+		   chat_logDefaultCharacterImpersonationAvatar="icons/chat/default_character_impersonation_avatar.xml"	
+		   chat_logStatusBarChangeIcon="icons/chat/status_bar_icon.xml"	
+		   chat_logMediumCreatedIcon="icons/chat/medium_created.png"	
+		   chat_logHighlightedTextIcon="icons/chat/highlighted_text.xml"
+		   
+		   chat_toolbutton_colorStyle="icons/colorToolbarIcon.xml"			   
+		   chat_toolbutton_boldStyle="icons/boldToolbarIcon.xml"		   
+		   chat_toolbutton_italicStyle="icons/italicToolbarIcon.xml"
+		   chat_toolbutton_underlineStyle="icons/underlineToolbarIcon.xml"		   
+		   chat_toolbutton_sendFile="icons/sendFileToolbarIcon.xml"		
+		   chat_toolbutton_dice_d4="icons/dices/chat_toolbar_d4.xml"
+		   chat_toolbutton_dice_d6="icons/dices/chat_toolbar_d6.xml"	   
+		   chat_toolbutton_dice_d8="icons/dices/chat_toolbar_d8.xml"
+		   chat_toolbutton_dice_d10="icons/dices/chat_toolbar_d10.xml"
+		   chat_toolbutton_dice_d12="icons/dices/chat_toolbar_d12.xml"
+		   chat_toolbutton_dice_d20="icons/dices/chat_toolbar_d20.xml"
+		   chat_toolbutton_dice_d100="icons/dices/chat_toolbar_d100.xml"
+		   chat_toolbutton_impersonation_noOne="icons/person.xml"
+		   chat_toolbutton_impersonation_narrator="icons/chat/narrator_impersonation_avatar.xml"
+		   chat_toolbutton_impersonation_npc="icons/person_background.xml"
+		   chat_editLogRec_cancel="icons/clear_warning.xml"
+		   		   
+		   directMessage_avatarClippingMask="/frames/avatarBotons/whiteCircle.xml"
+		   directMessage_avatarBackground="frames/avatarBotons/avatarBackground.xml"
+		   directMessage_avatarQuality="high"
+		   
+		   quickUpload_defaultIcon="icons/uploadToCloud.xml"
+		   quickUpload_cancelIcon="icons/cancellingX.xml"
+		   quickUpload_retryIcon="icons/retryArrow.xml"
+		   
+		   quickUploadConfirmation_fileIcon="icons/quickUploadFileIcon.xml"	
+		   
+		   actionCancel_cancelIcon="icons/cancellingX.xml" 
+		   
+		   cancelAccount_cancelAccountIcon="icons/cancelAccountIcon.png"
+		   
+		   connectionReconciliator_countDownImage="icons/d10logo_dominantcolor_silhouette.xml"	   
+
+		   
+		   userProfilePopup_coverClippingMask="frames/popups/userProfilePopup_cover_clippingMask.xml"
+		   userProfilePopup_coverClippingMaskMode="stretch"
+		   userProfilePopup_defaultCoverImage="frames/popups/userProfilePopup_cover_defaultimage.xml"
+		   
+		   userProfilePopup_reputation_undefined="icons/reputation/reputation_undefined.xml"
+		   userProfilePopup_reputation_1="icons/reputation/reputation1.xml"
+		   userProfilePopup_reputation_2="icons/reputation/reputation2.xml"
+		   userProfilePopup_reputation_3="icons/reputation/reputation3.xml"
+		   userProfilePopup_reputation_4="icons/reputation/reputation4.xml"
+		   userProfilePopup_reputation_5="icons/reputation/reputation5.xml"
+		   userProfilePopup_approve_icon="icons/thumb_up.xml"
+		   userProfilePopup_reprove_icon="icons/thumb_down.xml"
+		   userProfilePopup_discover_fake_icon="icons/supervisor_face_color.xml"
+		   
+		   roomOverviewQuad_coverClippingMask="frames/panelStyle/roomOverviewQuad_cover_clippingMask.xml"
+		   roomOverviewQuad_coverClippingMaskMode="stretch"
+		   roomOverviewQuad_coverFullRectClippingMask="frames/panelStyle/roomOverviewQuad_cover_clippingMask_fullRect.xml"
+		   roomOverviewQuad_coverFullRectClippingMaskMode="stretch"		   
+		   roomOverviewQuad_defaultCoverImage=""
+
+		   roomOverviewQuad_avatarClippingMask="frames/panelStyle/roomOverviewQuad_avatar_clippingMask.xml"
+		   roomOverviewQuad_avatarClippingMaskMode="stretch"
+		   roomOverviewQuad_avatarBackground="frames/avatarBotons/avatarBackground.xml"				   
+		   
+		   roomOverviewQuad_offAvatarClippingMask="frames/panelStyle/roomOverviewQuad_avatar_clippingMask.xml"
+		   roomOverviewQuad_offAvatarClippingMaskMode="stretch"
+		   roomOverviewQuad_offAvatarOverlay="icons/off_mark/off_mark_overlay.xml"
+		   roomOverviewQuad_offAvatarOverlayMode="stretch"
+		   roomOverviewQuad_offAvatarClippingNotMask="icons/off_mark/off_mark_notClipping.xml"
+		   roomOverviewQuad_offAvatarClippingNotMaskMode="stretch"		   
+		   roomOverviewQuad_offAvatarBackground="frames/avatarBotons/avatarBackground.xml"				   		   
+		   
+		   roomOverviewQuad_defaultAvatarImage="icons/default_room_avatar.xml"
+		   roomOverviewQuad_approve_icon="icons/thumb_up.xml"
+		   roomOverviewQuad_reprove_icon="icons/thumb_down.xml"
+		   
+		   roomProfilePopup_menu="icons/more_vert_ellipsis.xml"
+		   
+		   roomPresence_avatarClippingMask="/frames/avatarBotons/whiteRoundRectangle.xml"
+		   roomPresence_avatarClippingMaskMode="stretch"		   
+		   roomPresence_avatarBackground="frames/avatarBotons/avatarBackground.xml"
+		   roomPresence_avatarQuality="high"	
+		   roomPresence_defaultFallbackAvatar="icons/emoji.nerd.xml"		   
+		   roomPresence_defaultCharacterFallbackAvatar="icons/default_character_avatar.xml"
+		   roomPresence_coverClippingMask=""
+		   roomPresence_coverClippingMaskMode="stretch"		
+		   roomPresence_voiceState="icons/presences/voice.xml"
+		   roomPresence_blindState="icons/presences/blind.xml"
+		   roomPresence_muteState="icons/presences/mute.xml"
+		   roomPresence_typingState="icons/presences/typing.xml"
+		   roomPresence_busyState="icons/presences/busyState.xml"
+		   roomPresence_isOfflineState="icons/presences/offlineState.xml"
+		   roomPresence_brokenConnectionState="icons/presences/brokenConnection.xml"
+		   roomPresence_rrpgClassicConnectionState="icons/presences/rrpg_classic_r_greyscale_16.png"	   
+		   roomPresence_musicActivityState="icons/presences/music_activity_state.xml"		
+		   roomPresence_voiceActivityState_active="icons/presences/voice_activity_state_active.xml"	
+		   roomPresence_voiceActivityState_inactive="icons/presences/voice_activity_state_inactive.xml"	
+		   roomPresence_voiceActivityState_remote_on_voip="icons/presences/voice_activity_state_inactive.xml"	
+		   roomPresence_p2pCnxState_connecting="icons/presences/p2p_connecting.xml"	
+		   roomPresence_p2pCnxState_connected="icons/presences/p2p_connected.xml"	
+		   roomPresence_p2pCnxState_disconnected="icons/presences/p2p_disconnected.xml"	
+		   roomPresence_p2pCnxState_failed="icons/presences/p2p_failed.xml"			   
+		   roomPresence_mobileConnectionState="icons/presences/mobileMark.xml"
+		   roomPresence_avatarBlockedOverlay="icons/presences/blockedOverlay.xml"
+		   roomPresence_musicVolumeCtrl="icons/volume_up_deemphasized.xml"
+		   roomPresence_voiceVolumeCtrl="icons/volume_up_deemphasized.xml"
+		   roomPresence_charstatus_cancelEdtLine="icons/clear.xml"
+		   
+		   statusBarEditor_cancel="icons/clear.xml"
+
+		   ui_state_online_mark="icons/ui_states/online_mark.xml"
+		   ui_state_offline_mark="icons/ui_states/offline_mark.xml"
+		   ui_state_have_password_mark="icons/ui_states/password_mark.xml"
+		   ui_state_my_room_mark="icons/ui_states/my_room_mark.xml"
+		   
+		   face_color_checkmark="icons/face_color_checkmark.xml"
+		   
+		   dashboard_find_room="icons/dashboard/find_room.xml"
+		   dashboard_create_room="icons/dashboard/create_room.xml"
+		   dashboard_contacts="icons/dashboard/contacts.xml"
+		   dashboard_settings="icons/dashboard/settings.xml"
+		   
+		   library_closedFolder="icons/libraryClosedFolder.xml"	   
+		   library_openFolder="icons/libraryOpenFolder.xml"
+		   library_File="icons/libraryFile.xml"
+		   library_Scene="icons/libraryScene.xml"
+		   library_Imagem="icons/libraryImg.xml"
+		   library_character="icons/default_character_avatar.xml"
+		   library_sceneUnit="icons/librarySceneUnit.xml"
+		   library_Unknown="icons/libraryUnknown.xml"
+		   
+		   library_unlock_item="icons/lock_open.xml"
+		   library_locked_item="icons/lock_closed.xml"
+		   
+		   library_closedFolder_invisible="icons/libraryClosedFolder_invisible.xml"
+		   library_openFolder_invisible="icons/libraryOpenFolder_invisible.xml"
+		   library_File_invisible="icons/libraryFile_invisible.xml"
+		   library_Scene_invisible="icons/libraryScene_invisible.xml"
+		   library_Imagem_invisible="icons/libraryImg_invisible.xml"
+		   library_Character_invisible="icons/libraryCharacter_invisible.xml"
+		   library_sceneUnit_invisible="icons/librarySceneUnit_invisible.xml"
+		   library_Unknown_invisible="icons/libraryUnknown_invisible.xml"
+		   library_Mark_invisible="icons/libraryOverlayMarkInvisible.xml"
+		   
+		   library_createBibItem="icons/libraryCreateBibItem.xml"
+		   library_Empty_ChangeOwner="icons/libraryEmptyChangeOwner.xml"
+		   library_Empty_ChangeVisibility="icons/libraryEmptyChangeVisibility.xml"
+		   library_Empty_Settings="icons/libraryEmptySettings.xml"
+		   
+		   library_item_menu="icons/libraryItemMenu.xml"
+		   lbirary_item_new_directory="icons/libraryNewDirectory.xml"
+		   lbirary_item_new_scene="icons/libraryNewScene.xml"
+		   
+		   room_desktop_sheet_add="icons/addIcon.xml"
+		   room_desktop_sheet_close="icons/clear_bold.xml"
+		   room_desktop_sheet_menu="icons/more_vert_ellipsis.xml"
+		   room_desktop_menu="icons/menuIcon.xml"
+		   room_desktop_conference="icons/microphone_settings.xml"		   
+		   room_desktop_enter_layout_customization="icons/dashboard_customize.xml"
+		   room_desktop_leave_layout_customization="icons/dashboard_confirm.xml"
+		   
+		   room_compact_desktop_menu="icons/more_vert_ellipsis.xml"
+		   
+		   room_desktop_edition_drag_handle="icons/dragHandleIcon.xml"
+		   room_desktop_edition_dragcopy_handle="icons/fileCopy_small.xml"
+		   room_desktop_edition_remove_module="icons/clear_small.xml"
+		   
+		   room_module_highlight="icons/highlight.xml"
+		   
+		   room_settings_setPassword="icons/key.xml"
+		   room_settings_clearPassword="icons/clear.xml"
+		   
+		   room_delete_room_alert_icon="icons/trash_alert.xml"
+		   
+		   room_explorer_sort="icons/sort.xml"		   
+		   
+		   file_save="icons/save_file_icon.xml"
+		   
+		   playlistPlayer_nextTrack="icons/music/next.xml"
+		   playlistPlayer_previousTrack="icons/music/previous.xml"
+		   playlistPlayer_play="icons/music/play.xml"
+		   playlistPlayer_pause="icons/music/pause.xml"
+		   playlistPlayer_resume="icons/music/play.xml"
+		   playlistPlayer_stop="icons/music/stop.xml"
+		   playlistPlayer_volumeIcon="icons/volume_up_deemphasized.xml"		   
+		   playlistPlayer_addMusic="icons/addIcon_circle.xml"
+		   playlistPlayer_removeMusic="icons/removeIcon_circle.xml"
+		   playlistPlayer_clearPlaylist="icons/clear_all.xml"
+		   playlistPlayer_repeatNone="icons/repeat_none.xml"
+		   playlistPlayer_repeatAll="icons/repeat_all.xml"
+		   playlistPlayer_repeatOne="icons/repeat_one.xml"
+		   
+		   sfxPlayer_removeTrack="icons/removeIcon_circle.xml"
+		   sfxPlayer_addTrack="icons/addIcon_circle.xml"
+		   sfxPlayer_dir_expanded="icons/arrow_nav_down.xml"
+		   sfxPlayer_dir_collapsed="icons/arrow_nav_right.xml"
+		   sfxPlayer_track_play="icons/music/play.xml"
+		   sfxPlayer_track_pause="icons/music/pause.xml"
+		   sfxPlayer_track_stop="icons/music/stop.xml"
+		   sfxPlayer_track_repeat_off="icons/repeat.xml"
+		   sfxPlayer_track_repeat_on="icons/repeat_all.xml"
+		   sfxPlayer_track_info="icons/info.xml"
+		   sfxPlayer_masterVolume="icons/volume_up_deemphasized.xml"
+	   
+		   richEdit_paragraph_line_spacing="icons/format_line_spacing.xml"
+		   />
+		
+	<import file="theme_baseDefinitions.xml"/>
+	<import file="theme_disconnectedForm.xml"/>
+	<import file="theme_dialogs.xml"/>
+	<import file="theme_popups.xml"/>
+	<import file="theme_labels.xml"/>	
+	<import file="theme_buttons.xml"/>		
+	<import file="theme_checkboxes.xml"/>		
+	<import file="theme_radiobuttons.xml"/>
+	<import file="theme_edits.xml"/>		
+	<import file="theme_floating_window.xml"/>
+	<import file="theme_separators.xml"/>
+	<import file="theme_statusBars.xml"/>
+	<import file="theme_tabs.xml"/>
+	<import file="theme_panels.xml"/>
+</theme>

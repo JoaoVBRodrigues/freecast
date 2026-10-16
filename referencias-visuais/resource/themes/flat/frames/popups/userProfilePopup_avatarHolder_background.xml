@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="88" height="88" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>	
+	<padding left="6" right="6" bottom="6" top="6"/>
+	
+	<draw>
+	
+		<ellipse left="0" top="0" right="88" bottom="88" zOrder="1" >			
+			<fill color="$(bkg_color)"/>
+		</ellipse>				
+	</draw>
+</frame>

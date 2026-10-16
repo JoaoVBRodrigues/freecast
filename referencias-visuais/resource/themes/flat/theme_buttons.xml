@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="_suppressedParentBackgroundFrames" 
+		   background=""
+		   backgroundHover=""	
+		   backgroundDown=""
+		   backgroundFocused=""
+		   backgroundFocusedHover=""
+		   backgroundFocusedDown=""
+		   backgroundChecked=""
+		   backgroundCheckedHover="" 
+		   backgroundCheckedDown=""
+		   backgroundCheckedFocused=""
+		   backgroundCheckedFocusedHover=""
+		   backgroundCheckedFocusedDown=""	/>
+
+	<class name="_actionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/actionButton.xml"
+		   backgroundHover="frames/buttons/actionButtonHover.xml"
+		   backgroundDown="frames/buttons/actionButtonDown.xml"
+		   backgroundFocused="frames/buttons/actionButtonFocused.xml"
+		   backgroundFocusedHover="frames/buttons/actionButtonFocusedHover.xml"
+		   backgroundFocusedDown="frames/buttons/actionButtonFocusedDown.xml"/>
+
+	<class name="_secondaryActionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/secondaryActionButton_normal.xml"
+		   backgroundHover="frames/buttons/secondaryActionButton_hover.xml"
+		   backgroundDown="frames/buttons/secondaryActionButton_down.xml"
+		   backgroundFocused="frames/buttons/secondaryActionButton_focused.xml"
+		   backgroundFocusedHover="frames/buttons/secondaryActionButton_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/secondaryActionButton_focused_down.xml"/>		
+
+	<class name="_roundActionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/round_actionButton_normal.xml"
+		   backgroundHover="frames/buttons/round_actionButton_hover.xml"
+		   backgroundDown="frames/buttons/round_actionButton_down.xml"
+		   backgroundFocused="frames/buttons/round_actionButton_focused.xml"
+		   backgroundFocusedHover="frames/buttons/round_actionButton_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/round_actionButton_focused_down.xml"/>
+
+	<class name="_roundSecondaryActionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/round_secondaryActionButton_normal.xml"
+		   backgroundHover="frames/buttons/round_secondaryActionButton_hover.xml"
+		   backgroundDown="frames/buttons/round_secondaryActionButton_down.xml"
+		   backgroundFocused="frames/buttons/round_secondaryActionButton_focused.xml"
+		   backgroundFocusedHover="frames/buttons/round_secondaryActionButton_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/round_secondaryActionButton_focused_down.xml"/>	   
+		   
+	<class name="_navMenuButtonFrame" inherit="_suppressedParentBackgroundFrames"
+		   background="frames/buttons/navMenuButton_normal.xml"
+		   backgroundHover="frames/buttons/navMenuButton_hover.xml"	
+		   backgroundChecked="frames/buttons/navMenuButton_checked.xml"
+		   backgroundCheckedHover="frames/buttons/navMenuButton_checked.xml"	   
+		   iconOpacity="0.4" iconOpacityHover="0.6" iconOpacityDown="0.7" iconOpacityChecked="1.0"/>	
+		   
+	<class name="_smallActionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/smallActionButton_normal.xml"
+		   backgroundHover="frames/buttons/smallActionButton_hover.xml"
+		   backgroundDown="frames/buttons/smallActionButton_down.xml"
+		   backgroundFocused="frames/buttons/smallActionButton_focused.xml"
+		   backgroundFocusedHover="frames/buttons/smallActionButton_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/smallActionButton_focused_down.xml"/>		   
+
+	<class name="_stdButtonFrame" background="frames/buttons/std_button_normal.xml"
+		   backgroundHover="frames/buttons/std_button_hover.xml"
+		   backgroundDown="frames/buttons/std_button_down.xml"
+		   backgroundFocused="frames/buttons/std_button_focused.xml"
+		   backgroundFocusedHover="frames/buttons/std_button_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/std_button_focused_down.xml"
+		   
+		   contentOpacity="0.7" contentOpacityHover="0.95" contentOpacityDown="1.0"
+		   
+		   backgroundChecked="frames/buttons/std_button_checked.xml"
+		   backgroundCheckedHover="frames/buttons/std_button_checked_hover.xml"
+		   backgroundCheckedDown="frames/buttons/std_button_checked_down.xml"
+		   backgroundCheckedFocused="frames/buttons/std_button_checked_focused.xml"
+		   backgroundCheckedFocusedHover="frames/buttons/std_button_checked_focused_hover.xml"
+		   backgroundCheckedFocusedDown="frames/buttons/std_button_checked_focused_down.xml"
+		   
+		   contentOpacityChecked="1.0" contentOpacityCheckedHover="1.0" contentOpacityCheckedDown="1.0"/>
+		   
+		   
+	<class name="_tertiaryActionButtonFrame" inherit="_suppressedParentBackgroundFrames" background="frames/buttons/tertiaryActionButton_normal.xml"
+		   backgroundHover="frames/buttons/tertiaryActionButton_hover.xml"
+		   backgroundDown="frames/buttons/tertiaryActionButton_down.xml"
+		   backgroundFocused="frames/buttons/tertiaryActionButton_focused.xml"
+		   backgroundFocusedHover="frames/buttons/tertiaryActionButton_focused_hover.xml"
+		   backgroundFocusedDown="frames/buttons/tertiaryActionButton_focused_down.xml"
+		   
+		   contentOpacity="0.7" contentOpacityHover="0.95" contentOpacityDown="1.0"
+
+		   backgroundChecked="frames/buttons/tertiaryActionButton_checked.xml"
+		   backgroundCheckedHover="frames/buttons/tertiaryActionButton_checked_hover.xml"
+		   backgroundCheckedDown="frames/buttons/tertiaryActionButton_checked_down.xml"
+		   backgroundCheckedFocused="frames/buttons/tertiaryActionButton_checked_focused.xml"
+		   backgroundCheckedFocusedHover="frames/buttons/tertiaryActionButton_checked_focused_hover.xml"
+		   backgroundCheckedFocusedDown="frames/buttons/tertiaryActionButton_checked_focused_down.xml"
+		   
+		   contentOpacityChecked="1.0" contentOpacityCheckedHover="1.0" contentOpacityCheckedDown="1.0"
+		   />			   
+		   
+
+	<class name="baseButtonClass" inherit="text focused"/>	
+	<class name="buttonStyle" inherit="_stdButtonFrame baseButtonClass" focusedGlow="" />	
+	<class name="speedButtonStyle" inherit="buttonStyle"/>		
+	
+	<class name="talemarkButtonStyle" inherit="talemarktextstyle buttonStyle" fontSize="12" backgroundDominantColor="$(short_content_bkg_color)"
+			trimTexts="false" detectCharacterQuotedSpeech="false" />
+			
+	<class name="smallFontTalemarkButtonStyle" inherit="talemarkButtonStyle" fontSize="11"/>	
+		
+	<class name="linkButtonStyle" inherit="_suppressedParentBackgroundFrames text buttonStyle" 
+	       fontColorHover="$(face_color_hover)" 
+		   fontColorFocused="$(face_color_down_deemphasized)" 
+		   fontColorDown="$(face_color_down)" 		   
+		   background="frames/noFrame.xml"
+		   backgroundHover="frames/noFrame.xml"
+		   backgroundDown ="frames/buttons/linkButton_down.xml" />		
+		   
+	<class name="talemarkLinkButtonStyle" inherit="_suppressedParentBackgroundFrames text talemarkButtonStyle" 
+	       fontColorHover="$(face_color_hover)" 
+		   fontColorFocused="$(face_color_down_deemphasized)" 
+		   fontColorDown="$(face_color_down)" 		   
+		   background="frames/noFrame.xml"
+		   backgroundHover="frames/noFrame.xml"
+		   backgroundDown ="frames/buttons/linkButton_down.xml" />			   
+	
+	<class name="actionButtonStyle" inherit="_actionbuttonFrame textBig text" 
+		fontColor="$(action_button_text_color)"
+		fontColorHover="$(action_button_text_color)" 
+		fontColorDown="$(action_button_text_color)" 
+		fontColorFocused="$(action_button_text_color)"
+		fontStyle="medium"/>
+		
+	
+	<class name="mediumFontActionButtonStyle" inherit="actionButtonStyle" fontSize="14"/>
+	<class name="smallFontActionButtonStyle" inherit="_smallActionButtonFrame actionButtonStyle" fontSize="12" fontStyle="regular" fontColor="white"/>
+	
+	<class name="roundActionButtonStyle" inherit="_roundActionButtonFrame actionButtonStyle"/>	
+	<class name="mediumFontRoundActionButtonStyle" inherit="roundActionButtonStyle" fontSize="14"/>	
+	
+	
+	<class name="secondaryActionButtonStyle" inherit="_secondaryActionButtonFrame textBig text"  fontStyle="bold"
+		fontColor="$(secondary_action_button_color)" 
+		fontColorHover="$(secondary_action_button_color)" 
+		fontColorDown="$(secondary_action_button_color)" 
+		fontColorFocused="$(secondary_action_button_color)"/>
+		
+	<class name="smallSecondaryActionButtonStyle" inherit="secondaryActionButtonStyle" fontSize="12"/>	
+	<class name="mediumSecondaryActionButtonStyle" inherit="secondaryActionButtonStyle" fontSize="14"/>	
+	
+	<class name="tertiaryTalemarkButtonStyle" inherit="_tertiaryActionButtonFrame talemarkButtonStyle" backgroundDominantColor="$(secondary_bkg_color)"/>	
+	 
+	<class name="tagButtonStyle" inherit="tertiaryTalemarkButtonStyle"/>
+	
+
+	<class name="linkActionButtonStyle" inherit="text linkButtonStyle" 		   
+		   background="frames/noFrame.xml" 
+		   backgroundHover ="frames/noFrame.xml" 
+		   backgroundDown ="frames/buttons/linkActionButton_down.xml" 
+		   fontColor="$(dominant_color_regular_text_contrast)"
+		   fontColorHover="$(dominant_color_hover_regular_text_contrasted)"
+		   fontColorDown="$(dominant_color_regular_text_contrast)"
+		   fontColorFocused="$(dominant_color_focused_regular_text_contrasted)"
+		   focusedGlow=""
+		   fontStyle="bold"/>
+		   
+	<class name="mediumLinkActionButtonStyle" inherit="linkActionButtonStyle" fontSize="14"/>
+	<class name="smallToMediumLinkActionButtonStyle" inherit="linkActionButtonStyle" fontSize="13"/>	
+
+	<class name="strongLinkButtonStyle" inherit="linkButtonStyle" fontStyle="bold"/>
+
+	<class name="deemphasizedLinkButtonStyle" inherit="linkButtonStyle" fontColor="$(face_color_deemphasized)"/>	
+	
+	<class name="hugeStrongDeemphasizedLinkButtonStyle" inherit="deemphasizedLinkButtonStyle" fontSize="25" fontStyle="black"
+		   background="frames/buttons/hugeLinkButton_normal.xml" />		
+	
+	<class name="linkImageButtonStyle" inherit="linkButtonStyle hoverGlow"/>	
+	
+	<class name="linkDropDownButtonStyle" inherit="linkButtonStyle" dropMark="frames/dropDownMark/dropMark.xml"
+																	dropMarkHover="frames/dropDownMark/dropMarkHover.xml" />	
+																	
+																	
+    <class name="comboBoxButtonStyle" inherit="_aroundControlSmallDropShadowEffect text _suppressedParentBackgroundFrames buttonStyle" 
+		   fontColor="$(face_color_down_deemphasized)"
+		   fontColorHover="$(face_color_down_deemphasized)"
+		   fontColorDown="$(face_color_down_deemphasized)"
+		   fontColorFocused="$(face_color_down_deemphasized)"
+		   fontSize="15"	
+		   background="frames/buttons/comboboxButton_normal.xml"
+		   backgroundHover="frames/buttons/comboboxButton_hover.xml"		   
+		   backgroundFocused="frames/buttons/comboboxButton_focused.xml"		
+		   backgroundFocusedHover="frames/buttons/comboboxButton_focused_hover.xml"	
+		   backgroundDown="frames/buttons/comboboxButton_down.xml"	
+		   horizontalAlign="leading" focusedGlow=""/>
+		   
+	<class name="errorComboBoxButtonStyle" inherit="comboBoxButtonStyle"
+		   background="frames/buttons/error_comboboxButton_normal.xml"
+		   backgroundHover="frames/buttons/error_comboboxButton_hover.xml"		   
+		   backgroundFocused="frames/buttons/error_comboboxButton_focused.xml"		
+		   backgroundFocusedHover="frames/buttons/error_comboboxButton_focused_hover.xml"	
+		   backgroundDown="frames/buttons/error_comboboxButton_down.xml"	/>
+
+	<class name="navMenuButtonStyle" inherit="_navMenuButtonFrame" focusedGlow="$(null_color)"/>
+																	
+	<class name="topToolbarLinkButtonStyle" inherit="linkButtonStyle"
+											backgroundDown="frames/buttons/toolbarButton_down.xml"
+											backgroundHover="frames/buttons/toolbarButton_hover.xml"
+											focusedGlow="$(null_color)"
+											fontStyle="bold" fontSize="14" fontColorHover="$(face_color)"/>
+															  
+	<class name="toolbarButtonStyle" inherit="_suppressedParentBackgroundFrames buttonStyle" 
+		  focusedGlow="$(null_color)"
+		  background="frames/buttons/toolbarButton_normal.xml"
+		  backgroundHover="frames/buttons/toolbarButton_hover.xml"
+		  backgroundDown="frames/buttons/toolbarButton_down.xml"
+		  backgroundFocused="frames/buttons/toolbarButton_focused.xml"/>
+		  
+		  
+	<class name="_BaseButtonNavStyle" fontStyle="" fontSize="16" horizontalAlign="center" fontName="$(title_font_name)"/>
+	
+	<class name="selectedNavButtonStyle" inherit="_BaseButtonNavStyle _roundSecondaryActionButtonFrame secondaryActionButtonStyle"
+		   backgroundDown="frames/buttons/round_secondaryActionButton_hover.xml"
+		   backgroundFocused="frames/buttons/round_secondaryActionButton_normal.xml"
+		   backgroundFocusedHover="frames/buttons/round_secondaryActionButton_hover.xml"		   
+		   backgroundFocusedDown="frames/buttons/round_secondaryActionButton_hover.xml"/>
+		   
+	<class name="unselectedNavButtonStyle" inherit="_BaseButtonNavStyle textBig linkButtonStyle" 
+		   background="frames/buttons/vert_tab_nav_unselected_background.xml"
+		   backgroundDown="frames/buttons/vert_tab_nav_unselected_background.xml"/>			   
+	
+	<class name="vTabNavSelectedButtonStyle" inherit="selectedNavButtonStyle" horizontalAlign="leading" />
+	
+	<class name="vTabNavUnselectedButtonStyle" inherit="unselectedNavButtonStyle" horizontalAlign="leading" />	
+		
+	<class name="roomLibraryItemButtonStyle" inherit="linkButtonStyle" horizontalAlign="leading" backgroundDown ="frames/noFrame.xml" />
+	<class name="roomLibraryFolderItemButtonStyle" inherit="roomLibraryItemButtonStyle" />
+	<class name="roomLibraryInvisibleItemButtonStyle" inherit="roomLibraryItemButtonStyle" fontColor="$(face_color_deemphasized)" background="frames/buttons/toolbarButton_normal.xml"  />
+		
+	<class name="imageButtonStyle" inherit="_suppressedParentBackgroundFrames buttonStyle"
+		   background="frames/noFrame.xml"
+		   backgroundHover="frames/noFrame.xml"		   
+		   iconOpacity="0.75" iconOpacityHover="0.90" iconOpacityDown="0.67" iconOpacityChecked="1.0"/>	   	   
+		   		   		  
+	<class name="pageNavigatorNavButtonStyle" inherit="mediumFontActionButtonStyle"/>		
+	<class name="pageNavigatorSelectedJmpButtonStyle" inherit="selectedNavButtonStyle" fontSize="14" />
+	<class name="pageNavigatorUnselectedJmpButtonStyle" inherit="unselectedNavButtonStyle" fontSize="14" />	  
+</group>

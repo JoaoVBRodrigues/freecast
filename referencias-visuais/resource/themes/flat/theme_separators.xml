@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+
+	<class name="vTabNavSeparatorStyle" inherit="panelStyle" background="frames/separators/vTabNavSeparator_background.xml" />
+</group>

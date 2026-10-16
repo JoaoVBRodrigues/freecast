@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="24" height="24" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<draw>
+		<path left="0" top="0" right="24" bottom="24" zOrder="1" mode="original">
+			<pathData>M 0 0 L 24 24</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color)" size="2" autoScaleSize="true"/>
+		</path>					
+	</draw>
+</frame>

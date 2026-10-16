@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="18" height="18" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<draw>				
+		<path left="0" top="1" right="18" bottom="18" zOrder="1" mode="fit">
+			<pathData>M7 14C10.31 14 13 11.31 13 8V0H10.5V8C10.5 9.93 8.93 11.5 7 11.5C5.07 11.5 3.5 9.93 3.5 8V0H1V8C1 11.31 3.69 14 7 14ZM0 16V18H14V16H0Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(chat_toolbar_icon_color)"/>
+		</path>					
+	</draw>
+</frame>

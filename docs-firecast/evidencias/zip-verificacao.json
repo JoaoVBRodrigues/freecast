@@ -1,0 +1,15 @@
+{
+  "evidenceId": "ZIP-006",
+  "method": "inventory consistency and CRC verification; input read again after analysis",
+  "tool": "v22.23.2",
+  "sourceSha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+  "sourceSha256Matches": true,
+  "outerMembers": 1422,
+  "nestedMembers": 741,
+  "payloadReadErrors": 0,
+  "crcMismatches": 0,
+  "missingPayloadHashes": 0,
+  "uncompressedOuterBytes": 21219638,
+  "compressedOuterBytes": 21219638,
+  "payloadsExported": 0
+}

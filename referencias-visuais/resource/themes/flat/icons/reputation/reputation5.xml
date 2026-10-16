@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="67" height="20" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<const name="this_reputation_color">#3DBA32</const>
+	<const name="empty_bar_color">$(short_content_bkg_color)</const>
+	
+	
+	<draw>				
+		<path left="0" top="0" right="67" bottom="20" zOrder="1" mode="original">
+			<pathData>M0 15C0 14.4477 0.447715 14 1 14H6C6.55228 14 7 14.4477 7 15V20H0V15Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(this_reputation_color)"/>
+		</path>		
+
+		<path left="0" top="0" right="67" bottom="20" zOrder="1" mode="original">
+			<pathData>M15 10C15 9.44771 15.4477 9 16 9H21C21.5523 9 22 9.44772 22 10V20H15V10Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(this_reputation_color)"/>
+		</path>	
+		
+		<path left="0" top="0" right="67" bottom="20" zOrder="1" mode="original">
+			<pathData>M30 7C30 6.44772 30.4477 6 31 6H36C36.5523 6 37 6.44772 37 7V20H30V7Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(this_reputation_color)"/>
+		</path>		
+
+		<path left="0" top="0" right="67" bottom="20" zOrder="1" mode="original">
+			<pathData>M45 4C45 3.44772 45.4477 3 46 3H51C51.5523 3 52 3.44772 52 4V20H45V4Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(this_reputation_color)"/>
+		</path>		
+
+		<path left="0" top="0" right="67" bottom="20" zOrder="1" mode="original">
+			<pathData>M60 1C60 0.447715 60.4477 0 61 0H66C66.5523 0 67 0.447715 67 1V20H60V1Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(this_reputation_color)"/>
+		</path>	
+	</draw>				
+</frame>
+
+

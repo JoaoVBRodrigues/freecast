@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<const name="null_color">#00000000</const> 
+	
+	<const name="bkg_color">#303030</const>	
+	<const name="bkg_color_outline">#222222</const>	
+	<const name="bkg_color_highlight">#272727</const>	
+	<const name="secondary_bkg_color">#404040</const>	
+			
+	<const name="action_button_2_background_normal_color">#EB3449</const>		
+	<const name="action_button_2_background_hover_color">#FF2D45</const>	
+	<const name="action_button_2_background_down_color">#AA2635</const>
+	
+	<const name="action_button_2_text_color">black</const>		
+		
+	<const name="face_color">#E0E0E0</const>	
+	<const name="face_color_hover">#D2D2D2</const>	
+</group>

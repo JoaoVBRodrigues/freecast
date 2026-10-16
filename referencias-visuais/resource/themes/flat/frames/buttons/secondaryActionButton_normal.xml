@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+
+	<padding left="12" top="5" bottom="5" right="12" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="2" yradius="2">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(secondary_action_button_color)" size="1"/>
+		</rectangle>	
+	</draw>
+</frame>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="15" height="15" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<margins left="-2" top="-2" right="-2" bottom="-2"/>
+	
+	<draw>
+		<ellipse left="1.5" top="1.5" right="13.5" bottom="13.5">
+			<anchors left="false" top="false" bottom="false" right="false"/>
+			<fill color="$(face_color_deemphasized)"/>
+		</ellipse>	
+	</draw>
+</frame>

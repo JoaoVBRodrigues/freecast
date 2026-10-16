@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="tabBoxStyle_unselectedbutton" inherit="linkButtonStyle" 
+	       fontSize="16" fontStyle="bold" 
+		   fontColor="$(face_color_down_deemphasized)"
+		   fontColorHover="$(face_color_hover)" 
+		   fontColorFocused="$(face_color)" 
+		   fontColorDown="$(face_color_down)" 		
+		   />
+		   
+	<class name="tabBoxStyle_selectedButton" inherit="linkActionButtonStyle" fontSize="16" fontStyle="bold"/>
+	
+	<class name="tabBoxStyle" 
+		   background="frames/tabs/tabbox_background.xml"
+		   leftSelFramePart="frames/tabs/tabbox_leftSelPart.xml"
+		   selFramePart="frames/tabs/tabbox_selPart.xml"
+		   rightSelFramePart="frames/tabs/tabbox_rightSelPart.xml"
+		   minSelFrameWitdh="12"
+		   breaklineVertMargin="4"
+		   />
+		   		   				   				  
+	<class name="pageControlStyle" background="frames/noFrame.xml"/>			
+	<class name="pageControlStyle_tabbox" inherit="tabBoxStyle"/>
+	<class name="pageControlStyle_page" inherit="transparentPanelStyle" background="frames/tabs/pageControl_page_background.xml"/>	
+</group>

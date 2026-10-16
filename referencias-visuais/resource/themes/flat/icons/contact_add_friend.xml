@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="19" height="18" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<draw>				
+		<path left="0" top="0" right="19" bottom="18" zOrder="1" mode="original">
+			<pathData>M12.107 10.6027C9.80256 10.6027 5.21338 12.2512 5.21338 15.5342V17.9999H19.0006V15.5342C19.0006 12.2512 14.4114 10.6027 12.107 10.6027Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color_down_deemphasized)"/>
+		</path>			
+		
+		<path left="0" top="0" right="19" bottom="18" zOrder="2" mode="original">
+			<pathData>M12.1707 8.63015C14.3881 8.63015 16.192 6.69453 16.192 4.31508C16.192 1.93562 14.3881 0 12.1707 0C9.95324 0 8.14941 1.93562 8.14941 4.31508C8.14941 6.69453 9.95324 8.63015 12.1707 8.63015Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color_down_deemphasized)"/>
+		</path>	
+
+		<path left="0" top="0" right="19" bottom="18" zOrder="3" mode="original">
+			<pathData>M1 6.75H5.5</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color_down_deemphasized)"/>
+		</path>	
+		
+		<path left="0" top="0" right="19" bottom="18" zOrder="4" mode="original">
+			<pathData>M3.25 9V4.5</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color_down_deemphasized)"/>
+		</path>			
+	</draw>	
+</frame>
+
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="64" height="22" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<padding left="8" top="4" bottom="4" right="8" />
+	<draw>
+		<rectangle left="0" top="0" right="64" bottom="22" xradius="2" yradius="2" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(preponent_color_background_regular_text_contrasted)"/>
+		</rectangle>	
+	
+	</draw>
+</frame>

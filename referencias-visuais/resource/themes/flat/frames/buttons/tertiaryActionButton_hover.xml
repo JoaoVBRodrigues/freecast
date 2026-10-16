@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<padding left="5" top="3" bottom="3" right="5" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="2" yradius="2">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(face_color_hover)" size="1"/>
+			<fill color="$(short_content_bkg_color)0C"/>
+		</rectangle>			
+	</draw>
+</frame>

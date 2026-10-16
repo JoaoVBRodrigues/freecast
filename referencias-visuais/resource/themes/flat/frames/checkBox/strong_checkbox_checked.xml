@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="17" height="17" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<margins right="6"/>
+	<draw>				
+		<!-- BOX -->		
+		<rectangle left="0" top="0" right="17" bottom="17" xradius="3" yradius="3" zOrder="-2">
+			<anchors left="true" top="true" bottom="true" right="true" aspectFromMin="true"/>
+			<fill color="$(dominant_color)"/>
+		</rectangle>				
+		
+		<!-- Check Mark -->	
+		<frame left="0" top="0" right="17" bottom="17" zOrder="1">			
+			<anchors left="true" top="true" bottom="true" right="true" aspectFromMin="true" />
+			<source url="strong_checkmark.xml"/>
+		</frame>			
+	</draw>
+</frame>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+	<import file="consts.xml"/>
+
+	<class name="_popupDropShadowEffect" effect="shadow" effect_opacity="0.3" effect_softness="1.2" effect_color="black" effect_distance="10" effect_direction="90"/>
+	<class name="_popupSmallDropShadowEffect" effect="shadow" effect_opacity="0.25" effect_softness="0.25" effect_color="black" effect_distance="4" effect_direction="90"/>		
+	<class name="_text" fontColor="$(face_color)"/>	
+
+	<class name="customBkgColorRichEditStyle" background="frames/richEdit_normal.xml" enableCustomBkgColor="true"/>	
+				
+	<class name="floatingWindowStyle" inherit="_popupDropShadowEffect popupStyle"
+		   background="frames/floating_window_outermost_background.xml"/>						   
+		   
+	<class name="floatingWindowStyle_top" inherit="panelstyle"
+		   background="frames/floating_window_top_background.xml"/>
+		   
+	<class name="floatingWindowStyle_content" inherit="panelstyle"
+		   background="frames/floating_window_content_background.xml"/>		   
+		   
+	<class name="floatingWindowStyle_titleLabel" inherit="labelStyle" fontSize="15" fontStyle="bold"
+	       background="frames/floating_window_titlelabel_background_normal.xml"/>				   
+	
+	<class name="floatingWindowStyle_closeButton" inherit="buttonStyle"
+		   background="frames/floating_window_closebutton_normal.xml"
+		   backgroundHover="frames/floating_window_closebutton_hover.xml"
+		   backgroundDown="frames/floating_window_closebutton_down.xml"/>
+
+	<class name="floatingWindowStyle_resizeGrip" inherit="buttonStyle"
+		   background="frames/floating_window_resizegrip_normal.xml"
+		   backgroundDown="frames/floating_window_resizegrip_normal.xml"
+		   backgroundHover="frames/floating_window_resizegrip_normal.xml"/>
+		   
+	<class name="combopopupstyle" background="frames/combopopup_background.xml"/>		   
+	
+	<class name="listboxitemstyle" inherit="_text" fontColorSelected="$(face_color_hover)"/>			
+
+	<class name="comboBoxStyle"/>	
+	<class name="comboBoxStyle_popup" inherit="_popupSmallDropShadowEffect popupStyle"/>
+	<class name="comboBoxStyle_listbox" inherit="listboxstyle"/>
+	
+	<class name="comboBoxStyle_listitem" inherit="listboxitemstyle" fontColor="$(face_color)E0" />	
+	
+	<class name="layoutstyle" background="frames/transparent.xml" backgroundChecked="frames/layoutstyle_checked.xml" />		
+
+
+	<class name="scrollbarstyle" background="frames/transparent.xml"/>
+	<class name="scrollbarstyle_vtrack" background="frames/scrollbar/vtrack.xml"/>
+	<class name="scrollbarstyle_vtrack_thumb" background="frames/scrollbar/vthumb.xml" backgroundHover="frames/scrollbar/vthumb_hover.xml"/>
+	<class name="scrollbarstyle_topbutton" visible="false" />
+	<class name="scrollbarstyle_bottombutton" visible="false"/>
+	<class name="scrollbarstyle_htrack" background="frames/scrollbar/htrack.xml"/>
+	<class name="scrollbarstyle_htrack_thumb" background="frames/scrollbar/hthumb.xml" backgroundHover="frames/scrollbar/hthumb_hover.xml"/>
+	<class name="scrollbarstyle_leftbutton" visible="false"/>
+	<class name="scrollbarstyle_rightbutton" visible="false"/>	
+	
+	<class name="smallscrollbarstyle" inherit="scrollbarstyle"/>	
+	
+	<class name="icons"
+		richEdit_paragraph_line_spacing="icons/format_line_spacing.xml"
+	/>	
+</theme>

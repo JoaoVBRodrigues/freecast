@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="112" height="200" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>
+		<!-- Eyes -->
+		
+		<path left="0" top="45" right="112" bottom="200" zOrder="-1" mode="stretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<pathData>M 24.4435 0L 0 0L 0 22.814L 24.4435 22.814L 24.4435 0Z</pathData>
+			<fill color="$(face_color)"/>
+		</path>	
+
+		<path left="0" top="133" right="112" bottom="200" zOrder="-1" mode="stretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<pathData>M 24.4435 3.54004e-06L 0 3.54004e-06L 0 22.816L 24.4435 22.816L 24.4435 3.54004e-06Z</pathData>
+			<fill color="$(face_color)"/>
+		</path>			
+	
+		<!-- Mouth -->	
+	
+		<path left="56" top="0" right="112" bottom="200" zOrder="-1" mode="stretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<pathData>M 54.2726 0C 42.0318 21.28 34.0778 36.944 30.4125 46.992C 24.8766 62.27 22.1056 79.924 22.1056 99.948C 22.1056 120.182 25.2656 138.672 31.5815 155.418C 35.4813 165.744 43.1586 180.604 54.6215 200L 40.4699 200C 29.0852 184.092 22.0274 173.94 19.2966 169.544C 16.5677 165.148 13.6042 159.184 10.4062 151.648C 6.0392 141.322 2.99955 130.298 1.28323 118.578C 0.425068 112.506 -3.9773e-07 106.716 -3.9773e-07 101.202C -3.9773e-07 80.55 3.62312 62.164 10.8734 46.048C 15.4769 35.792 25.0671 20.442 39.6498 0L 54.2726 0Z</pathData>
+			<fill color="$(face_color)"/>
+		</path>					
+	</draw>
+</frame>

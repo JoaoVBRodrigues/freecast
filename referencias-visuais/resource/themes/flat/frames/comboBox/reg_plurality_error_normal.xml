@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="325" height="40"  >
+	<import file="../../consts.xml"/>
+	<padding left="50" top="3" bottom="3" right="8"/>
+	<draw>
+		<rectangle left="0" top="0" right="325" bottom="40" xradius="3" yradius="3" zOrder="-20">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(bkg_color)" kind="solid"/>
+			<stroke color="$(alert_color)" kind="solid" opacity="0.6"/>
+		</rectangle>	
+
+		<frame left="14" top="12" right="30" bottom="28" zOrder="-10" >
+			<source url="../../icons/diversity.xml"/>
+			<anchors left="true" top="false" right="false" bottom="false"/>				
+		</frame>	
+	</draw>
+</frame>

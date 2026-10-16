@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="12" height="100" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	
+	<borders left="2" top="2" right="2" bottom="2"/>
+	
+	<draw>
+		<roundRect left="0" top="0" right="12" bottom="100" zOrder="20">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(scrollbar_thumb_color)"/>
+		</roundRect>	
+	</draw>
+</frame>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="28" height="28" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<draw>				
+		<path left="3" top="6.5" right="25" bottom="21.5" zOrder="1" mode="original">
+			<pathData>M7.7 9.375C5.126 9.375 0 10.6286 0 13.125V15H15.4V13.125C15.4 10.6286 10.274 9.375 7.7 9.375ZM2.574 12.8571C3.498 12.2357 5.731 11.5179 7.7 11.5179C9.669 11.5179 11.902 12.2357 12.826 12.8571H2.574Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color)"/>
+		</path>			
+		
+		<path left="3" top="6.5" right="25" bottom="21.5" zOrder="1" mode="original">
+			<pathData>M7.69998 7.5C9.82298 7.5 11.55 5.81786 11.55 3.75C11.55 1.68214 9.82298 0 7.69998 0C5.57698 0 3.84998 1.68214 3.84998 3.75C3.84998 5.81786 5.57698 7.5 7.69998 7.5ZM7.69998 2.14286C8.61298 2.14286 9.34998 2.86071 9.34998 3.75C9.34998 4.63929 8.61298 5.35714 7.69998 5.35714C6.78698 5.35714 6.04998 4.63929 6.04998 3.75C6.04998 2.86071 6.78698 2.14286 7.69998 2.14286Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color)"/>
+		</path>	
+
+		<path left="3" top="6.5" right="25" bottom="21.5" zOrder="1" mode="original">
+			<pathData>M15.444 9.43945C16.72 10.3395 17.6 11.5395 17.6 13.1252V15.0002H22V13.1252C22 10.9609 18.15 9.72874 15.444 9.43945Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color)"/>
+		</path>	
+		
+		<path left="3" top="6.5" right="25" bottom="21.5" zOrder="1" mode="original">
+			<pathData>M14.3 7.5C16.423 7.5 18.15 5.81786 18.15 3.75C18.15 1.68214 16.423 0 14.3 0C13.706 0 13.156 0.139286 12.65 0.375C13.343 1.32857 13.75 2.49643 13.75 3.75C13.75 5.00357 13.343 6.17143 12.65 7.125C13.156 7.36071 13.706 7.5 14.3 7.5Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color)"/>
+		</path>			
+	</draw>
+</frame>

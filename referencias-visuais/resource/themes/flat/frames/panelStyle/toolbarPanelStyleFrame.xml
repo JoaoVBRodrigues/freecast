@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="50" height="50" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>
+		<rectangle left="0" top="0" right="50" bottom="50" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(bkg_color)"/>
+		</rectangle>					
+	</draw>
+</frame>

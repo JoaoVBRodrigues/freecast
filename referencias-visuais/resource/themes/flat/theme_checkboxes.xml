@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<!-- Base Style Definitions -->
+	
+	<class name="__defaultCheckboxesFontColors" 
+		   fontColor="$(face_color)"	
+		   fontColorHover="$(face_color_hover)" 
+		   fontColorFocused="$(face_color_down_deemphasized)" 
+		   fontColorDown="$(face_color_hover)" />
+	
+	<class name="_defaultCheckBoxStyle" inherit="__defaultCheckboxesFontColors text"
+			checkedFrame="frames/checkBox/checkbox_checked.xml"
+			uncheckedFrame="frames/checkBox/checkbox_unchecked.xml" />
+			
+	<class name="_strongCheckBoxStyle"
+			inherit="__defaultCheckboxesFontColors text"
+			checkedFrame="frames/checkBox/strong_checkbox_checked.xml"
+			uncheckedFrame="frames/checkBox/strong_checkbox_unchecked.xml"
+			checkMarkWidth="20"
+			fontStyle="bold"/>			
+			
+	<class name="_alternativeCheckBoxStyle"
+			inherit="__defaultCheckboxesFontColors text"
+			checkedFrame="frames/checkBox/alt_checkbox_checked.xml"
+			uncheckedFrame="frames/checkBox/alt_checkbox_unchecked.xml"/>
+
+	<!-- Standard Checkboxes -->
+	<class name="checkboxStyle" inherit="_defaultCheckBoxStyle text" />					
+	<class name="centercheckboxstyle" inherit="checkboxStyle" />
+	<class name="vtopcheckboxstyle" inherit="checkboxStyle" />
+	
+	<!-- Strong Checkboxes -->
+	<class name="strongCheckboxStyle" inherit="_strongCheckBoxStyle checkboxStyle"/>
+	<class name="centerStrongCheckboxStyle" inherit="_strongCheckBoxStyle centercheckboxstyle"/>
+	<class name="vTopStrongCheckboxStyle" inherit="_strongCheckBoxStyle vtopcheckboxstyle"/>		
+	
+	<!-- Alternative Checkboxes -->	
+	<class name="AltCheckboxStyle" inherit="_alternativeCheckBoxStyle checkboxStyle"/>
+	<class name="AltCenterCheckboxStyle" inherit="_alternativeCheckBoxStyle centercheckboxstyle"/>
+	<class name="AltVTopCheckboxStyle" inherit="_alternativeCheckBoxStyle vtopcheckboxstyle"/>
+	
+	<class name="formFieldTitleCheckboxStyle" inherit="checkboxStyle" fontStyle="bold" fontSize="15" />	
+	<class name="vtopFormFieldTitleCheckboxStyle" inherit="vtopcheckboxstyle" fontStyle="bold" fontSize="15" />	
+</group>

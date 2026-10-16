@@ -1,0 +1,138 @@
+{
+  "id": "F2-RUNTIME-001",
+  "method": "PrintWindow selected window, exact pixel region, no rescale",
+  "windowPixels": [
+    1938,
+    1038
+  ],
+  "captures": [
+    {
+      "id": "S09",
+      "file": "capturas/S09-versao-runtime.png",
+      "sha256": "6e72817d5072637da4ffae29ab5985f483f4e4ab6ba762b637a7fedf38307c13",
+      "bytes": 610,
+      "width": 140,
+      "height": 24,
+      "regionInWindow": [
+        34,
+        10,
+        140,
+        24
+      ],
+      "result": "Barra de título: Firecast 8.13",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S10",
+      "file": "capturas/S10-mesa-teste.png",
+      "sha256": "b1937f220b7bdbe47332aa6d63bfaac25761c6a154a04e65190dc26703edb918",
+      "bytes": 2529,
+      "width": 450,
+      "height": 82,
+      "regionInWindow": [
+        450,
+        205,
+        450,
+        82
+      ],
+      "result": "Campo Nome da mesa: Creator's Game",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S11",
+      "file": "capturas/S11-chat-texto-teste.png",
+      "sha256": "ea9bddc34f41414bef5d08ae23b37dddcf6a06889274bffc2e442f5149fc1ccf",
+      "bytes": 2386,
+      "width": 713,
+      "height": 33,
+      "regionInWindow": [
+        548,
+        823,
+        713,
+        33
+      ],
+      "result": "Mensagem sintética enviada",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S12",
+      "file": "capturas/S12-rolagem-deterministica.png",
+      "sha256": "b93c1a2cf226fcaec8c39b7ac00646fb1ffad9b6d772cdf09ee4b5d010a3d28c",
+      "bytes": 1535,
+      "width": 605,
+      "height": 33,
+      "regionInWindow": [
+        660,
+        820,
+        605,
+        33
+      ],
+      "result": "Expressão 1d1 + 2 = 3, decomposição [1] + 2",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S13",
+      "file": "capturas/S13-erro-expressao.png",
+      "sha256": "016d2da2847b2f2ccb98743acb6e01ddcd8a6e394bee8a78e4f2c8b3cd03285a",
+      "bytes": 4765,
+      "width": 795,
+      "height": 35,
+      "regionInWindow": [
+        480,
+        820,
+        795,
+        35
+      ],
+      "result": "Falha de interpretação, caractere exibido como ponto/bullet",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S14",
+      "file": "capturas/S14-rolagem-multiplos-dados.png",
+      "sha256": "e104a52c757e80603efd07d20bb16175ae6b592ca6162c71fd317132878232ab",
+      "bytes": 3775,
+      "width": 615,
+      "height": 28,
+      "regionInWindow": [
+        659,
+        796,
+        615,
+        28
+      ],
+      "result": "Soma de sete tipos de dados, primeira linha",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S15",
+      "file": "capturas/S15-rolagem-continuacao.png",
+      "sha256": "01f47cd8965830bdf3e23dc068ea46f88c24cb83b926bdaadb9dd9ae45566706",
+      "bytes": 1182,
+      "width": 726,
+      "height": 28,
+      "regionInWindow": [
+        548,
+        824,
+        726,
+        28
+      ],
+      "result": "Continuação da decomposição da soma",
+      "classification": "confirmado por observação visual"
+    },
+    {
+      "id": "S16",
+      "file": "capturas/S16-macros-comando-desconhecido.png",
+      "sha256": "926453313f17bf596f8dec00c5f0a44d3b47b69bfc387fa8004d8c8d1cdaee81",
+      "bytes": 2145,
+      "width": 795,
+      "height": 35,
+      "regionInWindow": [
+        480,
+        820,
+        795,
+        35
+      ],
+      "result": "Comando desconhecido: macros",
+      "classification": "confirmado por observação visual"
+    }
+  ]
+}

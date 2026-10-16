@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<class name="text" fontColor="$(face_color)" fontFamily="$(default_font_name)" fontStyle="" selectionColor="$(face_selection_color)" fontSize="14"/>
+	<class name="textBig" inherit="text" fontSize="17" fontStyle="bold"/>
+	
+	<class name="textPrompt" textPrompt_fontColor="$(face_color)" 
+							 textPrompt_fontFamily="$(default_font_name)" textPrompt_fontSize="14"
+							 textPrompt_trimming="character"/>
+	
+	<class name="focused" focusedGlow="$(face_glow_color)"/>				
+	<class name="invertedColorText" inherit="text" fontColor="$(tertiary_bkg_color)" fontColorDown="$(bkg_color)" fontColorHover="$(bkg_color)" fontColorFocused="$(bkg_color)"/>
+	<class name="invertedFocused" inherit="invertedColorText" focusedGlow="$(tertiary_bkg_color)"/>	
+
+	<class name="hoverGlow" effect0="glow" effect0_trigger="IsHover=True" 
+							effect0_opacity="0.7" effect0_softness="0.2"
+							effect0_color="$(face_color_deemphasized)"/>		
+		
+		
+	<class name="errorText" inherit="text" fontColor="$(alert_color)" />
+	<class name="errorTextPrompt" inherit="textPrompt" textPrompt_fontColor="$(alert_color)" />
+	
+	<class name="credentialText" inherit="text textPrompt" fontSize="15" textPrompt_fontSize="15" fontStyle=""/>
+	<class name="credentialErrorText" inherit="credentialText" fontColor="$(alert_color)" textPrompt_fontColor="$(alert_color)"/>
+	
+	<class name="mediumCredentialText" inherit="credentialText" fontSize="14" textPrompt_fontSize="14"/>
+	<class name="mediumCredentialErrorText" inherit="mediumCredentialText" fontColor="$(alert_color)" textPrompt_fontColor="$(alert_color)"/>	
+	
+	<class name="__credentialEditStyle" inherit="credentialText editStyle" background="frames/edit/credentialEdit.xml"/>	
+	<class name="__ErrorCredentialEditStyle" inherit="credentialErrorText __credentialEditStyle" background="frames/edit/credentialEditError.xml" />		
+	
+	<!-- Effects -->
+	<class name="_popupDropShadowEffect" effect="shadow" effect_opacity="0.3" effect_softness="1.2" effect_color="black" effect_distance="10" effect_direction="90"/>	
+	<class name="_popupHidingEffect" hidingColor="$(quaternary_bkg_color)" hidingOpacity="0.9"/>
+	
+	<class name="_popupSmallDropShadowEffect" effect="shadow" effect_opacity="0.25" effect_softness="0.25" effect_color="black" effect_distance="4" effect_direction="90"/>	
+	<class name="_aroundControlSmallDropShadowEffect" effect="shadow" effect_opacity="0.25" effect_softness="0.1" effect_color="black" effect_distance="0.1" effect_direction="90"/>	
+		
+	<!-- TaleMark Base Definitions -->
+	
+	<class name="_baseTaleMarkStyleSheet"
+		    fontFamily="$(default_font_name)"			
+			fontSize="15"
+			body_fontColor="$(text_content_foreground_color)"
+		    heading_fontFamily="$(title_font_name)"				
+		    initialCap_fontFamily="$(initial_cap_font_name)"
+			initialCap_fontSize="40"
+			textPrompt_fontSize="15"/>
+			
+	<class name="_consoleTalemarkStyleSheet" inherit="_baseTaleMarkStyleSheet"
+			fontFamily="$(console_font_name)"
+            fontSize="16" regularTextContrast="5" largeTextContrast="3.5"
+			optmizeContrast="true"/>
+		
+</group>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="200" height="24">
+	<import file="../../consts.xml"/>
+	<padding left="2" top="2" right="2" bottom="2"/>
+	
+	<draw>
+		<rectangle left="0" top="0" right="200" bottom="24" xradius="6" yradius="6" zOrder="-20" corners="topleft topright">
+			<anchors left="true" top="true" bottom="true" right="true"/>			
+			<fill color="$(emphasized_secondary_bkg_color)" opacity="1.0"/>
+		</rectangle>							
+	</draw>
+</frame>

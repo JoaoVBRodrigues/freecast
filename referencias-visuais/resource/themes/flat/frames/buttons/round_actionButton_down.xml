@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true" clipDrawing="true">
+	<import file="../../consts.xml"/>
+	
+	<padding left="12" top="5" bottom="5" right="12" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="10" yradius="10" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(action_button_background_hover_color)"/>
+		</rectangle>	
+		
+		<ellipse left="30" top="-40" right="140" bottom="70" zOrder="0" mode="fitStretch">		
+			<anchors left="true" top="false" bottom="false" right="true" aspectFromWidth="true"/>
+			<fill color="#00000026" kind="solid"/>
+		</ellipse>	
+		
+		<ellipse left="48" top="-22" right="122" bottom="52" zOrder="1">		
+			<anchors left="true" top="false" bottom="false" right="true" aspectFromWidth="true"/>
+			<fill color="#00000026" kind="solid"/>
+		</ellipse>			
+	</draw>
+</frame>

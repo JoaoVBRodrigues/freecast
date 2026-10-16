@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+
+	<!-- Dialogs -->
+	<class name="dialogIconPanelStyle" inherit="panelStyle"/>
+	<class name="dialogLabelStyle" inherit="labelStyle" fontSize="16" fontStyle="" fontColor="$(face_color)"/>	
+	<class name="firstLineDialogLabelStyle" inherit="labelStyle" fontSize="20" fontStyle="bold" fontColor="$(face_color)"/>		
+	
+	<class name="closeDialogButtonStyle" background="frames/icons/dialog_closeButton.xml"
+										 backgroundHover="frames/icons/dialog_closeButton_hover.xml"
+										 backgroundDown="frames/icons/dialog_closeButton_down.xml"/>
+										 
+	<class name="dialogActionButtonStyle" inherit="invertedFocused" fontStyle="bold" fontSize="16"
+			background="frames/buttons/dialogButton.xml"
+			backgroundHover="frames/buttons/dialogButton_hover.xml"
+			backgroundDown="frames/buttons/dialogButton_down.xml"
+			backgroundFocused="frames/buttons/dialogButton_focused.xml"
+			backgroundFocusedHover="frames/buttons/dialogButton_focused_hover.xml"
+			backgroundFocusedDown="frames/buttons/dialogButton_focused_down.xml"/>
+			
+	<class name="dialogPopupStyle" inherit="text popupStyle _popupDropShadowEffect _popupHidingEffect" background="frames/popups/dialogPopupFrame.xml"/>
+	
+			
+	<!-- Error Dialog -->
+	<class name="errorDialogLabelStyle" inherit="dialogLabelStyle"/>
+	<class name="firstLineErrorDialogLabelStyle" inherit="firstLineDialogLabelStyle"/>	
+	<class name="errorDialogIconPanelStyle" inherit="dialogIconPanelStyle" background="frames/icons/errorDialogIcon.xml"/>
+	<class name="closeErrorDialogButtonStyle" inherit="closeDialogButtonStyle"/>		
+	<class name="errorDialogActionButtonStyle" inherit="dialogActionButtonStyle"/>	
+	<class name="errorPopupStyle" inherit="dialogPopupStyle" background="frames/popups/errorPopupFrame.xml"/>			
+	
+	<!-- Confirmation Dialog -->
+	<class name="confirmationDialogLabelStyle" inherit="dialogLabelStyle"/>
+	<class name="firstLineConfirmationDialogLabelStyle" inherit="firstLineDialogLabelStyle"/>	
+	<class name="confirmationDialogIconPanelStyle" inherit="dialogIconPanelStyle" background="frames/icons/confirmationDialogIcon.xml"/>
+	<class name="closeConfirmationDialogButtonStyle" inherit="closeDialogButtonStyle"/>	
+	<class name="confirmationDialogActionButtonStyle" inherit="dialogActionButtonStyle"/>	
+	<class name="confirmationPopupStyle" inherit="dialogPopupStyle"/>		
+
+	<!-- Information Dialog -->
+	<class name="informationDialogLabelStyle" inherit="dialogLabelStyle"/>
+	<class name="firstLineInformationDialogLabelStyle" inherit="firstLineDialogLabelStyle"/>	
+	<class name="informationDialogIconPanelStyle" inherit="dialogIconPanelStyle" background="frames/icons/informationDialogIcon.xml"/>
+	<class name="closeInformationDialogButtonStyle" inherit="closeDialogButtonStyle"/>	
+	<class name="informationDialogActionButtonStyle" inherit="dialogActionButtonStyle"/>	
+	<class name="informationPopupStyle" inherit="dialogPopupStyle"/>
+</group>

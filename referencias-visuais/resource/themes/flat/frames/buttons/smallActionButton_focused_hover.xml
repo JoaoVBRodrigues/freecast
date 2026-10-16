@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="170" height="30" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	
+	<padding left="8" top="4" bottom="4" right="8" />
+	<draw>
+		<rectangle left="0" top="0" right="170" bottom="30" xradius="1" yradius="1" zOrder="-1">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(dominant_color_dark)"/>
+			<stroke color="$(action_button_focused_color)"/>
+		</rectangle>			
+	</draw>
+</frame>

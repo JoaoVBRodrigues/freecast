@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="200" height="200"  >
+	<import file="../../consts.xml"/>
+	<padding left="5" top="5" right="5" bottom="5"/>
+	
+	<draw>
+		<rectangle left="0.5" top="0.5" right="199.5" bottom="199.5" xradius="2" yradius="2" zOrder="-20">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(alert_color)" kind="solid" dashArray="5 5" cap="round" join="round" opacity="0.9"/>
+		</rectangle>				
+	</draw>
+</frame>

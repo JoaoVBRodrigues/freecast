@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="50" height="50" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	
+	<margins left="0" top="0" bottom="0" right="13"/>
+	<padding top="4" bottom="4" left="4"/>
+	
+	<draw>
+		
+
+
+	</draw>
+</frame>

@@ -1,0 +1,125 @@
+- generic [ref=f9e3]:
+  - banner [ref=f9e4]:
+    - link "Freecast, início" [ref=f9e5] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f9e9]: Freecast
+      - generic [ref=f9e10]: · mesa virtual
+    - generic [ref=f9e11]:
+      - generic [ref=f9e13]: Theo Arantes
+      - button "Sair da conta" [ref=f9e14] [cursor=pointer]
+  - generic [ref=f9e18]:
+    - complementary "Navegação principal" [ref=f9e19]:
+      - navigation [ref=f9e20]:
+        - link "Início" [ref=f9e21] [cursor=pointer]:
+          - /url: /
+        - link "Mesas online" [ref=f9e25] [cursor=pointer]:
+          - /url: /mesas
+        - link "Favoritas" [ref=f9e28] [cursor=pointer]:
+          - /url: /mesas?section=favoritas
+        - link "Perfil" [ref=f9e31] [cursor=pointer]:
+          - /url: /profile
+      - link "Perfil de Theo Arantes" [ref=f9e35] [cursor=pointer]:
+        - /url: /profile
+        - text: T
+    - main [ref=f9e37]:
+      - generic [ref=f9e38]:
+        - generic [ref=f9e39]:
+          - heading "Início" [level=1] [ref=f9e41]
+          - link "Nova mesa" [ref=f9e42] [cursor=pointer]:
+            - /url: /mesas/nova
+        - generic [ref=f9e44]:
+          - generic [ref=f9e45]:
+            - generic [ref=f9e46]:
+              - heading "Recomendações" [level=2] [ref=f9e47]
+              - generic [ref=f9e48]: Mesas abertas para conhecer
+            - link "Ver mesas online ›" [ref=f9e49] [cursor=pointer]:
+              - /url: /mesas
+              - text: Ver mesas online
+              - generic [ref=f9e50]: ›
+          - generic [ref=f9e51]:
+            - article [ref=f9e52]:
+              - generic [ref=f9e53]: AVENTURAABERTA
+              - generic [ref=f9e58]:
+                - generic [ref=f9e59]: MESA EM DESTAQUE
+                - heading "A Cripta das Marés" [level=3] [ref=f9e63]
+                - paragraph [ref=f9e64]: D&D 5ª Edição · 3 jogadores
+                - paragraph [ref=f9e65]: A névoa esconde ruínas antigas na costa. O grupo se reúne ao cair da noite.
+                - generic [ref=f9e66]:
+                  - generic [ref=f9e67]: Nara Vale
+                  - article [ref=f9e69]:
+                    - link "Abrir mesa" [ref=f9e71] [cursor=pointer]:
+                      - /url: /mesas/1
+            - generic [ref=f9e72]:
+              - link "Explorar mesas Encontre uma aventura para jogar." [ref=f9e73] [cursor=pointer]:
+                - /url: /mesas
+                - strong [ref=f9e78]: Explorar mesas
+                - generic [ref=f9e79]: Encontre uma aventura para jogar.
+              - link "Criar mesa Prepare a próxima sessão." [ref=f9e80] [cursor=pointer]:
+                - /url: /mesas/nova
+                - strong [ref=f9e83]: Criar mesa
+                - generic [ref=f9e84]: Prepare a próxima sessão.
+              - link "Conversar com amigos Suas mesas e seus grupos." [ref=f9e85] [cursor=pointer]:
+                - /url: /mesas
+                - strong [ref=f9e89]: Conversar com amigos
+                - generic [ref=f9e90]: Suas mesas e seus grupos.
+              - link "Personalizar conta Ajuste seu perfil de jogador." [ref=f9e91] [cursor=pointer]:
+                - /url: /profile
+                - strong [ref=f9e105]: Personalizar conta
+                - generic [ref=f9e106]: Ajuste seu perfil de jogador.
+        - generic [ref=f9e107]:
+          - generic [ref=f9e108]:
+            - generic [ref=f9e109]:
+              - heading "Recentes" [level=2] [ref=f9e110]
+              - generic [ref=f9e111]: Mesas que você visitou
+            - link "Ver recentes ›" [ref=f9e112] [cursor=pointer]:
+              - /url: /mesas?section=recentes
+              - text: Ver recentes
+              - generic [ref=f9e113]: ›
+          - article [ref=f9e115]:
+            - link "Abrir mesa A Cripta das Marés" [ref=f9e116] [cursor=pointer]:
+              - /url: /mesas/1
+              - generic [ref=f9e129]:
+                - strong [ref=f9e130]: A Cripta das Marés
+                - generic [ref=f9e131]: D&D 5ª Edição
+                - generic [ref=f9e132]: 3 jogadores na mesa
+            - button "Remover dos favoritos" [ref=f9e133] [cursor=pointer]
+            - generic [ref=f9e136]:
+              - generic [ref=f9e137]: Nara Vale
+              - generic [ref=f9e139]: Mesa aberta
+            - link "Abrir mesa" [ref=f9e146] [cursor=pointer]:
+              - /url: /mesas/1
+        - generic [ref=f9e147]:
+          - generic [ref=f9e148]:
+            - generic [ref=f9e149]:
+              - heading "Favoritas" [level=2] [ref=f9e150]
+              - generic [ref=f9e151]: Guardadas para mais tarde
+            - link "Ver favoritas ›" [ref=f9e152] [cursor=pointer]:
+              - /url: /mesas?section=favoritas
+              - text: Ver favoritas
+              - generic [ref=f9e153]: ›
+          - article [ref=f9e155]:
+            - link "Abrir mesa A Cripta das Marés" [ref=f9e156] [cursor=pointer]:
+              - /url: /mesas/1
+              - generic [ref=f9e169]:
+                - strong [ref=f9e170]: A Cripta das Marés
+                - generic [ref=f9e171]: D&D 5ª Edição
+                - generic [ref=f9e172]: 3 jogadores na mesa
+            - button "Remover dos favoritos" [ref=f9e173] [cursor=pointer]
+            - generic [ref=f9e176]:
+              - generic [ref=f9e177]: Nara Vale
+              - generic [ref=f9e179]: Mesa aberta
+            - link "Abrir mesa" [ref=f9e186] [cursor=pointer]:
+              - /url: /mesas/1
+        - generic [ref=f9e187]:
+          - generic [ref=f9e188]:
+            - generic [ref=f9e189]:
+              - heading "Minhas" [level=2] [ref=f9e190]
+              - generic [ref=f9e191]: Mesas que você conduz
+            - link "Ver todas ›" [ref=f9e192] [cursor=pointer]:
+              - /url: /mesas
+              - text: Ver todas
+              - generic [ref=f9e193]: ›
+          - generic [ref=f9e194]:
+            - text: Ainda não criou uma mesa.
+            - link "Preparar uma aventura ›" [ref=f9e195] [cursor=pointer]:
+              - /url: /mesas/nova

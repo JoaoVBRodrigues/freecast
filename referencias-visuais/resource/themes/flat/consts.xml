@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<group>
+	<const name="null_color">#00000000</const> <!--  NULL color -->
+
+	<const name="default_font_name">Roboto</const>
+	<const name="title_font_name">Lato</const>
+	<const name="console_font_name">Inconsolata</const>
+	<const name="initial_cap_font_name">Times New Roman</const>	
+	
+	<!-- Color Pallete -->	
+	<const name="color0">#F2F2F2</const> <!-- Default text/face color -->
+	<const name="color0_hover">#D2D2D2</const> <!-- Default text/face color -->			
+	<const name="color0_down">#ADADAD</const> <!-- Default text/face color -->
+	<const name="color0_down_deemphasized">#BDBDBD</const>	
+	<const name="color0_state">#DDDDDD</const>
+	<const name="color0_online_state">#A6FFA9</const>
+	<const name="color0_little_deemphasized">#C1C1C1</const>
+	
+	
+	<const name="color1">#EB3449</const> <!-- Dominant color theme / Orange -->
+	<const name="color1_gradient">#F45C43</const> <!-- Dominant color theme / Orange (used for gradient) -->	
+	<const name="color1_hover">#EE3C48</const> <!-- Dominant color theme / Orange (used for hover effect) -->		
+	<const name="color1_down">#F59388</const> <!-- Dominant color theme / Orange (used for pressed effect) -->	
+	<const name="color1_bright">#F6493C</const> <!-- Dominant color theme -->		
+	<const name="color1_dark">#C5293B</const> <!-- Dominant color theme -->					
+	<const name="color1_pale">#F35644</const> <!-- Dominant color theme -->			
+	<const name="color1_pale_transparent">$(color1_pale)70</const> <!-- Dominant color theme -->				
+	<const name="color1_regular_text_contrasted">#EE4E60</const>
+	<const name="color1_hover_regular_text_contrasted">#F27D8B</const>
+	<const name="color1_focused_regular_text_contrasted">#F0909A</const>
+	<const name="color1_background_regular_text_contrasted">#CD3143</const>	
+
+	
+	<const name="color2">#212121</const> <!-- Default background color -->
+			
+	<const name="color3">#363B45</const> <!-- Content area background color, like inputs ctrls -->
+	
+	<const name="color4">#272727</const> <!-- Secondary background color -->
+	
+	<const name="color5">#333333</const> <!-- Tertiary background color -->	
+	
+	
+	<!-- New color pallete of Marcello Galhardo -->
+	<const name="color6">#36393E</const> <!-- Quaternary background color -->	
+	<const name="color7">#424242</const> 
+	<const name="color8">#B9BABC</const> <!-- Default text color for chat -->
+	<const name="color8_deemphasized">#757D81</const>	
+	<const name="color9">#5B5E62</const>
+	<const name="color10">white</const>	
+	<const name="color11">#474A4F</const>
+	<const name="color12">#949494</const>
+	<const name="color13">#2F3136</const>
+	<const name="color14">#68696D</const>
+	<const name="color15">#26272B</const>
+	<const name="color16">#42464D</const>
+	<const name="color17">#65666A</const>
+	<const name="color18">#F04747</const>
+	<const name="color19">#0D0F12</const>	
+	<const name="color20">#7F8185</const>
+	<const name="color21">#161616</const>
+	<const name="color22">#333333</const>
+	<const name="color23">#FF1744</const>
+	<const name="color24">#181818</const>	
+	<const name="color25">#2F2F2F</const>
+	
+	<const name="yellow_warning_color">#FFAE00</const>
+	<const name="warning_color">$(yellow_warning_color)</const>	
+	
+	<const name="online_state_color">#65CB00</const>
+	<const name="busy_state_color">red</const>
+	<const name="offline_state_color">#828282</const>	
+	<const name="mobile_state_color">$(yellow_warning_color)</const>		
+	
+	
+	<!--  mnemonic consts -->
+	<const name="face_color">$(color0)</const>
+	<const name="face_color_hover">$(color0_hover)</const>	
+	<const name="face_color_down">$(color0_down)</const>		
+	<const name="face_selection_color">$(color1_pale_transparent)</const>
+	<const name="face_glow_color">$(color1_bright)</const>	
+	<const name="face_color_little_deemphasized">$(color0_little_deemphasized)</const>			
+	<const name="face_color_deemphasized">$(color17)</const>
+	<const name="face_color_down_deemphasized">$(color0_down_deemphasized)</const>				
+	<const name="face_color_state">$(color0_state)</const>
+	<const name="face_color_online_state">$(color0_online_state)</const>	
+			
+	<const name="dominant_color">$(color1)</const>	
+	<const name="dominant_color_gradient">$(color1_background_regular_text_contrasted)</const>	
+	<const name="dominant_color_hover">$(color1_hover)</const>	
+	<const name="dominant_color_down">$(color1_down)</const>
+	<const name="dominant_color_pale">$(color1_pale)</const>
+	<const name="dominant_color_dark">$(color1_dark)</const>	
+	<const name="dominant_color_regular_text_contrast">$(color1_regular_text_contrasted)</const>
+	<const name="dominant_color_hover_regular_text_contrasted">$(color1_hover_regular_text_contrasted)</const>		
+	<const name="dominant_color_focused_regular_text_contrasted">$(color1_focused_regular_text_contrasted)</const>			
+	<const name="dominant_color_background_regular_text_contrasted">$(color1_background_regular_text_contrasted)</const>				
+	
+	<const name="preponent_color_background_regular_text_contrasted">#54AB58</const>
+
+	<const name="bkg_color">$(color2)</const>	
+	<const name="dark_bkg_color">$(color21)</const>	
+	<const name="secondary_bkg_color">$(color4)</const>		
+	<const name="emphasized_secondary_bkg_color">$(color25)</const>			
+	<const name="tertiary_bkg_color">$(color5)</const>			
+	<const name="content_bkg_color">$(color3)</const>
+	<const name="quaternary_bkg_color">$(color24)</const>			
+	
+	<const name="long_content_bkg_color">$(color6)</const>	
+	<const name="short_content_bkg_color">$(color7)</const>	
+	<const name="short_content_error_bkg_color">#743F3E</const>
+	<const name="hover_short_content_error_bkg_color">#8B4C4B</const>	
+	<const name="pressed_content_error_bkg_color">#5B3333</const>	
+	<const name="text_content_foreground_color">$(color8)</const>	
+	<const name="text_content_deempashized_foreground_color">$(color8_deemphasized)90</const>		
+	<const name="low_contrast_text_content_foreground_color">$(color9)</const>	
+	<const name="high_contrast_text_content_foreground_color">$(color10)</const>		
+	<const name="low_contrast2_text_content_foreground_color">$(color11)</const>		
+	<const name="state_text_content_foreground_color">$(color12)</const>		
+	
+	<const name="sidebar_content_bkg_color">$(color13)</const>
+	<const name="sidebar_toolbar_label_font_color">$(color14)</const>
+	<const name="sidebar_search_edit_bkg_color">$(color15)</const>
+	
+	<const name="listview_selection_bkg_color">$(color16)</const>
+	<const name="listview_font_color">$(color17)</const>
+	<const name="listview_notification_badge_color">$(color18)</const>
+	
+	<const name="bright_alert_color">$(color1_bright)</const>
+	<const name="alert_color">$(bright_alert_color)</const>	
+
+	<const name="scrollbar_track_color">$(color22)</const>
+	<const name="scrollbar_thumb_color">$(bkg_color)</const>	
+	<const name="scrollbar_thumb_hover_color">$(bkg_color)90</const>	
+	
+	<const name="progressbar_track_color">$(face_color)</const>
+	<const name="progressbar_indicator_color">$(dominant_color_pale)</const>
+	
+	<const name="chat_toolbar_icon_color">$(color20)</const>
+	
+	<!-- emoji colors -->
+		
+	<const name="emoji_white_eye">white</const>
+	<const name="emoji_face_color">#ffdd67</const>	
+	<const name="emoji_glasses_color">$(face_glow_color)</const>		
+	<const name="emoji_iris_color">$(bkg_color)</const>		
+	<const name="emoji_mouth_color">$(bkg_color)</const>			
+	<const name="emoji_eyebrow_color">$(bkg_color)</const>		
+			
+	<const name="plurality_color_0_deemphasized">#43B8BC</const>
+	<const name="plurality_color_1_deemphasized">#C96E7F</const>
+	<const name="plurality_color_2_deemphasized">#A9C56A</const>
+	
+	<const name="action_button_text_color">$(face_color)</const>	
+	<const name="action_button_focused_color">#F3B6AC</const>
+	<const name="action_button_background_color_1">$(dominant_color)</const>
+	<const name="action_button_background_color_2">$(dominant_color_gradient)</const>
+	<const name="action_button_background_hover_color">$(dominant_color_dark)</const>
+	<const name="action_button_background_down_color">$(dominant_color)</const>	
+		
+	<const name="action_button_2_background_normal_color">$(dominant_color)</const>		
+	<const name="action_button_2_background_hover_color">#FF2D45</const>	
+	<const name="action_button_2_background_down_color">#AA2635</const>
+	
+	<const name="small_action_button_background_color_1">$(action_button_background_color_1)</const>
+	<const name="small_action_button_background_color_2">$(action_button_background_color_2)</const>	
+	
+	<const name="small_action_button_background_color_dark">#AE2A39</const>
+	<const name="small_action_button_background_color_even_darker">#922330</const>	
+			
+	
+	<const name="secondary_action_button_color">$(dominant_color_regular_text_contrast)</const>
+	<const name="secondary_action_button_focused_color">$(color1_focused_regular_text_contrasted)</const>
+	
+	<const name="radiocard_selected_focused_color">#EF757B</const>
+	
+	<const name="alt1_card_color">#0060F0</const>
+	<const name="alt2_card_color">#C2003A</const>	
+	<const name="alt3_card_color">#0076A8</const>		
+	<const name="alt4_card_color">#8000FF</const>		
+	
+	
+	<const name="premium_silver_color">#C4C4C4</const>
+	<const name="premium_gold_color">#FFC700</const>	
+	<const name="premium_platinum_color">#FFFFFF</const>		
+	<const name="premium_ruby_color">$(color1)</const>			
+</group>

@@ -1,0 +1,496 @@
+{
+  "evidenceId": "ZIP-005",
+  "method": "selected text syntax observations; no target execution or original source export",
+  "archiveSha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+  "packages": [
+    {
+      "container": "complementosPadroes/DnD5_SDK3.rpk",
+      "observations": [
+        {
+          "member": "contadores.xml",
+          "sha256": "95026478e6d7c661b8404f0a4b7d887f7e073543a36e9334e33e98466b941977",
+          "header": "3c3f786d6c2076657273696f",
+          "functions": [],
+          "fields": [
+            "contadores"
+          ],
+          "events": [
+            "onCompare",
+            "onItemAdded",
+            "onItemRemoved",
+            "onChange"
+          ],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "module.xml",
+          "sha256": "8159eb9fe497faca3a7e21fccc0fb3406df0561c5d8aee1c0bde85c9ab66e7d2",
+          "header": "3c3f786d6c2076657273696f",
+          "functions": [],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        }
+      ],
+      "nonSdkSourceNames": [
+        "common.lua",
+        "contadoresItem.lfm",
+        "equipamentoItem.lfm",
+        "equipamentoItemDefesa.lfm",
+        "fichaDnD5.lfm",
+        "frmText.lfm",
+        "magiaItemComCheckbox.lfm",
+        "magiaItemSemCheckbox.lfm",
+        "optAtaque.lfm",
+        "contadoresItem.lfm.lua",
+        "equipamentoItem.lfm.lua",
+        "equipamentoItemDefesa.lfm.lua",
+        "fichaDnD5.lfm.lua",
+        "frmText.lfm.lua",
+        "magiaItemComCheckbox.lfm.lua",
+        "magiaItemSemCheckbox.lfm.lua",
+        "optAtaque.lfm.lua"
+      ]
+    },
+    {
+      "container": "complementosPadroes/rrpginlua.rpk",
+      "observations": [
+        {
+          "member": "ConfigDice/metodosExpostos.lua",
+          "sha256": "1449a8ba222db038fedb0c45fc730f7bad75cc08c77e21151e8a894d5eafc038",
+          "header": "726571756972652822727270",
+          "functions": [
+            "Firecast_GerenciarDados"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "FichaBasicaMultiPlataforma.lfm",
+          "sha256": "6f61d0b0872859cff3d91910c779df868aaf32cd9390c0eb2be3814e48169961",
+          "header": "efbbbf3c3f786d6c20766572",
+          "functions": [],
+          "fields": [
+            "atributosStr",
+            "habilidadesStr",
+            "equipamentosStr",
+            "historiaStr"
+          ],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "sdk/firecast.lua",
+          "sha256": "562ca254414026b27d779011dad6e810d875f7988ce541f0e655c89d926185ca",
+          "header": "72657475726e207265717569",
+          "functions": [],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "sdk/internet.lua",
+          "sha256": "53e936e18d68da8c3a12847edd807467c2f8e9042952037036d1f9de6f18095b",
+          "header": "696e7465726e6574203d2072",
+          "functions": [],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "sdk/ndb.lua",
+          "sha256": "0f2bc02fedde396a46d86f0e32476ef993c1eca5f022cfc0fc08d0b2efbc5551",
+          "header": "6c6f63616c206f626a73203d",
+          "functions": [
+            "localNDB.ndbFromHandle",
+            "localNDB.Node:initialize",
+            "localNDB.Node:findChild",
+            "localNDB.Node:getFacade",
+            "localNDB.Node:getAttribute",
+            "localNDB.Node:setAttribute",
+            "localNDB.Node:clearNode",
+            "localNDB.Node:getAttributesNames",
+            "localNDB.Node:getAllAttributes",
+            "localNDB.Node:getChildCount",
+            "localNDB.Node:getChild",
+            "localNDB.Node:getAllChilds",
+            "localNDB.Node:addChild",
+            "localNDB.Node:delete",
+            "localNDB.Node:getName",
+            "localNDB.Node:getPersistedAttributeValue",
+            "localNDB.Node:exportXML",
+            "localNDB.Node:importXML",
+            "localNDB.Node:getLocalID",
+            "localNDB.Node:beginUpdate",
+            "localNDB.Node:endUpdate",
+            "localNDB.Node:getState",
+            "localNDB.Node:setPermission",
+            "localNDB.Node:getPermission",
+            "localNDB.Node:testPermission",
+            "localNDB.Node:enumPermissions",
+            "localNDB.nodeFromHandle",
+            "localNDB.copyNodeToAnother",
+            "localNDB.copyTableToNode",
+            "localNDB.assignPropValueToNode",
+            "localNDB.newNodeFacadeFor",
+            "localNDB.openNode",
+            "localNDB.openNodeFacade",
+            "localNDB.getNodeObjectFromFacade",
+            "_export_ndb_openNodeFacade"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "sdk/serpent.dlua",
+          "sha256": "2ab66ae78d31aee3af8e4f17a8834f0ea1a3546caa4d8c4027c835b1cfb1b6f4",
+          "header": "6c6f63616c2066756e637469",
+          "functions": [
+            "firecastQuotedStr",
+            "s",
+            "gensym",
+            "safestr",
+            "comment",
+            "globerr",
+            "safename",
+            "padnum",
+            "val2str",
+            "deserialize",
+            "merge"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": true,
+            "copyright": true
+          }
+        },
+        {
+          "member": "sdk/slaxml.dlua",
+          "sha256": "ebe391577ff020b7dc0e55df351067c63f456539965ff7af036769feae53e5a2",
+          "header": "2d2d5b3d3d3d3d3d3d3d3d3d",
+          "functions": [
+            "SLAXML:parser",
+            "SLAXML:parse",
+            "utf8",
+            "unescape",
+            "finishText",
+            "findPI",
+            "findComment",
+            "nsForPrefix",
+            "startElement",
+            "findAttribute",
+            "findCDATA",
+            "closeElement",
+            "findElementClose"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": true,
+            "copyright": true
+          }
+        },
+        {
+          "member": "sdk/system.lua",
+          "sha256": "0a6a9a121ca9858d0bb63da262ea1556dead45dabc0f114bf39bdf82a631abfd",
+          "header": "efbbbf73797374656d203d20",
+          "functions": [],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        },
+        {
+          "member": "turnos/CombatTrackerScripts.xml",
+          "sha256": "48093d2757c5a57656e0903df161df5cbe1c6d2892d8364628740be5ac56ca75",
+          "header": "efbbbf3c3f786d6c20766572",
+          "functions": [
+            "getAtoresNDB",
+            "getAtoresNodes",
+            "self:souMestre",
+            "self:narrar",
+            "self:escrever",
+            "self:getNomeColoridoDe",
+            "self:ativarTurnoDe",
+            "self:reordenar",
+            "self:agendarReordenacao",
+            "self:compareNodes",
+            "self:avancarRelogioDeAtor",
+            "self:avancarRelogio",
+            "self:proximoTurno",
+            "self:tratarNovoAtor",
+            "self:criarNovoAtor",
+            "self:limpar",
+            "self:exibirMenuDoAtor",
+            "self:scrollToAtor",
+            "verificarEstadoMsgEvents",
+            "dropPersonagemActor",
+            "dropJogadorActor",
+            "self.handleStartDrop",
+            "self:createDraggerForAtor"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          },
+          "trackerMarkers": {
+            "masterProperty": true,
+            "masterGuard": true,
+            "clearTurn": true,
+            "setTurn": true,
+            "scroll": true,
+            "narration": true
+          }
+        }
+      ],
+      "nonSdkSourceNames": [
+        "ConfigDice/ConfigDice.lfm",
+        "ConfigDice/metodosExpostos.lua",
+        "downloadsDePlugins.lua",
+        "FichaBasicaMultiPlataforma.lfm",
+        "fichaBasicaV3.lfm",
+        "fichaBasicaV3Branca.lfm",
+        "firedrive/FireDriveExplorer.lfm",
+        "firedrive/FireDriveExplorerPanel.lfm",
+        "firedrive/fireDriveGlobals.dlua",
+        "firedrive/firedriveHost.lua",
+        "firedrive/firedriveInterfaces.lua",
+        "firedrive/firedriveNavigator.dlua",
+        "firedrive/FireDriveNavigatorItem.lfm",
+        "firedrive/fireDriveUploads.dlua",
+        "GerenciarPlugins.lfm",
+        "GerencPluginBaixando.lfm",
+        "GerencPluginPluginItem.lfm",
+        "GerTablesDock/GerTableDockItem.lfm",
+        "GerTablesDock/GerTablesDock.lfm",
+        "GerTablesDock/GerTablesDockExport.lua",
+        "GerTablesDock/GerTablesDockGlobal.dlua",
+        "knowGold/KnowGoldForm.lfm",
+        "knowGold/knowGoldPanel.dlua",
+        "macros/rrpgMacros.dlua",
+        "macros/RRPGSimpleMacroGenItem.lfm",
+        "macros/RRPGSimpleMacros.lua",
+        "macros/RRPGSimpleMacrosGerenciar.lfm",
+        "macros/TablesDockMacros.lfm",
+        "macros/TablesDockMacrosItem.lfm",
+        "metodosExpostos.lua",
+        "NodeExplorer/Child.lfm",
+        "NodeExplorer/explorerHost.lua",
+        "NodeExplorer/PermissionsPopUp.lfm",
+        "NovoPersonagem.lfm",
+        "selImage/frmSelImage.lfm",
+        "selImage/rrpgSelImage.lua",
+        "turnos/AtorCombatTracker.lfm",
+        "turnos/CombatTrackerDock.lfm",
+        "turnos/EfeitoCombatTracker.lfm",
+        "utils/queuedJobs.dlua",
+        "ConfigDice/ConfigDice.lfm.lua",
+        "FichaBasicaMultiPlataforma.lfm.lua",
+        "fichaBasicaV3.lfm.lua",
+        "fichaBasicaV3Branca.lfm.lua",
+        "firedrive/FireDriveExplorer.lfm.lua",
+        "firedrive/FireDriveExplorerPanel.lfm.lua",
+        "firedrive/FireDriveNavigatorItem.lfm.lua",
+        "GerenciarPlugins.lfm.lua",
+        "GerencPluginBaixando.lfm.lua",
+        "GerencPluginPluginItem.lfm.lua",
+        "GerTablesDock/GerTableDockItem.lfm.lua",
+        "GerTablesDock/GerTablesDock.lfm.lua",
+        "knowGold/KnowGoldForm.lfm.lua",
+        "macros/RRPGSimpleMacroGenItem.lfm.lua",
+        "macros/RRPGSimpleMacrosGerenciar.lfm.lua",
+        "macros/TablesDockMacros.lfm.lua",
+        "macros/TablesDockMacrosItem.lfm.lua",
+        "NodeExplorer/Child.lfm.lua",
+        "NodeExplorer/PermissionsPopUp.lfm.lua",
+        "NovoPersonagem.lfm.lua",
+        "selImage/frmSelImage.lfm.lua",
+        "turnos/AtorCombatTracker.lfm.lua",
+        "turnos/CombatTrackerDock.lfm.lua",
+        "turnos/EfeitoCombatTracker.lfm.lua"
+      ]
+    },
+    {
+      "container": "complementosPadroes/sceneinlua.rpk",
+      "observations": [
+        {
+          "member": "delaunay.lua",
+          "sha256": "42c6cbac46a7124dc03be07df31363307d20234c04f58b48da97be1f327e1f4b",
+          "header": "2d2d2d2d2d2d2d2d2d2d2d2d",
+          "functions": [
+            "klass:new",
+            "quatCross",
+            "crossProduct",
+            "isFlatAngle",
+            "Edge:__init",
+            "Edge:same",
+            "Edge:length",
+            "Edge:getMidPoint",
+            "Point:__init",
+            "Point:dist2",
+            "Point:dist",
+            "Point:isInCircle",
+            "Triangle:__init",
+            "Triangle:isCW",
+            "Triangle:isCCW",
+            "Triangle:getSidesLength",
+            "Triangle:getCenter",
+            "Triangle:getCircumCircle",
+            "Triangle:getCircumCenter",
+            "Triangle:getCircumRadius",
+            "Triangle:getArea",
+            "Triangle:inCircumCircle",
+            "Delaunay.triangulate"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": true,
+            "copyright": true
+          }
+        }
+      ],
+      "nonSdkSourceNames": [
+        "btree_tester.xlua",
+        "delaunay.lua",
+        "geradormasmorra/delaunay.lua",
+        "geradormasmorra/gerador.lua",
+        "geradormasmorra/sceneDungeonOptions.lfm",
+        "geradormasmorra/sceneGeneratorOptions.lfm",
+        "geradormasmorra/sceneMazeOptions.lfm",
+        "inseridortokens/insert.lua",
+        "inseridortokens/magicTokens.lfm",
+        "inseridortokens/rclPlayer.lfm",
+        "inseridortokens/sceneInseridorFireDrive.lfm",
+        "movementHistoryCore.dlua",
+        "movementHistoryMonitor.dlua",
+        "rrpgScene _Zoom.lua",
+        "rrpgScene.lua",
+        "rrpgSceneBasic.lua",
+        "rrpgSceneUtil.lua",
+        "rrpgScene_Clipboard.dlua",
+        "rrpgScene_DragDrop.lua",
+        "rrpgScene_DrawSelected.lua",
+        "rrpgScene_FowShapeDetails.lua",
+        "rrpgScene_Globals.lua",
+        "rrpgScene_GMTools.lua",
+        "rrpgScene_GridFineTuning.lua",
+        "rrpgScene_InertialMov.lua",
+        "rrpgScene_Layers.lua",
+        "rrpgScene_MeasureTool.lua",
+        "rrpgScene_MovementHistory.lua",
+        "rrpgScene_MovementPath.dlua",
+        "rrpgScene_OptionsTool.lua",
+        "rrpgScene_Pan.lua",
+        "rrpgScene_PingerEngine.lua",
+        "rrpgScene_SelectMove.lua",
+        "rrpgScene_ShapesMaker.dlua",
+        "rrpgScene_SincronizadorGrid.lua",
+        "rrpgScene_TouchNav.lua",
+        "rrpgScene_Undo.dlua",
+        "rrpgScene_UserDrawing.lua",
+        "rrpgScene_UserDrawingDetails.lua",
+        "rrpgScene_WindowTools.lua",
+        "sceneBoardProps.lfm",
+        "sceneGridFineTuning.lfm",
+        "sceneMath.dlua",
+        "sceneSelectColor.lfm",
+        "sceneSquareShape.lfm",
+        "sceneTokenProps.lfm",
+        "scene_FowShapeDetailsForm.lfm",
+        "scene_genericItemMenu.dlua",
+        "scene_graphicItemMenu.lfm",
+        "scene_sceneMenu.lfm",
+        "scene_tokenMenu.lfm",
+        "scene_UserDrawingDetailsForm.lfm",
+        "geradormasmorra/sceneDungeonOptions.lfm.lua",
+        "geradormasmorra/sceneGeneratorOptions.lfm.lua",
+        "geradormasmorra/sceneMazeOptions.lfm.lua",
+        "inseridortokens/magicTokens.lfm.lua",
+        "inseridortokens/rclPlayer.lfm.lua",
+        "inseridortokens/sceneInseridorFireDrive.lfm.lua",
+        "sceneBoardProps.lfm.lua",
+        "sceneGridFineTuning.lfm.lua",
+        "sceneSelectColor.lfm.lua",
+        "sceneSquareShape.lfm.lua",
+        "sceneTokenProps.lfm.lua",
+        "scene_FowShapeDetailsForm.lfm.lua",
+        "scene_graphicItemMenu.lfm.lua",
+        "scene_sceneMenu.lfm.lua",
+        "scene_tokenMenu.lfm.lua",
+        "scene_UserDrawingDetailsForm.lfm.lua"
+      ]
+    },
+    {
+      "container": "complementosPadroes/UniversalVTTImporter.rpk",
+      "observations": [
+        {
+          "member": "base64.lua",
+          "sha256": "05e0a6de8b281cac7e8571c17def507d7c657f8e4a58b37c539676c6e02645ae",
+          "header": "2d2d5b5b0d0a0d0a20626173",
+          "functions": [
+            "base64.makeencoder",
+            "base64.makedecoder",
+            "base64.encode",
+            "base64.decode"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": true,
+            "copyright": true
+          }
+        },
+        {
+          "member": "uvtt.lua",
+          "sha256": "6c0b3862e688bbd981c1114fe35d53fbbdd7f210f315bce3762a5e007a57430c",
+          "header": "726571756972652822736365",
+          "functions": [
+            "tinifyJPEG",
+            "tinifyShrink",
+            "tinify"
+          ],
+          "fields": [],
+          "events": [],
+          "licenseIndicators": {
+            "MIT": false,
+            "copyright": false
+          }
+        }
+      ],
+      "nonSdkSourceNames": [
+        "base64.lua",
+        "jsonparser.lua",
+        "uvtt.lua"
+      ]
+    }
+  ]
+}

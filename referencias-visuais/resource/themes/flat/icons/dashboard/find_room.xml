@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="24" height="24">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<image left="0" top="0" right="24" bottom="24" zOrder="1" overflowX="stretch" overflowY="stretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			
+			<source url="face_color_rectangle.xml" left="0" top="0" right="24" bottom="24" 
+			        clippingMask="circle_masking.xml"
+					clippingNotMask="../groupWorkOutline.xml"
+					clippingNotMaskScaleX="0.43"
+					clippingNotMaskScaleY="0.43"/>						
+		</image>					
+	</draw>
+</frame>

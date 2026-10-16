@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="60" height="24" autoScaleY="true" autoScaleX="true">
+	<import file="../consts.xml"/>
+	<margins left="0" top="0" bottom="0" right="0"/>
+	
+	<draw>
+		<!-- Background 60x24, original era 50x20 -->
+		<path left="0" top="0" right="60" bottom="24" zOrder="1" mode="fitStretch">
+			<pathData>M9.78011 16.9929L0 0H50L40.2199 16.9929C39.1492 18.8533 37.1662 20 35.0197 20H14.9803C12.8338 20 10.8508 18.8533 9.78011 16.9929Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(action_button_2_background_normal_color)"/>
+		</path>				
+		
+		<!-- X shape Largura 9.6x9.6, original era 8x8 -->
+		
+		<path left="25.2" top="7.2" right="34.8" bottom="16.8" zOrder="2" mode="fit">
+			<pathData>M0.226745 6.58567C-0.0692729 6.87541 -0.0763761 7.3522 0.21088 7.65063C0.498136 7.94905 0.970973 7.95609 1.26699 7.66636L3.9324 5.05753L6.60875 7.77012C6.89967 8.06498 7.37255 8.06619 7.66497 7.77282C7.95739 7.47946 7.95861 7.00261 7.6677 6.70775L5.00435 4.00834L7.77006 1.30134C8.06608 1.0116 8.07319 0.534806 7.78593 0.236382C7.49867 -0.0620415 7.02584 -0.0690855 6.72982 0.220649L3.95088 2.9406L1.27634 0.22984C0.985425 -0.0650161 0.512538 -0.0662249 0.220117 0.227141C-0.0723028 0.520506 -0.0735217 0.997354 0.217395 1.29221L2.87893 3.98979L0.226745 6.58567Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(action_button_2_text_color)" opacity="0.5"/>
+		</path>		
+	</draw>
+</frame>

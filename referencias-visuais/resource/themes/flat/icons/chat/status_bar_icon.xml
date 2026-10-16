@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="24" height="24" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<path left="0" top="0" right="24" bottom="24" zOrder="1" mode="original">
+			<pathData>M14.8 5V8H5V5H14.8ZM19 10.6V13.4H5V10.6H19ZM11 16.2V19H5V16.2H11Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color)"/>
+		</path>				
+	</draw>
+</frame>

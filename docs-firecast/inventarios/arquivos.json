@@ -1,0 +1,3163 @@
+{
+  "id": "LOCAL-INVENTORY-001",
+  "collectedAtUtc": "2026-10-16T02:40:33.525Z",
+  "root": "C:/Users/João/AppData/Local/Firecast",
+  "tool": {
+    "node": "v22.23.2",
+    "script": "scripts-analise/inventario.mjs"
+  },
+  "scope": "Regular installation files recursively, excluding LogErrors directory and no external profile search",
+  "files": [
+    {
+      "id": "FILE-001",
+      "path": "avcodec-57.dll",
+      "size": 20152072,
+      "sha256": "b32b6b923ca21a0277f11a0547c6c72a3109d7826737a050ae05f7b035d09be2",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 15285896,
+            "rva": 4096,
+            "rawSize": 15286272,
+            "offset": 1024
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 37520,
+            "rva": 15290368,
+            "rawSize": 37888,
+            "offset": 15287296
+          },
+          {
+            "name": ".data",
+            "virtualSize": 172352,
+            "rva": 15331328,
+            "rawSize": 172544,
+            "offset": 15325184
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 4143876,
+            "rva": 15507456,
+            "rawSize": 4144128,
+            "offset": 15497728
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 182688,
+            "rva": 19652608,
+            "rawSize": 182784,
+            "offset": 19641856
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 246892,
+            "rva": 19836928,
+            "rawSize": 247296,
+            "offset": 19824640
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 9701088,
+            "rva": 20086784,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 7853,
+            "rva": 29790208,
+            "rawSize": 8192,
+            "offset": 20071936
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 14736,
+            "rva": 29798400,
+            "rawSize": 14848,
+            "offset": 20080128
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 96,
+            "rva": 29814784,
+            "rawSize": 512,
+            "offset": 20094976
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 29818880,
+            "rawSize": 512,
+            "offset": 20095488
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 856,
+            "rva": 29822976,
+            "rawSize": 1024,
+            "offset": 20096000
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 45012,
+            "rva": 29827072,
+            "rawSize": 45056,
+            "offset": 20097024
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "ole32.dll",
+          "avutil-55.dll",
+          "swresample-2.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 4,
+            "firstFileOffsets": [
+              15762280,
+              15770464,
+              15966224,
+              15966968
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 20142080,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-002",
+      "path": "avdevice-57.dll",
+      "size": 146696,
+      "sha256": "e6549371893f0736fbc397eecfa3c3ac1f91a462ed819df472bc06576ee37fdd",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 75304,
+            "rva": 4096,
+            "rawSize": 75776,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 1008,
+            "rva": 81920,
+            "rawSize": 1024,
+            "offset": 76800
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 41696,
+            "rva": 86016,
+            "rawSize": 41984,
+            "offset": 77824
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 2352,
+            "rva": 131072,
+            "rawSize": 2560,
+            "offset": 119808
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 2212,
+            "rva": 135168,
+            "rawSize": 2560,
+            "offset": 122368
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 3088,
+            "rva": 139264,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 700,
+            "rva": 143360,
+            "rawSize": 1024,
+            "offset": 124928
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 8088,
+            "rva": 147456,
+            "rawSize": 8192,
+            "offset": 125952
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 155648,
+            "rawSize": 512,
+            "offset": 134144
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 159744,
+            "rawSize": 512,
+            "offset": 134656
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 872,
+            "rva": 163840,
+            "rawSize": 1024,
+            "offset": 135168
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 480,
+            "rva": 167936,
+            "rawSize": 512,
+            "offset": 136192
+          }
+        ],
+        "imports": [
+          "GDI32.dll",
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "ole32.dll",
+          "OLEAUT32.dll",
+          "SHLWAPI.dll",
+          "USER32.dll",
+          "AVICAP32.dll",
+          "avcodec-57.dll",
+          "avfilter-6.dll",
+          "avformat-57.dll",
+          "avutil-55.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 136704,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-003",
+      "path": "avfilter-6.dll",
+      "size": 2451208,
+      "sha256": "6087971c6476bfdc4d6240aae462d7b9bfed064204912d055cbc89e5e982a92f",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 1656856,
+            "rva": 4096,
+            "rawSize": 1657344,
+            "offset": 1024
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 1248,
+            "rva": 1662976,
+            "rawSize": 1536,
+            "offset": 1658368
+          },
+          {
+            "name": ".data",
+            "virtualSize": 41536,
+            "rva": 1667072,
+            "rawSize": 41984,
+            "offset": 1659904
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 616564,
+            "rva": 1712128,
+            "rawSize": 616960,
+            "offset": 1701888
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 31836,
+            "rva": 2330624,
+            "rawSize": 32256,
+            "offset": 2318848
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 43696,
+            "rva": 2363392,
+            "rawSize": 44032,
+            "offset": 2351104
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 19712,
+            "rva": 2408448,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 2536,
+            "rva": 2428928,
+            "rawSize": 2560,
+            "offset": 2395136
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 13472,
+            "rva": 2433024,
+            "rawSize": 13824,
+            "offset": 2397696
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 2449408,
+            "rawSize": 512,
+            "offset": 2411520
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 2453504,
+            "rawSize": 512,
+            "offset": 2412032
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 888,
+            "rva": 2457600,
+            "rawSize": 1024,
+            "offset": 2412544
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 27576,
+            "rva": 2461696,
+            "rawSize": 27648,
+            "offset": 2413568
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "avcodec-57.dll",
+          "avformat-57.dll",
+          "avutil-55.dll",
+          "postproc-54.dll",
+          "swresample-2.dll",
+          "swscale-4.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 2441216,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-004",
+      "path": "avformat-57.dll",
+      "size": 2249992,
+      "sha256": "9181df55ae9bc7795dc7855d3ae84335170b1d74849dfa422e87d7395d197554",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 1612984,
+            "rva": 4096,
+            "rawSize": 1613312,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 96288,
+            "rva": 1617920,
+            "rawSize": 96768,
+            "offset": 1614336
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 411908,
+            "rva": 1716224,
+            "rawSize": 412160,
+            "offset": 1711104
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 33396,
+            "rva": 2129920,
+            "rawSize": 33792,
+            "offset": 2123264
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 40884,
+            "rva": 2166784,
+            "rawSize": 40960,
+            "offset": 2157056
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 3184,
+            "rva": 2207744,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 5508,
+            "rva": 2211840,
+            "rawSize": 5632,
+            "offset": 2198016
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 18888,
+            "rva": 2220032,
+            "rawSize": 18944,
+            "offset": 2203648
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 2240512,
+            "rawSize": 512,
+            "offset": 2222592
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 2244608,
+            "rawSize": 512,
+            "offset": 2223104
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 872,
+            "rva": 2248704,
+            "rawSize": 1024,
+            "offset": 2223616
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 15084,
+            "rva": 2252800,
+            "rawSize": 15360,
+            "offset": 2224640
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "Secur32.dll",
+          "WS2_32.dll",
+          "avcodec-57.dll",
+          "avutil-55.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 1,
+            "firstFileOffsets": [
+              1756488
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 2240000,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-005",
+      "path": "avutil-55.dll",
+      "size": 528648,
+      "sha256": "6c0eb5d6c149326aefc945306ac2057998496c493a8b85395f20c68ecd3d4ed2",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 336632,
+            "rva": 4096,
+            "rawSize": 336896,
+            "offset": 1024
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 32,
+            "rva": 344064,
+            "rawSize": 512,
+            "offset": 337920
+          },
+          {
+            "name": ".data",
+            "virtualSize": 464,
+            "rva": 348160,
+            "rawSize": 512,
+            "offset": 338432
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 130032,
+            "rva": 352256,
+            "rawSize": 130048,
+            "offset": 338944
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 11736,
+            "rva": 483328,
+            "rawSize": 11776,
+            "offset": 468992
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 11248,
+            "rva": 495616,
+            "rawSize": 11264,
+            "offset": 480768
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 84848,
+            "rva": 507904,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 14959,
+            "rva": 593920,
+            "rawSize": 15360,
+            "offset": 492032
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 6244,
+            "rva": 610304,
+            "rawSize": 6656,
+            "offset": 507392
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 96,
+            "rva": 618496,
+            "rawSize": 512,
+            "offset": 514048
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 622592,
+            "rawSize": 512,
+            "offset": 514560
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 848,
+            "rva": 626688,
+            "rawSize": 1024,
+            "offset": 515072
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 2208,
+            "rva": 630784,
+            "rawSize": 2560,
+            "offset": 516096
+          }
+        ],
+        "imports": [
+          "ADVAPI32.dll",
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "USER32.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 518656,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-006",
+      "path": "fcwebrtc_win_x64.dll",
+      "size": 13954048,
+      "sha256": "028df460b4dfd4bb44fd1e2e7f9b35dd9fb7bad28e5b2d76c971ca476ea9673c",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a7800010000000400000000000000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0xb190a0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 11872726,
+            "rva": 4096,
+            "rawSize": 11872768,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 1720444,
+            "rva": 11878400,
+            "rawSize": 1720832,
+            "offset": 11873792
+          },
+          {
+            "name": ".data",
+            "virtualSize": 686452,
+            "rva": 13602816,
+            "rawSize": 61952,
+            "offset": 13594624
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 239376,
+            "rva": 14290944,
+            "rawSize": 239616,
+            "offset": 13656576
+          },
+          {
+            "name": ".00cfg",
+            "virtualSize": 40,
+            "rva": 14532608,
+            "rawSize": 512,
+            "offset": 13896192
+          },
+          {
+            "name": ".gxfg",
+            "virtualSize": 12336,
+            "rva": 14536704,
+            "rawSize": 12800,
+            "offset": 13896704
+          },
+          {
+            "name": ".retplne",
+            "virtualSize": 168,
+            "rva": 14553088,
+            "rawSize": 512,
+            "offset": 13909504
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 2240,
+            "rva": 14557184,
+            "rawSize": 2560,
+            "offset": 13910016
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 641,
+            "rva": 14561280,
+            "rawSize": 1024,
+            "offset": 13912576
+          },
+          {
+            "name": ".voltbl",
+            "virtualSize": 58,
+            "rva": 14565376,
+            "rawSize": 512,
+            "offset": 13913600
+          },
+          {
+            "name": "_RDATA",
+            "virtualSize": 244,
+            "rva": 14569472,
+            "rawSize": 512,
+            "offset": 13914112
+          },
+          {
+            "name": "malloc_h",
+            "virtualSize": 326,
+            "rva": 14573568,
+            "rawSize": 512,
+            "offset": 13914624
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 38416,
+            "rva": 14577664,
+            "rawSize": 38912,
+            "offset": 13915136
+          }
+        ],
+        "imports": [
+          "WS2_32.dll",
+          "KERNEL32.dll",
+          "ole32.dll",
+          "msdmo.dll",
+          "USER32.dll",
+          "WINMM.dll",
+          "IPHLPAPI.DLL",
+          "ADVAPI32.dll",
+          "Secur32.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 13954048,
+          "bytes": 0
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-007",
+      "path": "ffmpeg.exe",
+      "size": 302344,
+      "sha256": "82553848dbf3bfb249730fac8e83536308e11c819f786b1a58cdbcef5155603a",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x14d0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 205864,
+            "rva": 4096,
+            "rawSize": 206336,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 384,
+            "rva": 212992,
+            "rawSize": 512,
+            "offset": 207360
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 52576,
+            "rva": 217088,
+            "rawSize": 52736,
+            "offset": 207872
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 3888,
+            "rva": 270336,
+            "rawSize": 4096,
+            "offset": 260608
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 4572,
+            "rva": 274432,
+            "rawSize": 4608,
+            "offset": 264704
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 3872,
+            "rva": 282624,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 53,
+            "rva": 286720,
+            "rawSize": 512,
+            "offset": 269312
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 17532,
+            "rva": 290816,
+            "rawSize": 17920,
+            "offset": 269824
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 96,
+            "rva": 311296,
+            "rawSize": 512,
+            "offset": 287744
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 315392,
+            "rawSize": 512,
+            "offset": 288256
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 1256,
+            "rva": 319488,
+            "rawSize": 1536,
+            "offset": 288768
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 1584,
+            "rva": 323584,
+            "rawSize": 2048,
+            "offset": 290304
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "SHELL32.dll",
+          "avcodec-57.dll",
+          "avdevice-57.dll",
+          "avfilter-6.dll",
+          "avformat-57.dll",
+          "avutil-55.dll",
+          "postproc-54.dll",
+          "swresample-2.dll",
+          "swscale-4.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 292352,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-008",
+      "path": "ffprobe.exe",
+      "size": 188168,
+      "sha256": "70ab9228205e4dd8a1be0893a3fcf58ae01ea430860aabe182450979eb39de19",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x14d0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 120792,
+            "rva": 4096,
+            "rawSize": 120832,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 4448,
+            "rva": 126976,
+            "rawSize": 4608,
+            "offset": 121856
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 28880,
+            "rva": 135168,
+            "rawSize": 29184,
+            "offset": 126464
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 3108,
+            "rva": 167936,
+            "rawSize": 3584,
+            "offset": 155648
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 3432,
+            "rva": 172032,
+            "rawSize": 3584,
+            "offset": 159232
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 3872,
+            "rva": 176128,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 54,
+            "rva": 180224,
+            "rawSize": 512,
+            "offset": 162816
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 10564,
+            "rva": 184320,
+            "rawSize": 10752,
+            "offset": 163328
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 96,
+            "rva": 196608,
+            "rawSize": 512,
+            "offset": 174080
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 200704,
+            "rawSize": 512,
+            "offset": 174592
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 1256,
+            "rva": 204800,
+            "rawSize": 1536,
+            "offset": 175104
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 1096,
+            "rva": 208896,
+            "rawSize": 1536,
+            "offset": 176640
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "SHELL32.dll",
+          "avcodec-57.dll",
+          "avdevice-57.dll",
+          "avfilter-6.dll",
+          "avformat-57.dll",
+          "avutil-55.dll",
+          "postproc-54.dll",
+          "swresample-2.dll",
+          "swscale-4.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 178176,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-009",
+      "path": "Firecast.exe",
+      "size": 285902821,
+      "sha256": "4f80d08ab252ffd0b541c89cf09610028c4f8e45879cb8969bc45e8ac74c1086",
+      "mtimeUtc": "2024-07-13T13:22:20.000Z",
+      "signatureHex": "4d5a50000200000004000f00ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x65403c0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 106563780,
+            "rva": 4096,
+            "rawSize": 106564096,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 8246536,
+            "rva": 106569728,
+            "rawSize": 8246784,
+            "offset": 106565120
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 701500,
+            "rva": 114819072,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 25256,
+            "rva": 115523584,
+            "rawSize": 25600,
+            "offset": 114811904
+          },
+          {
+            "name": ".didata",
+            "virtualSize": 37736,
+            "rva": 115552256,
+            "rawSize": 37888,
+            "offset": 114837504
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 154,
+            "rva": 115593216,
+            "rawSize": 512,
+            "offset": 114875392
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 836,
+            "rva": 115597312,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 109,
+            "rva": 115601408,
+            "rawSize": 512,
+            "offset": 114875904
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 4375296,
+            "rva": 115605504,
+            "rawSize": 4375552,
+            "offset": 114876416
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 4257900,
+            "rva": 119984128,
+            "rawSize": 4258304,
+            "offset": 119251968
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 3057152,
+            "rva": 124243968,
+            "rawSize": 3057152,
+            "offset": 123510272
+          },
+          {
+            "name": ".debug",
+            "virtualSize": 159335397,
+            "rva": 127303680,
+            "rawSize": 159335397,
+            "offset": 126567424
+          }
+        ],
+        "imports": [
+          "DWrite.dll",
+          "d3d9.dll",
+          "DbgHelp.dll",
+          "shlwapi.dll",
+          "opengl32.dll",
+          "version.dll",
+          "user32.dll",
+          "oleaut32.dll",
+          "msvcrt.dll",
+          "advapi32.dll",
+          "swresample-2.dll",
+          "lua54x64.dll",
+          "swscale-4.dll",
+          "avcodec-57.dll",
+          "kernel32.dll",
+          "d2d1.dll",
+          "SHFolder.dll",
+          "gdiplus.dll",
+          "gdi32.dll",
+          "winmm.dll",
+          "winspool.drv",
+          "comdlg32.dll",
+          "comctl32.dll",
+          "shell32.dll",
+          "URLMON.DLL",
+          "avformat-57.dll",
+          "avutil-55.dll",
+          "ole32.dll",
+          "NtDll.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Embarcadero",
+            "encoding": "ascii",
+            "count": 4,
+            "firstFileOffsets": [
+              114875944,
+              124065914,
+              124949156,
+              125694664
+            ]
+          },
+          {
+            "text": "Embarcadero",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              101690,
+              14722232
+            ]
+          },
+          {
+            "text": "Borland",
+            "encoding": "ascii",
+            "count": 15,
+            "firstFileOffsets": [
+              68226802,
+              68230611,
+              68255885,
+              68256884,
+              168453327,
+              268495028,
+              268510220,
+              268516374
+            ]
+          },
+          {
+            "text": "Borland",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              101800,
+              101850
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 135890,
+            "firstFileOffsets": [
+              2683286,
+              2683301,
+              2772651,
+              2773180,
+              2773267,
+              2781435,
+              2782124,
+              2782203
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "utf16le",
+            "count": 215,
+            "firstFileOffsets": [
+              101866,
+              7942128,
+              7943868,
+              7952984,
+              7959324,
+              7974404,
+              7976908,
+              7977576
+            ]
+          },
+          {
+            "text": "FireMonkey",
+            "encoding": "ascii",
+            "count": 631,
+            "firstFileOffsets": [
+              54033643,
+              54034857,
+              54046976,
+              54047521,
+              54080591,
+              54080679,
+              54080775,
+              54080981
+            ]
+          },
+          {
+            "text": "FireMonkey",
+            "encoding": "utf16le",
+            "count": 296,
+            "firstFileOffsets": [
+              54045328,
+              54087160,
+              54091524,
+              54091976,
+              54092332,
+              58738072,
+              58739136,
+              58740024
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "ascii",
+            "count": 20867,
+            "firstFileOffsets": [
+              3209611,
+              3214568,
+              3214910,
+              3215437,
+              3215472,
+              3222571,
+              3223212,
+              3223304
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "utf16le",
+            "count": 2462,
+            "firstFileOffsets": [
+              7942174,
+              7943914,
+              7953030,
+              7959370,
+              7974450,
+              7976954,
+              7977622,
+              7978278
+            ]
+          },
+          {
+            "text": "System.SysUtils",
+            "encoding": "ascii",
+            "count": 2733,
+            "firstFileOffsets": [
+              219231,
+              221590,
+              222303,
+              222641,
+              222962,
+              223291,
+              223599,
+              223920
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 285902821,
+          "bytes": 0
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-010",
+      "path": "FirecastPlugin.ico",
+      "size": 366015,
+      "sha256": "0850f7820dfdc91dd83b9042ee6e6e1e96a1dfccc9c0910d2701df297968896b",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "00000100080010100000010020006804",
+      "pe": null
+    },
+    {
+      "id": "FILE-011",
+      "path": "libeay32.dll",
+      "size": 1890040,
+      "sha256": "61b1779c2305beac35ae9767727eca546ffe3c26bf690ac31b531c4f3c9ae58c",
+      "mtimeUtc": "2024-06-20T20:19:26.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0xf47b8",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 1123088,
+            "rva": 4096,
+            "rawSize": 1123328,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 400162,
+            "rva": 1130496,
+            "rawSize": 400384,
+            "offset": 1124352
+          },
+          {
+            "name": ".data",
+            "virtualSize": 269752,
+            "rva": 1531904,
+            "rawSize": 254976,
+            "offset": 1524736
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 80304,
+            "rva": 1802240,
+            "rawSize": 80384,
+            "offset": 1779712
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 1096,
+            "rva": 1884160,
+            "rawSize": 1536,
+            "offset": 1860096
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 18432,
+            "rva": 1888256,
+            "rawSize": 18432,
+            "offset": 1861632
+          }
+        ],
+        "imports": [
+          "WS2_32.dll",
+          "GDI32.dll",
+          "ADVAPI32.dll",
+          "USER32.dll",
+          "KERNEL32.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 1880064,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-012",
+      "path": "libfftw3f-3.dll",
+      "size": 2772692,
+      "sha256": "42ca18fff35dd12890e04478bc990005b3969cb744f6843976bd436ccd7f0a4c",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x13e0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 1903344,
+            "rva": 4096,
+            "rawSize": 1903616,
+            "offset": 1536
+          },
+          {
+            "name": ".data",
+            "virtualSize": 720,
+            "rva": 1908736,
+            "rawSize": 1024,
+            "offset": 1905152
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 304352,
+            "rva": 1912832,
+            "rawSize": 304640,
+            "offset": 1906176
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 25572,
+            "rva": 2220032,
+            "rawSize": 25600,
+            "offset": 2210816
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 44644,
+            "rva": 2248704,
+            "rawSize": 45056,
+            "offset": 2236416
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 3584,
+            "rva": 2293760,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 7239,
+            "rva": 2297856,
+            "rawSize": 7680,
+            "offset": 2281472
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 2264,
+            "rva": 2306048,
+            "rawSize": 2560,
+            "offset": 2289152
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 2310144,
+            "rawSize": 512,
+            "offset": 2291712
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 104,
+            "rva": 2314240,
+            "rawSize": 512,
+            "offset": 2292224
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 7156,
+            "rva": 2318336,
+            "rawSize": 7168,
+            "offset": 2292736
+          },
+          {
+            "name": "/4",
+            "virtualSize": 1136,
+            "rva": 2326528,
+            "rawSize": 1536,
+            "offset": 2299904
+          },
+          {
+            "name": "/19",
+            "virtualSize": 44782,
+            "rva": 2330624,
+            "rawSize": 45056,
+            "offset": 2301440
+          },
+          {
+            "name": "/31",
+            "virtualSize": 7597,
+            "rva": 2375680,
+            "rawSize": 7680,
+            "offset": 2346496
+          },
+          {
+            "name": "/45",
+            "virtualSize": 6243,
+            "rva": 2383872,
+            "rawSize": 6656,
+            "offset": 2354176
+          },
+          {
+            "name": "/57",
+            "virtualSize": 3136,
+            "rva": 2392064,
+            "rawSize": 3584,
+            "offset": 2360832
+          },
+          {
+            "name": "/70",
+            "virtualSize": 359,
+            "rva": 2396160,
+            "rawSize": 512,
+            "offset": 2364416
+          },
+          {
+            "name": "/81",
+            "virtualSize": 15242,
+            "rva": 2400256,
+            "rawSize": 15360,
+            "offset": 2364928
+          },
+          {
+            "name": "/92",
+            "virtualSize": 1520,
+            "rva": 2416640,
+            "rawSize": 1536,
+            "offset": 2380288
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 2381824,
+          "bytes": 390868
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-013",
+      "path": "lua53x64.dll",
+      "size": 481016,
+      "sha256": "0867b41d0aae250879aaba5c2b0bdf37d5e60b4204e7071b11bc16a0fc0f70ac",
+      "mtimeUtc": "2023-05-04T13:22:12.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x2a0a4",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 353344,
+            "rva": 4096,
+            "rawSize": 353792,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 95094,
+            "rva": 360448,
+            "rawSize": 95232,
+            "offset": 354816
+          },
+          {
+            "name": ".data",
+            "virtualSize": 7904,
+            "rva": 458752,
+            "rawSize": 3072,
+            "offset": 450048
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 14100,
+            "rva": 466944,
+            "rawSize": 14336,
+            "offset": 453120
+          },
+          {
+            "name": "_RDATA",
+            "virtualSize": 148,
+            "rva": 483328,
+            "rawSize": 512,
+            "offset": 467456
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 2900,
+            "rva": 487424,
+            "rawSize": 3072,
+            "offset": 467968
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Lua 5.3",
+            "encoding": "ascii",
+            "count": 2,
+            "firstFileOffsets": [
+              355773,
+              362051
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 471040,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-014",
+      "path": "lua54x64.dll",
+      "size": 536312,
+      "sha256": "f8ff05ccd8889160711a47c49f9c9d1b26d9eaa2e3a13d8ae8c601490631f295",
+      "mtimeUtc": "2024-06-20T20:19:20.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x32500",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 402352,
+            "rva": 4096,
+            "rawSize": 402432,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 99974,
+            "rva": 409600,
+            "rawSize": 100352,
+            "offset": 403456
+          },
+          {
+            "name": ".data",
+            "virtualSize": 8112,
+            "rva": 512000,
+            "rawSize": 3584,
+            "offset": 503808
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 15360,
+            "rva": 520192,
+            "rawSize": 15360,
+            "offset": 507392
+          },
+          {
+            "name": "_RDATA",
+            "virtualSize": 348,
+            "rva": 536576,
+            "rawSize": 512,
+            "offset": 522752
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 3004,
+            "rva": 540672,
+            "rawSize": 3072,
+            "offset": 523264
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Lua 5.4",
+            "encoding": "ascii",
+            "count": 2,
+            "firstFileOffsets": [
+              404493,
+              410491
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 526336,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-015",
+      "path": "obsFirecast/obsFirecast32.dll",
+      "size": 12676856,
+      "sha256": "f3fc4f2777cfd08afefd37cd6b5679b7e31f505569f27ac159915512f28b0d5b",
+      "mtimeUtc": "2024-06-20T20:19:32.000Z",
+      "signatureHex": "4d5a50000200000004000f00ffff0000",
+      "pe": {
+        "format": "PE32",
+        "machine": "0x14c",
+        "architecture": "x86",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x87cc94",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 8880720,
+            "rva": 4096,
+            "rawSize": 8881152,
+            "offset": 1024
+          },
+          {
+            "name": ".itext",
+            "virtualSize": 11436,
+            "rva": 8888320,
+            "rawSize": 11776,
+            "offset": 8882176
+          },
+          {
+            "name": ".data",
+            "virtualSize": 342860,
+            "rva": 8900608,
+            "rawSize": 343040,
+            "offset": 8893952
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 111992,
+            "rva": 9244672,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 11526,
+            "rva": 9359360,
+            "rawSize": 11776,
+            "offset": 9236992
+          },
+          {
+            "name": ".didata",
+            "virtualSize": 26546,
+            "rva": 9371648,
+            "rawSize": 26624,
+            "offset": 9248768
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 362,
+            "rva": 9400320,
+            "rawSize": 512,
+            "offset": 9275392
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 69,
+            "rva": 9404416,
+            "rawSize": 512,
+            "offset": 9275904
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 825832,
+            "rva": 9408512,
+            "rawSize": 825856,
+            "offset": 9276416
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 2564608,
+            "rva": 10235904,
+            "rawSize": 2564608,
+            "offset": 10102272
+          }
+        ],
+        "imports": [
+          "winmm.dll",
+          "d3d9.dll",
+          "shlwapi.dll",
+          "winspool.drv",
+          "comdlg32.dll",
+          "comctl32.dll",
+          "shell32.dll",
+          "user32.dll",
+          "version.dll",
+          "oleaut32.dll",
+          "advapi32.dll",
+          "netapi32.dll",
+          "msvcrt.dll",
+          "obs.dll",
+          "kernel32.dll",
+          "SHFolder.dll",
+          "ole32.dll",
+          "gdi32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Embarcadero",
+            "encoding": "ascii",
+            "count": 4,
+            "firstFileOffsets": [
+              9275904,
+              10167678,
+              11050552,
+              11796060
+            ]
+          },
+          {
+            "text": "Embarcadero",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              55894,
+              8532188
+            ]
+          },
+          {
+            "text": "Borland",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              56006,
+              56058
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 12,
+            "firstFileOffsets": [
+              1196617,
+              1196632,
+              1265891,
+              1266252,
+              1266331,
+              1272851,
+              1273352,
+              1273423
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "utf16le",
+            "count": 1,
+            "firstFileOffsets": [
+              56074
+            ]
+          },
+          {
+            "text": "FireMonkey",
+            "encoding": "utf16le",
+            "count": 1,
+            "firstFileOffsets": [
+              10116776
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "ascii",
+            "count": 5040,
+            "firstFileOffsets": [
+              2509367,
+              2512720,
+              2512926,
+              2513273,
+              2513304,
+              2516930,
+              2518741,
+              2519754
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "utf16le",
+            "count": 37,
+            "firstFileOffsets": [
+              8500832,
+              8501120,
+              8501652,
+              8620572,
+              8620928,
+              8621652,
+              8622844,
+              8623492
+            ]
+          },
+          {
+            "text": "System.SysUtils",
+            "encoding": "ascii",
+            "count": 85,
+            "firstFileOffsets": [
+              134207,
+              136006,
+              136459,
+              136661,
+              136846,
+              137034,
+              137227,
+              137428
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 12666880,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-016",
+      "path": "obsFirecast/obsFirecast64.dll",
+      "size": 18225912,
+      "sha256": "983b17a842c240eadd69be5c7f428cafc437da784fbf917dbf404382e4aff4c9",
+      "mtimeUtc": "2024-06-20T20:19:36.000Z",
+      "signatureHex": "4d5a50000200000004000f00ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0xc124e0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 12818548,
+            "rva": 4096,
+            "rawSize": 12818944,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 1352152,
+            "rva": 12824576,
+            "rawSize": 1352192,
+            "offset": 12819968
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 139428,
+            "rva": 14180352,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 15092,
+            "rva": 14323712,
+            "rawSize": 15360,
+            "offset": 14172160
+          },
+          {
+            "name": ".didata",
+            "virtualSize": 36794,
+            "rva": 14340096,
+            "rawSize": 36864,
+            "offset": 14187520
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 362,
+            "rva": 14376960,
+            "rawSize": 512,
+            "offset": 14224384
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 69,
+            "rva": 14381056,
+            "rawSize": 512,
+            "offset": 14224896
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 719968,
+            "rva": 14385152,
+            "rawSize": 720384,
+            "offset": 14225408
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 705144,
+            "rva": 15106048,
+            "rawSize": 705536,
+            "offset": 14945792
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 2564608,
+            "rva": 15814656,
+            "rawSize": 2564608,
+            "offset": 15651328
+          }
+        ],
+        "imports": [
+          "winmm.dll",
+          "d3d9.dll",
+          "shlwapi.dll",
+          "winspool.drv",
+          "comdlg32.dll",
+          "comctl32.dll",
+          "shell32.dll",
+          "user32.dll",
+          "version.dll",
+          "oleaut32.dll",
+          "advapi32.dll",
+          "netapi32.dll",
+          "msvcrt.dll",
+          "obs.dll",
+          "kernel32.dll",
+          "SHFolder.dll",
+          "ole32.dll",
+          "gdi32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Embarcadero",
+            "encoding": "ascii",
+            "count": 4,
+            "firstFileOffsets": [
+              14224896,
+              15716822,
+              16599696,
+              17345204
+            ]
+          },
+          {
+            "text": "Embarcadero",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              89694,
+              12287304
+            ]
+          },
+          {
+            "text": "Borland",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              89804,
+              89854
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 12,
+            "firstFileOffsets": [
+              1761181,
+              1761196,
+              1851995,
+              1852524,
+              1852611,
+              1860779,
+              1861468,
+              1861547
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "utf16le",
+            "count": 1,
+            "firstFileOffsets": [
+              89870
+            ]
+          },
+          {
+            "text": "FireMonkey",
+            "encoding": "utf16le",
+            "count": 1,
+            "firstFileOffsets": [
+              15666000
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "ascii",
+            "count": 5044,
+            "firstFileOffsets": [
+              3603371,
+              3608312,
+              3608654,
+              3609181,
+              3609216,
+              3614278,
+              3616729,
+              3618222
+            ]
+          },
+          {
+            "text": "FMX.",
+            "encoding": "utf16le",
+            "count": 37,
+            "firstFileOffsets": [
+              12241984,
+              12242340,
+              12242988,
+              12414176,
+              12414560,
+              12415452,
+              12417148,
+              12417840
+            ]
+          },
+          {
+            "text": "System.SysUtils",
+            "encoding": "ascii",
+            "count": 85,
+            "firstFileOffsets": [
+              195663,
+              198022,
+              198735,
+              199073,
+              199394,
+              199722,
+              200051,
+              200392
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 18215936,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-017",
+      "path": "postproc-54.dll",
+      "size": 143112,
+      "sha256": "19c7c5de9736dfe300736bef4432dcb05332deb11964c03c10a50f6c04454ac4",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 118776,
+            "rva": 4096,
+            "rawSize": 118784,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 112,
+            "rva": 122880,
+            "rawSize": 512,
+            "offset": 119808
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 6080,
+            "rva": 126976,
+            "rawSize": 6144,
+            "offset": 120320
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 816,
+            "rva": 135168,
+            "rawSize": 1024,
+            "offset": 126464
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 728,
+            "rva": 139264,
+            "rawSize": 1024,
+            "offset": 127488
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 2320,
+            "rva": 143360,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 331,
+            "rva": 147456,
+            "rawSize": 512,
+            "offset": 128512
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 1348,
+            "rva": 151552,
+            "rawSize": 1536,
+            "offset": 129024
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 155648,
+            "rawSize": 512,
+            "offset": 130560
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 159744,
+            "rawSize": 512,
+            "offset": 131072
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 872,
+            "rva": 163840,
+            "rawSize": 1024,
+            "offset": 131584
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 200,
+            "rva": 167936,
+            "rawSize": 512,
+            "offset": 132608
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "avutil-55.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 133120,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-018",
+      "path": "resource.zip",
+      "size": 21462948,
+      "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+      "mtimeUtc": "2024-07-13T13:35:20.000Z",
+      "signatureHex": "504b0304140000080000828bb858283f",
+      "pe": null
+    },
+    {
+      "id": "FILE-019",
+      "path": "rrpgcpp64.dll",
+      "size": 672768,
+      "sha256": "2873bbd5fa8e05c83748e9185337742aa376cd46456d89363a188a94d9031ba2",
+      "mtimeUtc": "2023-10-20T12:50:48.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x57744",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 510416,
+            "rva": 4096,
+            "rawSize": 510464,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 131526,
+            "rva": 516096,
+            "rawSize": 131584,
+            "offset": 511488
+          },
+          {
+            "name": ".data",
+            "virtualSize": 11216,
+            "rva": 651264,
+            "rawSize": 5120,
+            "offset": 643072
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 19920,
+            "rva": 663552,
+            "rawSize": 19968,
+            "offset": 648192
+          },
+          {
+            "name": "_RDATA",
+            "virtualSize": 148,
+            "rva": 684032,
+            "rawSize": 512,
+            "offset": 668160
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 3856,
+            "rva": 688128,
+            "rawSize": 4096,
+            "offset": 668672
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 672768,
+          "bytes": 0
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-020",
+      "path": "rv.txt",
+      "size": 140,
+      "sha256": "37a061f813a8d38cee3ba1ce651268bf4e4764fdfddbac7c6b997312a0d668b8",
+      "mtimeUtc": "2024-07-13T13:35:20.000Z",
+      "signatureHex": "22763d31303834353438333326796561",
+      "pe": null
+    },
+    {
+      "id": "FILE-021",
+      "path": "sk4d.dll",
+      "size": 19860992,
+      "sha256": "d7fc2792653036d4104f824a9bd28ca6fad1b2bdc40b37e31959eb445985fb92",
+      "mtimeUtc": "2023-10-20T12:52:26.000Z",
+      "signatureHex": "4d5a7800010000000400000000000000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x7b897c",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 8323910,
+            "rva": 4096,
+            "rawSize": 8324096,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 11276324,
+            "rva": 8331264,
+            "rawSize": 11276800,
+            "offset": 8325120
+          },
+          {
+            "name": ".data",
+            "virtualSize": 68404,
+            "rva": 19611648,
+            "rawSize": 33280,
+            "offset": 19601920
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 187056,
+            "rva": 19681280,
+            "rawSize": 187392,
+            "offset": 19635200
+          },
+          {
+            "name": ".00cfg",
+            "virtualSize": 56,
+            "rva": 19869696,
+            "rawSize": 512,
+            "offset": 19822592
+          },
+          {
+            "name": ".retplne",
+            "virtualSize": 24,
+            "rva": 19873792,
+            "rawSize": 512,
+            "offset": 19823104
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 53,
+            "rva": 19877888,
+            "rawSize": 512,
+            "offset": 19823616
+          },
+          {
+            "name": "_RDATA",
+            "virtualSize": 348,
+            "rva": 19881984,
+            "rawSize": 512,
+            "offset": 19824128
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 36216,
+            "rva": 19886080,
+            "rawSize": 36352,
+            "offset": 19824640
+          }
+        ],
+        "imports": [
+          "ole32.dll",
+          "FONTSUB.dll",
+          "USER32.dll",
+          "OPENGL32.dll",
+          "KERNEL32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 78,
+            "firstFileOffsets": [
+              19364920,
+              19364993,
+              19365051,
+              19365115,
+              19365184,
+              19365238,
+              19365306,
+              19365367
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 19860992,
+          "bytes": 0
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-022",
+      "path": "ssleay32.dll",
+      "size": 474872,
+      "sha256": "f3edbae9445dd47c4e82014d445bc576ad63bcaa22a77575209f0c05f57f4542",
+      "mtimeUtc": "2024-06-20T20:19:30.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x3b4d0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 300368,
+            "rva": 4096,
+            "rawSize": 300544,
+            "offset": 1024
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 77464,
+            "rva": 307200,
+            "rawSize": 77824,
+            "offset": 301568
+          },
+          {
+            "name": ".data",
+            "virtualSize": 68864,
+            "rva": 385024,
+            "rawSize": 64512,
+            "offset": 379392
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 13980,
+            "rva": 454656,
+            "rawSize": 14336,
+            "offset": 443904
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 1096,
+            "rva": 471040,
+            "rawSize": 1536,
+            "offset": 458240
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 4888,
+            "rva": 475136,
+            "rawSize": 5120,
+            "offset": 459776
+          }
+        ],
+        "imports": [
+          "LIBEAY32.dll",
+          "KERNEL32.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 464896,
+          "bytes": 9976
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-023",
+      "path": "swresample-2.dll",
+      "size": 132872,
+      "sha256": "30c7ab484b16432aa4df6433380498beaec0ffc636d454a7e0cb9c223479d900",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 89688,
+            "rva": 4096,
+            "rawSize": 90112,
+            "offset": 1024
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 208,
+            "rva": 94208,
+            "rawSize": 512,
+            "offset": 91136
+          },
+          {
+            "name": ".data",
+            "virtualSize": 144,
+            "rva": 98304,
+            "rawSize": 512,
+            "offset": 91648
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 19040,
+            "rva": 102400,
+            "rawSize": 19456,
+            "offset": 92160
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 2112,
+            "rva": 122880,
+            "rawSize": 2560,
+            "offset": 111616
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 2476,
+            "rva": 126976,
+            "rawSize": 2560,
+            "offset": 114176
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 288,
+            "rva": 131072,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 660,
+            "rva": 135168,
+            "rawSize": 1024,
+            "offset": 116736
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 2024,
+            "rva": 139264,
+            "rawSize": 2048,
+            "offset": 117760
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 143360,
+            "rawSize": 512,
+            "offset": 119808
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 147456,
+            "rawSize": 512,
+            "offset": 120320
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 880,
+            "rva": 151552,
+            "rawSize": 1024,
+            "offset": 120832
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 748,
+            "rva": 155648,
+            "rawSize": 1024,
+            "offset": 121856
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "avutil-55.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 122880,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-024",
+      "path": "swscale-4.dll",
+      "size": 526088,
+      "sha256": "d0e4c89d4fc3db6949a5f09135a05da85c84f373502cd44e3f4e49ff4ef21277",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x1350",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 462840,
+            "rva": 4096,
+            "rawSize": 462848,
+            "offset": 1024
+          },
+          {
+            "name": ".rodata",
+            "virtualSize": 320,
+            "rva": 466944,
+            "rawSize": 512,
+            "offset": 463872
+          },
+          {
+            "name": ".data",
+            "virtualSize": 144,
+            "rva": 471040,
+            "rawSize": 512,
+            "offset": 464384
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 22400,
+            "rva": 475136,
+            "rawSize": 22528,
+            "offset": 464896
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 9228,
+            "rva": 499712,
+            "rawSize": 9728,
+            "offset": 487424
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 12332,
+            "rva": 512000,
+            "rawSize": 12800,
+            "offset": 497152
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 33344,
+            "rva": 528384,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 1006,
+            "rva": 565248,
+            "rawSize": 1024,
+            "offset": 509952
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 1760,
+            "rva": 569344,
+            "rawSize": 2048,
+            "offset": 510976
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 88,
+            "rva": 573440,
+            "rawSize": 512,
+            "offset": 513024
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 577536,
+            "rawSize": 512,
+            "offset": 513536
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 864,
+            "rva": 581632,
+            "rawSize": 1024,
+            "offset": 514048
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 880,
+            "rva": 585728,
+            "rawSize": 1024,
+            "offset": 515072
+          }
+        ],
+        "imports": [
+          "KERNEL32.dll",
+          "msvcrt.dll",
+          "avutil-55.dll"
+        ],
+        "markerHits": [],
+        "overlay": {
+          "offset": 516096,
+          "bytes": 9992
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-025",
+      "path": "unins000.dat",
+      "size": 46248,
+      "sha256": "6e5fbf0130f78edd7228e43660c338e1e50b925cdeaa870ce85849d3cbbc26ea",
+      "mtimeUtc": "2024-09-07T18:35:44.456Z",
+      "signatureHex": "496e6e6f20536574757020556e696e73",
+      "pe": null
+    },
+    {
+      "id": "FILE-026",
+      "path": "unins000.exe",
+      "size": 3552413,
+      "sha256": "a1be60db096ba6bf62d96ddfaa54f6cc9b2de9e3ddf3e72a6967e534d7ea8a57",
+      "mtimeUtc": "2024-09-07T18:35:29.473Z",
+      "signatureHex": "4d5a50000200000004000f00ffff0000",
+      "pe": {
+        "format": "PE32",
+        "machine": "0x14c",
+        "architecture": "x86",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x2c5660",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 2889232,
+            "rva": 4096,
+            "rawSize": 2889728,
+            "offset": 1024
+          },
+          {
+            "name": ".itext",
+            "virtualSize": 10384,
+            "rva": 2895872,
+            "rawSize": 10752,
+            "offset": 2890752
+          },
+          {
+            "name": ".data",
+            "virtualSize": 37344,
+            "rva": 2908160,
+            "rawSize": 37376,
+            "offset": 2901504
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 30976,
+            "rva": 2949120,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 14778,
+            "rva": 2981888,
+            "rawSize": 14848,
+            "offset": 2938880
+          },
+          {
+            "name": ".didata",
+            "virtualSize": 3038,
+            "rva": 2998272,
+            "rawSize": 3072,
+            "offset": 2953728
+          },
+          {
+            "name": ".edata",
+            "virtualSize": 151,
+            "rva": 3002368,
+            "rawSize": 512,
+            "offset": 2956800
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 76,
+            "rva": 3006464,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 93,
+            "rva": 3010560,
+            "rawSize": 512,
+            "offset": 2957312
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 566844,
+            "rva": 3014656,
+            "rawSize": 567296,
+            "offset": 2957824
+          }
+        ],
+        "imports": [
+          "mpr.dll",
+          "comdlg32.dll",
+          "comctl32.dll",
+          "shell32.dll",
+          "user32.dll",
+          "version.dll",
+          "oleaut32.dll",
+          "advapi32.dll",
+          "netapi32.dll",
+          "msvcrt.dll",
+          "winhttp.dll",
+          "kernel32.dll",
+          "ole32.dll",
+          "gdi32.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "Embarcadero",
+            "encoding": "ascii",
+            "count": 1,
+            "firstFileOffsets": [
+              2957336
+            ]
+          },
+          {
+            "text": "Embarcadero",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              55562,
+              2447716
+            ]
+          },
+          {
+            "text": "Borland",
+            "encoding": "utf16le",
+            "count": 2,
+            "firstFileOffsets": [
+              55674,
+              55726
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "ascii",
+            "count": 3,
+            "firstFileOffsets": [
+              1940146,
+              1940243,
+              2957348
+            ]
+          },
+          {
+            "text": "Delphi",
+            "encoding": "utf16le",
+            "count": 5,
+            "firstFileOffsets": [
+              55742,
+              1184524,
+              1184600,
+              2896856,
+              2896888
+            ]
+          },
+          {
+            "text": "System.SysUtils",
+            "encoding": "ascii",
+            "count": 85,
+            "firstFileOffsets": [
+              111846,
+              112299,
+              112501,
+              112667,
+              112827,
+              113083,
+              113253,
+              113448
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 3525120,
+          "bytes": 27293
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    },
+    {
+      "id": "FILE-027",
+      "path": "unins000.msg",
+      "size": 27265,
+      "sha256": "b56b9da38a57f2572c62c6f1a1699efefccb5bb293b35ca1651eea0655bf9e4c",
+      "mtimeUtc": "2024-04-19T19:39:42.253Z",
+      "signatureHex": "496e6e6f205365747570204d65737361",
+      "pe": null
+    },
+    {
+      "id": "FILE-028",
+      "path": "yt-dlp.exe",
+      "size": 13873484,
+      "sha256": "3eeeb1f2e2f3f2fe9111783887ea2569308df6ed6795c9ca5dd43d03eb337d06",
+      "mtimeUtc": "2023-10-20T12:50:50.000Z",
+      "signatureHex": "4d5a90000300000004000000ffff0000",
+      "pe": {
+        "format": "PE32+",
+        "machine": "0x8664",
+        "architecture": "x86-64",
+        "cliDirectoryPresent": false,
+        "entryRva": "0x14f0",
+        "sections": [
+          {
+            "name": ".text",
+            "virtualSize": 83224,
+            "rva": 4096,
+            "rawSize": 83456,
+            "offset": 1024
+          },
+          {
+            "name": ".data",
+            "virtualSize": 272,
+            "rva": 90112,
+            "rawSize": 512,
+            "offset": 84480
+          },
+          {
+            "name": ".rdata",
+            "virtualSize": 29040,
+            "rva": 94208,
+            "rawSize": 29184,
+            "offset": 84992
+          },
+          {
+            "name": ".pdata",
+            "virtualSize": 3192,
+            "rva": 126976,
+            "rawSize": 3584,
+            "offset": 114176
+          },
+          {
+            "name": ".xdata",
+            "virtualSize": 3152,
+            "rva": 131072,
+            "rawSize": 3584,
+            "offset": 117760
+          },
+          {
+            "name": ".bss",
+            "virtualSize": 61280,
+            "rva": 135168,
+            "rawSize": 0,
+            "offset": 0
+          },
+          {
+            "name": ".idata",
+            "virtualSize": 4440,
+            "rva": 196608,
+            "rawSize": 4608,
+            "offset": 121344
+          },
+          {
+            "name": ".CRT",
+            "virtualSize": 96,
+            "rva": 204800,
+            "rawSize": 512,
+            "offset": 125952
+          },
+          {
+            "name": ".tls",
+            "virtualSize": 16,
+            "rva": 208896,
+            "rawSize": 512,
+            "offset": 126464
+          },
+          {
+            "name": ".rsrc",
+            "virtualSize": 43868,
+            "rva": 212992,
+            "rawSize": 44032,
+            "offset": 126976
+          },
+          {
+            "name": ".reloc",
+            "virtualSize": 316,
+            "rva": 258048,
+            "rawSize": 512,
+            "offset": 171008
+          }
+        ],
+        "imports": [
+          "ADVAPI32.dll",
+          "KERNEL32.dll",
+          "msvcrt.dll"
+        ],
+        "markerHits": [
+          {
+            "text": "PyInstaller",
+            "encoding": "ascii",
+            "count": 3,
+            "firstFileOffsets": [
+              86508,
+              94528,
+              94568
+            ]
+          }
+        ],
+        "overlay": {
+          "offset": 171520,
+          "bytes": 13701964
+        },
+        "limitations": [
+          "Imports are static directory names, not observed library loading.",
+          "Absent CLR directory does not identify original programming language.",
+          "Markers alone do not establish compiler or runtime behavior.",
+          "Overlay includes any certificate table; not automatically a package."
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Live installation, no atomic snapshot.",
+    "File modification times are not build times.",
+    "Application not executed."
+  ]
+}

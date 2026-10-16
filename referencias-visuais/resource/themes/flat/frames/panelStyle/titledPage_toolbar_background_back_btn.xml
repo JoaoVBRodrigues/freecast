@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="709" height="50" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	
+	<padding top="0" bottom="12" right="0"/>
+	<margins bottom="8" left="15"/>
+	
+	<draw>		
+		<path left="0" top="42" right="709" bottom="50" zOrder="1" mode="9slice">
+			<anchors left="true" top="false" bottom="true" right="true"/>
+			<borders left="96" top="8" right="0" bottom="0"/>
+			<pathData>M0 7.2H61.996L66.9381 2L71.5 7.2L709 7.2</pathData>
+			<stroke color="$(dominant_color)" size="2"/>
+		</path>		
+	</draw>
+</frame>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="20" height="20" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>
+	<draw>				
+		<path left="0" top="0" right="20" bottom="20" zOrder="1" mode="fit">
+			<pathData>M18 0H2C0.9 0 0 0.9 0 2V20L4 16H18C19.1 16 20 15.1 20 14V2C20 0.9 19.1 0 18 0Z</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<fill color="$(face_color_deemphasized)"/>
+		</path>	
+
+		<path left="0" top="0" right="20" bottom="20" zOrder="2" mode="original">
+			<pathData>M 0 0 L 26 26</pathData>
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<stroke color="$(busy_state_color)" size="2"/>
+		</path>		
+	</draw>
+</frame>

@@ -1,0 +1,1445 @@
+{
+  "id": "LOCAL-VERIFY-002",
+  "atUtc": "2026-10-16T03:23:05.793Z",
+  "node": "v22.23.2",
+  "ok": true,
+  "originals": [
+    {
+      "path": "avcodec-57.dll",
+      "sha256": "b32b6b923ca21a0277f11a0547c6c72a3109d7826737a050ae05f7b035d09be2",
+      "matches": true
+    },
+    {
+      "path": "avdevice-57.dll",
+      "sha256": "e6549371893f0736fbc397eecfa3c3ac1f91a462ed819df472bc06576ee37fdd",
+      "matches": true
+    },
+    {
+      "path": "avfilter-6.dll",
+      "sha256": "6087971c6476bfdc4d6240aae462d7b9bfed064204912d055cbc89e5e982a92f",
+      "matches": true
+    },
+    {
+      "path": "avformat-57.dll",
+      "sha256": "9181df55ae9bc7795dc7855d3ae84335170b1d74849dfa422e87d7395d197554",
+      "matches": true
+    },
+    {
+      "path": "avutil-55.dll",
+      "sha256": "6c0eb5d6c149326aefc945306ac2057998496c493a8b85395f20c68ecd3d4ed2",
+      "matches": true
+    },
+    {
+      "path": "fcwebrtc_win_x64.dll",
+      "sha256": "028df460b4dfd4bb44fd1e2e7f9b35dd9fb7bad28e5b2d76c971ca476ea9673c",
+      "matches": true
+    },
+    {
+      "path": "ffmpeg.exe",
+      "sha256": "82553848dbf3bfb249730fac8e83536308e11c819f786b1a58cdbcef5155603a",
+      "matches": true
+    },
+    {
+      "path": "ffprobe.exe",
+      "sha256": "70ab9228205e4dd8a1be0893a3fcf58ae01ea430860aabe182450979eb39de19",
+      "matches": true
+    },
+    {
+      "path": "Firecast.exe",
+      "sha256": "4f80d08ab252ffd0b541c89cf09610028c4f8e45879cb8969bc45e8ac74c1086",
+      "matches": true
+    },
+    {
+      "path": "FirecastPlugin.ico",
+      "sha256": "0850f7820dfdc91dd83b9042ee6e6e1e96a1dfccc9c0910d2701df297968896b",
+      "matches": true
+    },
+    {
+      "path": "libeay32.dll",
+      "sha256": "61b1779c2305beac35ae9767727eca546ffe3c26bf690ac31b531c4f3c9ae58c",
+      "matches": true
+    },
+    {
+      "path": "libfftw3f-3.dll",
+      "sha256": "42ca18fff35dd12890e04478bc990005b3969cb744f6843976bd436ccd7f0a4c",
+      "matches": true
+    },
+    {
+      "path": "lua53x64.dll",
+      "sha256": "0867b41d0aae250879aaba5c2b0bdf37d5e60b4204e7071b11bc16a0fc0f70ac",
+      "matches": true
+    },
+    {
+      "path": "lua54x64.dll",
+      "sha256": "f8ff05ccd8889160711a47c49f9c9d1b26d9eaa2e3a13d8ae8c601490631f295",
+      "matches": true
+    },
+    {
+      "path": "obsFirecast/obsFirecast32.dll",
+      "sha256": "f3fc4f2777cfd08afefd37cd6b5679b7e31f505569f27ac159915512f28b0d5b",
+      "matches": true
+    },
+    {
+      "path": "obsFirecast/obsFirecast64.dll",
+      "sha256": "983b17a842c240eadd69be5c7f428cafc437da784fbf917dbf404382e4aff4c9",
+      "matches": true
+    },
+    {
+      "path": "postproc-54.dll",
+      "sha256": "19c7c5de9736dfe300736bef4432dcb05332deb11964c03c10a50f6c04454ac4",
+      "matches": true
+    },
+    {
+      "path": "resource.zip",
+      "sha256": "892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b",
+      "matches": true
+    },
+    {
+      "path": "rrpgcpp64.dll",
+      "sha256": "2873bbd5fa8e05c83748e9185337742aa376cd46456d89363a188a94d9031ba2",
+      "matches": true
+    },
+    {
+      "path": "rv.txt",
+      "sha256": "37a061f813a8d38cee3ba1ce651268bf4e4764fdfddbac7c6b997312a0d668b8",
+      "matches": true
+    },
+    {
+      "path": "sk4d.dll",
+      "sha256": "d7fc2792653036d4104f824a9bd28ca6fad1b2bdc40b37e31959eb445985fb92",
+      "matches": true
+    },
+    {
+      "path": "ssleay32.dll",
+      "sha256": "f3edbae9445dd47c4e82014d445bc576ad63bcaa22a77575209f0c05f57f4542",
+      "matches": true
+    },
+    {
+      "path": "swresample-2.dll",
+      "sha256": "30c7ab484b16432aa4df6433380498beaec0ffc636d454a7e0cb9c223479d900",
+      "matches": true
+    },
+    {
+      "path": "swscale-4.dll",
+      "sha256": "d0e4c89d4fc3db6949a5f09135a05da85c84f373502cd44e3f4e49ff4ef21277",
+      "matches": true
+    },
+    {
+      "path": "unins000.dat",
+      "sha256": "6e5fbf0130f78edd7228e43660c338e1e50b925cdeaa870ce85849d3cbbc26ea",
+      "matches": true
+    },
+    {
+      "path": "unins000.exe",
+      "sha256": "a1be60db096ba6bf62d96ddfaa54f6cc9b2de9e3ddf3e72a6967e534d7ea8a57",
+      "matches": true
+    },
+    {
+      "path": "unins000.msg",
+      "sha256": "b56b9da38a57f2572c62c6f1a1699efefccb5bb293b35ca1651eea0655bf9e4c",
+      "matches": true
+    },
+    {
+      "path": "yt-dlp.exe",
+      "sha256": "3eeeb1f2e2f3f2fe9111783887ea2569308df6ed6795c9ca5dd43d03eb337d06",
+      "matches": true
+    }
+  ],
+  "json": [
+    {
+      "path": "capturas/manifesto-fase2.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/achados.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/binary_session.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/close_binary.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/fontes-temas.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/janela-host.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/janela-sandbox.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/macros.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/ndb.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/powershell-sintaxe.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/runtime.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/fase2/uvtt.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/inspect_artifact.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/open_binary.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/rea-doctor.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/rea-pe-firecast.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/rea-tools-schema.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/relato-gold.json",
+      "valid": true
+    },
+    {
+      "path": "evidencias/zip-focused.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/arquivos.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/assets-instalacao.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/assets-resource.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/formularios.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/recursos-pe.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/resource-zip.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/rpk-members.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/versoes-windows.json",
+      "valid": true
+    },
+    {
+      "path": "inventarios/zip-static-index.json",
+      "valid": true
+    }
+  ],
+  "syntax": [
+    {
+      "path": "scripts-analise/assets-pe.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/consolidar.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-consolidar.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-fontes-temas.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-macros.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-ndb.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-runtime-registro.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/fase2-uvtt.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/formularios.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/inventario.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/rea-estatico.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/rea-sessao.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/registrar-restricao-gold.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/verificar.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-assets.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-find-markers.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-focused.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-inspect.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-inventory.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-packages.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-static-index.mjs",
+      "valid": true,
+      "error": null
+    },
+    {
+      "path": "scripts-analise/zip-verify.mjs",
+      "valid": true,
+      "error": null
+    }
+  ],
+  "powershellSyntax": [
+    {
+      "File": "fase2-acao-janela.ps1",
+      "Valid": true,
+      "Errors": []
+    },
+    {
+      "File": "fase2-captura-janela.ps1",
+      "Valid": true,
+      "Errors": []
+    },
+    {
+      "File": "fase2-janela.ps1",
+      "Valid": true,
+      "Errors": []
+    },
+    {
+      "File": "versoes.ps1",
+      "Valid": true,
+      "Errors": []
+    }
+  ],
+  "captures": [
+    {
+      "path": "capturas/S09-versao-runtime.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S10-mesa-teste.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S11-chat-texto-teste.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S12-rolagem-deterministica.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S13-erro-expressao.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S14-rolagem-multiplos-dados.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S15-rolagem-continuacao.png",
+      "valid": true
+    },
+    {
+      "path": "capturas/S16-macros-comando-desconhecido.png",
+      "valid": true
+    }
+  ],
+  "links": [
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "PROGRESSO.md",
+      "exists": true
+    },
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "00-resumo-executivo.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "01-ambiente-e-metodologia.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "01-ambiente-e-metodologia.md",
+      "target": "evidencias/rea-doctor.json",
+      "exists": true
+    },
+    {
+      "source": "01-ambiente-e-metodologia.md",
+      "target": "scripts-analise/rea-sessao.mjs",
+      "exists": true
+    },
+    {
+      "source": "01-ambiente-e-metodologia.md",
+      "target": "evidencias/rea-tools-schema.json",
+      "exists": true
+    },
+    {
+      "source": "01-ambiente-e-metodologia.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "evidencias/fase2/runtime.json",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "inventarios/arquivos.json",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "scripts-analise/inventario.mjs",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "inventarios/versoes-windows.json",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "scripts-analise/versoes.ps1",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "evidencias/rea-pe-firecast.json",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "inventarios/recursos-pe.json",
+      "exists": true
+    },
+    {
+      "source": "02-inventario-tecnico.md",
+      "target": "inventarios/formularios.json",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "fase2/01-macros.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "fase2/02-importador-uvtt.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "fase2/03-contrato-ndb.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "scripts-analise/formularios.mjs",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "inventarios/formularios.json",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "evidencias/achados.json",
+      "exists": true
+    },
+    {
+      "source": "03-funcionalidades-e-regras.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "04-telas-e-fluxos.md",
+      "target": "capturas/README.md",
+      "exists": true
+    },
+    {
+      "source": "04-telas-e-fluxos.md",
+      "target": "capturas/manifesto-fase2.json",
+      "exists": true
+    },
+    {
+      "source": "04-telas-e-fluxos.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "fase2/03-contrato-ndb.md",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "fase2/02-importador-uvtt.md",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "evidencias/inspect_artifact.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "inventarios/resource-zip.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "inventarios/rpk-members.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "inventarios/zip-static-index.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "evidencias/zip-focused.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "evidencias/zip-verificacao.json",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "08-assets-e-reutilizacao.md",
+      "exists": true
+    },
+    {
+      "source": "05-dados-e-formatos.md",
+      "target": "inventarios/formularios.json",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "fase2/01-macros.md",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "fase2/03-contrato-ndb.md",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "fase2/02-importador-uvtt.md",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "inventarios/rpk-members.json",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "inventarios/zip-static-index.json",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "06-fichas-scripts-e-plugins.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "07-comunicacao-e-sincronizacao.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "07-comunicacao-e-sincronizacao.md",
+      "target": "02-inventario-tecnico.md",
+      "exists": true
+    },
+    {
+      "source": "07-comunicacao-e-sincronizacao.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "fase2/04-fontes-e-temas.md",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "fase2/04-swatches.html",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "capturas/README.md",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "inventarios/resource-zip.json",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "inventarios/rpk-members.json",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "inventarios/assets-resource.json",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "inventarios/recursos-pe.json",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "inventarios/assets-instalacao.json",
+      "exists": true
+    },
+    {
+      "source": "08-assets-e-reutilizacao.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "11-plano-de-implementacao.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "12-lacunas-e-proximos-experimentos.md",
+      "target": "fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "12-lacunas-e-proximos-experimentos.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "12-lacunas-e-proximos-experimentos.md",
+      "target": "evidencias/relato-gold.json",
+      "exists": true
+    },
+    {
+      "source": "assets-extraidos/README.md",
+      "target": "../inventarios/assets-resource.json",
+      "exists": true
+    },
+    {
+      "source": "assets-extraidos/README.md",
+      "target": "catalogo.html",
+      "exists": true
+    },
+    {
+      "source": "assets-extraidos/README.md",
+      "target": "../08-assets-e-reutilizacao.md",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "manifesto-fase2.json",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "../04-telas-e-fluxos.md",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S09-versao-runtime.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S10-mesa-teste.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S11-chat-texto-teste.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S12-rolagem-deterministica.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S13-erro-expressao.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S14-rolagem-multiplos-dados.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S15-rolagem-continuacao.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "S16-macros-comando-desconhecido.png",
+      "exists": true
+    },
+    {
+      "source": "capturas/README.md",
+      "target": "../fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "evidencias/fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "evidencias/relato-gold.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "inventarios/arquivos.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "inventarios/versoes-windows.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "evidencias/rea-pe-firecast.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "inventarios/formularios.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "inventarios/resource-zip.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "inventarios/rpk-members.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "evidencias/zip-focused.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "08-assets-e-reutilizacao.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "04-telas-e-fluxos.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "capturas/manifesto-fase2.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "evidencias/achados.json",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "01-ambiente-e-metodologia.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "10-matriz-de-paridade.csv",
+      "exists": true
+    },
+    {
+      "source": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "target": "11-plano-de-implementacao.md",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "macros.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "uvtt.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "ndb.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "fontes-temas.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "janela-sandbox.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "janela-host.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "runtime.json",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "paridade-antes.csv",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "../../fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "evidencias/fase2/README.md",
+      "target": "../../capturas/manifesto-fase2.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/01-macros.md",
+      "target": "../evidencias/fase2/macros.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/02-importador-uvtt.md",
+      "target": "../evidencias/fase2/uvtt.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/02-importador-uvtt.md",
+      "target": "../scripts-analise/fase2-uvtt.mjs",
+      "exists": true
+    },
+    {
+      "source": "fase2/03-contrato-ndb.md",
+      "target": "../evidencias/fase2/ndb.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/03-contrato-ndb.md",
+      "target": "../scripts-analise/fase2-ndb.mjs",
+      "exists": true
+    },
+    {
+      "source": "fase2/04-fontes-e-temas.md",
+      "target": "../evidencias/fase2/fontes-temas.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/04-fontes-e-temas.md",
+      "target": "../scripts-analise/fase2-fontes-temas.mjs",
+      "exists": true
+    },
+    {
+      "source": "fase2/04-fontes-e-temas.md",
+      "target": "04-swatches.html",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../evidencias/fase2/runtime.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../evidencias/relato-gold.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../capturas/manifesto-fase2.json",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../scripts-analise/fase2-janela.ps1",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../scripts-analise/fase2-captura-janela.ps1",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../scripts-analise/fase2-acao-janela.ps1",
+      "exists": true
+    },
+    {
+      "source": "fase2/05-testes-na-mesa.md",
+      "target": "../scripts-analise/fase2-runtime-registro.mjs",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "01-macros.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "02-importador-uvtt.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "03-contrato-ndb.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "04-fontes-e-temas.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "04-swatches.html",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "fase2/README.md",
+      "target": "../PROGRESSO.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "evidencias/fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "evidencias/relato-gold.json",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "fase2/05-testes-na-mesa.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "evidencias/verificacao.json",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "evidencias/verificacao.json",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "evidencias/zip-verificacao.json",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "source": "PROGRESSO.md",
+      "target": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "fase2/README.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "00-resumo-executivo.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "PROGRESSO.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "01-ambiente-e-metodologia.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "02-inventario-tecnico.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "03-funcionalidades-e-regras.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "04-telas-e-fluxos.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "07-comunicacao-e-sincronizacao.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "08-assets-e-reutilizacao.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "10-matriz-de-paridade.csv",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "11-plano-de-implementacao.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "evidencias/achados.json",
+      "exists": true
+    },
+    {
+      "source": "README.md",
+      "target": "capturas/README.md",
+      "exists": true
+    }
+  ],
+  "required": [
+    {
+      "path": "README.md",
+      "exists": true
+    },
+    {
+      "path": "00-resumo-executivo.md",
+      "exists": true
+    },
+    {
+      "path": "01-ambiente-e-metodologia.md",
+      "exists": true
+    },
+    {
+      "path": "02-inventario-tecnico.md",
+      "exists": true
+    },
+    {
+      "path": "03-funcionalidades-e-regras.md",
+      "exists": true
+    },
+    {
+      "path": "04-telas-e-fluxos.md",
+      "exists": true
+    },
+    {
+      "path": "05-dados-e-formatos.md",
+      "exists": true
+    },
+    {
+      "path": "06-fichas-scripts-e-plugins.md",
+      "exists": true
+    },
+    {
+      "path": "07-comunicacao-e-sincronizacao.md",
+      "exists": true
+    },
+    {
+      "path": "08-assets-e-reutilizacao.md",
+      "exists": true
+    },
+    {
+      "path": "09-arquitetura-proposta.md",
+      "exists": true
+    },
+    {
+      "path": "10-matriz-de-paridade.csv",
+      "exists": true
+    },
+    {
+      "path": "11-plano-de-implementacao.md",
+      "exists": true
+    },
+    {
+      "path": "12-lacunas-e-proximos-experimentos.md",
+      "exists": true
+    },
+    {
+      "path": "CONTEXTO-PARA-IMPLEMENTACAO.md",
+      "exists": true
+    },
+    {
+      "path": "PROGRESSO.md",
+      "exists": true
+    }
+  ],
+  "analysisScripts": [
+    {
+      "path": "scripts-analise/assets-pe.mjs",
+      "sha256": "f85924de3fc6039208f6f65212571b4d9c08803ce8a859ede90e9210ecd2a715"
+    },
+    {
+      "path": "scripts-analise/consolidar.mjs",
+      "sha256": "d957200ae436c4d0280e3ee7f8129c09a8e0ded9ddf3c7b2f93eb045b25c3d6c"
+    },
+    {
+      "path": "scripts-analise/fase2-acao-janela.ps1",
+      "sha256": "0a802d639755d586170546a3644e124f3f9dae75d4aa0b30e2a46bf39ea50873"
+    },
+    {
+      "path": "scripts-analise/fase2-captura-janela.ps1",
+      "sha256": "12d0ae2908b1436a67e7c3f974f9efc5f5b309cb80d39cfe251b20cd55724eb8"
+    },
+    {
+      "path": "scripts-analise/fase2-consolidar.mjs",
+      "sha256": "733bb0088d6774bd93afa321f4fcea00e9beeb70185ed833f41ee3b7ccb879be"
+    },
+    {
+      "path": "scripts-analise/fase2-fontes-temas.mjs",
+      "sha256": "524fb8117c72e52b66b423dbf8788cf0a265f0e86615c0d3b4b8cfd201ae3414"
+    },
+    {
+      "path": "scripts-analise/fase2-janela.ps1",
+      "sha256": "7988de4b5a782252bedcfe28995cf790d333ebff9fe0741628fb5bbd9102fe19"
+    },
+    {
+      "path": "scripts-analise/fase2-macros.mjs",
+      "sha256": "bfbb4a3a0f4f6c482551bd115122893d023f5bc046d7b02a21cb9c9420272a01"
+    },
+    {
+      "path": "scripts-analise/fase2-ndb.mjs",
+      "sha256": "0af0391880120e5a60a7b428692e2341688ccd4767ae746f02ebfc079f39d0f7"
+    },
+    {
+      "path": "scripts-analise/fase2-runtime-registro.mjs",
+      "sha256": "1a5b3ce922da08a136e64fc0ecec8b98ca05962e592af824994c318fcc4e311c"
+    },
+    {
+      "path": "scripts-analise/fase2-uvtt.mjs",
+      "sha256": "4aa5cc3f734f49e659f940c9e9691946c533d3cd91e953d4c683b5e709ee16c9"
+    },
+    {
+      "path": "scripts-analise/formularios.mjs",
+      "sha256": "b6d4b088b7c65bc121996b80cdf21facb8ca7f8526d9ec9b90ad16930f324ba1"
+    },
+    {
+      "path": "scripts-analise/inventario.mjs",
+      "sha256": "36332c228f847d91f57789c7589ecdfbb5e99352c62d09af4a5aef9b70317f5d"
+    },
+    {
+      "path": "scripts-analise/rea-estatico.mjs",
+      "sha256": "b99b407e4fefce41a62bbc8b5462e54533e524a96b4b43430f054c6fb6c7f3f1"
+    },
+    {
+      "path": "scripts-analise/rea-sessao.mjs",
+      "sha256": "af78970af94a7b4ff4efed9d81e8dbba50ad990e8640e1a94cdba329b9f5488d"
+    },
+    {
+      "path": "scripts-analise/registrar-restricao-gold.mjs",
+      "sha256": "9b2b31278cf5b5e8dbcc7a006b62836babce8496f7690f58440f8c0c32b73ac7"
+    },
+    {
+      "path": "scripts-analise/verificar.mjs",
+      "sha256": "23409e4da3f924eec1d1c88f911d5e08f8d8e98ab9321633044193016d3e1dff"
+    },
+    {
+      "path": "scripts-analise/versoes.ps1",
+      "sha256": "338d16c8bf1463c1e809005b6c420557d0b8feae5415229d16807e9c736cc5e8"
+    },
+    {
+      "path": "scripts-analise/zip-assets.mjs",
+      "sha256": "6a4f86040de71e0f45c978ea669d5a0c847157c67b16c31b3645cbe5722beb47"
+    },
+    {
+      "path": "scripts-analise/zip-find-markers.mjs",
+      "sha256": "deb0fddacdf9eb645d55045412407d6506e3401f328de1927bd81b7e37a2f418"
+    },
+    {
+      "path": "scripts-analise/zip-focused.mjs",
+      "sha256": "71841da9fe15a9eafe6db14ccaaf6e9e2f2ecf54e4dd013127dc7713f7993e0f"
+    },
+    {
+      "path": "scripts-analise/zip-inspect.mjs",
+      "sha256": "198605d0710c9950bdd4848dbc4e52903e5e5ce30486088be4ecc4cc0ec156c9"
+    },
+    {
+      "path": "scripts-analise/zip-inventory.mjs",
+      "sha256": "42ece9287462f0c6fed869153c4a63043e9c68f4c10366d43a01ee0fe1045592"
+    },
+    {
+      "path": "scripts-analise/zip-packages.mjs",
+      "sha256": "11bba416aedcc3a1ab2899822d01092c67e5b057b73dd460c5c94862de4f75e4"
+    },
+    {
+      "path": "scripts-analise/zip-static-index.mjs",
+      "sha256": "4da08ce0a3577524c1f0f36ef2223cac5b90e31ca72fa1a2467b114abd3f0882"
+    },
+    {
+      "path": "scripts-analise/zip-verify.mjs",
+      "sha256": "57442464395bde1469b9f5f892b0a35edae36033761f5b00ad74e369a444f7d0"
+    }
+  ],
+  "evidenceIds": {
+    "pe": "ev_cee6f056eecc2b6073260af618e4faf007a8b34c20e46ce28408cd235235d995",
+    "archive": "ev_37f10b27dd4efeaacbf18c12bdf44b61655ffbef3390c4c1e33fedc94a09578e"
+  },
+  "zipVerificationReference": "zip-verificacao.json",
+  "limitations": [
+    "This verifier does not execute the target; authorized UI tests are recorded separately in fase2/runtime.json.",
+    "Hash equality compares initial inventory against this later read; no atomic snapshot or continuous monitoring.",
+    "Relative links checked for file existence, not anchors or remote availability.",
+    "PowerShell AST checks are loaded from the separate parsing report; no scripts executed by this verifier."
+  ]
+}

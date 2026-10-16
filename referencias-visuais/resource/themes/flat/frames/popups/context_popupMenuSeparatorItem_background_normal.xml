@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="300" height="1" autoScaleY="true" autoScaleX="true">
+	<import file="../../consts.xml"/>		
+	<draw>
+		<path left="0" top="0" right="300" bottom="1" mode="fitStretch">
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<pathData>M 0 0 L 300 0</pathData>
+			<stroke color="$(face_color)" size="1" opacity="0.15"/>
+		</path>		
+	</draw>
+</frame>

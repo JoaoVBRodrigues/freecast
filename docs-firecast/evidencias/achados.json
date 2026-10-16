@@ -1,0 +1,308 @@
+{
+  "scope": "Etapa1 e fase2: estática, UI autorizada em uma conta e lacunas",
+  "findings": [
+    {
+      "id": "F01",
+      "source": "inventarios/arquivos.json",
+      "procedure": "node docs-firecast/scripts-analise/inventario.mjs",
+      "result": "Instalação existe; 28 arquivos fora de LogErrors, 423598042 bytes.",
+      "classification": "confirmado",
+      "limitations": "Escopo da instalação, não inclui perfis externos; leitura não atômica.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F02",
+      "source": "inventarios/arquivos.json#Firecast.exe",
+      "procedure": "Ler assinatura MZ/PE, COFF Machine e Optional Header; comparar SHA com Evidence PE.",
+      "result": "Cliente principal PE32+ x86-64, 285902821 bytes, SHA256 4f80d08ab252ffd0b541c89cf09610028c4f8e45879cb8969bc45e8ac74c1086; diretório CLR ausente.",
+      "classification": "confirmado",
+      "limitations": "Não identifica sozinho a linguagem.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F03",
+      "source": [
+        "inventarios/arquivos.json",
+        "inventarios/formularios.json",
+        "evidencias/rea-pe-firecast.json"
+      ],
+      "procedure": "Comparar marcadores com offsets, streams TPF0, classes FMX e estilos incorporados.",
+      "result": "Delphi/FireMonkey no cliente principal é inferência fortemente sustentada.",
+      "classification": "inferido",
+      "limitations": "Sem recuperar projeto, versão exata do compilador ou código-fonte; não atribuir mesma tecnologia a todas DLLs.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F04",
+      "source": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "inventarios/versoes-windows.json"
+      ],
+      "procedure": "Inspecionar anexos e ler FileInfo.VersionInfo sem iniciar alvo.",
+      "result": "Capturas exibem 8.13; Firecast.exe declara 8.0.0.0/1.0.0.0; unins000.exe declara produto 8.13.",
+      "classification": "confirmado",
+      "limitations": "Não estabelece que as capturas derivam exatamente do hash local.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F05",
+      "source": "inventarios/arquivos.json",
+      "procedure": "Ler Machine de cada PE, sem usar nome de arquivo como arquitetura.",
+      "result": "OBS inclui x86 e x64; desinstalador x86; demais executáveis e bibliotecas inventariados são x64.",
+      "classification": "confirmado",
+      "limitations": "Nem todos componentes possuem metadados de linguagem/versão.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F06",
+      "source": "inventarios/arquivos.json#Firecast.exe.pe.imports",
+      "procedure": "Decodificar apenas diretório normal de importações PE.",
+      "result": "Cliente declara dependência de lua54x64.dll e bibliotecas libav/Windows; Lua 5.3 também está distribuída.",
+      "classification": "confirmado",
+      "limitations": "Delay imports e carregamento dinâmico não decodificados; uso de Lua 5.3 não estabelecido.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F07",
+      "source": "evidencias/rea-pe-firecast.json#ev_cee6f056eecc2b6073260af618e4faf007a8b34c20e46ce28408cd235235d995",
+      "procedure": "node docs-firecast/scripts-analise/rea-estatico.mjs",
+      "result": "REA examina 359 entradas de diretório e inventaria 175 recursos PE com offsets/hash; dois grupos de ícones.",
+      "classification": "confirmado",
+      "limitations": "Árvore PE completa; payloads opacos exceto grupos de ícones no REA; não é cobertura de todos os assets.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F08",
+      "source": "inventarios/formularios.json",
+      "procedure": "node docs-firecast/scripts-analise/formularios.mjs",
+      "result": "Parser local consome completamente 73 streams TPF0, recuperando propriedades e nomes de handlers.",
+      "classification": "confirmado",
+      "limitations": "Não expande herança, não interpreta o corpo de handlers nem observa runtime.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F09",
+      "source": "evidencias/inspect_artifact.json#ev_37f10b27dd4efeaacbf18c12bdf44b61655ffbef3390c4c1e33fedc94a09578e",
+      "procedure": "node docs-firecast/scripts-analise/rea-sessao.mjs archive",
+      "result": "REA identifica ZIP e inventaria 1422 entradas externas; hash 892afd517cfec3a33d060feb6a1137c76d9519fb68f5dfcb1b90c1a3a8f34f2b.",
+      "classification": "confirmado",
+      "limitations": "Inventário de diretório central, sem semântica de execução; close_binary registrado.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F10",
+      "source": [
+        "inventarios/resource-zip.json",
+        "inventarios/rpk-members.json",
+        "evidencias/zip-verificacao.json"
+      ],
+      "procedure": "Executar scripts zip-inventory, zip-packages e zip-verify conforme 05.",
+      "result": "1422 membros externos + 741 em cinco RPK, com hashes e CRC verificados sem divergência.",
+      "classification": "confirmado",
+      "limitations": "Integridade não prova autenticidade ou licença.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F11",
+      "source": "inventarios/zip-static-index.json",
+      "procedure": "Separar extensão de assinatura dos membros; verificar ZIP-003.",
+      "result": "486 dos 1029 XML externos começam TPF0; outros 543 têm cabeçalho XML textual.",
+      "classification": "confirmado",
+      "limitations": "Schema dos TPF0 externos não integralmente decodificado; XML não validado contra schema.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F12",
+      "source": "inventarios/rpk-members.json",
+      "procedure": "Ler module.xml dos cinco ZIPs aninhados sem instalar pacotes.",
+      "result": "Distribuídos AutoUpdater1.3, DnD5 1.2.3, rrpginlua1.0, sceneinlua1.0, UniversalVTTImporter1.2; SDK3.7/3.7c, APIs88.1/88.3.",
+      "classification": "confirmado",
+      "limitations": "Metadados declarados; ativação e compatibilidade runtime desconhecidas.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F13",
+      "source": [
+        "evidencias/zip-focused.json",
+        "inventarios/zip-static-index.json"
+      ],
+      "procedure": "Consulta estática seletiva dos wrappers SDK e formulários.",
+      "result": "Lua/XML vinculam GUI, NDB, Firecast, internet e sistema; import/exportXML são interfaces expostas.",
+      "classification": "confirmado",
+      "limitations": "Referências textuais não demonstram execução, permissões, storage físico ou protocolo.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F14",
+      "source": "evidencias/zip-focused.json#rrpginlua.rpk!/turnos/CombatTrackerScripts.xml",
+      "procedure": "Executar zip-focused.mjs; localizar SHA256 48093d2757c5a57656e0903df161df5cbe1c6d2892d8364628740be5ac56ca75.",
+      "result": "Trecho de ativação de turno verifica mestre, desmarca outros atores e marca selecionado; há scroll/narração.",
+      "classification": "confirmado",
+      "limitations": "Regra estática no script; proteção do servidor, alternativas e correspondência ao tracker aberto não testadas.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F15",
+      "source": "inventarios/assets-resource.json",
+      "procedure": "Executar zip-assets.mjs conforme 08.",
+      "result": "628 registros de assets, 515 imagens; dimensões PNG/JPEG lidas; nenhum asset extraído.",
+      "classification": "confirmado",
+      "limitations": "Durações, validação integral de áudio/fontes/modelos e licenças visuais não determinadas.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F16",
+      "source": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "procedure": "Inspeção visual dos anexos na ordem; consultar 04.",
+      "result": "Telas de mesa/menu/início/listas/compositor/macros e diretório catalogadas, sem nomes ou conteúdo pessoal.",
+      "classification": "confirmado",
+      "limitations": "Sem arquivos locais, hashes, medição de pixels ou sequência de ações executada.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F17",
+      "source": "inventarios/formularios.json#TFRMDISCONNECTEDSTATEFORM",
+      "procedure": "Localizar controles e propriedades Password/OnClick no stream decodificado.",
+      "result": "Formulário distribuído contém entrada, recuperação e cadastro em etapas.",
+      "classification": "confirmado",
+      "limitations": "Não comprova validações ou sucesso de autenticação.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F18",
+      "source": "inventarios/formularios.json#TFRMCONFIGURATION*",
+      "procedure": "Localizar DataFieldName, DefaultValue e ValueList nos controles dos formulários de perfil/geral/notificações.",
+      "result": "Há bindings profile.*, preferences.*, notifications.* e accessibility.* em seus formulários.",
+      "classification": "confirmado",
+      "limitations": "Não é export de dados real; coerção, validação e persistência desconhecidas.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F19",
+      "source": [
+        "07-comunicacao-e-sincronizacao.md",
+        "12-lacunas-e-proximos-experimentos.md"
+      ],
+      "procedure": "Revisar operações realizadas: nenhum alvo iniciado, nenhuma conta acessada ou captura de tráfego.",
+      "result": "Autorização efetiva, autoridade de dados, persistência, protocolo e reconexão não verificados.",
+      "classification": "não verificado",
+      "limitations": "Exige experimentos E02–E10; não inferir servidor a partir do cliente.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F20",
+      "source": [
+        "evidencias/rea-doctor.json",
+        "evidencias/binary_session.json",
+        "evidencias/rea-tools-schema.json"
+      ],
+      "procedure": "Doctor local, initialize/tools-list/binary_session no cliente efêmero.",
+      "result": "REA6.5.0 instalado; registro Codex alinhado; 207 ferramentas no processo local; nenhum setup executado.",
+      "classification": "confirmado",
+      "limitations": "MCP efêmero não equivale a conexão persistente no chat; provider nativo não foi preparado para Firecast.",
+      "phase": "etapa1"
+    },
+    {
+      "id": "F21",
+      "phase": "fase2",
+      "source": "evidencias/fase2/runtime.json#UI-001",
+      "procedure": "Observar título e perfil da mesa autorizada; cruzar caminho do processo e hash em disco.",
+      "result": "Cliente exibe8.13, mesa confirmada; arquivo do caminho de processo tem mesmo hash do inventário.",
+      "classification": "confirmado",
+      "limitations": "Não é hash de memória; nenhuma nova autenticação; origem E01 é sessão existente autorizada."
+    },
+    {
+      "id": "F22",
+      "phase": "fase2",
+      "source": "evidencias/fase2/runtime.json#UI-002",
+      "procedure": "Enviar mensagem sintética na mesa autorizada e observar compositor/histórico.",
+      "result": "Texto simples aparece no chat e compositor fica vazio.",
+      "classification": "confirmado",
+      "limitations": "Uma conta; sem validar persistência ou recebimento por outra sessão."
+    },
+    {
+      "id": "F23",
+      "phase": "fase2",
+      "source": "evidencias/fase2/runtime.json#UI-003,UI-005",
+      "procedure": "Enviar /r 1d1 + 2 e soma dos sete tipos; aguardar saída.",
+      "result": "Caso determinístico total3; sete componentes2,1,5,7,7,15,100 total137; animação3D observada.",
+      "classification": "confirmado",
+      "limitations": "Não determina parser completo, distribuição aleatória ou autoridade do servidor."
+    },
+    {
+      "id": "F24",
+      "phase": "fase2",
+      "source": "evidencias/fase2/runtime.json#UI-004",
+      "procedure": "Enviar /r 1d1 + 2 * 3 por WM_CHAR.",
+      "result": "Erro visual; operador exibido como ponto/bullet desconhecido.",
+      "classification": "confirmado",
+      "limitations": "Transformação do editor não isolada; não concluir ausência universal de multiplicação."
+    },
+    {
+      "id": "F25",
+      "phase": "fase2",
+      "source": [
+        "evidencias/fase2/runtime.json#UI-006",
+        "evidencias/fase2/macros.json"
+      ],
+      "procedure": "Comparar listener distribuído com comando /macros na sessão existente.",
+      "result": "Código anuncia /macros; runtime responde comando desconhecido.",
+      "classification": "confirmado",
+      "limitations": "Causa não determinada; não prova licença, permissão, corrupção ou falha de servidor.",
+      "userReport": {
+        "source": "evidencias/relato-gold.json",
+        "status": "relato do usuário; critérios comerciais não verificados independentemente",
+        "decision": "Não comprar acesso nem alterar licenciamento; manter testes afetados pendentes e continuar com evidências acessíveis."
+      }
+    },
+    {
+      "id": "F26",
+      "phase": "fase2",
+      "source": "evidencias/fase2/macros.json",
+      "procedure": "node docs-firecast/scripts-analise/fase2-macros.mjs",
+      "result": "Três escopos; precedência pessoal mesa > pessoal global > compartilhada; S envia linhas e L compila em coroutine; migração XML identificada.",
+      "classification": "confirmado",
+      "limitations": "Confirmação estática; precedência de listeners, permissões e carregamento runtime não validados."
+    },
+    {
+      "id": "F27",
+      "phase": "fase2",
+      "source": "evidencias/fase2/ndb.json",
+      "procedure": "node docs-firecast/scripts-analise/fase2-ndb.mjs",
+      "result": "Fachada NDB prioriza filho na leitura; nil remove atributo/filhos; XML e transações dependem do host; consumidores salvam sheet.xml/tokens.xml em UTF8.",
+      "classification": "confirmado",
+      "limitations": "Schema XML, durabilidade, atomicidade e sincronização permanecem desconhecidos."
+    },
+    {
+      "id": "F28",
+      "phase": "fase2",
+      "source": "evidencias/fase2/uvtt.json",
+      "procedure": "node docs-firecast/scripts-analise/fase2-uvtt.mjs",
+      "result": "Recuperados campos e transformações de mapa, paredes, portais e luzes; guarda scene.isGM e limite local128MiB no wrapper FireDrive.",
+      "classification": "confirmado",
+      "limitations": "Contrato estático do importador1.2, não importação executada ou limite do servidor/NDB; uploads e geometria não atômicos no fluxo analisado."
+    },
+    {
+      "id": "F29",
+      "phase": "fase2",
+      "source": "evidencias/fase2/fontes-temas.json",
+      "procedure": "node docs-firecast/scripts-analise/fase2-fontes-temas.mjs",
+      "result": "24TTF,141constantes,30classes: Roboto padrão/Lato títulos/Inconsolata console;66cores6hex catalogadas; declarações por fonte registradas.",
+      "classification": "confirmado",
+      "limitations": "Não mede fonte final renderizada; metadados não estabelecem redistribuição; alpha8hex não interpretado."
+    }
+  ]
+}

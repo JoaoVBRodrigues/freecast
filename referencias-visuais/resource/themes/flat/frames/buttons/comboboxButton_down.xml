@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frame width="300" height="40" autoScaleY="false" autoScaleX="false">
+	<import file="../../consts.xml"/>
+	<padding left="14" top="3" bottom="3" right="4"/>	
+	<draw>
+		<frame left="0" top="0" right="300" bottom="40" zOrder="-1">		
+			<anchors left="true" top="true" bottom="true" right="true"/>
+			<source url="../comboBox/combobox_focused_down.xml"/>
+		</frame>	
+		
+		<frame left="262" top="8" right="286" bottom="32" zOrder="1">
+			<anchors right="true"/>		
+			<source url="../comboBox/dropDownArrow_normal.xml"/>
+		</frame>		
+	</draw>
+</frame>
