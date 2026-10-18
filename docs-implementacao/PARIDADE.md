@@ -30,3 +30,20 @@ Validação visual e funcional concluída: Playwright MCP capturou ambas as tela
 - A documentação de investigação não validou visualmente o editor original. Por isso, zoom ancorado no cursor, pan por Espaço, controles de camada e o painel de propriedades são decisões novas, sem alegação de paridade comprovada.
 - A interface mantém os tokens de cor, tipografia, densidade e hierarquia da Parte 1 e conserva o acesso à conversa da mesa por uma aba.
 - O teste browser confirma upload do fundo, colocação e movimentação de três tokens, zoom/pan, encaixe, autorização, dados ocultos e recuperação após recarga. Não verifica sincronização entre navegadores, que pertence à Parte 3.
+
+## Parte 3 — mesa multiusuário
+
+- A captura [Mapa em tempo real](../capturas/mapa-tempo-real-parte3.png) foi feita por Playwright MCP em 867 × 465 com mapa/tokens sintéticos. Confere visualmente a tela e a composição existente do editor; não há captura validada do editor original para comparação e não se declara paridade nessa área.
+- A captura [Chat formatado](../capturas/chat-formatacao-parte3.png) foi feita por Playwright MCP em 867 × 466; texto rico usa apenas os formatos independentes documentados e conteúdo HTML arbitrário aparece escapado. Não é comparação com um fluxo visual original.
+- A apresentação mantém a faixa superior da aplicação, as abas, as três colunas, densidade, paleta, tipografia e acesso à conversa. O chat agora renderiza somente os marcadores próprios de negrito, itálico e sublinhado; HTML fornecido como texto permanece escapado.
+- As tentativas anteriores registraram 419 e conflito de porta; foram corrigidas antes da rodada final. A validação Playwright via Quick Tunnel passou com três contexts independentes e Reverb do Freecast em 8082, conforme os resultados em `PROGRESSO.md`. A causa original do 419 não foi comprovada por A/B do cookie legado.
+- O teste captura o canvas e verifica coordenadas/resultados por seletores do mapa em viewport 867 × 465; a geometria do editor é funcional da implementação própria. Não se afirma equivalência de controles, proporções internas ou comportamento ao editor original.
+- Ainda não foi realizado piloto com três computadores físicos na LAN. As instruções de portas e endereços em `PROGRESSO.md` são um roteiro operacional a validar, não uma validação de rede concluída.
+- A mudança de porta do Reverb não alterou a interface; as capturas continuam servindo apenas como evidência visual da implementação própria, sem alegação de paridade com o editor original.
+
+## Preparacao do piloto publico temporario
+
+- A preparacao nao altera os componentes visuais do Freecast; mantem a apresentacao existente e muda apenas a forma de servir paginas/assets e estabelecer o WebSocket.
+- A rodada final via Quick Tunnel passou nos testes de salas/mapas e realtime em viewport 867 × 465. O navegador confirmou HTTPS/WSS no mesmo hostname, cookie `Secure`/host-only, ausencia de recursos HTTP mistos e os fluxos funcionais descritos em `PROGRESSO.md`.
+- A captura [realtime-map-three-contexts.png](../test-results/realtime-map-three-contexts.png) documenta o canvas proprio com recursos sinteticos. Ela nao e comparacao visual com o Firecast nem comprovacao de paridade com o editor original, que nao foi validado visualmente.
+- Os navegadores eram tres contexts independentes executados neste computador atraves do hostname publico. Isso valida o tunnel e o fluxo de rede externo ao loopback da aplicacao, mas nao substitui o teste com tres computadores/dispositivos fisicos.

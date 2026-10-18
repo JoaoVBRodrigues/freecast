@@ -11,6 +11,10 @@ class Room extends Model
 {
     use HasFactory;
 
+    protected $attributes = [
+        'revision' => 1,
+    ];
+
     protected $fillable = [
         'owner_id',
         'title',
@@ -18,6 +22,8 @@ class Room extends Model
         'description',
         'is_public',
         'password_hash',
+        'active_map_id',
+        'revision',
     ];
 
     protected $hidden = [
@@ -28,6 +34,7 @@ class Room extends Model
     {
         return [
             'is_public' => 'boolean',
+            'revision' => 'integer',
         ];
     }
 
@@ -69,6 +76,16 @@ class Room extends Model
     public function maps(): HasMany
     {
         return $this->hasMany(RoomMap::class);
+    }
+
+    public function macros(): HasMany
+    {
+        return $this->hasMany(RoomMacro::class);
+    }
+
+    public function events(): HasMany
+    {
+        return $this->hasMany(RoomEvent::class);
     }
 
     public function assetFolders(): HasMany

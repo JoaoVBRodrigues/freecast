@@ -7,7 +7,6 @@ use App\Models\RoomMembership;
 use App\Models\RoomPreference;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
@@ -105,8 +104,6 @@ class RoomAuthorizationTest extends TestCase
 
     public function test_room_panel_preferences_persist_and_messages_are_broadcast(): void
     {
-        Event::fake();
-
         $owner = User::factory()->create();
         $room = Room::query()->create([
             'owner_id' => $owner->id,
@@ -136,14 +133,19 @@ class RoomAuthorizationTest extends TestCase
             ->firstOrFail()
             ->panels);
 
-        $this->post(route('rooms.messages.store', $room), ['body' => 'A porta se abriu.'])
-            ->assertRedirect();
+        $this->postJson(route('rooms.messages.store', $room), [
+            'body' => 'A porta se abriu.',
+            'idempotency_key' => 'room-message-command-0001',
+        ])->assertOk();
 
         $this->assertDatabaseHas('room_messages', [
             'room_id' => $room->id,
             'user_id' => $owner->id,
             'body' => 'A porta se abriu.',
         ]);
-        Event::assertDispatched(\App\Events\RoomMessagePosted::class);
+        $this->assertDatabaseHas('room_events', [
+            'room_id' => $room->id,
+            'event_type' => 'message.created',
+        ]);
     }
 }

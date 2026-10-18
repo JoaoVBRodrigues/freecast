@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RoomMapLayer extends Model
 {
+    protected $attributes = [
+        'revision' => 1,
+    ];
+
     protected $fillable = [
         'room_map_id',
         'type',
@@ -16,6 +20,7 @@ class RoomMapLayer extends Model
         'visible',
         'locked',
         'is_master_only',
+        'revision',
     ];
 
     protected function casts(): array
@@ -24,6 +29,7 @@ class RoomMapLayer extends Model
             'visible' => 'boolean',
             'locked' => 'boolean',
             'is_master_only' => 'boolean',
+            'revision' => 'integer',
         ];
     }
 

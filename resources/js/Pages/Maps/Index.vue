@@ -3,16 +3,19 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import type { MapAsset, MapFolder, RoomMapSummary } from '@/types/maps';
 import { Head, Link, router, useForm } from '@inertiajs/vue3';
 import { ArrowLeft, Copy, FolderPlus, ImagePlus, Map, Pencil, Plus, Trash2 } from '@lucide/vue';
+import axios from 'axios';
+import { ref } from 'vue';
+import { useEchoPresence } from '@laravel/echo-vue';
 
 const props = defineProps<{
-    room: { id: number; title: string };
+    room: { id: number; title: string; active_map_id: number | null };
     can_manage: boolean;
     maps: RoomMapSummary[];
     folders: MapFolder[];
     assets: MapAsset[];
 }>();
 
-const newMap = useForm({ title: 'Novo mapa', width: 1600, height: 1000, cell_size: 50 });
+const newMap = useForm({ title: 'Novo mapa', width: 1600, height: 1000, cell_size: 50, idempotency_key: crypto.randomUUID() });
 const newFolder = useForm({ name: '', parent_id: null as number | null, is_master_only: false });
 const upload = useForm({
     file: null as File | null,
@@ -22,8 +25,11 @@ const upload = useForm({
     is_master_only: false,
 });
 const folderNames = Object.fromEntries(props.folders.map((folder) => [folder.id, folder.name]));
+const activeMapId = ref<number | null>(props.room.active_map_id);
 
-const submitMap = () => newMap.post(`/mesas/${props.room.id}/mapas`);
+const submitMap = () => newMap.post(`/mesas/${props.room.id}/mapas`, {
+    onSuccess: () => { newMap.idempotency_key = crypto.randomUUID(); },
+});
 const submitFolder = () => newFolder.post(`/mesas/${props.room.id}/biblioteca/pastas`, {
     preserveScroll: true,
     onSuccess: () => newFolder.reset('name', 'parent_id', 'is_master_only'),
@@ -42,10 +48,10 @@ const submitUpload = () => upload.post(`/mesas/${props.room.id}/biblioteca/recur
     preserveScroll: true,
     onSuccess: () => upload.reset('file', 'name'),
 });
-const duplicateMap = (map: RoomMapSummary) => router.post(`/mesas/${props.room.id}/mapas/${map.id}/duplicar`);
+const duplicateMap = (map: RoomMapSummary) => router.post(`/mesas/${props.room.id}/mapas/${map.id}/duplicar`, { idempotency_key: crypto.randomUUID() });
 const removeMap = (map: RoomMapSummary) => {
     if (window.confirm(`Excluir o mapa “${map.title}” e seus tokens?`)) {
-        router.delete(`/mesas/${props.room.id}/mapas/${map.id}`);
+        router.delete(`/mesas/${props.room.id}/mapas/${map.id}`, { data: { idempotency_key: crypto.randomUUID() } });
     }
 };
 const removeAsset = (asset: MapAsset) => {
@@ -58,9 +64,37 @@ const renameMap = (map: RoomMapSummary, event: SubmitEvent) => {
     if (!(form instanceof HTMLFormElement)) return;
     const input = form.elements.namedItem('title');
     if (input instanceof HTMLInputElement && input.value.trim()) {
-        router.patch(`/mesas/${props.room.id}/mapas/${map.id}`, { title: input.value.trim() }, { preserveScroll: true });
+        router.patch(`/mesas/${props.room.id}/mapas/${map.id}`, {
+            title: input.value.trim(),
+            expected_revision: map.revision,
+            idempotency_key: crypto.randomUUID(),
+        }, { preserveScroll: true });
     }
 };
+
+useEchoPresence<{ type: string; payload: { map_id?: number } }>(
+    `rooms.${props.room.id}`,
+    '.room.state.changed',
+    (event) => {
+        if (event.type === 'room.active_map' && typeof event.payload.map_id === 'number') {
+            activeMapId.value = event.payload.map_id;
+        }
+        if (event.type === 'map.deleted' && event.payload.map_id === activeMapId.value) {
+            activeMapId.value = null;
+        }
+    },
+);
+
+async function activateMap(map: RoomMapSummary): Promise<void> {
+    try {
+        await axios.post(`/mesas/${props.room.id}/mapas/${map.id}/ativar`, {
+            idempotency_key: crypto.randomUUID(),
+        }, { headers: { Accept: 'application/json' } });
+        activeMapId.value = map.id;
+    } catch (error) {
+        console.error('Não foi possível definir o mapa ativo.', error);
+    }
+}
 </script>
 
 <template>
@@ -111,7 +145,9 @@ const renameMap = (map: RoomMapSummary, event: SubmitEvent) => {
                         </Link>
                         <div class="map-library-card-copy">
                             <Link :href="`/mesas/${room.id}/mapas/${map.id}`"><strong>{{ map.title }}</strong></Link>
+                            <span v-if="activeMapId === map.id" class="map-active-badge">Mapa ativo</span>
                             <span>Atualizado {{ new Date(map.updated_at).toLocaleDateString('pt-BR') }}</span>
+                            <button v-if="can_manage && activeMapId !== map.id" type="button" @click="activateMap(map)">Definir como mapa ativo</button>
                             <details v-if="can_manage" class="map-card-actions">
                                 <summary aria-label="Ações do mapa"><Pencil :size="13" /> Ações</summary>
                                 <form class="map-inline-rename" @submit.prevent="renameMap(map, $event)">

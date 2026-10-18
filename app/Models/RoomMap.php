@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class RoomMap extends Model
 {
+    protected $attributes = [
+        'revision' => 1,
+    ];
+
     protected $fillable = [
         'room_id',
         'background_asset_id',
@@ -19,6 +23,7 @@ class RoomMap extends Model
         'grid_color',
         'grid_opacity',
         'grid_enabled',
+        'revision',
     ];
 
     protected function casts(): array
@@ -26,6 +31,7 @@ class RoomMap extends Model
         return [
             'grid_opacity' => 'float',
             'grid_enabled' => 'boolean',
+            'revision' => 'integer',
         ];
     }
 

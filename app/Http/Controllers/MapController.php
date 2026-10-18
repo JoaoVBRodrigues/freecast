@@ -8,7 +8,10 @@ use App\Models\RoomMap;
 use App\Models\RoomMapLayer;
 use App\Models\RoomMapObject;
 use App\Models\RoomMembership;
+use App\Services\RoomSyncService;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
@@ -16,6 +19,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 use Inertia\Inertia;
 use Inertia\Response;
+use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
 class MapController extends Controller
 {
@@ -37,6 +41,9 @@ class MapController extends Controller
             'maps' => $room->maps()->with('background')->latest()->get()->map(fn (RoomMap $map) => [
                 'id' => $map->id,
                 'title' => $map->title,
+                'revision' => $map->revision,
+                'is_active' => $room->active_map_id === $map->id,
+                'revision' => $map->revision,
                 'width' => $map->width,
                 'height' => $map->height,
                 'background' => $map->background && ! $this->assetIsMasterOnly($map->background)
@@ -56,24 +63,46 @@ class MapController extends Controller
     {
         $this->authorizeRoom($request, $room, 'manage');
         $data = $request->validate([
-            'title' => ['required', 'string', 'max:100', Rule::unique('room_maps', 'title')->where('room_id', $room->id)],
+            'title' => ['required', 'string', 'max:100'],
             'width' => ['required', 'integer', 'min:200', 'max:8000'],
             'height' => ['required', 'integer', 'min:200', 'max:8000'],
             'cell_size' => ['required', 'integer', 'min:8', 'max:256'],
+            'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
         ]);
 
-        $map = DB::transaction(function () use ($request, $room, $data) {
-            $map = $room->maps()->create([
-                ...$data,
-                'created_by' => $request->user()->id,
-            ]);
+        $result = app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-create',
+            $data['idempotency_key'],
+            array_diff_key($data, ['idempotency_key' => true]),
+            function (string $commandId) use ($request, $room, $data) {
+                $map = DB::transaction(function () use ($request, $room, $data) {
+                    unset($data['idempotency_key']);
+                    if ($room->maps()->where('title', $data['title'])->exists()) {
+                        throw ValidationException::withMessages(['title' => 'Já existe um mapa com esse nome nesta mesa.']);
+                    }
+                    $map = $room->maps()->create([
+                        ...$data,
+                        'created_by' => $request->user()->id,
+                    ]);
 
-            foreach (self::LAYERS as $layer) {
-                $map->layers()->create($layer);
-            }
+                    foreach (self::LAYERS as $layer) {
+                        $map->layers()->create($layer);
+                    }
 
-            return $map;
-        });
+                    return $map;
+                });
+
+                $event = app(RoomSyncService::class)->record($room, 'room', 'map.created', (string) $map->id, $map->revision, $commandId, $data['idempotency_key'], [
+                    'map_id' => $map->id,
+                    'title' => $map->title,
+                ]);
+
+                return ['mapId' => $map->id, 'sequence' => $event->sequence];
+            },
+        );
+        $map = RoomMap::query()->findOrFail($result['mapId']);
 
         return to_route('maps.show', [$room, $map]);
     }
@@ -108,6 +137,7 @@ class MapController extends Controller
 
                 return [
                     'id' => $layer->id,
+                    'revision' => $layer->revision,
                     'type' => $layer->type,
                     'name' => $layer->name,
                     'sort_order' => $layer->sort_order,
@@ -135,6 +165,7 @@ class MapController extends Controller
             'map' => [
                 'id' => $map->id,
                 'title' => $map->title,
+                'revision' => $map->revision,
                 'width' => $map->width,
                 'height' => $map->height,
                 'cell_size' => $map->cell_size,
@@ -166,6 +197,8 @@ class MapController extends Controller
             'grid_opacity' => ['sometimes', 'required', 'numeric', 'min:0.05', 'max:1'],
             'grid_enabled' => ['sometimes', 'required', 'boolean'],
             'background_asset_id' => ['sometimes', 'nullable', 'integer', 'exists:room_assets,id'],
+            'expected_revision' => ['required', 'integer', 'min:1'],
+            'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
         ]);
 
         if (array_key_exists('background_asset_id', $data) && $data['background_asset_id'] !== null) {
@@ -178,7 +211,31 @@ class MapController extends Controller
             );
         }
 
-        $map->update($data);
+        $key = $data['idempotency_key'];
+        $expectedRevision = (int) $data['expected_revision'];
+        unset($data['idempotency_key'], $data['expected_revision']);
+
+        app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-update',
+            $key,
+            ['map_id' => $map->id, ...$data, 'expected_revision' => $expectedRevision],
+            function (string $commandId) use ($request, $room, $map, $data, $expectedRevision, $key) {
+                $locked = RoomMap::query()->whereKey($map->id)->lockForUpdate()->firstOrFail();
+                $this->assertMapBelongsToRoom($room, $locked);
+                if ($locked->revision !== $expectedRevision) {
+                    throw new ConflictHttpException('O mapa foi alterado por outra pessoa. Atualize e tente novamente.');
+                }
+                $locked->update([...$data, 'revision' => $locked->revision + 1]);
+                $event = app(RoomSyncService::class)->record($room, 'room', 'map.updated', (string) $locked->id, $locked->revision, $commandId, $key, [
+                    'map_id' => $locked->id,
+                    'revision' => $locked->revision,
+                ]);
+
+                return ['mapId' => $locked->id, 'revision' => $locked->revision, 'sequence' => $event->sequence];
+            },
+        );
 
         return back();
     }
@@ -186,9 +243,17 @@ class MapController extends Controller
     public function duplicate(Request $request, Room $room, RoomMap $map): RedirectResponse
     {
         $this->authorizeMapManager($request, $room, $map);
+        $data = $request->validate(['idempotency_key' => ['required', 'string', 'min:16', 'max:128']]);
         $map->load(['layers.objects']);
 
-        $copy = DB::transaction(function () use ($request, $room, $map) {
+        $result = app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-duplicate',
+            $data['idempotency_key'],
+            ['map_id' => $map->id],
+            function (string $commandId) use ($request, $room, $map, $data) {
+                $copy = DB::transaction(function () use ($request, $room, $map) {
             $baseTitle = $map->title.' (cópia)';
             $title = $baseTitle;
             $suffix = 2;
@@ -233,8 +298,17 @@ class MapController extends Controller
                 }
             }
 
-            return $copy;
-        });
+                    return $copy;
+                });
+                $event = app(RoomSyncService::class)->record($room, 'room', 'map.created', (string) $copy->id, $copy->revision, $commandId, $data['idempotency_key'], [
+                    'map_id' => $copy->id,
+                    'title' => $copy->title,
+                ]);
+
+                return ['mapId' => $copy->id, 'sequence' => $event->sequence];
+            },
+        );
+        $copy = RoomMap::query()->findOrFail($result['mapId']);
 
         return to_route('maps.show', [$room, $copy]);
     }
@@ -242,7 +316,25 @@ class MapController extends Controller
     public function destroy(Request $request, Room $room, RoomMap $map): RedirectResponse
     {
         $this->authorizeMapManager($request, $room, $map);
-        $map->delete();
+        $data = $request->validate(['idempotency_key' => ['required', 'string', 'min:16', 'max:128']]);
+        $title = $map->title;
+        app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-delete',
+            $data['idempotency_key'],
+            ['map_id' => $map->id],
+            function (string $commandId) use ($room, $map, $title, $data) {
+                $mapId = $map->id;
+                $map->delete();
+                app(RoomSyncService::class)->record($room, 'room', 'map.deleted', (string) $mapId, null, $commandId, $data['idempotency_key'], [
+                    'map_id' => $mapId,
+                    'title' => $title,
+                ]);
+
+                return ['mapId' => $mapId];
+            },
+        );
 
         return to_route('maps.index', $room);
     }
@@ -255,33 +347,58 @@ class MapController extends Controller
             'visible' => ['sometimes', 'boolean'],
             'locked' => ['sometimes', 'boolean'],
             'sort_order' => ['sometimes', 'integer', 'min:0', 'max:20'],
+            'expected_revision' => ['required', 'integer', 'min:1'],
+            'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
         ]);
 
-        if (array_key_exists('sort_order', $data)) {
-            DB::transaction(function () use ($layer, $data) {
-                $oldOrder = (int) $layer->sort_order;
-                $newOrder = (int) $data['sort_order'];
+        $key = $data['idempotency_key'];
+        $expectedRevision = (int) $data['expected_revision'];
+        unset($data['idempotency_key'], $data['expected_revision']);
 
-                if ($newOrder < $oldOrder) {
-                    $layer->map->layers()
-                        ->where('id', '!=', $layer->id)
-                        ->whereBetween('sort_order', [$newOrder, $oldOrder - 1])
-                        ->increment('sort_order');
-                } elseif ($newOrder > $oldOrder) {
-                    $layer->map->layers()
-                        ->where('id', '!=', $layer->id)
-                        ->whereBetween('sort_order', [$oldOrder + 1, $newOrder])
-                        ->decrement('sort_order');
+        app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-layer-update',
+            $key,
+            ['layer_id' => $layer->id, ...$data, 'expected_revision' => $expectedRevision],
+            function (string $commandId) use ($room, $map, $layer, $data, $expectedRevision, $key) {
+                $layer = RoomMapLayer::query()->whereKey($layer->id)->lockForUpdate()->firstOrFail();
+                $this->assertLayerBelongsToMap($map, $layer);
+                if ($layer->revision !== $expectedRevision) {
+                    throw new ConflictHttpException('A camada foi alterada por outra pessoa. Atualize e tente novamente.');
                 }
+                DB::transaction(function () use ($layer, $data) {
+                    $oldOrder = (int) $layer->sort_order;
+                    $newOrder = (int) ($data['sort_order'] ?? $oldOrder);
 
-                $layer->update([
-                    ...array_diff_key($data, ['sort_order' => true]),
-                    'sort_order' => $newOrder,
+                    if (array_key_exists('sort_order', $data) && $newOrder < $oldOrder) {
+                        $layer->map->layers()
+                            ->where('id', '!=', $layer->id)
+                            ->whereBetween('sort_order', [$newOrder, $oldOrder - 1])
+                            ->increment('sort_order', 1, ['revision' => DB::raw('revision + 1')]);
+                    } elseif (array_key_exists('sort_order', $data) && $newOrder > $oldOrder) {
+                        $layer->map->layers()
+                            ->where('id', '!=', $layer->id)
+                            ->whereBetween('sort_order', [$oldOrder + 1, $newOrder])
+                            ->decrement('sort_order', 1, ['revision' => DB::raw('revision + 1')]);
+                    }
+
+                    $layer->update([
+                        ...array_diff_key($data, ['sort_order' => true]),
+                        ...(array_key_exists('sort_order', $data) ? ['sort_order' => $newOrder] : []),
+                        'revision' => $layer->revision + 1,
+                    ]);
+                });
+                $audience = $layer->is_master_only ? 'masters' : 'room';
+                $event = app(RoomSyncService::class)->record($room, $audience, 'map.layer.updated', (string) $layer->id, $layer->revision, $commandId, $key, [
+                    'map_id' => $map->id,
+                    'layer_id' => $layer->id,
+                    'revision' => $layer->revision,
                 ]);
-            });
-        } else {
-            $layer->update($data);
-        }
+
+                return ['layerId' => $layer->id, 'revision' => $layer->revision, 'sequence' => $event->sequence];
+            },
+        );
 
         return back();
     }
@@ -295,6 +412,7 @@ class MapController extends Controller
             'x' => ['required', 'numeric', 'between:-100000,100000'],
             'y' => ['required', 'numeric', 'between:-100000,100000'],
             'assigned_user_id' => ['sometimes', 'nullable', 'integer', 'exists:users,id'],
+            'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
         ]);
 
         $asset = RoomAsset::query()->with('folder')->findOrFail($data['asset_id']);
@@ -323,22 +441,41 @@ class MapController extends Controller
         }
 
         $sizeRatio = min(1, 512 / max($asset->width, $asset->height));
-        $object = $layer->objects()->create([
-            'room_map_id' => $map->id,
-            'room_asset_id' => $asset->id,
-            'assigned_user_id' => $assignedUserId,
-            'name' => $asset->name,
-            'x' => $data['x'],
-            'y' => $data['y'],
-            'width' => max(8, (int) round($asset->width * $sizeRatio)),
-            'height' => max(8, (int) round($asset->height * $sizeRatio)),
-            'z_index' => (int) $map->objects()->max('z_index') + 1,
-        ]);
+        $key = $data['idempotency_key'];
+        $result = app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-object-create',
+            $key,
+            array_diff_key($data, ['idempotency_key' => true]),
+            function (string $commandId) use ($room, $request, $map, $layer, $asset, $data, $sizeRatio, $key, $assignedUserId) {
+                $object = $layer->objects()->create([
+                    'room_map_id' => $map->id,
+                    'room_asset_id' => $asset->id,
+                    'assigned_user_id' => $assignedUserId,
+                    'name' => $asset->name,
+                    'x' => $data['x'],
+                    'y' => $data['y'],
+                    'width' => max(8, (int) round($asset->width * $sizeRatio)),
+                    'height' => max(8, (int) round($asset->height * $sizeRatio)),
+                    'z_index' => (int) $map->objects()->max('z_index') + 1,
+                ]);
+                $object->load(['layer', 'asset.folder']);
+                $audience = $this->isMasterOnlyObject($object) ? 'masters' : 'room';
+                $event = app(RoomSyncService::class)->record($room, $audience, 'map.object.created', (string) $object->id, $object->revision, $commandId, $key, [
+                    'map_id' => $map->id,
+                    'object_id' => $object->id,
+                    'revision' => $object->revision,
+                ]);
 
-        return back()->with('map_object_id', $object->id);
+                return ['objectId' => $object->id, 'revision' => $object->revision, 'sequence' => $event->sequence];
+            },
+        );
+
+        return back()->with('map_object_id', $result['objectId']);
     }
 
-    public function updateObject(Request $request, Room $room, RoomMap $map, RoomMapObject $object): RedirectResponse
+    public function updateObject(Request $request, Room $room, RoomMap $map, RoomMapObject $object): RedirectResponse|JsonResponse
     {
         $this->authorizeRoom($request, $room, 'view');
         $this->assertMapBelongsToRoom($room, $map);
@@ -348,7 +485,7 @@ class MapController extends Controller
         $object->load(['layer', 'asset.folder']);
 
         if (! $canManage) {
-            $keys = array_diff(array_keys($request->all()), ['x', 'y']);
+            $keys = array_diff(array_keys($request->all()), ['x', 'y', 'expected_revision', 'idempotency_key']);
             abort_if($keys !== [], 403);
             abort_unless(
                 $object->assigned_user_id === $request->user()->id
@@ -364,6 +501,8 @@ class MapController extends Controller
             $data = $request->validate([
                 'x' => ['required', 'numeric', 'between:-100000,100000'],
                 'y' => ['required', 'numeric', 'between:-100000,100000'],
+                'expected_revision' => ['required', 'integer', 'min:1'],
+                'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
             ]);
         } else {
             $data = $request->validate([
@@ -378,6 +517,8 @@ class MapController extends Controller
                 'z_index' => ['sometimes', 'integer', 'between:-10000,10000'],
                 'assigned_user_id' => ['sometimes', 'nullable', 'integer', 'exists:users,id'],
                 'layer_id' => ['sometimes', 'integer', 'exists:room_map_layers,id'],
+                'expected_revision' => ['required', 'integer', 'min:1'],
+                'idempotency_key' => ['required', 'string', 'min:16', 'max:128'],
             ]);
 
             if (isset($data['layer_id'])) {
@@ -402,16 +543,102 @@ class MapController extends Controller
             }
         }
 
-        $object->update($data);
+        $key = $data['idempotency_key'];
+        $expectedRevision = (int) $data['expected_revision'];
+        unset($data['idempotency_key'], $data['expected_revision']);
+        $result = app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-object-update',
+            $key,
+            ['object_id' => $object->id, ...$data, 'expected_revision' => $expectedRevision],
+            function (string $commandId) use ($request, $room, $map, $object, $data, $expectedRevision, $key) {
+                $locked = RoomMapObject::query()->whereKey($object->id)->lockForUpdate()->with(['layer', 'asset.folder'])->firstOrFail();
+                $this->assertObjectBelongsToMap($map, $locked);
+                if ($locked->revision !== $expectedRevision) {
+                    throw new HttpResponseException(response()->json([
+                        'message' => 'O token foi alterado por outra pessoa.',
+                        'revision' => $locked->revision,
+                        'object' => $this->objectData($locked, $request, $room, Gate::allows('manage', $room)),
+                    ], 409));
+                }
+                $wasMasterOnly = $this->isMasterOnlyObject($locked);
+                $wasPublic = $this->isPublicObject($locked);
+                $locked->update([...$data, 'revision' => $locked->revision + 1]);
+                $locked->load(['layer', 'asset.folder']);
+                $isMasterOnly = $this->isMasterOnlyObject($locked);
+                $isPublic = $this->isPublicObject($locked);
+                $revision = $locked->revision;
+                $sequence = null;
 
-        return back();
+                if ($wasPublic && ! $isPublic) {
+                    $event = app(RoomSyncService::class)->record($room, 'room', 'map.object.removed', (string) $locked->id, $revision, $commandId, $key, [
+                        'map_id' => $map->id,
+                        'object_id' => $locked->id,
+                        'revision' => $revision,
+                    ]);
+                    $sequence = $event->sequence;
+                } elseif ($isPublic) {
+                    $event = app(RoomSyncService::class)->record($room, 'room', 'map.object.updated', (string) $locked->id, $revision, $commandId, $key, [
+                        'map_id' => $map->id,
+                        'object_id' => $locked->id,
+                        'revision' => $revision,
+                    ]);
+                    $sequence = $event->sequence;
+                }
+
+                if ($isMasterOnly || $wasMasterOnly) {
+                    $event = app(RoomSyncService::class)->record($room, 'masters', 'map.object.updated', (string) $locked->id, $revision, $commandId, $key, [
+                        'map_id' => $map->id,
+                        'object_id' => $locked->id,
+                        'revision' => $revision,
+                    ]);
+                    $sequence = $event->sequence;
+                }
+
+                return ['objectId' => $locked->id, 'revision' => $revision, 'sequence' => $sequence];
+            },
+        );
+
+        if ($request->expectsJson()) {
+            return response()->json($result);
+        }
+
+        return back()->with('map_object_revision', $result['revision']);
     }
 
-    public function destroyObject(Request $request, Room $room, RoomMap $map, RoomMapObject $object): RedirectResponse
+    public function destroyObject(Request $request, Room $room, RoomMap $map, RoomMapObject $object): RedirectResponse|JsonResponse
     {
         $this->authorizeMapManager($request, $room, $map);
         $this->assertObjectBelongsToMap($map, $object);
-        $object->delete();
+        $keyData = $request->validate(['idempotency_key' => ['required', 'string', 'min:16', 'max:128']]);
+        $key = $keyData['idempotency_key'];
+        $object->load(['layer', 'asset.folder']);
+        $wasPublic = $this->isPublicObject($object);
+        $wasMasterOnly = $this->isMasterOnlyObject($object);
+        $result = app(RoomSyncService::class)->execute(
+            $room,
+            $request->user(),
+            'map-object-delete',
+            $key,
+            ['object_id' => $object->id],
+            function (string $commandId) use ($room, $map, $object, $wasMasterOnly, $key) {
+                $revision = $object->revision + 1;
+                $object->delete();
+                $audience = $wasPublic ? 'room' : 'masters';
+                $event = app(RoomSyncService::class)->record($room, $audience, 'map.object.removed', (string) $object->id, $revision, $commandId, $key, [
+                    'map_id' => $map->id,
+                    'object_id' => $object->id,
+                    'revision' => $revision,
+                ]);
+
+                return ['objectId' => $object->id, 'sequence' => $event->sequence];
+            },
+        );
+
+        if ($request->expectsJson()) {
+            return response()->json(['objectId' => $object->id, 'sequence' => $result['sequence'] ?? null]);
+        }
 
         return back();
     }
@@ -447,11 +674,24 @@ class MapController extends Controller
         return $asset->is_master_only || (bool) $asset->folder?->is_master_only;
     }
 
+    private function isMasterOnlyObject(RoomMapObject $object): bool
+    {
+        return $object->layer->is_master_only || $this->assetIsMasterOnly($object->asset);
+    }
+
+    private function isPublicObject(RoomMapObject $object): bool
+    {
+        return $object->visible
+            && $object->layer->visible
+            && ! $this->isMasterOnlyObject($object);
+    }
+
     private function roomData(Room $room): array
     {
         return [
             'id' => $room->id,
             'title' => $room->title,
+            'active_map_id' => $room->active_map_id,
         ];
     }
 
@@ -493,6 +733,7 @@ class MapController extends Controller
 
         return [
             'id' => $object->id,
+            'revision' => $object->revision,
             'layer_id' => $object->room_map_layer_id,
             'asset_id' => $object->room_asset_id,
             'name' => $object->name,

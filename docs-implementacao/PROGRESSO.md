@@ -51,3 +51,53 @@ Esta etapa termina antes da Parte 3. A edição é persistente, mas ainda não s
 - [x] O arquivo de log existente foi preservado; suas mensagens SQLite terminam antes da troca para PostgreSQL e do início dos serviços corrigidos. Não há erros novos registrados após a inicialização PostgreSQL.
 
 **Pendência:** a troca de `.env` para PostgreSQL não transfere dados da base SQLite. Se houver conteúdo local que precise ser mantido, planejar uma transferência explícita antes de descartá-lo. A base PostgreSQL está pronta para iniciar a Parte 3.
+
+## Parte 3/4 — sincronização, conversa, dados e macros
+
+- [x] Presença por mesa e seleção de mapa ativo pelo mestre; membros e dados enviados conforme a audiência autorizada.
+- [x] Movimento otimista de tokens com previews transitórios e posição final persistida, revisão para conflitos e recibos idempotentes.
+- [x] Eventos duráveis em outbox PostgreSQL, entrega por worker após commit, tentativas e comando agendado para reenfileirar eventos pendentes.
+- [x] Recuperação de eventos do histórico após entrada/reconexão do Echo; o cliente reconcilia por audiência e deduplica por `eventId`.
+- [x] Histórico paginado, mensagens públicas/narração/privadas e anexos autorizados da biblioteca. Mensagens privadas são encaminhadas aos canais individuais de autor/destinatário, não ao canal público da sala.
+- [x] Formatação limitada a negrito, itálico, sublinhado e quebras de linha; HTML fornecido pelo usuário é escapado antes da renderização.
+- [x] `/r` com d4, d6, d8, d10, d12, d20, d100, modificadores aditivos/subtrativos e constantes; resultado e componentes são sorteados uma vez, persistidos e idempotentes.
+- [x] Macros pessoais por mesa, pessoais globais e compartilhadas da mesa; resolução por nome respeita precedência, enquanto o botão executa o item selecionado. Edição de macro compartilhada restrita a proprietário/mestre; jogadores podem executar macro compartilhada.
+- [x] Revogação remove a associação, encerra conexões Reverb do usuário e nega novamente canais, histórico e downloads privados.
+- [x] Migration aditiva `2026_10_17_000000_create_room_sync_tables` aplicada no PostgreSQL de desenvolvimento; `php artisan migrate:status --database=pgsql` confirma as sete migrations como `Ran`. Não foi usado `migrate:fresh`.
+- [x] Testes backend: `php artisan test` — 40 testes, 199 assertions aprovadas na base PostgreSQL exclusiva `freecast_test`.
+- [x] Build: `npm run build` — `vue-tsc` e Vite concluídos.
+- [x] Revalidação Playwright concluída via Quick Tunnel com Apache, Caddy e Reverb próprio em 8082: `rooms.spec.ts` + `maps.spec.ts` passaram (3 testes) e `realtime.spec.ts` passou (1 teste), em três contexts independentes.
+- [x] O login final não recebeu HTTP 419; HTTPS/WSS, cookie `Secure` host-only, XSRF, ausência de conteúdo misto e conexão ao hostname público foram verificados. A causa do 419 histórico continua sem confirmação por A/B do cookie legado.
+- [x] Teste de texto rico confirmou tags permitidas e que conteúdo HTML arbitrário aparece como texto, sem criar elemento executável.
+- [x] Captura Playwright MCP [mapa-tempo-real-parte3.png](../capturas/mapa-tempo-real-parte3.png) conferida em 867 × 465 com dados sintéticos próprios. Não comprova paridade visual do editor original.
+- [x] Captura Playwright MCP [chat-formatacao-parte3.png](../capturas/chat-formatacao-parte3.png) inspecionada em viewport 867 × 466; formatação permitida aparece e HTML é texto escapado.
+
+### Piloto em três computadores pela LAN — roteiro não executado
+
+O roteiro abaixo continua disponível para uma futura validação de LAN. As tentativas iniciais contra o Reverb em 8081 e o posterior HTTP 419 foram superadas na validação automatizada pública via Quick Tunnel, descrita na seção seguinte; nenhuma delas foi um teste com três computadores físicos. Para testar na mesma rede:
+
+1. No computador servidor, obtenha o IPv4 privado da interface usada pelos três computadores e use-o como `<IP-LAN>`. Mantenha PostgreSQL publicado somente em `127.0.0.1:5434`.
+2. Configure o Apache com o `DocumentRoot` deste projeto em `public` e listener `0.0.0.0:8000`. Não use `php artisan serve` para este piloto.
+3. Confirme primeiro que TCP 8082 está livre no servidor. No `.env`, mantenha `BROADCAST_CONNECTION=reverb`, `QUEUE_CONNECTION=database`, `REVERB_HOST=127.0.0.1`, `REVERB_PORT=8082`, `REVERB_SCHEME=http`, `REVERB_SERVER_HOST=0.0.0.0` e `REVERB_SERVER_PORT=8082`. Defina `APP_URL=http://<IP-LAN>:8000`, `VITE_REVERB_HOST=<IP-LAN>`, `VITE_REVERB_PORT=8082` e `VITE_REVERB_SCHEME=http`. Preserve a `APP_KEY`, não exponha credenciais e use `APP_DEBUG=false` na rede. Não tente liberar 8081 enquanto o container preexistente o ocupar.
+4. Rode `npm run build` depois de alterar as variáveis `VITE_*`; confirme que `public/hot` não está apontando clientes para o servidor Vite de desenvolvimento.
+5. Inicie os processos no computador servidor: `docker compose up -d postgres`, Apache, `php artisan reverb:start --host=0.0.0.0 --port=8082`, `php artisan queue:work --tries=5 --timeout=20 --sleep=1` e `php artisan schedule:work`.
+6. Libere TCP 8000 (HTTP) e TCP 8082 (WebSocket) somente no perfil de rede privada do Windows Firewall. Não exponha a porta 5434 aos computadores clientes.
+7. No mestre e nos dois jogadores, abra `http://<IP-LAN>:8000` — nunca `localhost`. O navegador conectará ao Reverb por `ws://<IP-LAN>:8082` (o Echo acrescenta o caminho/protocolo Reverb); em HTTPS, configure TLS e use WSS.
+8. Entre com três contas sintéticas, entre na mesma mesa, abra o mapa ativo, atribua um token a um jogador, troque mensagens/rolagens e desconecte/reconecte um cliente. Confirme no servidor HTTP e WebSocket a entrega e recuperação, sem compartilhar URLs locais ou credenciais.
+
+**Pendências:** a causa do HTTP 419 histórico segue sem A/B controlado do cookie legado; a validação física em três computadores externos ainda não foi realizada. Visão dinâmica, áudio e plugins continuam fora desta etapa; a Parte 4 não foi iniciada.
+
+## Preparacao do piloto publico temporario
+
+- [x] `scripts/Start-Pilot.ps1`, `scripts/Stop-Pilot.ps1`, `scripts/Caddyfile.Pilot` e `PILOTO-INTERNET.md` adicionados sem alterar `.env` ou a configuracao global do XAMPP. Cloudflared 2026.10.1 (assinatura Authenticode Cloudflare valida) e Caddy 2.11.7 (checksum oficial validado) estao em `%LOCALAPPDATA%\Freecast\pilot\tools`.
+- [x] Caddy validado com `PILOT_HOST` sintetico. Apache 2.4.58/PHP 8.2.12 iniciou com configuracao isolada e document root `public`; caminhos curtos 8.3 corrigiram a incompatibilidade do perfil Windows acentuado.
+- [x] Quick Tunnel capturou hostname temporario sem reiniciar o tunel; Caddy ficou em `127.0.0.1:8091`, Laravel/Apache em `127.0.0.1:8000`, Reverb em `127.0.0.1:8082`. O navegador alcançou HTTPS e WSS sob o mesmo host; PostgreSQL permaneceu em `127.0.0.1:5434`.
+- [x] `APP_DEBUG=false`, cookie exclusivo seguro, APP_KEY preservada e credenciais Reverb server-only passaram o preflight no `freecast_test`. O `.env` permaneceu inalterado; contas E2E usaram senhas aleatorias apenas no processo.
+- [x] Conexoes do piloto para PostgreSQL, sessoes, cache e fila agora sao fixadas em `pgsql`; host/porta/usuario/senha sao herdados do `.env` somente pelos processos do Freecast. O preflight valida loopback `127.0.0.1:5434`, credenciais e conexoes persistentes antes de iniciar o tunnel.
+- [x] Diagnostico corrigido: logs de uma rodada anterior mostraram sessoes tentando SQLite com o nome `freecast_test`; outra rodada registrou autenticacao PostgreSQL sem senha no Apache. A configuracao explicita dos processos e o preflight mais estrito eliminaram esses erros na rodada final.
+- [x] `php artisan test` — 40 testes/199 assertions aprovadas. `phpunit.xml` aponta para `freecast_test`/PostgreSQL; o teste `PostgresTestDatabaseTest` passou. Consulta posterior confirmou sete migrations em cada base; `freecast` permaneceu com tres usuarios e 36 mesas. Nenhuma migration foi rodada em `freecast`.
+- [x] Playwright atraves de um Quick Tunnel publico: `rooms.spec.ts` + `maps.spec.ts` — 3 passaram (1,4 min); `realtime.spec.ts` — 1 passou (1,2 min). Os tres contexts independentes validaram HTTPS/WSS no mesmo host, cookie `Secure`/host-only/`SameSite=Lax`, XSRF correspondente, ausencia de HTTP misto e nenhum 419.
+- [x] O teste de mapas validou upload do fundo e tres tokens sinteticos, permissao, arraste/zoom/pan, posicoes persistidas apos reload e screenshot do canvas em viewport 867 × 465. O teste realtime verificou movimento recebido pelos tres participantes, chats simultaneos sem duplicacao, resultado unico de dado, mensagem privada e token oculto ausentes do terceiro context/trafego, reconexao, recuperacao apos reinicio do worker e revogacao de canal/midia.
+- [x] `npm run build`, validacao Caddy, PHP lint e parse dos scripts PowerShell passaram. O build emite apenas o aviso ja existente de bundle JS maior que 500 kB. Uma chamada isolada de `tsc` para os testes nao foi validada por falta de `@types/node`; nenhuma dependencia foi adicionada.
+- Nota de preservacao: os testes browser enviaram imagens sinteticas ao storage privado; depois, PHPUnit reinicializou os metadados de `freecast_test`. Os arquivos do storage compartilhado foram mantidos para evitar remover conteudo preexistente; alguns arquivos de teste podem permanecer sem metadados.
+- [ ] Teste com tres computadores/rede externos continua pendente. Nenhuma porta foi aberta no roteador/firewall. Para o modo real, altere as senhas das contas demonstrativas; o preflight recusa as senhas conhecidas. A Parte 4 nao foi iniciada.

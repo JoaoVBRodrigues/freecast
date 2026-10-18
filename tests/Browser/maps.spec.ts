@@ -1,7 +1,16 @@
 import { expect, test, type Page } from '@playwright/test';
 import { deflateSync } from 'node:zlib';
+import { waitForLoginResponse } from './csrf-diagnostics';
 
 const demoPassword = 'Mesa2026!';
+
+function passwordFor(email: string): string {
+    if (email === 'mestre@freecast.test') return process.env.FREECAST_MASTER_PASSWORD ?? demoPassword;
+    if (email === 'jogador@freecast.test') return process.env.FREECAST_PLAYER_PASSWORD ?? demoPassword;
+    if (email === 'convidada@freecast.test') return process.env.FREECAST_GUEST_PASSWORD ?? demoPassword;
+
+    throw new Error(`No browser-test password is configured for ${email}.`);
+}
 
 function crc32(buffer: Buffer): number {
     let crc = 0xffffffff;
@@ -59,8 +68,12 @@ function syntheticPng(color: [number, number, number], circle = false): Buffer {
 async function signIn(page: Page, email: string): Promise<void> {
     await page.goto('/login');
     await page.getByLabel('E-mail').fill(email);
-    await page.getByLabel('Senha', { exact: true }).fill(demoPassword);
-    await page.getByRole('button', { name: 'Entrar', exact: true }).click();
+    await page.getByLabel('Senha', { exact: true }).fill(passwordFor(email));
+    const response = await waitForLoginResponse(page);
+    expect(response.status()).toBe(302);
+    if (process.env.FREECAST_BASE_URL?.startsWith('https://')) {
+        expect(new URL(page.url()).origin).toBe(new URL(process.env.FREECAST_BASE_URL).origin);
+    }
     await expect(page.getByRole('heading', { name: 'Início' })).toBeVisible({ timeout: 15_000 });
 }
 
@@ -124,7 +137,8 @@ test('a master persists an uploaded map and three tokens; a player can move only
     await expect(player.getByRole('link', { name: `Mesa: ${roomTitle}` })).toBeVisible();
     await expect(player.getByText('Jogador', { exact: true })).toBeVisible();
 
-    await page.goto(`/mesas/${roomId}/mapas`);
+    const mapLibraryResponse = await page.goto(`/mesas/${roomId}/mapas`);
+    expect(mapLibraryResponse?.status()).toBe(200);
     await page.getByLabel('Nome do mapa').fill(mapTitle);
     await page.getByLabel('Largura do mapa').fill('1000');
     await page.getByLabel('Altura do mapa').fill('700');
@@ -133,7 +147,8 @@ test('a master persists an uploaded map and three tokens; a player can move only
     await expect(page.locator('.map-toolbar-title strong')).toHaveText(mapTitle, { timeout: 15_000 });
     const mapId = new URL(page.url()).pathname.split('/').at(-1);
 
-    await page.goto(`/mesas/${roomId}/mapas`);
+    const resourceLibraryResponse = await page.goto(`/mesas/${roomId}/mapas`);
+    expect(resourceLibraryResponse?.status()).toBe(200);
     await uploadImage(page, 'Fundo sintético', 'background', [47, 52, 62]);
     await uploadImage(page, 'Token azul', 'token', [70, 145, 235]);
     await uploadImage(page, 'Token verde', 'token', [77, 185, 120]);

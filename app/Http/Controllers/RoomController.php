@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Events\RoomMessagePosted;
 use App\Models\Room;
 use App\Models\RoomFavorite;
 use App\Models\RoomMembership;
 use App\Models\RoomMessage;
 use App\Models\RoomPreference;
 use App\Models\RoomVisit;
+use App\Models\RoomMacro;
+use App\Models\RoomAsset;
+use App\Services\ReverbConnectionTerminator;
 use App\Support\RoomCardData;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -100,8 +102,53 @@ class RoomController extends Controller
         $room->load([
             'owner:id,name',
             'memberships.user:id,name',
-            'messages' => fn ($query) => $query->with('user:id,name')->latest()->limit(60),
         ]);
+
+        $messages = $room->messages()
+            ->with(['user:id,name', 'recipient:id,name'])
+            ->where(function ($query) use ($request) {
+                $query->where('message_type', '!=', 'private')
+                    ->orWhere('user_id', $request->user()->id)
+                    ->orWhere('recipient_user_id', $request->user()->id);
+            })
+            ->latest('id')
+            ->limit(50)
+            ->get()
+            ->reverse()
+            ->values();
+
+        $macros = RoomMacro::query()
+            ->where(function ($query) use ($room, $request) {
+                $query->where(fn ($personal) => $personal
+                    ->where('user_id', $request->user()->id)
+                    ->where(fn ($scope) => $scope
+                        ->where('scope', RoomMacro::PERSONAL_GLOBAL)
+                        ->orWhere(fn ($inRoom) => $inRoom->where('scope', RoomMacro::PERSONAL_ROOM)->where('room_id', $room->id))))
+                    ->orWhere(fn ($shared) => $shared->where('scope', RoomMacro::SHARED_ROOM)->where('room_id', $room->id)->whereNull('user_id'));
+            })
+            ->orderBy('scope')
+            ->orderBy('name')
+            ->get(['id', 'scope', 'name', 'body', 'revision'])
+            ->map(fn (RoomMacro $macro) => [
+                'id' => $macro->id,
+                'scope' => $macro->scope,
+                'name' => $macro->name,
+                'body' => $macro->body,
+                'revision' => $macro->revision,
+            ]);
+
+        $libraryAssets = $room->assets()
+            ->with('folder')
+            ->where('is_master_only', false)
+            ->orderBy('name')
+            ->get()
+            ->filter(fn (RoomAsset $asset) => ! $asset->folder?->is_master_only)
+            ->map(fn (RoomAsset $asset) => [
+                'id' => $asset->id,
+                'name' => $asset->name,
+                'url' => route('maps.assets.show', [$room, $asset]),
+            ])
+            ->values();
 
         return Inertia::render('Rooms/Show', [
             'room' => [
@@ -111,7 +158,10 @@ class RoomController extends Controller
                 'description' => $room->description,
                 'owner_name' => $room->owner->name,
                 'is_owner' => $room->owner_id === $request->user()->id,
+                'active_map_id' => $room->active_map_id,
+                'active_map_title' => $room->active_map_id ? $room->maps()->whereKey($room->active_map_id)->value('title') : null,
             ],
+            'user_id' => $request->user()->id,
             'members' => $room->memberships
                 ->map(fn (RoomMembership $membership) => [
                     'id' => $membership->user_id,
@@ -119,15 +169,31 @@ class RoomController extends Controller
                     'role' => $membership->role,
                 ])
                 ->values(),
-            'messages' => $room->messages
-                ->sortBy('created_at')
-                ->values()
-                ->map(fn (RoomMessage $message) => [
+            'messages' => $messages->map(fn (RoomMessage $message) => [
                     'id' => $message->id,
+                    'author_id' => $message->user_id,
                     'author' => $message->user->name,
+                    'recipient_id' => $message->message_type === 'private' ? $message->recipient_user_id : null,
+                    'recipient' => $message->message_type === 'private' ? $message->recipient?->name : null,
+                    'message_type' => $message->message_type,
                     'body' => $message->body,
+                    'assets' => RoomAsset::query()
+                        ->with('folder')
+                        ->where('room_id', $room->id)
+                        ->whereIn('id', $message->asset_ids ?? [])
+                        ->get()
+                        ->filter(fn (RoomAsset $asset) => Gate::allows('manage', $room) || (! $asset->is_master_only && ! $asset->folder?->is_master_only))
+                        ->map(fn (RoomAsset $asset) => [
+                            'id' => $asset->id,
+                            'name' => $asset->name,
+                            'url' => route('maps.assets.show', [$room, $asset]),
+                        ])
+                        ->values(),
                     'created_at' => $message->created_at->toIso8601String(),
                 ]),
+            'macros' => $macros,
+            'library_assets' => $libraryAssets,
+            'can_manage' => Gate::allows('manage', $room),
             'panels' => array_merge(self::DEFAULT_PANELS, $preference->panels ?? []),
         ]);
     }
@@ -154,8 +220,20 @@ class RoomController extends Controller
     {
         Gate::authorize('leave', $room);
         $room->memberships()->where('user_id', $request->user()->id)->delete();
+        app(ReverbConnectionTerminator::class)->terminate($request->user()->id);
 
         return to_route('rooms.index')->with('status', 'Você saiu da mesa.');
+    }
+
+    public function removeMember(Request $request, Room $room, int $memberId): RedirectResponse
+    {
+        Gate::authorize('manage', $room);
+        abort_if($memberId === $room->owner_id, 403);
+        $membership = $room->memberships()->where('user_id', $memberId)->firstOrFail();
+        $membership->delete();
+        app(ReverbConnectionTerminator::class)->terminate($memberId);
+
+        return back()->with('status', 'O acesso do participante foi revogado.');
     }
 
     public function toggleFavorite(Request $request, Room $room): RedirectResponse
@@ -206,13 +284,6 @@ class RoomController extends Controller
             'body' => ['required', 'string', 'max:2000'],
         ]);
 
-        $message = $room->messages()->create([
-            'user_id' => $request->user()->id,
-            'body' => trim($data['body']),
-        ]);
-
-        broadcast(new RoomMessagePosted($message->load('user:id,name')))->toOthers();
-
-        return back();
+        abort(410, 'Use o endpoint de mensagens em tempo real.');
     }
 }

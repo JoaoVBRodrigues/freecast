@@ -28,6 +28,7 @@ class MapEditorAuthorizationTest extends TestCase
                 'width' => 1200,
                 'height' => 800,
                 'cell_size' => 40,
+                'idempotency_key' => 'create-map-command-0001',
             ])
             ->assertRedirect();
 
@@ -36,7 +37,11 @@ class MapEditorAuthorizationTest extends TestCase
 
         $objectsLayer = $map->layers()->where('type', 'objects')->firstOrFail();
         $this->actingAs($owner)
-            ->patch(route('maps.layers.update', [$room, $map, $objectsLayer]), ['sort_order' => 3])
+            ->patch(route('maps.layers.update', [$room, $map, $objectsLayer]), [
+                'sort_order' => 3,
+                'expected_revision' => $objectsLayer->revision,
+                'idempotency_key' => 'reorder-layer-command-001',
+            ])
             ->assertRedirect();
 
         $this->assertSame(
@@ -45,14 +50,18 @@ class MapEditorAuthorizationTest extends TestCase
         );
 
         $this->actingAs($owner)
-            ->post(route('maps.duplicate', [$room, $map]))
+            ->post(route('maps.duplicate', [$room, $map]), ['idempotency_key' => 'duplicate-map-command-01'])
             ->assertRedirect();
         $copy = RoomMap::query()->where('room_id', $room->id)->where('title', 'Mapa de teste (cópia)')->firstOrFail();
         $this->actingAs($owner)
-            ->patch(route('maps.update', [$room, $copy]), ['title' => 'Mapa renomeado'])
+            ->patch(route('maps.update', [$room, $copy]), [
+                'title' => 'Mapa renomeado',
+                'expected_revision' => $copy->revision,
+                'idempotency_key' => 'rename-map-command-0001',
+            ])
             ->assertRedirect();
         $this->actingAs($owner)
-            ->delete(route('maps.destroy', [$room, $copy]))
+            ->delete(route('maps.destroy', [$room, $copy]), ['idempotency_key' => 'delete-map-command-00001'])
             ->assertRedirect(route('maps.index', $room));
 
         $this->assertDatabaseMissing('room_maps', ['id' => $copy->id]);
@@ -160,8 +169,14 @@ class MapEditorAuthorizationTest extends TestCase
             ->patch(route('maps.objects.update', [$room, $map, $assigned]), ['name' => 'Alteração proibida'])
             ->assertForbidden();
         $this->actingAs($player)
-            ->patch(route('maps.objects.update', [$room, $map, $assigned]), ['x' => 140, 'y' => 90])
-            ->assertRedirect();
+            ->patchJson(route('maps.objects.update', [$room, $map, $assigned]), [
+                'x' => 140,
+                'y' => 90,
+                'expected_revision' => $assigned->revision,
+                'idempotency_key' => 'move-token-command-0001',
+            ])
+            ->assertOk()
+            ->assertJsonPath('revision', 2);
 
         $this->assertDatabaseHas('room_map_objects', [
             'id' => $assigned->id,

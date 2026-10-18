@@ -5,6 +5,7 @@ use App\Http\Controllers\MapController;
 use App\Http\Controllers\MapLibraryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\RoomRealtimeController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
@@ -15,9 +16,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/mesas/{room}', [RoomController::class, 'show'])->whereNumber('room')->name('rooms.show');
     Route::post('/mesas/{room}/entrar', [RoomController::class, 'join'])->whereNumber('room')->name('rooms.join');
     Route::post('/mesas/{room}/sair', [RoomController::class, 'leave'])->whereNumber('room')->name('rooms.leave');
+    Route::delete('/mesas/{room}/participantes/{memberId}', [RoomController::class, 'removeMember'])->whereNumber(['room', 'memberId'])->name('rooms.members.destroy');
     Route::post('/mesas/{room}/favorita', [RoomController::class, 'toggleFavorite'])->whereNumber('room')->name('rooms.favorite');
     Route::patch('/mesas/{room}/preferencias', [RoomController::class, 'updatePreferences'])->whereNumber('room')->name('rooms.preferences');
-    Route::post('/mesas/{room}/mensagens', [RoomController::class, 'storeMessage'])->whereNumber('room')->name('rooms.messages.store');
+    Route::get('/mesas/{room}/eventos', [RoomRealtimeController::class, 'events'])->whereNumber('room')->name('rooms.events');
+    Route::get('/mesas/{room}/historico', [RoomRealtimeController::class, 'history'])->whereNumber('room')->name('rooms.messages.history');
+    Route::post('/mesas/{room}/mensagens', [RoomRealtimeController::class, 'storeMessage'])->whereNumber('room')->name('rooms.messages.store');
+    Route::post('/mesas/{room}/macros', [RoomRealtimeController::class, 'storeMacro'])->whereNumber('room')->name('rooms.macros.store');
+    Route::patch('/mesas/{room}/macros/{macro}', [RoomRealtimeController::class, 'updateMacro'])->whereNumber(['room', 'macro'])->name('rooms.macros.update');
+    Route::delete('/mesas/{room}/macros/{macro}', [RoomRealtimeController::class, 'deleteMacro'])->whereNumber(['room', 'macro'])->name('rooms.macros.destroy');
+    Route::post('/mesas/{room}/macros/{macro}/executar', [RoomRealtimeController::class, 'executeMacro'])->whereNumber(['room', 'macro'])->name('rooms.macros.execute');
+    Route::post('/mesas/{room}/mapas/{map}/ativar', [RoomRealtimeController::class, 'activateMap'])->whereNumber(['room', 'map'])->name('rooms.maps.activate');
+    Route::post('/mesas/{room}/mapas/{map}/objetos/{object}/preview', [RoomRealtimeController::class, 'previewObject'])->middleware('throttle:120,1')->whereNumber(['room', 'map', 'object'])->name('maps.objects.preview');
     Route::get('/mesas/{room}/mapas', [MapController::class, 'index'])->whereNumber('room')->name('maps.index');
     Route::post('/mesas/{room}/mapas', [MapController::class, 'store'])->whereNumber('room')->name('maps.store');
     Route::get('/mesas/{room}/mapas/{map}', [MapController::class, 'show'])->whereNumber(['room', 'map'])->name('maps.show');

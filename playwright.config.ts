@@ -1,5 +1,7 @@
 import { defineConfig } from '@playwright/test';
 
+const baseURL = process.env.FREECAST_BASE_URL ?? 'http://127.0.0.1:8000';
+
 export default defineConfig({
     testDir: './tests/Browser',
     fullyParallel: false,
@@ -7,12 +9,12 @@ export default defineConfig({
     workers: 1,
     reporter: 'list',
     use: {
-        baseURL: 'http://127.0.0.1:8000',
+        baseURL,
         viewport: { width: 867, height: 465 },
-        trace: 'retain-on-failure',
+        trace: process.env.FREECAST_PUBLIC_PILOT ? 'off' : 'retain-on-failure',
         screenshot: 'only-on-failure',
     },
-    webServer: {
+    webServer: process.env.FREECAST_BASE_URL ? undefined : {
         command: 'php artisan serve --host=127.0.0.1 --port=8000',
         url: 'http://127.0.0.1:8000/login',
         reuseExistingServer: !process.env.CI,

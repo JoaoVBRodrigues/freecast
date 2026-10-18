@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class RoomMapObject extends Model
 {
+    protected $attributes = [
+        'revision' => 1,
+    ];
+
     protected $fillable = [
         'room_map_id',
         'room_map_layer_id',
@@ -21,6 +25,7 @@ class RoomMapObject extends Model
         'z_index',
         'visible',
         'locked',
+        'revision',
     ];
 
     protected function casts(): array
@@ -31,6 +36,7 @@ class RoomMapObject extends Model
             'rotation' => 'float',
             'visible' => 'boolean',
             'locked' => 'boolean',
+            'revision' => 'integer',
         ];
     }
 

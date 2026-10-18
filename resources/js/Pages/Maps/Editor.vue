@@ -3,13 +3,16 @@ import AppLayout from '@/Layouts/AppLayout.vue';
 import type { MapAsset, MapLayer, MapObject } from '@/types/maps';
 import { screenToWorld, snapWorldPointToGrid, worldToScreen, zoomAtPoint, type Camera, type Point } from '@/mapCoordinates';
 import { Head, Link, router } from '@inertiajs/vue3';
+import axios from 'axios';
 import { ArrowDown, ArrowLeft, ArrowUp, Eye, EyeOff, Grid2X2, LockKeyhole, LockKeyholeOpen, MapPinned, Minus, Move, Plus, Scan, Trash2, Unlock, UserRound, ZoomIn, ZoomOut } from '@lucide/vue';
 import Konva from 'konva';
-import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, shallowReactive, shallowRef, watch } from 'vue';
+import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, shallowReactive, shallowRef, toRaw, watch } from 'vue';
 import type { VueKonvaRef } from 'vue-konva';
+import { useEcho, useEchoPresence } from '@laravel/echo-vue';
 
 interface MapData {
     id: number;
+    revision: number;
     title: string;
     width: number;
     height: number;
@@ -19,6 +22,24 @@ interface MapData {
     grid_enabled: boolean;
     background_asset_id: number | null;
     background_url: string | null;
+}
+
+interface RoomSyncEnvelope {
+    eventId: string;
+    stream: 'room' | 'masters' | 'user';
+    sequence: number;
+    type: string;
+    payload: Record<string, unknown>;
+}
+
+interface ObjectPreview {
+    roomId: number;
+    mapId: number;
+    objectId: number;
+    x: number;
+    y: number;
+    revision: number;
+    userId: number;
 }
 
 const props = defineProps<{
@@ -54,6 +75,19 @@ const settings = reactive({
     background_asset_id: props.map.background_asset_id,
 });
 
+function copyLayerState(layers: MapLayer[]): MapLayer[] {
+    return toRaw(layers).map((layer) => ({
+        ...toRaw(layer),
+        objects: toRaw(layer.objects).map((object) => ({ ...toRaw(object) })),
+    }));
+}
+
+const liveLayers = ref<MapLayer[]>(copyLayerState(props.layers));
+const remotePreviews = reactive<Record<number, { x: number; y: number }>>({});
+const previewSentAt = new Map<number, number>();
+const eventCursors = reactive({ room: 0, masters: 0, user: 0 });
+const receivedEvents = new Set<string>();
+
 const localCameraKey = computed(() => `freecast:map-camera:${props.user_id}:${props.map.id}`);
 const worldGroupConfig = computed(() => ({
     x: camera.x,
@@ -67,7 +101,7 @@ const stageConfig = computed(() => ({
     height: viewport.height,
     listening: true,
 }));
-const orderedLayers = computed(() => [...props.layers].sort((a, b) => a.sort_order - b.sort_order));
+const orderedLayers = computed(() => [...liveLayers.value].sort((a, b) => a.sort_order - b.sort_order));
 const drawableObjects = computed(() =>
     orderedLayers.value.flatMap((layer) => layer.visible
         ? [...layer.objects]
@@ -77,8 +111,8 @@ const drawableObjects = computed(() =>
 );
 const allObjects = computed(() => orderedLayers.value.flatMap((layer) => layer.objects));
 const selectedObject = computed(() => allObjects.value.find((item) => item.id === selectedObjectId.value) ?? null);
-const tokenLayer = computed(() => props.layers.find((layer) => layer.type === 'tokens') ?? null);
-const gmLayer = computed(() => props.layers.find((layer) => layer.type === 'gm') ?? null);
+const tokenLayer = computed(() => liveLayers.value.find((layer) => layer.type === 'tokens') ?? null);
+const gmLayer = computed(() => liveLayers.value.find((layer) => layer.type === 'gm') ?? null);
 const backgroundAssets = computed(() => props.assets.filter((asset) => asset.kind === 'background' && !asset.is_master_only));
 const tokenAssets = computed(() => props.assets.filter((asset) => asset.kind === 'token'));
 const selectedCanTransform = computed(() => props.can_manage && Boolean(selectedObject.value?.visible));
@@ -119,6 +153,14 @@ watch(
 );
 
 watch(
+    () => props.layers,
+    (layers) => {
+        liveLayers.value = copyLayerState(layers);
+    },
+    { deep: true },
+);
+
+watch(
     () => [props.map.background_url, ...drawableObjects.value.map((object) => `${object.id}:${object.url}`)],
     async () => {
         await nextTick();
@@ -138,6 +180,73 @@ watch(selectedNode, async (node) => {
 watch(selectedCanTransform, (enabled) => {
     if (!enabled) selectedNode.value = null;
 });
+
+const presenceEvents = useEchoPresence<RoomSyncEnvelope>(
+    `rooms.${props.room.id}`,
+    '.room.state.changed',
+    applyRoomEvent,
+);
+presenceEvents.channel().here(() => void recoverRoomEvents());
+
+useEchoPresence<ObjectPreview>(
+    `rooms.${props.room.id}`,
+    '.room.object.preview',
+    applyObjectPreview,
+);
+
+if (props.can_manage) {
+    useEcho<RoomSyncEnvelope>(`rooms.${props.room.id}.masters`, '.room.state.changed', applyRoomEvent, [], 'private');
+    useEcho<ObjectPreview>(`rooms.${props.room.id}.masters`, '.room.object.preview', applyObjectPreview, [], 'private');
+}
+useEcho<RoomSyncEnvelope>(`users.${props.user_id}`, '.room.state.changed', applyRoomEvent, [], 'private');
+
+function applyRoomEvent(event: RoomSyncEnvelope): void {
+    eventCursors[event.stream] = Math.max(eventCursors[event.stream], event.sequence);
+    if (receivedEvents.has(event.eventId)) return;
+    receivedEvents.add(event.eventId);
+    if (
+        ['map.updated', 'map.layer.updated', 'map.object.created', 'map.object.updated', 'map.object.removed'].includes(event.type)
+        && Number(event.payload.map_id) === props.map.id
+    ) {
+        router.reload({ only: ['map', 'layers', 'assets'] });
+    }
+}
+
+function applyObjectPreview(preview: ObjectPreview): void {
+    if (
+        preview.mapId !== props.map.id
+        || preview.userId === props.user_id
+        || !allObjects.value.some((object) => object.id === preview.objectId)
+    ) {
+        return;
+    }
+
+    remotePreviews[preview.objectId] = { x: preview.x, y: preview.y };
+    window.setTimeout(() => {
+        delete remotePreviews[preview.objectId];
+    }, 1200);
+}
+
+async function recoverRoomEvents(): Promise<void> {
+    try {
+        let hasMore = true;
+        while (hasMore) {
+            const response = await axios.get(`/mesas/${props.room.id}/eventos`, {
+                params: { after: { ...eventCursors } },
+                headers: { Accept: 'application/json' },
+            });
+            const result = response.data as { events: RoomSyncEnvelope[]; cursor: typeof eventCursors; hasMore: boolean };
+            result.events.forEach(applyRoomEvent);
+            eventCursors.room = Math.max(eventCursors.room, result.cursor.room);
+            eventCursors.masters = Math.max(eventCursors.masters, result.cursor.masters);
+            eventCursors.user = Math.max(eventCursors.user, result.cursor.user);
+            hasMore = result.hasMore;
+        }
+    } catch (error) {
+        editorError.value = 'A conexão foi retomada, mas não foi possível recuperar todas as alterações.';
+        console.error('Falha ao recuperar eventos do mapa.', error);
+    }
+}
 
 function loadImage(url: string | null, key: string): void {
     if (!url) {
@@ -309,19 +418,8 @@ function dragBound(object: MapObject, absolutePosition: Point): Point {
 function persistPosition(object: MapObject, node: Konva.Node): void {
     const position = boundWorldPosition(object, { x: node.x(), y: node.y() });
     node.position(position);
-    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}`, {
-        x: position.x,
-        y: position.y,
-    }, {
-        preserveScroll: true,
-        preserveState: true,
-        onError: () => {
-            editorError.value = 'Não foi possível salvar a posição. Verifique sua permissão para este token.';
-        },
-        onSuccess: () => {
-            editorError.value = '';
-        },
-    });
+    delete remotePreviews[object.id];
+    void saveObjectUpdate(object, { x: position.x, y: position.y });
 }
 
 function persistTransform(): void {
@@ -332,27 +430,58 @@ function persistTransform(): void {
     const height = Math.max(8, Math.round(node.height() * node.scaleY()));
     const rotation = Math.round(node.rotation() * 10) / 10;
     node.scale({ x: 1, y: 1 });
-    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}`, {
+    void saveObjectUpdate(object, {
         x: node.x(),
         y: node.y(),
         width,
         height,
         rotation,
-    }, {
-        preserveScroll: true,
-        preserveState: true,
-        onError: () => {
-            editorError.value = 'Não foi possível salvar a transformação do token.';
-        },
-        onSuccess: () => {
-            editorError.value = '';
-        },
+    });
+}
+
+async function saveObjectUpdate(object: MapObject, values: Record<string, string | number | boolean | null>): Promise<void> {
+    try {
+        const response = await axios.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}`, {
+            ...values,
+            expected_revision: object.revision,
+            idempotency_key: crypto.randomUUID(),
+        }, { headers: { Accept: 'application/json' } });
+        object.revision = response.data.revision;
+        if (typeof values.x === 'number') object.x = values.x;
+        if (typeof values.y === 'number') object.y = values.y;
+        if (typeof values.width === 'number') object.width = values.width;
+        if (typeof values.height === 'number') object.height = values.height;
+        if (typeof values.rotation === 'number') object.rotation = values.rotation;
+        editorError.value = '';
+    } catch (error) {
+        editorError.value = 'Não foi possível salvar a posição. O objeto foi alterado ou sua permissão mudou.';
+        console.error('Falha ao salvar alterações no token.', error);
+        router.reload({ only: ['layers'] });
+    }
+}
+
+function sendObjectPreview(object: MapObject, node: Konva.Node): void {
+    const now = Date.now();
+    const previous = previewSentAt.get(object.id) ?? 0;
+    if (now - previous < 600) return;
+    previewSentAt.set(object.id, now);
+    const position = boundWorldPosition(object, { x: node.x(), y: node.y() });
+    void axios.post(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}/preview`, {
+        x: position.x,
+        y: position.y,
+        revision: object.revision,
+    }, { headers: { Accept: 'application/json' } }).catch((error: unknown) => {
+        console.error('Falha ao enviar a prévia do movimento.', error);
     });
 }
 
 function patchMap(values: Partial<MapData>): void {
     if (!props.can_manage) return;
-    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}`, values, {
+    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}`, {
+        ...values,
+        expected_revision: props.map.revision,
+        idempotency_key: crypto.randomUUID(),
+    }, {
         preserveScroll: true,
         preserveState: true,
         onError: () => {
@@ -366,7 +495,11 @@ function patchMap(values: Partial<MapData>): void {
 
 function updateLayer(layer: MapLayer, values: Partial<Pick<MapLayer, 'visible' | 'locked' | 'sort_order'>>): void {
     if (!props.can_manage) return;
-    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/camadas/${layer.id}`, values, {
+    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/camadas/${layer.id}`, {
+        ...values,
+        expected_revision: layer.revision,
+        idempotency_key: crypto.randomUUID(),
+    }, {
         preserveScroll: true,
         preserveState: true,
     });
@@ -392,20 +525,26 @@ function addToken(asset: MapAsset): void {
         layer_id: layer.id,
         x,
         y,
+        idempotency_key: crypto.randomUUID(),
     }, { preserveScroll: true, preserveState: true });
 }
 
+async function removeSelectedObject(object: MapObject): Promise<void> {
+    try {
+        await axios.delete(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}`, {
+            data: { idempotency_key: crypto.randomUUID() },
+            headers: { Accept: 'application/json' },
+        });
+        selectedObjectId.value = null;
+        selectedNode.value = null;
+    } catch (error) {
+        editorError.value = 'Não foi possível remover o objeto.';
+        console.error('Falha ao remover objeto do mapa.', error);
+    }
+}
+
 function updateObject(object: MapObject, values: Record<string, string | number | boolean | null>): void {
-    router.patch(`/mesas/${props.room.id}/mapas/${props.map.id}/objetos/${object.id}`, values, {
-        preserveScroll: true,
-        preserveState: true,
-        onError: () => {
-            editorError.value = 'Não foi possível atualizar este token.';
-        },
-        onSuccess: () => {
-            editorError.value = '';
-        },
-    });
+    void saveObjectUpdate(object, values);
 }
 
 function changeAssignment(object: MapObject, event: Event): void {
@@ -558,8 +697,8 @@ watch(() => props.map.id, async () => {
                                         v-for="object in drawableObjects"
                                         :key="object.id"
                                         :config="{
-                                            x: object.x,
-                                            y: object.y,
+                                            x: remotePreviews[object.id]?.x ?? object.x,
+                                            y: remotePreviews[object.id]?.y ?? object.y,
                                             width: object.width,
                                             height: object.height,
                                             rotation: object.rotation,
@@ -572,6 +711,7 @@ watch(() => props.map.id, async () => {
                                         @click="selectObject(object, $event)"
                                         @tap="selectObject(object, $event)"
                                         @dragstart="selectObject(object, $event)"
+                                        @dragmove="sendObjectPreview(object, $event.target)"
                                         @dragend="persistPosition(object, $event.target)"
                                     />
                                 </v-group>
@@ -764,7 +904,7 @@ watch(() => props.map.id, async () => {
                             <div class="map-object-actions">
                                 <button type="button" @click="updateObject(selectedObject, { z_index: selectedObject.z_index + 1 })"><Plus :size="12" /> Trazer à frente</button>
                                 <button type="button" @click="updateObject(selectedObject, { z_index: selectedObject.z_index - 1 })"><Minus :size="12" /> Enviar atrás</button>
-                                <button class="danger-text" type="button" @click="router.delete(`/mesas/${room.id}/mapas/${map.id}/objetos/${selectedObject.id}`, { preserveScroll: true, preserveState: true })"><Trash2 :size="12" /> Remover</button>
+                                <button class="danger-text" type="button" @click="removeSelectedObject(selectedObject)"><Trash2 :size="12" /> Remover</button>
                             </div>
                         </template>
                         <p v-else class="map-inspector-hint">

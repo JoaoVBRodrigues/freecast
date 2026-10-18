@@ -1,12 +1,25 @@
 import { expect, test, type Page } from '@playwright/test';
+import { waitForLoginResponse } from './csrf-diagnostics';
 
 const demoPassword = 'Mesa2026!';
+
+function passwordFor(email: string): string {
+    if (email === 'mestre@freecast.test') return process.env.FREECAST_MASTER_PASSWORD ?? demoPassword;
+    if (email === 'jogador@freecast.test') return process.env.FREECAST_PLAYER_PASSWORD ?? demoPassword;
+    if (email === 'convidada@freecast.test') return process.env.FREECAST_GUEST_PASSWORD ?? demoPassword;
+
+    throw new Error(`No browser-test password is configured for ${email}.`);
+}
 
 async function signIn(page: Page, email: string): Promise<void> {
     await page.goto('/login');
     await page.getByLabel('E-mail').fill(email);
-    await page.getByLabel('Senha', { exact: true }).fill(demoPassword);
-    await page.getByRole('button', { name: 'Entrar', exact: true }).click();
+    await page.getByLabel('Senha', { exact: true }).fill(passwordFor(email));
+    const response = await waitForLoginResponse(page);
+    expect(response.status()).toBe(302);
+    if (process.env.FREECAST_BASE_URL?.startsWith('https://')) {
+        expect(new URL(page.url()).origin).toBe(new URL(process.env.FREECAST_BASE_URL).origin);
+    }
     await expect(page.getByRole('heading', { name: 'Início' })).toBeVisible({ timeout: 15_000 });
 }
 
@@ -17,7 +30,7 @@ test('a registered player can sign in and see the home page', async ({ page }) =
 });
 
 test('a master creates a room, a player joins, and an outsider is denied', async ({ browser, page }) => {
-    test.setTimeout(60_000);
+    test.setTimeout(process.env.FREECAST_PUBLIC_PILOT ? 180_000 : 60_000);
 
     const title = `Mesa de teste ${Date.now()}`;
     await signIn(page, 'mestre@freecast.test');

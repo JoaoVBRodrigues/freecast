@@ -1,6 +1,8 @@
 export interface RoomMapSummary {
     id: number;
     title: string;
+    revision: number;
+    is_active?: boolean;
     width: number;
     height: number;
     background: string | null;
@@ -27,6 +29,7 @@ export interface MapFolder {
 
 export interface MapObject {
     id: number;
+    revision: number;
     layer_id: number;
     asset_id: number;
     name: string;
@@ -46,6 +49,7 @@ export interface MapObject {
 
 export interface MapLayer {
     id: number;
+    revision: number;
     type: 'background' | 'objects' | 'tokens' | 'gm';
     name: string;
     sort_order: number;
