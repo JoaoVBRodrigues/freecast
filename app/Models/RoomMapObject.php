@@ -16,6 +16,7 @@ class RoomMapObject extends Model
         'room_map_layer_id',
         'room_asset_id',
         'assigned_user_id',
+        'character_id',
         'name',
         'x',
         'y',
@@ -38,6 +39,11 @@ class RoomMapObject extends Model
             'locked' => 'boolean',
             'revision' => 'integer',
         ];
+    }
+
+    public function character(): BelongsTo
+    {
+        return $this->belongsTo(RoomCharacter::class, 'character_id');
     }
 
     public function map(): BelongsTo

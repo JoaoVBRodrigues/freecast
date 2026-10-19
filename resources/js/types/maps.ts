@@ -28,6 +28,8 @@ export interface MapFolder {
 }
 
 export interface MapObject {
+    character_id?: number | null;
+    character?: { name: string; hp_current: number; hp_max: number } | null;
     id: number;
     revision: number;
     layer_id: number;

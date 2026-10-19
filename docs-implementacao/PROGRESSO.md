@@ -1,5 +1,44 @@
 # Progresso da implementação
 
+## Parte 4A — personagens, recursos e combate (18/10/2026)
+
+- CRUD de personagens com retrato da biblioteca privada, anotações, atributos textuais, recursos configuráveis e PV. Limites: `0 <= atual <= máximo <= 1.000.000`. Sem fórmulas, scripts ou fichas originais.
+- Proprietário/mestre cria/remove/atribui/publica e escolhe retrato. Jogador atribuído edita nome, notas, atributos, recursos e PV. Outros membros só recebem resumo nome/PV/retrato permitido dos públicos; fichas privadas são omitidas de HTTP/snapshots. Retratos têm endpoint privado com autorização atual; exclusão de imagem referenciada é bloqueada.
+- Tokens vinculados usam nome e barra de PV derivados da ficha autorizada, no canvas e na lista. Revisões da ficha e do token protegem vínculo/desvínculo. Duplicação conserva vínculo sem copiar nome privado para o nome base. Remover ficha desvincula tokens e remove atores do combate.
+- Tracker do mestre: iniciar/encerrar, adicionar/remover personagem com token vinculado opcional, editar iniciativa, ordenar, destacar ator, avançar turno/rodada. Empate usa ordem de inclusão. Componente modular CharacterPanel integrado à conversa e ao mapa.
+- RoomSyncService reutilizado: lock da mesa, transação, recibos idempotentes, revisões e outbox. Eventos `characters.changed` são invalidações sem conteúdo/IDs de ficha; snapshot usa autorização atual. Recibos só contêm IDs/revisões. Reconexão recupera eventos e busca estado atual; reatribuição fecha editor sem autorização.
+- Migration aditiva `2026_10_18_000000_create_characters_and_combat` aplicada. `.env`, APP_KEY e arquivos privados existentes não foram editados. Não houve migrate:fresh em desenvolvimento nem exposição pública. Scripts do piloto foram preservados.
+- Backend final: `php artisan test` — **43 testes, 289 assertions**, PostgreSQL **freecast_test**; inclui HTTP/Inertia de tokens, privacidade/downloads, outra mesa, PV/recursos inválidos, reatribuição, replay, conflito, empate/rodada/remoção e lista vazia.
+- `npm run build` oficial (`vue-tsc && vite build`) passou, sem erro de @types/node ou dependências novas. Permanece aviso Vite de bundle principal >500 kB. Assets locais restaurados ao final com `.env` atual.
+- Playwright rooms/maps: **3 testes aprovados**. `characters.spec.ts`: **1 teste aprovado, 58,6s**, mestre + dois jogadores em contexts independentes. Testou formulário completo, atribuição/retrato/vínculo, PV via Reverb, projeção de mapa de dois clientes, conteúdo privado ausente de HTTP/frames, edição negada, combate, reenvio idempotente/409, reload, offline/reconexão e perda de acesso a editor aberto por reatribuição.
+- Tentativa inicial com PHP embutido apresentou resets de assets e foi interrompida. Rodada final usou Apache próprio em **127.0.0.1:8014**, Reverb **127.0.0.1:8084** e worker próprios. Primeira rodada Apache falhou por seletor incorreto de teste `.asset-card`; corrigido para `.asset-library-card`. Somente 4A foi reexecutada após as três regressões passarem.
+- Antes de uploads, PHPUnit usou `storage/app/testing/phpunit-private`, com guarda em Tests/TestCase. Servidor/Playwright verificaram conexão real **freecast_test** e `storage/app/testing/browser-4a-private` por assert-test-environment.php. Nenhum upload desta rodada foi ao storage de desenvolvimento; nenhum arquivo antigo foi apagado em massa. Captura anterior realtime-map-three-contexts.png foi restaurada do HEAD após limpeza automática de outputDir; executor agora usa `test-results/parte4a`.
+- Playwright MCP foi usado para navegar, inspecionar e capturar [parte4a-personagens-combate.png](../capturas/parte4a-personagens-combate.png), conferida em **867 × 465**. Mostra recursos sintéticos do fixture, com posição/tamanho do token ajustados somente nele para legibilidade. REA e Context7 não foram utilizados: documentação existente bastou e não houve dúvida de API que exigisse consulta.
+- Processos de teste próprios encerrados; conexão TCP confirmou **8014/8084 fechadas**. Backend final executado depois de encerrar browser/processos, pois compartilha freecast_test com o browser.
+
+### Incidente operacional desta rodada
+
+Uma tentativa inicial de dot-source foi bloqueada pela ExecutionPolicy, mas o shell prosseguiu com `php artisan migrate --force` e `php artisan db:seed --force` no desenvolvimento **freecast**. A migration foi aditiva. O seed **redefiniu as senhas** de `mestre@freecast.test`, `jogador@freecast.test` e `convidada@freecast.test` para `Mesa2026!`, e os nomes para Nara Vale, Theo Arantes e Lia Monte. Também atualizou a mesa sintética A Cripta das Marés (sistema/descrição, pública, senha de mesa nula), associações dos três usuários, favoritos/visita previstos pelo seed e mensagens sintéticas ausentes. Os valores/hashes anteriores não foram guardados nesta rodada e não podem ser restaurados sem backup. Não se afirma que os dados de desenvolvimento ficaram intactos. **Troque as senhas dessas contas antes do piloto; não execute o seed para uso real.**
+
+O executor corrigido usa `powershell.exe -NoProfile -ExecutionPolicy Bypass -File`, `$ErrorActionPreference = 'Stop'` e assert PHP obrigatório de banco/storage antes das ações. Preparações posteriores e todos os uploads/browser usaram ambiente isolado. Arquivos de desenvolvimento foram preservados.
+
+### Abrir e testar manualmente
+
+No modo local normal, aplique `php artisan migrate --force` somente se a migration estiver pendente (já aplicada neste workspace). Inicie aplicação, Reverb e worker pelo fluxo existente. Abra mesa como proprietário/mestre e role Combate até **Personagens → Novo personagem**. Informe máximo antes do PV atual, escolha jogador/retrato e marque publicação somente para compartilhar nome/PV. O jogador atribuído abre a ficha pelo nome. Retratos são enviados pela biblioteca existente; remova a referência antes de excluir imagem usada.
+
+Para vincular: abra mapa, adicione/selecione um token em **Itens no mapa**, role inspector até Personagens e use **Vincular token**. O botão permite desvincular. Atribuição de movimento do token permanece independente da atribuição da ficha. Para combate: selecione personagens/iniciativa, adicione, inicie e avance turnos; a conversa mantém o mesmo tracker sem sair do chat.
+
+Para repetir testes isolados (feche outros testes usando freecast_test), na raiz:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Part4ATests.ps1 -Action Prepare
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/Run-Part4ATests.ps1 -Action Build
+```
+
+Abra três terminais com o mesmo comando, usando `-Action Serve`, `-Action Reverb`, `-Action Worker`. Serve gera config Apache exclusiva em storage/app/testing/apache-4a, requer XAMPP em C:/xampp e caminho curto ASCII. Em outro terminal, execute `-Action Browser` (4A + salas/mapas) ou `-Action Browser4A`. Cada ação verifica banco/storage. Encerre esses terminais por Ctrl+C, confira 8014/8084 fechadas e rode `npm.cmd run build` em terminal normal para restaurar assets locais. Prepare semeia apenas freecast_test; não use essa base para dados reais. Execute `php artisan test` separadamente com browser/servidores encerrados.
+
+Limites: runtime browser usou APP_ENV=testing, que pode dispensar CSRF no Laravel; esta rodada valida autorização/funcionalidade/realtime, **não certifica CSRF em produção**. Realtime legado completo/public pilot não foi repetido; não houve teste com três dispositivos físicos. Régua/desenho/névoa/dd2vtt (4B) não foram iniciados. Retomada: backup/troca das senhas demonstrativas e piloto manual autorizado, depois planejar 4B.
+
 ## Parte 1/4 — base jogável
 
 - [x] Scaffold Laravel 12 com Vue 3, Inertia, TypeScript e autenticação por sessão.

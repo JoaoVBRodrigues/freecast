@@ -1,0 +1,134 @@
+openapi: 3.1.0
+info:
+  title: Freecast — personagens e combate
+  version: 1.0.0
+  description: >-
+    Sessão Laravel, XSRF-TOKEN/X-XSRF-TOKEN nas mutações em runtime normal.
+    Comandos serializados pelo lock da mesa, transação PostgreSQL, recibo por
+    usuário/operação/chave e outbox após commit. Limite 120 comandos/minuto.
+    Timeout/retry de rede é responsabilidade do chamador: reenvio deve manter
+    a mesma chave e conteúdo; nunca repetir próximo turno com uma nova chave
+    após resultado desconhecido. 409 exige snapshot e revisão atual.
+paths:
+  /mesas/{room}/personagens:
+    parameters:
+      - $ref: '#/components/parameters/room'
+    get:
+      operationId: characterSnapshot
+      responses:
+        '200':
+          description: >-
+            characters e combat atuais. Mestre/atribuído recebem ficha completa;
+            outros membros recebem só id/nome/PV/revisão/can_edit/retrato permitido
+            dos personagens públicos. Privados são omitidos. Token_id do combate
+            omitido (null) para jogadores. Cache-Control private, no-store.
+        '403': { description: Sem associação à mesa }
+  /mesas/{room}/personagens/comandos:
+    parameters:
+      - $ref: '#/components/parameters/room'
+    post:
+      operationId: characterCommand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/Command'
+                - type: object
+                  required: [action]
+                  properties:
+                    action: { enum: [create, update, delete, link] }
+                    character_id: { type: integer }
+                    name: { type: string, minLength: 1, maxLength: 100 }
+                    notes: { type: string, maxLength: 20000 }
+                    hp_current: { type: integer, minimum: 0, maximum: 1000000 }
+                    hp_max: { type: integer, minimum: 0, maximum: 1000000 }
+                    assigned_user_id: { type: [integer, 'null'] }
+                    portrait_asset_id: { type: [integer, 'null'] }
+                    is_public: { type: boolean }
+                    token_id: { type: integer }
+                    token_revision: { type: integer, minimum: 1 }
+                    unlink: { type: boolean }
+                    attributes:
+                      type: array
+                      maxItems: 40
+                      items:
+                        type: object
+                        additionalProperties: false
+                        required: [name, value]
+                        properties:
+                          name: { type: string, maxLength: 60 }
+                          value: { type: string, maxLength: 200 }
+                    resources:
+                      type: array
+                      maxItems: 20
+                      items:
+                        type: object
+                        additionalProperties: false
+                        required: [name, current, max]
+                        properties:
+                          name: { type: string, maxLength: 60 }
+                          current: { type: integer, minimum: 0, maximum: 1000000 }
+                          max: { type: integer, minimum: 0, maximum: 1000000 }
+      responses:
+        '200': { description: characterId/revision/commandId/replayed; sem dados privados no recibo }
+        '403': { description: Operação não autorizada }
+        '404': { description: Personagem/token não pertence à mesa }
+        '409': { description: Revisão divergente ou chave usada com conteúdo diferente }
+        '422': { description: Dados inválidos; PV/recurso atual deve ser menor ou igual ao máximo }
+        '429': { description: Limite de comandos excedido }
+  /mesas/{room}/combate/comandos:
+    parameters:
+      - $ref: '#/components/parameters/room'
+    post:
+      operationId: combatCommand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/Command'
+                - type: object
+                  required: [action, expected_revision]
+                  properties:
+                    action: { enum: [start, end, add, remove, initiative, next] }
+                    character_id: { type: integer }
+                    token_id: { type: [integer, 'null'] }
+                    participant_id: { type: string, format: uuid }
+                    initiative: { type: integer, minimum: -1000000, maximum: 1000000 }
+      responses:
+        '200': { description: revision/commandId/replayed; outbox characters.changed sem conteúdo privado }
+        '403': { description: Somente proprietário/mestre }
+        '404': { description: Participante inexistente }
+        '409': { description: Revisão divergente ou chave com conteúdo diferente }
+        '422': { description: Comando inválido ou próximo turno sem combate/participantes }
+        '429': { description: Limite de comandos excedido }
+  /mesas/{room}/personagens/{character}/retrato:
+    parameters:
+      - $ref: '#/components/parameters/room'
+      - name: character
+        in: path
+        required: true
+        schema: { type: integer }
+    get:
+      operationId: characterPortrait
+      responses:
+        '200': { description: Bytes privados sem cache; ACL atual da ficha e do retrato }
+        '403': { description: Retrato exclusivo do mestre sem autorização de ficha }
+        '404': { description: Ficha/retrato ausente ou invisível }
+components:
+  parameters:
+    room:
+      name: room
+      in: path
+      required: true
+      schema: { type: integer }
+  schemas:
+    Command:
+      type: object
+      required: [idempotency_key]
+      properties:
+        idempotency_key: { type: string, minLength: 16, maxLength: 128 }
+        expected_revision: { type: integer, minimum: 1 }

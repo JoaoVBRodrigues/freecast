@@ -1,5 +1,20 @@
 # Decisões de implementação
 
+## Parte 4A — regras independentes e limites
+
+As evidências originais em docs-firecast/03 e 06 confirmam superfícies de fichas/barras e guard de mestre no script de ativação de ator, sem comprovar ACL de servidor, PV, empates ou persistência. As regras abaixo são **decisões próprias do Freecast**, sem alegação de equivalência. Não houve nova engenharia reversa.
+
+- Uma ficha pertence à mesa. Mestre/proprietário administra; atribuído edita nome/notas/atributos/recursos/PV. Atribuição, retrato, publicação, criação/remoção/vínculo são do mestre. Sem publicação por padrão. Outros membros veem apenas nome/PV/revisão/can_edit/retrato autorizado dos públicos, sem notas, atributos, recursos nem atribuição. Privados não aparecem.
+- PV e recursos são inteiros entre zero e um milhão, atual não supera máximo; máximo zero só admite atual zero. Atributos são pares nome/valor textuais, até 40; recursos nome/atual/máximo até 20. Nenhuma expressão é executada.
+- Retrato é asset da mesma mesa, escolhido pelo mestre. Endpoint dedicado permite mestre/atribuído ler o retrato da ficha, inclusive asset exclusivo do mestre; isso é compartilhamento específico do retrato, não ampliação do endpoint geral da biblioteca. Outros membros só recebem retrato público de ficha pública. Autorização atual é repetida em cada download; no-store. Imagem referenciada tem exclusão bloqueada.
+- Token pode vincular uma ficha, e ficha pode ter múltiplos tokens. Nome/PV autorizados derivam da ficha, sem copiar valores para o token. Quem não vê a ficha recebe nome base do token e nenhum ID/PV da ficha. Movimento continua pela atribuição própria do token. Duplicação conserva vínculo; exclusão de ficha o remove e incrementa revisão de tokens. Combate só devolve token_id a gestores, e apenas se ainda vinculado corretamente na mesma mesa.
+- Um tracker por mesa, participantes únicos por personagem, token vinculado opcional. Iniciativa decrescente; empate por ordem de inclusão persistida. Alterar iniciativa preserva identidade do ativo. Iniciar com atores define rodada 1 e primeiro da ordem; iniciar vazio deixa rodada 0/ativo nulo. Adicionar primeiro ator ao combate vazio ativo inicia rodada 1. Próximo sem combate/atores retorna 422. Encerrar mantém lista e zera rodada/ativo.
+- Próximo percorre ordem e incrementa rodada ao retornar ao primeiro. Remover ativo escolhe próximo sobrevivente na ordem anterior; se houver volta ao início, incrementa rodada. Remover último deixa rodada 0/ativo nulo e combate pode receber novos atores. Excluir ficha usa a mesma remoção. Jogador só recebe participantes de fichas visíveis e ativo nulo quando não visível.
+- Comandos exigem idempotency_key; mutações existentes exigem expected_revision (vínculo exige também token_revision). Lock da mesa serializa, revisão obsoleta retorna 409 e não sobrescreve. Mesmo comando/chave reenvia recibo; chave com dados diferentes retorna 409. Comandos de combate/ficha persistem transação, recibo e outbox. Eventos são invalidações vazias para a mesa, sem segredos históricos a revogar. Snapshot usa autorização atual; cliente descarta respostas antigas fora de ordem e fecha draft quando perde edição. Revisão do draft não avança silenciosamente: conflito pede reabrir antes de salvar.
+- Contrato verificável: [CONTRATO-PARTE-4A.yaml](CONTRATO-PARTE-4A.yaml), endpoints versionados como contrato 1.0.0/schemaVersion de evento 1. Banco/storage e processos de teste têm guardas explícitas; não se mistura PHPUnit simultâneo com browser na mesma freecast_test.
+
+O incidente de seed no desenvolvimento está descrito integralmente em PROGRESSO.md. Não há promessa de compatibilidade com fichas, regras ou scripts originais. 4B fica fora desta entrega.
+
 ## Versões fixadas
 
 As versões diretas foram resolvidas e gravadas nos lockfiles gerados; patches futuros só devem mudar junto com compatibilidade e testes.

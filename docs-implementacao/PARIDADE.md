@@ -1,5 +1,12 @@
 # Paridade visual e funcional — Partes 1 e 2
 
+## Parte 4A — personagens e tracker independentes
+
+- [Captura MCP 867 × 465](../capturas/parte4a-personagens-combate.png) mostra inspector com personagens, barras de PV e tracker, além do nome/PV derivado do token no canvas. Dados, nomes e retrato quadrado são sintéticos; posição/tamanho do token foi ajustado no fixture de teste para a captura.
+- CharacterPanel modular aparece no painel de Combate da conversa e no inspector do mapa; mantém paleta, tipografia, densidade, navegação e acesso ao chat. Formulário de ficha inclui atribuição, retrato, publicação, notas privadas, atributos e recursos; jogador sem edição recebe resumo autorizado.
+- Playwright com mestre e dois jogadores confirmou formulários, vínculo, PV ao vivo, tracker/rodada, privacidade de payloads, conflito, replay, reload/reconexão e fechamento de ficha após perda de autorização. Resultado real e limites do ambiente estão em PROGRESSO.md.
+- A documentação original só comprova superfície visual e guard de mestre no script distribuído. PV, ACL, recursos configuráveis, vínculo, desempate e remoção são decisões próprias. A captura não compara fichas/tracker original nem prova equivalência de controles/comportamento. REA não foi necessário. 4B não foi iniciada.
+
 ## Referências alvo
 
 - Início em viewport 867 × 465: navegação estreita, título sob linha de acento, destaque de mesa e quatro ações saturadas; recentes, favoritas e minhas em cartões.

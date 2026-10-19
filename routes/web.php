@@ -9,6 +9,10 @@ use App\Http\Controllers\RoomRealtimeController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
+    Route::get('/mesas/{room}/personagens', [\App\Http\Controllers\CharacterController::class, 'index'])->name('characters.index');
+    Route::post('/mesas/{room}/personagens/comandos', [\App\Http\Controllers\CharacterController::class, 'command'])->middleware('throttle:120,1')->name('characters.command');
+    Route::get('/mesas/{room}/personagens/{character}/retrato', [\App\Http\Controllers\CharacterController::class, 'portrait'])->name('characters.portrait');
+    Route::post('/mesas/{room}/combate/comandos', [\App\Http\Controllers\CharacterController::class, 'combat'])->middleware('throttle:120,1')->name('combat.command');
     Route::get('/', HomeController::class)->name('dashboard');
     Route::get('/mesas', [RoomController::class, 'index'])->name('rooms.index');
     Route::get('/mesas/nova', [RoomController::class, 'create'])->name('rooms.create');

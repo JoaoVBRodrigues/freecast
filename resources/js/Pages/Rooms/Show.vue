@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CharacterPanel from '@/Components/CharacterPanel.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import { Head, Link, router } from '@inertiajs/vue3';
 import axios from 'axios';
@@ -83,6 +84,7 @@ const props = defineProps<{
 }>();
 
 const panelState = reactive({ ...props.panels });
+const characterVersion = ref(0);
 const showPanelMenu = ref(false);
 const search = ref('');
 const messageList = ref<RoomMessage[]>([...props.messages]);
@@ -157,6 +159,7 @@ function applyEvent(event: RoomSyncEnvelope): void {
     if (receivedEvents.has(event.eventId)) return;
     receivedEvents.add(event.eventId);
     const payload = event.payload;
+    if (event.type === 'characters.changed') characterVersion.value++;
 
     if (event.type === 'message.created') {
         upsertMessage({ ...(payload as unknown as RoomMessage), command_id: event.commandId });
@@ -221,7 +224,7 @@ presence.channel()
 useEcho<RoomSyncEnvelope>(`users.${props.user_id}`, '.room.state.changed', applyEvent, [], 'private');
 
 const stopObservingConnection = echo().connector.onConnectionChange((status) => {
-    if (status === 'connected') void recoverEvents();
+    if (status === 'connected') { characterVersion.value++; void recoverEvents(); }
 });
 onUnmounted(stopObservingConnection);
 
@@ -451,19 +454,7 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
                         </div>
                     </section>
 
-                    <section v-if="panelState.combat" class="room-panel combat-panel">
-                        <header class="room-panel-heading">
-                            <h2><Swords :size="14" /> Combate</h2>
-                            <button class="tiny-icon-button" type="button" aria-label="Opções de combate"><Ellipsis :size="14" /></button>
-                        </header>
-                        <div class="combat-tools">
-                            <button type="button">Teste</button>
-                            <button type="button">Init</button>
-                            <button type="button">A/H</button>
-                        </div>
-                        <div class="combat-empty"><span class="combat-indicator"></span> Aguardando iniciativa</div>
-                        <footer><button type="button">Próx. turno</button><span>Rodada <strong>1</strong></span></footer>
-                    </section>
+                    <section v-if="panelState.combat" class="room-panel combat-panel"><CharacterPanel :room-id="room.id" :can-manage="can_manage" :members="members" :assets="library_assets" :version="characterVersion" /></section>
                 </aside>
 
                 <section class="room-panel chat-panel" aria-label="Conversa da mesa">

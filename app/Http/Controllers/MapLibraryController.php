@@ -123,10 +123,11 @@ class MapLibraryController extends Controller
 
         if (
             RoomMap::query()->where('background_asset_id', $asset->id)->exists()
+            || \App\Models\RoomCharacter::query()->where('portrait_asset_id', $asset->id)->exists()
             || RoomMapObject::query()->where('room_asset_id', $asset->id)->exists()
         ) {
             throw ValidationException::withMessages([
-                'asset' => 'Esta imagem está sendo usada por um mapa. Remova suas referências primeiro.',
+                'asset' => 'Esta imagem está sendo usada por um mapa ou personagem. Remova suas referências primeiro.',
             ]);
         }
 

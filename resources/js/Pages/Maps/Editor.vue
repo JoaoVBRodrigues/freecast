@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CharacterPanel from '@/Components/CharacterPanel.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import type { MapAsset, MapLayer, MapObject } from '@/types/maps';
 import { screenToWorld, snapWorldPointToGrid, worldToScreen, zoomAtPoint, type Camera, type Point } from '@/mapCoordinates';
@@ -52,6 +53,7 @@ const props = defineProps<{
     assignable_members: Array<{ id: number; name: string }>;
 }>();
 
+const characterVersion = ref(0);
 const canvasHost = ref<HTMLElement | null>(null);
 const worldGroup = ref<VueKonvaRef<Konva.Group> | null>(null);
 const transformer = ref<VueKonvaRef<Konva.Transformer> | null>(null);
@@ -204,6 +206,7 @@ function applyRoomEvent(event: RoomSyncEnvelope): void {
     eventCursors[event.stream] = Math.max(eventCursors[event.stream], event.sequence);
     if (receivedEvents.has(event.eventId)) return;
     receivedEvents.add(event.eventId);
+    if (event.type === 'characters.changed') { characterVersion.value++; router.reload({ only: ['layers'] }); }
     if (
         ['map.updated', 'map.layer.updated', 'map.object.created', 'map.object.updated', 'map.object.removed'].includes(event.type)
         && Number(event.payload.map_id) === props.map.id
@@ -714,6 +717,11 @@ watch(() => props.map.id, async () => {
                                         @dragmove="sendObjectPreview(object, $event.target)"
                                         @dragend="persistPosition(object, $event.target)"
                                     />
+                                    <template v-for="object in drawableObjects.filter(item => item.character)" :key="`hp-${object.id}`">
+                                        <v-text :config="{ x: object.x, y: object.y + object.height + 4, text: `${object.character?.name} ${object.character?.hp_current}/${object.character?.hp_max}`, fontSize: 11, fill: '#fff', listening: false }" />
+                                        <v-rect :config="{ x: object.x, y: object.y + object.height, width: object.width, height: 3, fill: '#622', listening: false }" />
+                                        <v-rect :config="{ x: object.x, y: object.y + object.height, width: object.width * ((object.character?.hp_current ?? 0) / (object.character?.hp_max || 1)), height: 3, fill: '#69b66d', listening: false }" />
+                                    </template>
                                 </v-group>
                                 <v-transformer
                                     ref="transformer"
@@ -850,13 +858,14 @@ watch(() => props.map.id, async () => {
                                     :data-testid="`map-object-select-${object.id}`"
                                     @click="selectObjectFromList(object)"
                                 >
-                                    <span>{{ object.name }}</span>
+                                    <span>{{ object.name }}<template v-if="object.character"> · PV {{ object.character.hp_current }}/{{ object.character.hp_max }}</template></span>
                                     <small>{{ Math.round(object.x) }}, {{ Math.round(object.y) }}<template v-if="!object.visible"> · oculto</template></small>
                                 </button>
                             </li>
                         </ul>
                     </section>
 
+                    <section class="map-inspector-section"><CharacterPanel :room-id="room.id" :can-manage="can_manage" :members="assignable_members" :assets="assets" :version="characterVersion" :token="selectedObject" @changed="router.reload({ only: ['layers'] })" /></section>
                     <section v-if="selectedObject" class="map-inspector-section selected-object-panel">
                         <header><h2>Token selecionado</h2></header>
                         <label class="map-setting-field">

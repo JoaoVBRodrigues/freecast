@@ -4,6 +4,7 @@ const baseURL = process.env.FREECAST_BASE_URL ?? 'http://127.0.0.1:8000';
 
 export default defineConfig({
     testDir: './tests/Browser',
+    outputDir: process.env.FREECAST_TEST_OUTPUT_DIR ?? 'test-results',
     fullyParallel: false,
     retries: 0,
     workers: 1,

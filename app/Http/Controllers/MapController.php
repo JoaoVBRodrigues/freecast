@@ -116,6 +116,7 @@ class MapController extends Controller
         $map->load([
             'background.folder',
             'layers.objects.asset.folder',
+            'layers.objects.character',
         ]);
 
         $layers = $map->layers
@@ -286,6 +287,7 @@ class MapController extends Controller
                         'room_asset_id' => $object->room_asset_id,
                         'assigned_user_id' => $object->assigned_user_id,
                         'name' => $object->name,
+                        'character_id' => $object->character_id,
                         'x' => $object->x,
                         'y' => $object->y,
                         'width' => $object->width,
@@ -737,6 +739,7 @@ class MapController extends Controller
             'layer_id' => $object->room_map_layer_id,
             'asset_id' => $object->room_asset_id,
             'name' => $object->name,
+            ...app(\App\Services\RoomCharacterData::class)->token($room, $request->user(), $object),
             'x' => $object->x,
             'y' => $object->y,
             'width' => $object->width,

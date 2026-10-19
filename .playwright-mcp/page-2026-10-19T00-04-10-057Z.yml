@@ -1,0 +1,24 @@
+- generic [ref=e3]:
+  - banner [ref=e4]: Freecast · mesa virtual
+  - main [ref=e5]:
+    - generic [ref=e6]:
+      - generic [ref=e11]:
+        - strong [ref=e12]: Freecast
+        - text: Seu grupo, sua próxima aventura.
+      - heading "Que bom ter você de volta." [level=1] [ref=e13]
+      - paragraph [ref=e14]: Entre na sua conta para continuar a aventura.
+      - generic [ref=e15]:
+        - text: E-mail
+        - textbox "E-mail" [active] [ref=e16]:
+          - /placeholder: voce@exemplo.com
+        - text: Senha
+        - textbox "Senha" [ref=e17]:
+          - /placeholder: Sua senha
+        - generic [ref=e18]:
+          - checkbox "Manter conectado" [ref=e19]
+          - text: Manter conectado
+        - button "Entrar" [ref=e20]
+      - paragraph [ref=e21]:
+        - text: Ainda não tem conta?
+        - link "Criar conta" [ref=e22] [cursor=pointer]:
+          - /url: /register
