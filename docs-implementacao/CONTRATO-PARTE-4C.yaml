@@ -34,6 +34,7 @@ paths:
         '404': {description: Wrong room or author}
         '410': {description: Expired or missing/altered staged image; imported map deleted}
         '419': {description: Invalid or missing CSRF token}
+        '422': {description: Staged PNG/WebP cannot be decoded or decoder unavailable; no new map/asset/receipt}
         '500': {description: Storage/database failure; compensates uncommitted operation files only}
   /mesas/{room}/importacoes/dd2vtt/{preview}:
     delete:
@@ -50,6 +51,9 @@ x-contract:
   max_pixels: 16000000
   cell_size: [8, 256]
   image_bytes: 20971520
+  image_decoder: 'GD PNG/WebP in PHP CLI subprocess; preview and confirmation; fail closed'
+  decoder_timeout_seconds: 15
+  decoder_memory: 256M
   json_bytes: 30408704
   json_depth: 32
   walls: 1000

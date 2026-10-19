@@ -48,8 +48,10 @@ test('a master creates a room, a player joins, and an outsider is denied', async
     await player.goto('/mesas');
     const card = player.locator('.room-card').filter({ hasText: title });
     await expect(card).toBeVisible();
+    const joined = player.waitForResponse(response => response.url().endsWith(`/mesas/${roomId}/entrar`) && response.request().method() === 'POST', { timeout: 30_000 });
     await card.getByRole('button', { name: 'Entrar na mesa' }).click();
-    await expect(player.getByRole('link', { name: `Mesa: ${title}` })).toBeVisible();
+    expect((await joined).status()).toBe(302);
+    await expect(player.getByRole('link', { name: `Mesa: ${title}` })).toBeVisible({ timeout: 15_000 });
     await expect(player.getByText('Jogador', { exact: true })).toBeVisible();
 
     const liveMessage = 'A maré está subindo.';

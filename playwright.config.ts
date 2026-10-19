@@ -1,6 +1,10 @@
 import { defineConfig } from '@playwright/test';
 
-const baseURL = process.env.FREECAST_BASE_URL ?? 'http://127.0.0.1:8000';
+// Never start a default server against the development .env after shell setup fails.
+if (process.env.FREECAST_TEST_RUNTIME !== '1' || process.env.DB_DATABASE !== 'freecast_test' || !process.env.FREECAST_BASE_URL) {
+    throw new Error('Playwright requires the explicit isolated freecast_test environment. Use scripts/Run-Part4ATests.ps1.');
+}
+const baseURL = process.env.FREECAST_BASE_URL;
 
 export default defineConfig({
     testDir: './tests/Browser',
@@ -14,11 +18,5 @@ export default defineConfig({
         viewport: { width: 867, height: 465 },
         trace: process.env.FREECAST_PUBLIC_PILOT ? 'off' : 'retain-on-failure',
         screenshot: 'only-on-failure',
-    },
-    webServer: process.env.FREECAST_BASE_URL ? undefined : {
-        command: 'php artisan serve --host=127.0.0.1 --port=8000',
-        url: 'http://127.0.0.1:8000/login',
-        reuseExistingServer: !process.env.CI,
-        timeout: 30_000,
     },
 });

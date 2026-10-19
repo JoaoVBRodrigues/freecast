@@ -1,5 +1,15 @@
 # Decisões de implementação
 
+## Revisão integrada 4D — estado atual
+
+A validação HTTP comprovou aceitação de PNG com CRC correto e pixels inválidos. Prévia e confirmação agora exigem decode real GD PNG/WebP, inclusive para prévias legadas. O decode usa subprocesso PHP CLI sem bootstrap/banco/escrita, 256 MiB/15s, e recusa falha/timeout/decoder ausente sem fallback. Um WebP inválido provocou fatal nativo no GD; o isolamento contém essa falha. Em Apache, Symfony filtrava PHP_INI_SCAN_DIR herdado; o decoder o transmite explicitamente ao filho. O helper por processo não edita php.ini global. Detalhes em IMPORTACAO-DD2VTT.md.
+
+Foram corrigidos controles decorativos da mesa, substituindo acesso à biblioteca por link real e removendo ações sem comportamento. Permanecem identidade, painéis e funcionalidades anteriores. Campos de chat/macros e opacidade do mapa receberam fundo/contraste consistentes e limites de tamanho/rolagem. O painel de fichas coalesce invalidações e aguarda a projeção mais recente antes de liberar o próximo comando, corrigindo revisão antiga após resposta substituída. O mapa aplica revisão/posição confirmadas também à cópia atual de um token substituído durante o request, sem recriar removidos nem sobrescrever revisão superior. O teste exige vínculo e encerramento HTTP 200 e combate encerrado nas seis páginas. Servidor mantém 409 e recibos idempotentes.
+
+As duas migrations autorizadas 4B/4C foram aplicadas em freecast após backup atual verificado e identificação do destino, sem seed ou mudança de contas/mesas/associações. Falhas após bootstrap PHP têm saída explícita não zero; Playwright exige ambiente isolado e não inicia servidor padrão de desenvolvimento. Guias e limites: [ENTREGA-4D.md](ENTREGA-4D.md).
+
+As seções seguintes preservam decisões e estado histórico de cada rodada. Menções a migrations pendentes, ausência de GD e fases futuras refletem aquele momento e foram superadas pela 4D quando indicado acima.
+
 ## Parte 4B — ferramentas próprias de mapa
 
 Os registros `docs-firecast/03` e `06` identificam régua, desenho e névoa no pacote Scene 3, sem validar as regras completas dessas ferramentas. As regras seguintes são decisões próprias do Freecast; não comprovam paridade com Firecast. Foi aplicado o perfil Frontend Developer e consultado Backend Architect para as necessidades concretas de autorização, persistência e sincronização. Não foi necessário REA nem Context7.

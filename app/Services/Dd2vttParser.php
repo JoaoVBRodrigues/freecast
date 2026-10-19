@@ -46,6 +46,7 @@ class Dd2vttParser
         $mime = (new \finfo(FILEINFO_MIME_TYPE))->buffer($image);
         $this->check($info && in_array($mime, ['image/png', 'image/webp'], true) && $info['mime'] === $mime && $info[0] === $width && $info[1] === $height, 'Imagem deve ser PNG/WebP real com dimensões iguais a map_size × pixels_per_grid.');
         $this->validateContainer($image, $mime);
+        app(ImportImageDecoder::class)->validate($image, $width, $height);
         $data = ['contract' => 1, 'format' => $d['format'], 'origin' => $origin, 'map_size' => $size, 'pixels_per_grid' => $ppg, 'walls' => [], 'portals' => [], 'lights' => []];
         $pointCount = 0;
         foreach (['line_of_sight', 'objects_line_of_sight'] as $field) {

@@ -65,6 +65,8 @@ class Dd2vttImportService
                 $v = $p->validated;
                 $bytes = Storage::disk('local')->get($p->image_path);
                 abort_unless(is_string($bytes) && hash_equals($p->image_hash, hash('sha256', $bytes)), 410, 'Imagem temporária ausente ou alterada.');
+                // Also covers previews created before server-side pixel validation existed.
+                app(ImportImageDecoder::class)->validate($bytes, $v['width'], $v['height']);
                 $path = "rooms/{$room->id}/library/".Str::uuid().($v['mime'] === 'image/png' ? '.png' : '.webp');
                 $written[] = $path;
                 if (! Storage::disk('local')->put($path, $bytes)) {

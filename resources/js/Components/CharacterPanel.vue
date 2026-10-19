@@ -25,16 +25,30 @@ const busy = ref(false);
 const combatCharacter = ref<number | null>(null);
 const initiative = ref(0);
 let generation = 0;
-async function refresh() {
-    const current = ++generation;
-    try {
-        const response = await axios.get(`/mesas/${props.roomId}/personagens`);
-        if (current !== generation) return;
-        characters.value = response.data.characters;
-        combat.value = response.data.combat;
-        // Reassignment revokes an open editor too; never keep an obsolete private draft.
-        if (draft.value?.id && !characters.value.some(c => c.id === draft.value?.id && c.can_edit)) draft.value = null;
-    } catch { error.value = 'Não foi possível atualizar fichas e combate.'; }
+let refreshing: Promise<void> | null = null;
+function refresh(): Promise<void> {
+    generation++;
+    // A command must await the latest invalidation too, before enabling another
+    // command with this panel's revision. Superseded requests cannot release it.
+    refreshing ??= refreshLatest().finally(() => { refreshing = null; });
+    return refreshing;
+}
+async function refreshLatest() {
+    while (true) {
+        const current = generation;
+        try {
+            const response = await axios.get(`/mesas/${props.roomId}/personagens`);
+            if (current !== generation) continue;
+            characters.value = response.data.characters;
+            combat.value = response.data.combat;
+            // Reassignment revokes an open editor too; never keep an obsolete private draft.
+            if (draft.value?.id && !characters.value.some(c => c.id === draft.value?.id && c.can_edit)) draft.value = null;
+        } catch {
+            if (current !== generation) continue;
+            error.value = 'Não foi possível atualizar fichas e combate.';
+        }
+        return;
+    }
 }
 onMounted(refresh);
 watch(() => props.version, refresh);

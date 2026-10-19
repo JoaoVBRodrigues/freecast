@@ -1,4 +1,4 @@
-﻿# Importação dd2vtt — Parte 4C
+# Importação dd2vtt — Parte 4C
 
 Na mesa, abra **Mapas e biblioteca → Importar dd2vtt**, selecione um arquivo local e pressione **Validar e preparar prévia**. Confira imagem, dimensões, grade, contagens e avisos. **Confirmar importação e abrir novo mapa** cria um mapa novo; **Cancelar importação** descarta apenas a prévia. Somente proprietário/mestre pode importar. O autor da prévia precisa conservar essa permissão para confirmar.
 
@@ -33,7 +33,8 @@ Listas opcionais ausentes viram vazias com aviso; listas nulas são recusadas. P
 - Arquivo JSON até **29 MiB**, profundidade 32; imagem decodificada de Base64 até **20 MiB**, com overhead da Base64 incluído no limite do arquivo.
 - Dimensões de mundo/imagem entre **200 e 8000** por eixo, área até **16 milhões de pixels**, grade inteira entre **8 e 256**. Dimensões reais devem coincidir com resolução calculada. A máscara continua em células fixas de 64, até 15.625 células.
 - Até 1.000 paredes no total, 1.000 portais e 1.000 luzes; polilinha de 2 a 256 pontos, portal com exatamente 2 limites, até 20.000 pontos no total. Pontos normalizados precisam estar dentro do mapa. Origem/coordenadas de entrada entre −1.000.000 e +1.000.000; alcance entre 0 e 1.000 células, intensidade entre 0 e 100. Números não finitos e tipos incorretos são recusados.
-- Base64 estrita com decodificação/reencodificação idêntica, MIME real e dimensões por PHP; validação de chunks/CRC/finalização PNG ou comprimento/chunks RIFF/WebP. Isso **não é uma decodificação completa do bitmap**. Não se instalou GD ou outra dependência. A interface exige carregar a imagem antes de habilitar confirmação e bloqueia erro de exibição.
+- Base64 estrita com decodificação/reencodificação idêntica, MIME real e dimensões por PHP; validação de chunks/CRC/finalização PNG ou comprimento/chunks RIFF/WebP. Na 4D, após reproduzir confirmação HTTP de PNG com CRC correto e pixels inválidos, acrescentou-se decodificação real por **GD com suporte PNG/WebP**, tanto na prévia quanto antes da confirmação (inclusive prévias legadas). A exigência de carga da imagem no navegador permanece como feedback, não como garantia do servidor.
+- O decode roda em subprocesso PHP CLI, sem bootstrap da aplicação, banco ou gravação, limitado a **256 MiB e 15 segundos**, além dos limites de bytes/pixels anteriores. Isso contém falhas fatais nativas do GD reproduzidas com WebP corrompido. Saída não zero, timeout, decoder indisponível e avisos de decode recusam a importação com 422, sem fallback para cabeçalhos. Não é antivírus nem garantia de comportamento idêntico em todos os renderizadores.
 - PHP do servidor precisa permitir upload de pelo menos 29 MiB e POST de pelo menos 32 MiB. O Apache **isolado de teste** fixa 29M/32M; a consulta do PHP CLI atual registrou 40M/40M. Nenhum php.ini global foi alterado. Um limite do servidor menor pode recusar o arquivo antes da validação da aplicação.
 
 Prévia expira após **30 minutos**, vinculada ao autor, mesa e imagem verificada por digest; o JSON bruto não é guardado. Título é vinculado à prévia, e nomes repetidos recebem sufixo ao confirmar. O ID da prévia é a chave durável da confirmação: reenvio retorna o mesmo recibo/mapa sem duplicar asset/evento. Selecionar novamente o arquivo gera nova prévia e permite nova importação deliberada. Mapa confirmado removido retorna 410 ao replay; não é recriado silenciosamente.
@@ -42,6 +43,12 @@ Staging e fundo têm caminhos privados aleatórios definidos pelo servidor. Tran
 
 ## Validar localmente sem desenvolvimento
 
+### Dependência de imagem após a correção 4D
+
+No Windows/XAMPP deste workspace a DLL GD já existe, mas o `php.ini` global não a carregava. `Use-FreecastPhp.ps1` verifica o suporte e, se necessário, cria somente `storage/app/runtime/php-gd/freecast-gd.ini`, acrescentando esse diretório a `PHP_INI_SCAN_DIR` no processo. Define também `PHP_PATH` para o CLI usado pelo decoder; o executável do Apache não é usado como CLI. Não altera `.env`, `php.ini` global nem instalações de outros projetos. A extensão deve estar instalada para o PHP escolhido e possuir PNG/WebP; sem ela, o preflight falha e o servidor recusa importações.
+
+Abra um shell de trabalho com `powershell.exe -NoProfile -ExecutionPolicy Bypass`; nele execute `. .\scripts\Use-FreecastPhp.ps1` antes de `php artisan test` ou `composer dev`. O shell e seus filhos herdam a configuração. Os scripts de validação fazem isso automaticamente; o piloto existente também configura e restaura essas variáveis, sem ter sido publicado nesta rodada. Em Linux/outro PHP instale/habilite GD PNG/WebP no CLI e servidor; `php scripts/check-image-runtime.php` deve passar e `proc_open` deve estar disponível. A verificação definitiva inclui importar uma fixture pelo HTTP, pois o processo filho também precisa da extensão.
+
 Não execute seed ou migrations em `freecast` para testar este fluxo. Use os comandos existentes `Run-Part4ATests.ps1 -Action Prepare`, `Build`, `Serve`, `Reverb`, `Worker` e `Browser4C` em ambiente isolado. As guardas PHP confirmam PostgreSQL `freecast_test` e storage exclusivo antes de escrever; staging é subdiretório desse storage. Runtime `validation` conserva CSRF normal. PHPUnit roda separadamente com os serviços browser encerrados.
 
-As migrations 4B e 4C permanecem pendentes no desenvolvimento; aplique-as somente quando decidir atualizar esse ambiente, sem seed. A recuperação das contas/mesa do incidente anterior permanece aguardando sua confirmação conforme [OPERACAO-4A.md](OPERACAO-4A.md). Não houve túnel público nesta rodada.
+As migrations 4B e 4C foram aplicadas no desenvolvimento na revisão 4D, após backup verificável e autorização específica, sem seed. A recuperação das contas/mesa do incidente anterior permanece aguardando sua confirmação conforme [OPERACAO-4A.md](OPERACAO-4A.md). Não houve túnel público nesta rodada.

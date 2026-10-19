@@ -473,12 +473,20 @@ async function saveObjectUpdate(object: MapObject, values: Record<string, string
             expected_revision: object.revision,
             idempotency_key: crypto.randomUUID(),
         }, { headers: { Accept: 'application/json' } });
-        object.revision = response.data.revision;
-        if (typeof values.x === 'number') object.x = values.x;
-        if (typeof values.y === 'number') object.y = values.y;
-        if (typeof values.width === 'number') object.width = values.width;
-        if (typeof values.height === 'number') object.height = values.height;
-        if (typeof values.rotation === 'number') object.rotation = values.rotation;
+        // A projection reload may replace the dragged/selected object while the
+        // request is pending. Apply the acknowledged revision to the live copy
+        // too, without overwriting a newer revision or recreating a removed item.
+        const current = allObjects.value.find(item => item.id === object.id);
+        for (const target of new Set([object, current])) {
+            if (!target || target.revision > response.data.revision) continue;
+            target.revision = response.data.revision;
+            if (typeof values.x === 'number') target.x = values.x;
+            if (typeof values.y === 'number') target.y = values.y;
+            if (typeof values.width === 'number') target.width = values.width;
+            if (typeof values.height === 'number') target.height = values.height;
+            if (typeof values.rotation === 'number') target.rotation = values.rotation;
+            if ('assigned_user_id' in values) target.assigned_user_id = values.assigned_user_id as number | null;
+        }
         editorError.value = '';
     } catch (error) {
         editorError.value = 'Não foi possível salvar a posição. O objeto foi alterado ou sua permissão mudou.';

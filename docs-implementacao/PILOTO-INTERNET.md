@@ -1,5 +1,13 @@
 # Piloto temporario pela internet
 
+## Estado após a revisão 4D
+
+Nenhum túnel foi iniciado na 4D. O procedimento abaixo permanece disponível, condicionado à troca das três senhas e revisão de privacidade/senha/participantes da mesa, ainda sem confirmação do responsável (OPERACAO-4A.md). As migrations 4B/4C já foram aplicadas após backup verificado. A importação agora exige GD PNG/WebP e subprocesso CLI; o script configura essas dependências somente nos processos do Freecast e restaura as variáveis ao terminar.
+
+O modo -UseTestDatabase agora fixa também storage exclusivo e marcador de runtime; a guarda PHP recusa banco efetivo ou storage incorreto. O teste local de recusa não publica túnel. Para uma futura execução Playwright pública, use shell explicitamente isolado com FREECAST_TEST_RUNTIME=1, DB_DATABASE=freecast_test e FREECAST_BASE_URL público: o endereço padrão e a criação automática de servidor foram removidos. Não se certificou de novo o piloto público completo nesta rodada.
+
+Guia local, backup/restauração/atualização sem seed e matriz atual: [ENTREGA-4D.md](ENTREGA-4D.md). Três contexts neste PC não equivalem a três dispositivos físicos.
+
 Este guia descreve o piloto do Freecast com Cloudflare Quick Tunnel em um computador Windows. O link e temporario, muda a cada inicializacao e so funciona enquanto o PC e os processos do piloto estiverem ligados.
 
 ## Exposicao de rede
@@ -44,19 +52,7 @@ Essa opcao nao limpa, semeia nem migra `freecast_test`; prepare os fixtures de t
 
 ## Backup
 
-Salve os backups fora do workspace e proteja-os com criptografia/ACL adequada. No PowerShell aberto na raiz do projeto, substitua `freecast` se o nome de usuario/banco do Compose tiver sido alterado:
-
-```powershell
-$stamp = Get-Date -Format 'yyyyMMdd-HHmmss'
-$backupDir = Join-Path $env:USERPROFILE 'FreecastBackups'
-New-Item -ItemType Directory -Path $backupDir -Force | Out-Null
-$dumpPath = Join-Path $backupDir "freecast-$stamp.dump"
-& $env:ComSpec /d /c "docker compose exec -T postgres pg_dump -Fc -U freecast -d freecast > `"$dumpPath`""
-if ($LASTEXITCODE -ne 0) { throw 'O backup PostgreSQL falhou.' }
-Copy-Item -LiteralPath .\storage\app\private -Destination (Join-Path $backupDir "private-$stamp") -Recurse
-```
-
-O armazenamento privado pode conter mapas, tokens e anexos; nao o coloque em `public` nem o envie junto com o dump. Guarde o dump e a copia de arquivos em local protegido e teste a restauracao antes de depender deles.
+Use o procedimento protegido e verificável de [ENTREGA-4D.md](ENTREGA-4D.md#backup-restauração-e-atualização-sem-seed), antes de expor ou atualizar dados. O backup atual preserva o estado posterior ao incidente, sem recuperar valores anteriores desconhecidos.
 
 ## Encerrar e voltar ao modo local
 
@@ -74,7 +70,7 @@ O modo local volta a usar as configuracoes atuais de `.env`. Se o script avisar 
 
 Estado de processos e logs ficam em `%LOCALAPPDATA%\Freecast\pilot`; nao incluem senhas da aplicacao. Os executaveis x64 de `cloudflared` e Caddy ficam em `tools` sob esse diretorio. O script verifica a assinatura Authenticode do cloudflared e o checksum oficial do arquivo do Caddy ao provisiona-los.
 
-## Validacao
+## Validação histórica da Parte 3
 
 Na rodada final, `php artisan test` passou com 40 testes/199 assertions usando `freecast_test` via PostgreSQL. `rooms.spec.ts` e `maps.spec.ts` passaram com 3 testes; `realtime.spec.ts` passou com 1 teste. Os cenarios rodaram em tres contexts Playwright independentes atraves de um hostname Quick Tunnel temporario, verificando HTTPS/WSS, login sem 419, cookie/CSRF, mesas, upload privado, mapa/tokens e persistencia, chat concorrente, dado idempotente, privacidade, reconexao, recuperacao da fila e revogacao de canais/midia. A captura sintetica do canvas foi salva em `../test-results/realtime-map-three-contexts.png`.
 

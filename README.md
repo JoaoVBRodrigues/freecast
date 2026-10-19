@@ -1,57 +1,67 @@
 # Freecast
 
-Aplicação web independente para jogar RPG com amigos. Esta entrega cobre autenticação, perfis, mesas e a interface inicial de início e mesa.
+Mesa virtual independente para jogar RPG com amigos: mesas, biblioteca privada, mapas, conversa em tempo real, dados/macros simples, personagens/PV, combate, régua, desenhos, névoa manual e importação limitada de `.dd2vtt`.
 
-## Requisitos
+Este workspace usa PostgreSQL `freecast`, em `127.0.0.1:5434`. As migrations 4B/4C foram aplicadas na revisão 4D após backup verificado. Não execute seed para preparar dados reais nem gere outra APP_KEY neste ambiente existente.
 
-- PHP 8.2+ com `pdo_pgsql` e `pgsql` para o banco de destino.
-- Composer 2, Node.js 22 e npm.
-- Docker Desktop para iniciar PostgreSQL 17 pelo Compose.
+## Abrir agora no Windows
 
-## Iniciar no Windows
+Requisitos: PHP 8.2 com PDO PostgreSQL, Composer, Node 22/npm e Docker Desktop/PostgreSQL 17. A importação exige GD PNG/WebP no servidor e CLI, além de `proc_open`. O helper habilita a DLL já instalada somente neste processo, sem editar o `php.ini` global.
 
-1. Inicie Docker Desktop. No PowerShell, confirme `docker version`.
-2. Copie `.env.example` para `.env` e configure `DB_PASSWORD` com uma senha local. O PostgreSQL do projeto publica `127.0.0.1:5434`, evitando conflito com os serviços que já usam as portas 5432 e 5433 neste host; mantenha `DB_PORT=5434` e `POSTGRES_HOST_PORT=5434`.
-3. Habilite `extension=pdo_pgsql` e `extension=pgsql` em `C:\xampp\php\php.ini` (as DLLs já existem em `C:\xampp\php\ext`); abra um terminal novo e confirme `php -m | findstr /I "pdo_pgsql pgsql"`.
-4. Na raiz do projeto:
-
-   ```powershell
-   composer install
-   npm ci
-   php artisan key:generate
-   docker compose up -d postgres
-   php artisan migrate --seed
-   composer dev
-   ```
-
-5. Abra `http://127.0.0.1:8000`. O comando `composer dev` inicia HTTP, Vite, fila do banco e Reverb. Os logs continuam em `storage/logs/laravel.log`; o tail interativo do Pail não é iniciado porque exige `pcntl`, indisponível no PHP do Windows.
-
-Neste host, as portas 5432 e 5433 já pertencem a containers de outros projetos; o Compose usa 5434 para não os interromper. `.env.example` mantém PostgreSQL como padrão. A validação desta entrega usou SQLite porque o PHP atual ainda não carrega `pdo_pgsql`; não a trate como validação PostgreSQL.
-
-## Contas sintéticas do seed
-
-`php artisan migrate --seed` opcionalmente cria três contas de demonstração e uma mesa. As contas são somente locais:
-
-| Papel | E-mail | Senha |
-|---|---|---|
-| Proprietária/mestre | `mestre@freecast.test` | `Mesa2026!` |
-| Jogador | `jogador@freecast.test` | `Mesa2026!` |
-| Jogadora convidada | `convidada@freecast.test` | `Mesa2026!` |
-
-Troque ou remova essas contas antes de expor qualquer ambiente. As senhas não devem ser reutilizadas.
-
-## Verificações
+Na raiz, abra um PowerShell de trabalho:
 
 ```powershell
-php artisan test
-npm run build
-npm run test:e2e
+powershell.exe -NoProfile -ExecutionPolicy Bypass
+. .\scripts\Use-FreecastPhp.ps1
+docker compose up -d postgres
+if ($LASTEXITCODE -ne 0) { throw 'PostgreSQL não iniciou.' }
+npm.cmd run build
+if ($LASTEXITCODE -ne 0) { throw 'Build falhou.' }
+php artisan serve --host=127.0.0.1 --port=8000
 ```
 
-Playwright Test usa Chromium. Se não estiver instalado ainda, execute `npx playwright install chromium`. Os testes de navegador usam o banco configurado pelo ambiente da aplicação e esperam as contas sintéticas do seed.
+Em outros três terminais, abra o mesmo PowerShell de trabalho, na raiz, e execute o helper antes do respectivo comando:
 
-## Continuidade
+```powershell
+# Terminal 2
+. .\scripts\Use-FreecastPhp.ps1
+php artisan reverb:start --host=127.0.0.1 --port=8082
 
-- [Progresso da Parte 1](docs-implementacao/PROGRESSO.md)
-- [Decisões e versões](docs-implementacao/DECISOES.md)
-- [Matriz de paridade](docs-implementacao/PARIDADE.md)
+# Terminal 3
+. .\scripts\Use-FreecastPhp.ps1
+php artisan queue:work --tries=5 --timeout=20 --sleep=1
+
+# Terminal 4
+. .\scripts\Use-FreecastPhp.ps1
+php artisan schedule:work
+```
+
+Abra **http://127.0.0.1:8000**. Este fluxo usa assets compilados e os valores locais existentes do `.env` (Reverb 8082), sem depender de Vite/5173. Encerre com **Ctrl+C nos quatro terminais**. PostgreSQL pode continuar ligado; para pará-lo use `docker compose stop postgres`, que alcança somente esse serviço deste projeto.
+
+Para desenvolvimento com Vite, no shell com o helper use `$env:REVERB_SERVER_HOST='127.0.0.1'` e `composer dev`; o atalho inclui servidor, Vite, fila, Reverb e scheduler e exige 5173 livre. Não execute os dois fluxos simultaneamente.
+
+## Jogar e operar
+
+- [Guia 4D: mestre, jogadores, backup/restauração e matriz de recursos](docs-implementacao/ENTREGA-4D.md).
+- [Importação dd2vtt, fixture própria e dependências](docs-implementacao/IMPORTACAO-DD2VTT.md).
+- [Resultados e histórico](docs-implementacao/PROGRESSO.md), [decisões](docs-implementacao/DECISOES.md) e [evidências visuais](docs-implementacao/PARIDADE.md).
+- [Piloto temporário pela internet](docs-implementacao/PILOTO-INTERNET.md): procedimento existente; nenhum túnel foi publicado na 4D.
+
+Antes de compartilhar com amigos, o responsável ainda deve confirmar a troca das três senhas e revisar privacidade/senha/participantes da mesa do incidente, conforme [OPERACAO-4A.md](docs-implementacao/OPERACAO-4A.md). O backup atual não recupera valores anteriores desconhecidos. Três contexts Playwright neste PC não equivalem a três dispositivos físicos.
+
+Paredes, portais e luzes importados são somente dados armazenados para o mestre: sem iluminação dinâmica, colisão ou portas funcionais. A névoa filtra entidades/projeções, mas não protege pixels do fundo já baixado.
+
+## Verificar sem usar o desenvolvimento
+
+Execute backend com os servidores de teste encerrados:
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass
+. .\scripts\Use-FreecastPhp.ps1
+php artisan test
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/Operational/ScriptSafety.ps1
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File tests/Operational/TestActionSafety.ps1
+npm.cmd run build
+```
+
+Para navegador use exclusivamente o [executor isolado](docs-implementacao/ENTREGA-4D.md#repetir-os-testes), que verifica `freecast_test` e storage exclusivo no mesmo PHP das ações. Playwright recusa ausência do ambiente explícito; não o aponte para `freecast`. Preserve `.env`, APP_KEY e arquivos privados. `composer install`/`npm ci` instalam dependências; não execute `composer setup` ou seed sobre este ambiente existente.

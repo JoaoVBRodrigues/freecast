@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][ValidateSet('Prepare', 'Build', 'Serve', 'Reverb', 'Worker', 'Browser', 'Browser4A', 'Browser4B', 'Browser4C', 'CrossMap4B', 'Regression4B', 'Realtime')][string]$Action)
+param([Parameter(Mandatory=$true)][ValidateSet('Prepare', 'Build', 'Serve', 'Reverb', 'Worker', 'Browser', 'Browser4A', 'Browser4B', 'Browser4C', 'Browser4D', 'Visual4D', 'Regression4D', 'CrossMap4B', 'Regression4B', 'Realtime')][string]$Action)
 $ErrorActionPreference = 'Stop'
 . (Join-Path $PSScriptRoot 'Use-Part4ATestEnvironment.ps1')
 Set-Location $part4Root
@@ -15,6 +15,9 @@ switch ($Action) {
     'Worker' { php artisan queue:work --tries=5 --timeout=20 --sleep=1 }
     'Browser' { npx.cmd playwright test tests/Browser/characters.spec.ts tests/Browser/rooms.spec.ts tests/Browser/maps.spec.ts }
     'Browser4C' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4c'; npx.cmd playwright test tests/Browser/dd2vtt.spec.ts }
+    'Browser4D' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4d'; npx.cmd playwright test tests/Browser/integrated.spec.ts }
+    'Visual4D' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4d-references'; npx.cmd playwright test tests/Browser/visual-references.spec.ts }
+    'Regression4D' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4d-regression'; npx.cmd playwright test tests/Browser/rooms.spec.ts tests/Browser/maps.spec.ts tests/Browser/dd2vtt.spec.ts }
     'Browser4B' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4b'; npx.cmd playwright test tests/Browser/map-tools.spec.ts }
     'Regression4B' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4b-regression'; npx.cmd playwright test tests/Browser/characters.spec.ts tests/Browser/maps.spec.ts }
     'CrossMap4B' { $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4b-cross-map'; npx.cmd playwright test tests/Browser/map-tools.spec.ts --grep cross-map }

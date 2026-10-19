@@ -72,6 +72,7 @@ function Add-PilotProcess {
         -WorkingDirectory $WorkingDirectory `
         -RedirectStandardOutput $StdoutPath `
         -RedirectStandardError $StderrPath `
+        -WindowStyle Hidden `
         -PassThru
 
     Start-Sleep -Milliseconds 700
@@ -344,6 +345,10 @@ $manifest = [ordered]@{
 Save-PilotState
 
 try {
+    # Preserve and restore the process-only GD configuration, including on failure.
+    Set-PilotEnvironment -Name 'PHP_INI_SCAN_DIR' -Value ([string]$env:PHP_INI_SCAN_DIR)
+    Set-PilotEnvironment -Name 'PHP_PATH' -Value ([string]$env:PHP_PATH)
+    . (Join-Path $PSScriptRoot 'Use-FreecastPhp.ps1') -PhpExecutable $phpPath
     $tools = Get-VerifiedTools
 
     & docker compose up -d postgres
@@ -458,6 +463,8 @@ try {
 
     if ($UseTestDatabase) {
         Set-PilotEnvironment -Name 'DB_DATABASE' -Value 'freecast_test'
+        Set-PilotEnvironment -Name 'FREECAST_TEST_RUNTIME' -Value '1'
+        Set-PilotEnvironment -Name 'FREECAST_PRIVATE_ROOT' -Value (Join-Path $projectRoot 'storage/app/testing/browser-4a-private')
     } else {
         Set-PilotEnvironment -Name 'DB_DATABASE' -Value (Get-DotEnvValue -Name 'DB_DATABASE')
     }

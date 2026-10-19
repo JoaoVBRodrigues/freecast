@@ -40,3 +40,4 @@ $env:VITE_REVERB_SCHEME = 'http'
 $env:FREECAST_BASE_URL = $env:APP_URL
 $env:FREECAST_TEST_OUTPUT_DIR = 'test-results/parte4a'
 if ($env:DB_HOST -ne '127.0.0.1' -or $env:DB_PORT -ne '5434' -or -not $env:DB_USERNAME -or -not $env:DB_PASSWORD) { throw 'Explicit loopback PostgreSQL credentials required.' }
+. (Join-Path $PSScriptRoot 'Use-FreecastPhp.ps1')

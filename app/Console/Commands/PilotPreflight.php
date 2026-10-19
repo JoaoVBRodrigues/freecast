@@ -79,6 +79,16 @@ class PilotPreflight extends Command
             }
         }
 
+        if ($isTestDatabase) {
+            try {
+                \App\Support\TestEnvironmentGuard::assert();
+            } catch (\RuntimeException) {
+                $this->error('Test pilot requires effective PostgreSQL freecast_test and exclusive test storage.');
+
+                return self::FAILURE;
+            }
+        }
+
         try {
             DB::connection($sessionConnection)->getPdo();
             DB::connection($queueConnection)->getPdo();

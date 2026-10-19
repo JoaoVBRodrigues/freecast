@@ -1,5 +1,7 @@
 # Correção operacional da Parte 4A — 18/10/2026
 
+Registro histórico da rodada 4A. Continuidade atual e novo backup/migrations 4D: [ENTREGA-4D.md](ENTREGA-4D.md). A recuperação manual abaixo permanece pendente; não houve confirmação do responsável.
+
 Esta rodada preserva a implementação 4A e não inicia 4B. Não houve túnel, alteração de firewall, seed em `freecast`, restauração do desenvolvimento nem mudança de `.env`/APP_KEY.
 
 ## Estado preservado e limites de recuperação

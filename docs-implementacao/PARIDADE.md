@@ -1,5 +1,29 @@
 # Paridade visual e funcional
 
+## Parte 4D — inspeção integrada e acabamento
+
+Capturas Playwright finais próprias, inspecionadas com conteúdo sintético:
+
+| Tela | 867 × 465 | 1440 × 900 |
+|---|---|---|
+| Início | [compacto](../capturas/parte4d-inicio-867.png) | [desktop](../capturas/parte4d-inicio-1440.png) |
+| Mesa/conversa | [compacta](../capturas/parte4d-mesa-867.png) | [desktop](../capturas/parte4d-mesa-1440.png) |
+| Mapa | [compacto](../capturas/parte4d-mapa-867.png) | [desktop](../capturas/parte4d-mapa-1440.png) |
+
+A leitura dos metadados dos arquivos originais corrigiu uma afirmação anterior: a referência do início tem **864 × 465** e a da mesa **879 × 465**, não 867 × 465. Foram feitas também capturas equivalentes de [início em 864 × 465](../capturas/parte4d-inicio-referencia-864.png) e [mesa em 879 × 465](../capturas/parte4d-mesa-referencia-879.png), comparadas visualmente com `referencias-visuais/1827783f-fd46-4fda-bd14-1cc4679c7dbb.png` e `591b091d-4b35-4424-aedc-aba2c335ec3e.png`.
+
+Mantêm-se navegação estreita, faixa/linha de acento, destaque e quatro ações saturadas no início; abas e três colunas densas na mesa. As diferenças de conteúdo, ícones, ilustrações CSS, tipografia distribuída e proporções não são ocultadas: é composição própria, sem alegação de igualdade por pixel ou equivalência de todos os controles. A moldura nativa e assets proprietários não foram reproduzidos.
+
+A inspeção encontrou campos brancos com texto claro e controles sem ação. Foram corrigidos contraste/dimensões/rolagem dos formulários de chat/macros e campo numérico do mapa, ajustado o cabeçalho de personagens, usado link real para biblioteca e retiradas affordances decorativas. Em 867 × 465 os painéis densos continuam roláveis para alcançar combate e propriedades; não se exige mostrar todos os campos simultaneamente.
+
+A primeira rodada integrada tinha assert de encerramento insuficiente: a captura desktop revelou combate ainda em andamento. A corrida de refresh/revisão do painel foi corrigida e a rodada final exige HTTP 200 ao encerrar, estado `active=false`, rodada zero e UI encerrada nas seis páginas dos três contexts. Outra corrida aplicava o recibo de token a uma cópia já substituída; agora a cópia atual recebe a revisão confirmada sem sobrescrever revisão mais nova. Vínculo também exige HTTP 200 no teste.
+
+Mapa, régua/desenhos/névoa, personagens e importador são avaliados por consistência, legibilidade e uso funcional. Não existe referência original validada dessas áreas; não se declara paridade comprovada com Firecast. Resultados e limites de rede estão em [PROGRESSO.md](PROGRESSO.md).
+
+## Histórico visual das rodadas anteriores
+
+As referências e resultados abaixo preservam a respectiva rodada; a correção das dimensões acima substitui a afirmação antiga de viewport idêntico.
+
 ## Parte 4B — ferramentas de mapa próprias
 
 As capturas Playwright [mestre](../capturas/parte4b-mestre.png) e [jogador coberto](../capturas/parte4b-jogador-coberto.png), em **867 × 465**, mostram dados sintéticos próprios, ferramentas separadas, quatro desenhos, cobertura violeta do mestre e máscara opaca do jogador sem entidades cobertas na lista. Foram acompanhadas de assertions de geometria mundial, régua 3 × 4 = 5, zoom/pan, escala, persistência, sincronização e ausência das projeções não autorizadas no servidor.
@@ -31,7 +55,7 @@ Capturas reais do Playwright MCP foram feitas em 867 × 465 após seed e login:
 - [Início](capturas/inicio.png) comparado com a tela de início em `referencias-visuais/1827783f-fd46-4fda-bd14-1cc4679c7dbb.png`.
 - [Mesa](capturas/mesa.png) comparada com a tela de mesa em `referencias-visuais/591b091d-4b35-4424-aedc-aba2c335ec3e.png`.
 
-A composição mantém navegação lateral estreita, destaque e ações no início, e três colunas de mesa com biblioteca/macros/combate, conversa e participantes. O seed, a paleta e a hierarquia foram conferidos no navegador; a tela da mesa não gerou erros no console após fixar o host local do Reverb. Ilustrações são novas formas CSS; ícones são Lucide; conteúdo do seed é sintético. O viewport usado tem a mesma dimensão das referências selecionadas.
+A composição mantém navegação lateral estreita, destaque e ações no início, e três colunas de mesa com biblioteca/macros/combate, conversa e participantes. O seed, a paleta e a hierarquia foram conferidos no navegador; a tela da mesa não gerou erros no console após fixar o host local do Reverb. Ilustrações são novas formas CSS; ícones são Lucide; conteúdo do seed é sintético. O viewport alvo era 867 × 465; na 4D os metadados originais foram medidos e capturas equivalentes adicionais foram feitas, conforme a correção acima.
 
 Validação visual e funcional concluída: Playwright MCP capturou ambas as telas; os testes browser passaram incluindo mensagem em tempo real entre duas sessões. A paridade é visual/estrutural, não reprodução de conteúdo ou assets proprietários.
 

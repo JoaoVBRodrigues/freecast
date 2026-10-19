@@ -1429,7 +1429,8 @@ textarea:focus-visible {
     scrollbar-width: thin;
 }
 
-.library-tree button {
+.library-tree button,
+.library-tree a {
     display: flex;
     min-height: 25px;
     align-items: center;
@@ -1447,7 +1448,8 @@ textarea:focus-visible {
     cursor: pointer;
 }
 
-.library-tree button:hover {
+.library-tree button:hover,
+.library-tree a:hover {
     background: #343434;
 }
 
@@ -1480,6 +1482,38 @@ textarea:focus-visible {
 .macro-manage:hover {
     background: #414141;
 }
+
+.macros-panel { overflow: auto; }
+.combat-panel > .character-panel { min-height: 0; max-height: 100%; }
+.character-panel header { flex-wrap: wrap; }
+.macro-create-form { display: grid; gap: 4px; padding: 6px; }
+.macro-create-form input,
+.macro-create-form textarea,
+.macro-create-form select,
+.chat-message-options select {
+    width: 100%;
+    min-width: 0;
+    padding: 4px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #292929;
+    color: #dedee0;
+    font-size: 10px;
+    line-height: 1.4;
+    color-scheme: dark;
+}
+.macro-create-form select,
+.chat-message-options select:not([multiple]) { padding-right: 23px; }
+.macro-create-form textarea { resize: vertical; }
+.map-inspector input[type=number] { background-color: #292929; color: #dedee0; color-scheme: dark; }
+.macro-create-form .macro-manage { margin: 0; flex-wrap: wrap; }
+.macro-row-wrap { display: flex; flex-wrap: wrap; min-width: 0; }
+.macro-row-wrap .macro-row { min-width: 0; flex: 1 1 100%; overflow-wrap: anywhere; }
+.macro-row-wrap .tiny-icon-button { flex: 0 0 22px; }
+.chat-message-options { display: flex; flex-wrap: wrap; gap: 4px; padding: 5px; max-height: 110px; overflow: auto; }
+.chat-message-options label { min-width: 0; flex: 1 1 95px; }
+.chat-message-options .chat-asset-select { flex-basis: 100%; }
+.chat-message-options select[multiple] { height: 42px; }
 
 .macro-row {
     display: flex;

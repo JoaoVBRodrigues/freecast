@@ -8,18 +8,14 @@ import {
     Check,
     ChevronDown,
     Dices,
-    Ellipsis,
     LockKeyhole,
     MapPinned,
     MessageSquare,
-    Music,
-    Paperclip,
     PanelRight,
-    Search,
+    Paperclip,
     Send,
     Settings,
     Shield,
-    Swords,
     Users,
     X,
     Trash2,
@@ -86,7 +82,6 @@ const props = defineProps<{
 const panelState = reactive({ ...props.panels });
 const characterVersion = ref(0);
 const showPanelMenu = ref(false);
-const search = ref('');
 const messageList = ref<RoomMessage[]>([...props.messages]);
 const macroList = ref<Macro[]>([...props.macros]);
 const messageBody = ref('');
@@ -402,25 +397,17 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
                     <section v-if="panelState.library" class="room-panel library-panel">
                         <header class="room-panel-heading">
                             <h2><BookOpen :size="14" /> Biblioteca</h2>
-                            <button class="tiny-icon-button" type="button" aria-label="Adicionar item à biblioteca"><span>+</span></button>
+                            <Link class="tiny-icon-button" :href="`/mesas/${room.id}/mapas`" aria-label="Abrir biblioteca de imagens"><span>+</span></Link>
                         </header>
-                        <label class="library-search">
-                            <Search :size="13" />
-                            <input v-model="search" aria-label="Procurar na biblioteca" placeholder="Procurar na biblioteca" />
-                        </label>
                         <div class="library-tree">
-                            <button type="button"><ChevronDown :size="12" /><BookOpen :size="14" /> Regras da mesa</button>
-                            <button type="button" class="tree-child"><BookOpen :size="13" /> Guia do aventureiro</button>
-                            <button type="button"><ChevronDown :size="12" /><BookOpen :size="14" /> Cenário</button>
-                            <button type="button" class="tree-child"><Swords :size="13" /> Encontro na cripta</button>
-                            <button v-if="search" class="tree-hint" type="button">Filtrar: {{ search }}</button>
+                            <Link :href="`/mesas/${room.id}/mapas`"><BookOpen :size="14" /> Mapas e imagens da mesa</Link>
+                            <p class="tree-hint">Envie imagens e organize mapas na biblioteca.</p>
                         </div>
                     </section>
 
                     <section v-if="panelState.macros" class="room-panel macros-panel">
                         <header class="room-panel-heading">
                             <h2><Dices :size="14" /> Macros</h2>
-                            <button class="tiny-icon-button" type="button" aria-label="Gerenciar macros"><Ellipsis :size="14" /></button>
                         </header>
                         <form class="macro-create-form" @submit.prevent="createMacro">
                             <input v-model="macroName" aria-label="Nome da nova macro" maxlength="40" placeholder="Nome" required />
@@ -460,7 +447,6 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
                 <section class="room-panel chat-panel" aria-label="Conversa da mesa">
                     <header class="room-panel-heading chat-heading">
                         <h2><MessageSquare :size="14" /> Conversa</h2>
-                        <button class="tiny-icon-button" type="button" aria-label="Opções da conversa"><Ellipsis :size="15" /></button>
                     </header>
 
                     <div class="chat-history" aria-live="polite">
@@ -536,9 +522,7 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
                                 <button class="italic-tool" type="button" aria-label="Itálico" @click="wrapMessageSelection('*')">I</button>
                                 <button class="underline-tool" type="button" aria-label="Sublinhado" @click="wrapMessageSelection('__')">U</button>
                                 <span class="toolbar-divider"></span>
-                                <button type="button" aria-label="Anexar arquivo"><Paperclip :size="14" /></button>
                                 <button type="button" aria-label="Inserir rolagem" @click="messageType = 'public'; messageBody = messageBody.trim() ? `${messageBody}\n/r 1d20` : '/r 1d20'"><Dices :size="15" /></button>
-                                <button type="button" aria-label="Opções de áudio"><Music :size="14" /></button>
                             </div>
                             <button class="send-message" type="submit" aria-label="Enviar mensagem" :disabled="!messageBody.trim() || (messageType === 'private' && !recipientId)">
                                 <Send :size="14" />
@@ -551,7 +535,6 @@ const timestamp = (value: string) => new Date(value).toLocaleTimeString('pt-BR',
                 <aside v-if="panelState.participants" class="room-panel participants-panel">
                     <header class="room-panel-heading participant-heading">
                         <h2><Users :size="14" /> Participantes <span>{{ members.length }}</span></h2>
-                        <button class="tiny-icon-button" type="button" aria-label="Opções de participantes"><Ellipsis :size="15" /></button>
                     </header>
                     <div class="participant-group-label"><span>Mestre</span><i></i></div>
                     <article v-for="member in members.filter((item) => item.role !== 'player')" :key="member.id" class="participant-card">
