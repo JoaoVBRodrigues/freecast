@@ -9,6 +9,7 @@ use App\Http\Controllers\RoomRealtimeController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
+    Route::post('/mesas/{room}/mapas/{map}/ferramentas', [\App\Http\Controllers\MapToolsController::class, 'command'])->middleware('throttle:120,1')->name('maps.tools.command');
     Route::get('/mesas/{room}/personagens', [\App\Http\Controllers\CharacterController::class, 'index'])->name('characters.index');
     Route::post('/mesas/{room}/personagens/comandos', [\App\Http\Controllers\CharacterController::class, 'command'])->middleware('throttle:120,1')->name('characters.command');
     Route::get('/mesas/{room}/personagens/{character}/retrato', [\App\Http\Controllers\CharacterController::class, 'portrait'])->name('characters.portrait');

@@ -21,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Before HTTP session writes, Artisan migrations, or RefreshDatabase traits.
+        if (app()->environment('testing', 'validation') || getenv('FREECAST_TEST_RUNTIME') === '1') {
+            \App\Support\TestEnvironmentGuard::assert();
+        }
         if (app()->environment('production')) {
             Password::defaults(
                 fn (): Password => Password::min(12)->mixedCase()->numbers()->symbols()

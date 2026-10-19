@@ -15,20 +15,20 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $mestre = User::query()->updateOrCreate(
+        $mestre = User::query()->firstOrCreate(
             ['email' => 'mestre@freecast.test'],
             ['name' => 'Nara Vale', 'password' => Hash::make('Mesa2026!')],
         );
-        $jogador = User::query()->updateOrCreate(
+        $jogador = User::query()->firstOrCreate(
             ['email' => 'jogador@freecast.test'],
             ['name' => 'Theo Arantes', 'password' => Hash::make('Mesa2026!')],
         );
-        $convidada = User::query()->updateOrCreate(
+        $convidada = User::query()->firstOrCreate(
             ['email' => 'convidada@freecast.test'],
             ['name' => 'Lia Monte', 'password' => Hash::make('Mesa2026!')],
         );
 
-        $mesa = Room::query()->updateOrCreate(
+        $mesa = Room::query()->firstOrCreate(
             ['title' => 'A Cripta das Marés', 'owner_id' => $mestre->id],
             [
                 'system' => 'D&D 5ª Edição',
@@ -38,12 +38,17 @@ class DatabaseSeeder extends Seeder
             ],
         );
 
+        // Existing demo rooms and all their relations remain untouched.
+        if (! $mesa->wasRecentlyCreated) {
+            return;
+        }
+
         foreach ([
             [$mestre, RoomMembership::ROLE_OWNER],
             [$jogador, RoomMembership::ROLE_PLAYER],
             [$convidada, RoomMembership::ROLE_PLAYER],
         ] as [$user, $role]) {
-            $mesa->memberships()->updateOrCreate(
+            $mesa->memberships()->firstOrCreate(
                 ['user_id' => $user->id],
                 ['role' => $role],
             );
@@ -57,7 +62,7 @@ class DatabaseSeeder extends Seeder
         );
 
         RoomFavorite::query()->firstOrCreate(['room_id' => $mesa->id, 'user_id' => $jogador->id]);
-        RoomVisit::query()->updateOrCreate(
+        RoomVisit::query()->firstOrCreate(
             ['room_id' => $mesa->id, 'user_id' => $jogador->id],
             ['seen_at' => now()],
         );

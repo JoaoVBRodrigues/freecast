@@ -1,4 +1,14 @@
-# Paridade visual e funcional — Partes 1 e 2
+# Paridade visual e funcional
+
+## Parte 4B — ferramentas de mapa próprias
+
+As capturas Playwright [mestre](../capturas/parte4b-mestre.png) e [jogador coberto](../capturas/parte4b-jogador-coberto.png), em **867 × 465**, mostram dados sintéticos próprios, ferramentas separadas, quatro desenhos, cobertura violeta do mestre e máscara opaca do jogador sem entidades cobertas na lista. Foram acompanhadas de assertions de geometria mundial, régua 3 × 4 = 5, zoom/pan, escala, persistência, sincronização e ausência das projeções não autorizadas no servidor.
+
+A apresentação mantém faixa superior, abas, densidade/paleta/tipografia e conversa acessível. Os controles compactos da régua/desenhos ficam acima do canvas; escala e névoa são expansíveis; a lista de desenhos integra o inspector. As imagens registram a implementação Freecast, **não uma comparação visual ou funcional comprovada com o editor Firecast**, cujas ferramentas não foram validadas integralmente na investigação existente. Régua euclidiana, máscara fixa de 64 unidades, visibilidade por centro dos tokens e caixa inteira de desenhos são decisões novas. Limites e resultados reais estão em [DECISOES.md](DECISOES.md) e [PROGRESSO.md](PROGRESSO.md). Capturas anteriores foram preservadas.
+
+## Validação operacional da 4A — 18/10/2026
+
+A rodada operacional não alterou a interface nem implementou 4B. A captura [4A operacional](../capturas/parte4a-validacao-operacional.png) registra o fixture sintético da validação de personagens/combate com CSRF ativo em loopback; a captura anterior foi preservada. É evidência da implementação própria, sem comparação nova com Firecast. Resultados funcionais, tentativas e limites de recuperação estão em [PROGRESSO.md](PROGRESSO.md) e [OPERACAO-4A.md](OPERACAO-4A.md).
 
 ## Parte 4A — personagens e tracker independentes
 

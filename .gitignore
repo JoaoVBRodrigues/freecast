@@ -22,3 +22,8 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/test-results/parte4a/
+/test-results/parte4b/
+/test-results/parte4b-regression/
+/test-results/parte4b-cross-map/
+/test-results/map-editor-three-tokens.png

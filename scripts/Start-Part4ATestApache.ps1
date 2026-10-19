@@ -2,7 +2,9 @@ $ErrorActionPreference = 'Stop'
 if ($env:DB_DATABASE -ne 'freecast_test') { throw 'Test database is required.' }
 $part4Apache = Join-Path $part4Root 'storage/app/testing/apache-4a'
 New-Item -ItemType Directory -Path $part4Apache -Force | Out-Null
-$part4Short = (& $env:ComSpec /d /c ('for %I in ("' + $part4Root + '") do @echo %~sI') | Select-Object -Last 1).Trim().Replace('\', '/')
+$part4ShortOutput = & $env:ComSpec /d /c ('for %I in ("' + $part4Root + '") do @echo %~sI')
+if ($LASTEXITCODE -ne 0 -or -not $part4ShortOutput) { throw 'Short path resolution failed.' }
+$part4Short = ($part4ShortOutput | Select-Object -Last 1).Trim().Replace('\', '/')
 if ($part4Short -match '[^\x00-\x7F]') { throw 'Apache requires an ASCII short path.' }
 $part4Config = Join-Path $part4Apache 'httpd.conf'
 @"

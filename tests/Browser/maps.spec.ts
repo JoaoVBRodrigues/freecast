@@ -175,7 +175,7 @@ test('a master persists an uploaded map and three tokens; a player can move only
     }
 
     await expect(page.getByLabel('Canvas do mapa. Tokens selecionáveis; segure Espaço para deslocar a câmera e use a roda do mouse para zoom.')).toBeVisible();
-    await page.screenshot({ path: 'test-results/map-editor-three-tokens.png' });
+    await page.screenshot({ path: test.info().outputPath('map-editor-three-tokens.png') });
     const tokenButton = page.locator('.map-object-list button').filter({ hasText: 'Token azul' });
     const tokenObjectId = Number((await tokenButton.getAttribute('data-testid'))?.replace('map-object-select-', ''));
     await tokenButton.click();
@@ -205,9 +205,10 @@ test('a master persists an uploaded map and three tokens; a player can move only
     await expect(player.locator('.layer-control input:not(:disabled)')).toHaveCount(0);
 
     const start = await canvasPoint(player, 32, 32);
+    const scaleBeforeWheel = Number(await player.locator('.map-editor-page').getAttribute('data-camera-scale'));
     await player.mouse.move(start.x, start.y);
     await player.mouse.wheel(0, -300);
-    await expect.poll(async () => Number(await player.locator('.map-editor-page').getAttribute('data-camera-scale'))).toBeGreaterThan(0.5);
+    await expect.poll(async () => Number(await player.locator('.map-editor-page').getAttribute('data-camera-scale'))).toBeCloseTo(scaleBeforeWheel * Math.pow(1.0015, 300), 3);
     const cameraBeforePan = await player.locator('.map-editor-page').evaluate((element) => ({
         x: Number(element.getAttribute('data-camera-x')),
         y: Number(element.getAttribute('data-camera-y')),

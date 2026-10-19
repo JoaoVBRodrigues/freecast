@@ -2724,6 +2724,10 @@ textarea:focus-visible {
     flex-direction: column;
 }
 
+.map-drawing-list { margin: 0; padding: 0; list-style: none; }
+.map-drawing-list button { width: 100%; padding: 7px; margin-bottom: 3px; text-align: left; background: #242424; border-radius: 3px; color: #ddd; font-size: 11px; }
+.map-drawing-list button[aria-pressed="true"] { outline: 1px solid var(--accent); }
+
 .map-canvas-caption {
     min-height: 25px;
     justify-content: space-between;

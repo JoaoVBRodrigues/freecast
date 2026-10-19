@@ -192,13 +192,16 @@ class RoomRealtimeTest extends TestCase
         $this->assertDatabaseHas('room_events', [
             'room_id' => $room->id,
             'audience' => 'masters',
-            'event_type' => 'map.object.updated',
+            'event_type' => 'map.contents.changed',
         ]);
 
         $this->actingAs($player)->getJson(route('rooms.events', $room))
             ->assertOk()
-            ->assertJsonCount(0, 'events')
-            ->assertDontSee((string) $object->id);
+            ->assertJsonCount(1, 'events')
+            ->assertJsonPath('events.0.type', 'characters.changed')
+            ->assertJsonPath('events.0.entityId', null)
+            ->assertJsonPath('events.0.entityRevision', null)
+            ->assertJsonPath('events.0.payload', []);
     }
 
     /**

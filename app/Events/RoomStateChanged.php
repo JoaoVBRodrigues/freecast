@@ -42,6 +42,12 @@ class RoomStateChanged implements ShouldBroadcastNow
      */
     public function broadcastWith(): array
     {
-        return $this->payload;
+        $payload = $this->payload;
+        if (str_starts_with($payload['type'], 'map.object.')) {
+            $payload['type'] = 'map.contents.changed';
+            $payload['entityId'] = null; $payload['entityRevision'] = null;
+            $payload['payload'] = ['map_id' => $payload['payload']['map_id'] ?? null];
+        }
+        return $payload;
     }
 }

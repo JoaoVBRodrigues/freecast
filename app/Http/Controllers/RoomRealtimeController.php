@@ -53,7 +53,13 @@ class RoomRealtimeController extends Controller
             $hasMore = $hasMore || $batch->count() > 200;
             $visible = $batch->take(200);
             foreach ($visible as $event) {
-                $result[] = $event->payload;
+                $envelope = $event->payload;
+                if (str_starts_with($envelope['type'], 'map.object.')) {
+                    $envelope['type'] = 'map.contents.changed';
+                    $envelope['entityId'] = null; $envelope['entityRevision'] = null;
+                    $envelope['payload'] = ['map_id' => $envelope['payload']['map_id'] ?? null];
+                }
+                $result[] = $envelope;
             }
             $next[$cursorKey] = $visible->last()?->sequence ?? $cursor;
         }
@@ -386,6 +392,12 @@ class RoomRealtimeController extends Controller
     {
         Gate::authorize('view', $room);
         abort_unless($map->room_id === $room->id && $object->room_map_id === $map->id, 404);
+        // Serialize authorization with fog changes/revocation, including route-bound stale models.
+        return DB::transaction(function () use ($request, $room, $map, $object) {
+        Room::query()->whereKey($room->id)->lockForUpdate()->firstOrFail();
+        Gate::authorize('view', $room);
+        $map = $map->fresh(); $object = $object->fresh();
+        abort_unless($map && $object, 404);
         $data = $request->validate([
             'x' => ['required', 'numeric', 'between:-100000,100000'],
             'y' => ['required', 'numeric', 'between:-100000,100000'],
@@ -405,12 +417,14 @@ class RoomRealtimeController extends Controller
                     && ! $object->layer->locked
                     && ! $object->layer->is_master_only
                     && ! $object->asset->is_master_only
-                    && ! $object->asset->folder?->is_master_only,
+                    && ! $object->asset->folder?->is_master_only
+                    && app(\App\Services\MapVisibility::class)->object($object, $map)
+                    && app(\App\Services\MapVisibility::class)->object($object, $map, $data),
                 403,
             );
         }
 
-        $audience = $object->layer->is_master_only || $object->asset->is_master_only || $object->asset->folder?->is_master_only
+        $audience = $map->fog_enabled || ! $object->visible || ! $object->layer->visible || $object->layer->is_master_only || $object->asset->is_master_only || $object->asset->folder?->is_master_only
             ? 'masters'
             : 'room';
         event(new RoomObjectPreview($room->id, $audience, [
@@ -424,6 +438,7 @@ class RoomRealtimeController extends Controller
         ]));
 
         return response()->json(['accepted' => true]);
+        });
     }
 
     private function executeMacroRequest(

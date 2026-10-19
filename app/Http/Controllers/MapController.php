@@ -9,6 +9,8 @@ use App\Models\RoomMapLayer;
 use App\Models\RoomMapObject;
 use App\Models\RoomMembership;
 use App\Services\RoomSyncService;
+use App\Services\MapVisibility;
+use App\Models\RoomMapDrawing;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -128,9 +130,7 @@ class MapController extends Controller
                             return true;
                         }
 
-                        return $object->visible
-                            && ! $this->assetIsMasterOnly($object->asset)
-                            && $object->asset->room_id === $room->id;
+                        return app(MapVisibility::class)->object($object);
                     })
                     ->sortBy('z_index')
                     ->values()
@@ -162,6 +162,7 @@ class MapController extends Controller
             : collect();
 
         return Inertia::render('Maps/Editor', [
+            'drawings' => RoomMapDrawing::where('room_map_id', $map->id)->get()->filter(fn ($drawing) => $canManage || app(MapVisibility::class)->drawing($map, $drawing))->map(fn ($drawing) => [...$drawing->only(['id', 'kind', 'points', 'color', 'stroke_width', 'revision']), 'can_delete' => $canManage || $drawing->created_by === $request->user()->id])->values(),
             'room' => $this->roomData($room),
             'map' => [
                 'id' => $map->id,
@@ -170,6 +171,10 @@ class MapController extends Controller
                 'width' => $map->width,
                 'height' => $map->height,
                 'cell_size' => $map->cell_size,
+                'fog_enabled' => $map->fog_enabled,
+                'fog_revealed' => $map->fog_revealed ?? [],
+                'distance_scale' => $map->distance_scale,
+                'distance_unit' => $map->distance_unit,
                 'grid_color' => $map->grid_color,
                 'grid_opacity' => $map->grid_opacity,
                 'grid_enabled' => $map->grid_enabled,
@@ -228,7 +233,10 @@ class MapController extends Controller
                 if ($locked->revision !== $expectedRevision) {
                     throw new ConflictHttpException('O mapa foi alterado por outra pessoa. Atualize e tente novamente.');
                 }
-                $locked->update([...$data, 'revision' => $locked->revision + 1]);
+                // Changing dimensions changes the fixed-cell indexing. Start covered.
+                $resized = (isset($data['width']) && (int) $data['width'] !== $locked->width)
+                    || (isset($data['height']) && (int) $data['height'] !== $locked->height);
+                $locked->update([...$data, ...($resized ? ['fog_revealed' => []] : []), 'revision' => $locked->revision + 1]);
                 $event = app(RoomSyncService::class)->record($room, 'room', 'map.updated', (string) $locked->id, $locked->revision, $commandId, $key, [
                     'map_id' => $locked->id,
                     'revision' => $locked->revision,
@@ -272,6 +280,8 @@ class MapController extends Controller
                 'grid_color' => $map->grid_color,
                 'grid_opacity' => $map->grid_opacity,
                 'grid_enabled' => $map->grid_enabled,
+                'fog_enabled' => $map->fog_enabled, 'fog_revealed' => $map->fog_revealed,
+                'distance_scale' => $map->distance_scale, 'distance_unit' => $map->distance_unit,
             ]);
 
             $layerIds = [];
@@ -300,6 +310,9 @@ class MapController extends Controller
                 }
             }
 
+                    foreach (RoomMapDrawing::where('room_map_id', $map->id)->get() as $drawing) {
+                        $copyDrawing = $drawing->replicate(); $copyDrawing->room_map_id = $copy->id; $copyDrawing->save();
+                    }
                     return $copy;
                 });
                 $event = app(RoomSyncService::class)->record($room, 'room', 'map.created', (string) $copy->id, $copy->revision, $commandId, $data['idempotency_key'], [
@@ -497,7 +510,8 @@ class MapController extends Controller
                     && $object->layer->visible
                     && ! $object->layer->locked
                     && ! $object->layer->is_master_only
-                    && ! $this->assetIsMasterOnly($object->asset),
+                    && ! $this->assetIsMasterOnly($object->asset)
+                    && app(MapVisibility::class)->object($object, $map),
                 403,
             );
             $data = $request->validate([
@@ -557,6 +571,10 @@ class MapController extends Controller
             function (string $commandId) use ($request, $room, $map, $object, $data, $expectedRevision, $key) {
                 $locked = RoomMapObject::query()->whereKey($object->id)->lockForUpdate()->with(['layer', 'asset.folder'])->firstOrFail();
                 $this->assertObjectBelongsToMap($map, $locked);
+                if (! Gate::allows('manage', $room)) {
+                    $currentMap = $map->fresh();
+                    abort_unless($locked->assigned_user_id === $request->user()->id && ! $locked->locked && ! $locked->layer->locked && $locked->layer->type === 'tokens' && app(MapVisibility::class)->object($locked, $currentMap) && app(MapVisibility::class)->object($locked, $currentMap, $data), 403);
+                }
                 if ($locked->revision !== $expectedRevision) {
                     throw new HttpResponseException(response()->json([
                         'message' => 'O token foi alterado por outra pessoa.',
@@ -624,7 +642,7 @@ class MapController extends Controller
             'map-object-delete',
             $key,
             ['object_id' => $object->id],
-            function (string $commandId) use ($room, $map, $object, $wasMasterOnly, $key) {
+            function (string $commandId) use ($room, $map, $object, $wasMasterOnly, $wasPublic, $key) {
                 $revision = $object->revision + 1;
                 $object->delete();
                 $audience = $wasPublic ? 'room' : 'masters';

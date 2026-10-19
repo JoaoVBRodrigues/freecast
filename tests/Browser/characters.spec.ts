@@ -137,6 +137,27 @@ test('4A: sheets, private payloads, linked token, combat and reconnect with thre
         expect((await api(player, snapshotUrl)).body.characters[0]).not.toHaveProperty('notes');
         expect(thirdTraffic.join('\n')).not.toContain('SEGREDO-PRIVADO-4A');
         expect(thirdTraffic.join('\n')).not.toContain('NPC-OCULTO-4A');
-        await master.screenshot({ path: 'capturas/parte4a-personagens-combate.png' });
+        snapshot = (await api(master, snapshotUrl)).body;
+        // Empirical CSRF proof on an authenticated mutating 4A endpoint.
+        const csrfCommand = { action: 'update', character_id: heroId, expected_revision: snapshot.characters[0].revision, hp_current: 8, idempotency_key: crypto.randomUUID() };
+        for (const token of [null, 'invalid-csrf-token']) {
+            const status = await master.evaluate(async ({ url, body, token }) => {
+                const response = await fetch(url, { method: 'POST', headers: {
+                    Accept: 'application/json', 'Content-Type': 'application/json',
+                    ...(token ? { 'X-CSRF-TOKEN': token } : {}),
+                }, body: JSON.stringify(body) });
+                return response.status;
+            }, { url: `/mesas/${roomId}/personagens/comandos`, body: csrfCommand, token });
+            expect(status).toBe(419);
+            expect((await api(master, snapshotUrl)).body).toEqual(snapshot);
+        }
+        expect((await api(master, `/mesas/${roomId}/personagens/comandos`, csrfCommand)).status).toBe(200);
+        snapshot = (await api(master, snapshotUrl)).body;
+        expect(snapshot.characters[0].hp_current).toBe(8);
+        expect((await api(master, `/mesas/${roomId}/personagens/comandos`, {
+            action: 'update', character_id: heroId, expected_revision: snapshot.characters[0].revision, hp_current: 9, idempotency_key: crypto.randomUUID(),
+        })).status).toBe(200);
+        snapshot = (await api(master, snapshotUrl)).body;
+        await master.screenshot({ path: test.info().outputPath('parte4a-personagens-combate.png') });
     } finally { await Promise.all(contexts.map(c => c.close())); }
 });

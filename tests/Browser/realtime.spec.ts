@@ -199,10 +199,10 @@ function trackTraffic(
         });
         if (onSocketClose) socket.on('close', onSocketClose);
     });
-    page.on('response', (response) => {
+    page.on('response', async (response) => {
         const path = new URL(response.url()).pathname;
         if (!path.endsWith('/eventos') && !path.endsWith('/historico') && !path.endsWith('/mensagens')) return;
-        void response.text().then((body) => traffic.push(body));
+        traffic.push(await response.text());
     });
 }
 
@@ -302,7 +302,7 @@ test('three participants synchronize maps, chat, rolls, private messages, and re
             { idempotency_key: `activate-${Date.now()}-map` },
         );
         expect(activateStatus.status, activateStatus.body).toBe(200);
-        await masterMap.screenshot({ path: 'test-results/realtime-map-three-contexts.png' });
+        await masterMap.screenshot({ path: `${process.env.FREECAST_TEST_OUTPUT_DIR ?? 'test-results'}/realtime-map-three-contexts.png` });
 
         const masterChat = await page.context().newPage();
         const firstMap = firstLogin;
@@ -322,7 +322,7 @@ test('three participants synchronize maps, chat, rolls, private messages, and re
         await expect.poll(() => observedWebSocketUrls.some((socketUrl) => {
             const parsed = new URL(socketUrl);
             return parsed.protocol === expectedWebSocketScheme
-                && parsed.host === browserBaseUrl.host
+                && parsed.host === (browserBaseUrl.protocol === 'https:' ? browserBaseUrl.host : `${browserBaseUrl.hostname}:${process.env.VITE_REVERB_PORT ?? browserBaseUrl.port}`)
                 && parsed.pathname.startsWith('/app/');
         }), { timeout: 15_000 }).toBe(true);
         if (browserBaseUrl.protocol === 'https:') {
@@ -419,6 +419,8 @@ test('three participants synchronize maps, chat, rolls, private messages, and re
         await expect(firstChat.locator('.chat-message').filter({ hasText: privateMarker })).toHaveCount(1);
         await expect(masterChat.locator('.chat-message').filter({ hasText: privateMarker })).toHaveCount(1);
         await expect(secondChat.locator('.chat-message').filter({ hasText: privateMarker })).toHaveCount(0);
+        // Finish in-flight body reads before checking privacy and deliberately closing pages.
+        await secondChat.removeAllListeners('response', { behavior: 'wait' });
         await expect.poll(() => secondTraffic.some((payload) => payload.includes(privateMarker))).toBe(false);
 
         await Promise.all([secondMap.close(), secondChat.close()]);
@@ -488,6 +490,7 @@ test('three participants synchronize maps, chat, rolls, private messages, and re
         expect(revokedHistoryStatus).toBe(403);
     } finally {
         if (queueWorker) await stopQueueWorker(queueWorker);
+        await Promise.all(contexts.flatMap(context => context.pages()).map(openPage => openPage.removeAllListeners('response', { behavior: 'wait' })));
         await Promise.all(contexts.map((context) => context.close()));
     }
 });

@@ -10,12 +10,12 @@ class RoomCharacterData
 {
     public function canEdit(Room $room, User $user, RoomCharacter $character): bool
     {
-        return Gate::forUser($user)->allows('manage', $room) || $character->assigned_user_id === $user->id;
+        return Gate::forUser($user)->allows('manage', $room) || ($character->assigned_user_id === $user->id && app(MapVisibility::class)->character($character));
     }
 
     public function visible(Room $room, User $user, RoomCharacter $character): bool
     {
-        return $character->is_public || $this->canEdit($room, $user, $character);
+        return Gate::forUser($user)->allows('manage', $room) || (app(MapVisibility::class)->character($character) && ($character->is_public || $character->assigned_user_id === $user->id));
     }
 
     public function character(Room $room, User $user, RoomCharacter $character): array
@@ -47,8 +47,8 @@ class RoomCharacterData
             ->filter(fn ($character) => $this->visible($room, $user, $character));
         $combat = RoomCombat::query()->where('room_id', $room->id)->first();
         $linkedTokens = RoomMapObject::query()->whereIn('id', array_filter(array_column($combat?->participants ?? [], 'token_id')))
-            ->whereHas('map', fn ($query) => $query->where('room_id', $room->id))->get()->keyBy('id');
-        $participants = collect($combat?->participants ?? [])->filter(fn ($p) => $characters->contains('id', $p['character_id']))
+            ->whereHas('map', fn ($query) => $query->where('room_id', $room->id))->with(['map', 'layer', 'asset.folder'])->get()->keyBy('id');
+        $participants = collect($combat?->participants ?? [])->filter(fn ($p) => $characters->contains('id', $p['character_id']) && (Gate::forUser($user)->allows('manage', $room) || ! $p['token_id'] || ($linkedTokens->has($p['token_id']) && app(MapVisibility::class)->object($linkedTokens->get($p['token_id'])))))
             ->map(fn ($p) => [...$p, 'token_id' => Gate::forUser($user)->allows('manage', $room) && ($linkedTokens->get($p['token_id'])?->character_id === $p['character_id']) ? $p['token_id'] : null, 'name' => $characters->firstWhere('id', $p['character_id'])->name])->values();
 
         return [

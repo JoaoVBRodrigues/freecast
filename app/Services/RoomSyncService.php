@@ -85,6 +85,16 @@ class RoomSyncService
         string $idempotencyKey,
         array $payload,
     ): RoomEvent {
+        // Hidden-map changes can alter global sheet/combat authorization too.
+        // Wake public projections using an empty invalidation, without identifiers.
+        if ($audience === 'masters' && (str_starts_with($type, 'map.object.') || $type === 'map.layer.updated')) {
+            $this->record($room, 'room', 'characters.changed', null, null, $commandId, $idempotencyKey, []);
+        }
+        // Never persist entity IDs/revisions for object invalidations.
+        if (str_starts_with($type, 'map.object.')) {
+            $type = 'map.contents.changed'; $entityId = null; $entityRevision = null;
+            $payload = ['map_id' => $payload['map_id']];
+        }
         $sequence = RoomEventSequence::query()->firstOrCreate(
             ['room_id' => $room->id, 'audience' => $audience],
             ['sequence' => 0],

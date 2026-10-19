@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import MapToolsControls from '@/Components/MapToolsControls.vue';
+import MapToolsOverlay from '@/Components/MapToolsOverlay.vue';
+import { useMapTools, type Drawing, type ToolMap } from '@/composables/useMapTools';
 import CharacterPanel from '@/Components/CharacterPanel.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import type { MapAsset, MapLayer, MapObject } from '@/types/maps';
@@ -9,9 +12,9 @@ import { ArrowDown, ArrowLeft, ArrowUp, Eye, EyeOff, Grid2X2, LockKeyhole, LockK
 import Konva from 'konva';
 import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, shallowReactive, shallowRef, toRaw, watch } from 'vue';
 import type { VueKonvaRef } from 'vue-konva';
-import { useEcho, useEchoPresence } from '@laravel/echo-vue';
+import { echo, useEcho, useEchoPresence } from '@laravel/echo-vue';
 
-interface MapData {
+interface MapData extends ToolMap {
     id: number;
     revision: number;
     title: string;
@@ -48,6 +51,7 @@ const props = defineProps<{
     map: MapData;
     can_manage: boolean;
     user_id: number;
+    drawings: Drawing[];
     layers: MapLayer[];
     assets: MapAsset[];
     assignable_members: Array<{ id: number; name: string }>;
@@ -61,6 +65,9 @@ const viewport = reactive({ width: 720, height: 420 });
 const camera = reactive<Camera>({ x: 0, y: 0, scale: 1 });
 const spaceDown = ref(false);
 const snapping = ref(true);
+const tools = useMapTools(props, camera, snapping, spaceDown);
+const { tool, color: drawingColor, width: drawingWidth, points: toolPoints, selected: selectedDrawing, error: toolError, busy: toolBusy, scale: distanceScale, unit: distanceUnit, measurement } = tools;
+watch(tool, () => { selectedObjectId.value = null; selectedNode.value = null; });
 const selectedObjectId = ref<number | null>(null);
 const selectedNode = shallowRef<Konva.Node | null>(null);
 const loadedImages = shallowReactive<Record<string, HTMLImageElement>>({});
@@ -202,16 +209,32 @@ if (props.can_manage) {
 }
 useEcho<RoomSyncEnvelope>(`users.${props.user_id}`, '.room.state.changed', applyRoomEvent, [], 'private');
 
+const stopObservingConnection = echo().connector.onConnectionChange((status) => {
+    if (status === 'connected') { characterVersion.value++; void recoverRoomEvents(); }
+});
+onBeforeUnmount(stopObservingConnection);
+
 function applyRoomEvent(event: RoomSyncEnvelope): void {
     eventCursors[event.stream] = Math.max(eventCursors[event.stream], event.sequence);
     if (receivedEvents.has(event.eventId)) return;
     receivedEvents.add(event.eventId);
     if (event.type === 'characters.changed') { characterVersion.value++; router.reload({ only: ['layers'] }); }
+    // Sheet visibility is global: a covered representation on another map also
+    // removes its name/PV from tokens and open sheet/combat panels on this map.
+    if (event.type.startsWith('map.') && Number(event.payload.map_id) !== props.map.id) {
+        characterVersion.value++;
+        selectedObjectId.value = null; selectedNode.value = null;
+        Object.keys(remotePreviews).forEach(id => delete remotePreviews[Number(id)]);
+        router.reload({ only: ['layers'] });
+    }
     if (
-        ['map.updated', 'map.layer.updated', 'map.object.created', 'map.object.updated', 'map.object.removed'].includes(event.type)
+        ['map.contents.changed', 'map.updated', 'map.layer.updated', 'map.object.created', 'map.object.updated', 'map.object.removed'].includes(event.type)
         && Number(event.payload.map_id) === props.map.id
     ) {
-        router.reload({ only: ['map', 'layers', 'assets'] });
+        selectedObjectId.value = null; selectedNode.value = null; selectedDrawing.value = null;
+        Object.keys(remotePreviews).forEach(id => delete remotePreviews[Number(id)]);
+        characterVersion.value++;
+        router.reload({ only: ['map', 'layers', 'assets', 'drawings'] });
     }
 }
 
@@ -240,9 +263,9 @@ async function recoverRoomEvents(): Promise<void> {
             });
             const result = response.data as { events: RoomSyncEnvelope[]; cursor: typeof eventCursors; hasMore: boolean };
             result.events.forEach(applyRoomEvent);
-            eventCursors.room = Math.max(eventCursors.room, result.cursor.room);
-            eventCursors.masters = Math.max(eventCursors.masters, result.cursor.masters);
-            eventCursors.user = Math.max(eventCursors.user, result.cursor.user);
+            eventCursors.room = Math.max(eventCursors.room, result.cursor.room ?? 0);
+            eventCursors.masters = Math.max(eventCursors.masters, result.cursor.masters ?? 0);
+            eventCursors.user = Math.max(eventCursors.user, result.cursor.user ?? 0);
             hasMore = result.hasMore;
         }
     } catch (error) {
@@ -568,6 +591,7 @@ function selectedGridPoint(object: MapObject): string {
 }
 
 function onKeyDown(event: KeyboardEvent): void {
+    if (event.code === 'Escape') tools.cancel();
     if (event.code !== 'Space' || event.repeat) return;
     const target = event.target;
     if (target instanceof HTMLElement && target.matches('input, textarea, select, button')) return;
@@ -618,6 +642,9 @@ watch(() => props.map.id, async () => {
             :data-camera-x="camera.x.toFixed(2)"
             :data-camera-y="camera.y.toFixed(2)"
             :data-snap-grid="snapping"
+            :data-map-revision="map.revision"
+            :data-drawing-count="drawings.length"
+            :data-fog-enabled="map.fog_enabled"
         >
             <header class="map-editor-toolbar">
                 <Link class="map-toolbar-link" :href="`/mesas/${room.id}/mapas`" aria-label="Voltar à biblioteca de mapas">
@@ -645,6 +672,7 @@ watch(() => props.map.id, async () => {
 
             <div class="map-editor-workspace">
                 <div class="map-canvas-column">
+                    <MapToolsControls v-model:tool="tool" v-model:color="drawingColor" v-model:width="drawingWidth" v-model:scale="distanceScale" v-model:unit="distanceUnit" :measurement="measurement" :can-manage="can_manage" :fog-enabled="map.fog_enabled" :busy="toolBusy" :selected="selectedDrawing" :can-delete="Boolean(drawings.find(d => d.id === selectedDrawing)?.can_delete)" :error="toolError" @fog="tools.fog" @remove="tools.remove" @cancel="tools.cancel" @scale="tools.command({ action:'scale',distance_scale:distanceScale,distance_unit:distanceUnit })" />
                     <div class="map-canvas-caption">
                         <span><Move :size="12" /> Segure Espaço e arraste para mover a câmera</span>
                         <label><input v-model="snapping" type="checkbox" @change="saveCameraPreferences" /> Encaixe na grade</label>
@@ -662,7 +690,10 @@ watch(() => props.map.id, async () => {
                         <v-stage
                             :config="stageConfig"
                             @wheel="handleWheel"
-                            @mousedown="handleStageMouseDown"
+                            @mousedown="e => { tools.start(e); handleStageMouseDown(e); }"
+                            @mousemove="tools.move"
+                            @mouseup="tools.finish"
+                            @mouseleave="tools.leave"
                             @click="handleCanvasClick"
                             @dragmove="handlePan"
                             @dragend="finishPan"
@@ -706,7 +737,7 @@ watch(() => props.map.id, async () => {
                                             height: object.height,
                                             rotation: object.rotation,
                                             image: loadedImages[`object-${object.id}`],
-                                            draggable: object.can_move && !object.locked,
+                                            draggable: tool === 'select' && object.can_move && !object.locked,
                                             opacity: object.locked ? 0.72 : 1,
                                             name: `map-object-${object.id}`,
                                             dragBoundFunc: (position: Point) => dragBound(object, position),
@@ -722,6 +753,7 @@ watch(() => props.map.id, async () => {
                                         <v-rect :config="{ x: object.x, y: object.y + object.height, width: object.width, height: 3, fill: '#622', listening: false }" />
                                         <v-rect :config="{ x: object.x, y: object.y + object.height, width: object.width * ((object.character?.hp_current ?? 0) / (object.character?.hp_max || 1)), height: 3, fill: '#69b66d', listening: false }" />
                                     </template>
+                                    <MapToolsOverlay :map="map" :drawings="drawings" :tool="tool" :points="toolPoints" :color="drawingColor" :width="drawingWidth" :selected="selectedDrawing" :master="can_manage" :panning="spaceDown" @select="id => { selectedDrawing = id; selectedObjectId = null; selectedNode = null; }" />
                                 </v-group>
                                 <v-transformer
                                     ref="transformer"
@@ -739,6 +771,12 @@ watch(() => props.map.id, async () => {
                 </div>
 
                 <aside class="map-inspector" aria-label="Propriedades do mapa e camadas">
+                    <section class="map-inspector-section">
+                        <header><h2>Desenhos</h2><span>{{ drawings.length }}/500</span></header>
+                        <ul class="map-drawing-list">
+                            <li v-for="d in drawings" :key="d.id"><button type="button" :data-testid="`drawing-select-${d.id}`" :aria-pressed="selectedDrawing === d.id" @click="selectedDrawing = d.id; selectedObjectId = null; selectedNode = null">{{ ({ line:'Linha', rectangle:'Retângulo', ellipse:'Elipse', freehand:'Livre' } as Record<string,string>)[d.kind] }} · {{ d.stroke_width }} px</button></li>
+                        </ul>
+                    </section>
                     <section class="map-inspector-section">
                         <header><h2>Camadas</h2><span>{{ layers.length }}</span></header>
                         <ul class="map-layer-list">

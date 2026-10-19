@@ -159,7 +159,7 @@ function applyEvent(event: RoomSyncEnvelope): void {
     if (receivedEvents.has(event.eventId)) return;
     receivedEvents.add(event.eventId);
     const payload = event.payload;
-    if (event.type === 'characters.changed') characterVersion.value++;
+    if (event.type === 'characters.changed' || event.type.startsWith('map.')) characterVersion.value++;
 
     if (event.type === 'message.created') {
         upsertMessage({ ...(payload as unknown as RoomMessage), command_id: event.commandId });
@@ -194,9 +194,9 @@ async function recoverEvents(): Promise<void> {
             });
             const result = response.data as { events: RoomSyncEnvelope[]; cursor: typeof eventCursors; hasMore: boolean };
             result.events.forEach(applyEvent);
-            eventCursors.room = Math.max(eventCursors.room, result.cursor.room);
-            eventCursors.masters = Math.max(eventCursors.masters, result.cursor.masters);
-            eventCursors.user = Math.max(eventCursors.user, result.cursor.user);
+            eventCursors.room = Math.max(eventCursors.room, result.cursor.room ?? 0);
+            eventCursors.masters = Math.max(eventCursors.masters, result.cursor.masters ?? 0);
+            eventCursors.user = Math.max(eventCursors.user, result.cursor.user ?? 0);
             hasMore = result.hasMore;
         }
     } catch (error) {
