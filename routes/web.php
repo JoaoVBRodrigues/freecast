@@ -33,6 +33,10 @@ Route::middleware('auth')->group(function () {
     Route::post('/mesas/{room}/macros/{macro}/executar', [RoomRealtimeController::class, 'executeMacro'])->whereNumber(['room', 'macro'])->name('rooms.macros.execute');
     Route::post('/mesas/{room}/mapas/{map}/ativar', [RoomRealtimeController::class, 'activateMap'])->whereNumber(['room', 'map'])->name('rooms.maps.activate');
     Route::post('/mesas/{room}/mapas/{map}/objetos/{object}/preview', [RoomRealtimeController::class, 'previewObject'])->middleware('throttle:120,1')->whereNumber(['room', 'map', 'object'])->name('maps.objects.preview');
+    Route::post('/mesas/{room}/importacoes/dd2vtt', [\App\Http\Controllers\MapImportController::class, 'preview'])->middleware('throttle:10,1')->name('maps.import.preview');
+    Route::get('/mesas/{room}/importacoes/dd2vtt/{preview}/imagem', [\App\Http\Controllers\MapImportController::class, 'image'])->whereUuid('preview')->name('maps.import.image');
+    Route::post('/mesas/{room}/importacoes/dd2vtt/{preview}/confirmar', [\App\Http\Controllers\MapImportController::class, 'confirm'])->whereUuid('preview')->name('maps.import.confirm');
+    Route::delete('/mesas/{room}/importacoes/dd2vtt/{preview}', [\App\Http\Controllers\MapImportController::class, 'cancel'])->whereUuid('preview')->name('maps.import.cancel');
     Route::get('/mesas/{room}/mapas', [MapController::class, 'index'])->whereNumber('room')->name('maps.index');
     Route::post('/mesas/{room}/mapas', [MapController::class, 'store'])->whereNumber('room')->name('maps.store');
     Route::get('/mesas/{room}/mapas/{map}', [MapController::class, 'show'])->whereNumber(['room', 'map'])->name('maps.show');

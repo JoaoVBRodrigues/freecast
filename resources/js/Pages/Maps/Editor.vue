@@ -52,6 +52,7 @@ const props = defineProps<{
     can_manage: boolean;
     user_id: number;
     drawings: Drawing[];
+    import_details?: {counts:{walls:number;portals:number;lights:number;points:number};warnings:string[];walls:unknown[];portals:unknown[];lights:unknown[]}|null;
     layers: MapLayer[];
     assets: MapAsset[];
     assignable_members: Array<{ id: number; name: string }>;
@@ -771,6 +772,13 @@ watch(() => props.map.id, async () => {
                 </div>
 
                 <aside class="map-inspector" aria-label="Propriedades do mapa e camadas">
+                    <section v-if="can_manage && import_details" class="map-inspector-section" data-testid="import-details">
+                        <details><summary>Dados importados dd2vtt (somente mestre)</summary>
+                            <p>{{ import_details.counts.walls }} paredes · {{ import_details.counts.portals }} portais · {{ import_details.counts.lights }} luzes</p>
+                            <p v-for="warning in import_details.warnings" :key="warning">{{ warning }}</p>
+                            <details><summary>Inspecionar estrutura normalizada</summary><pre style="white-space:pre-wrap;overflow-wrap:anywhere;max-height:300px;overflow:auto">{{ JSON.stringify({walls:import_details.walls,portals:import_details.portals,lights:import_details.lights},null,2) }}</pre></details>
+                        </details>
+                    </section>
                     <section class="map-inspector-section">
                         <header><h2>Desenhos</h2><span>{{ drawings.length }}/500</span></header>
                         <ul class="map-drawing-list">

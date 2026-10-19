@@ -22,6 +22,9 @@ LoadModule mime_module "C:/xampp/apache/modules/mod_mime.so"
 LoadModule rewrite_module "C:/xampp/apache/modules/mod_rewrite.so"
 LoadModule php_module "C:/xampp/php/php8apache2_4.dll"
 PHPIniDir "C:/xampp/php"
+php_value upload_max_filesize 29M
+php_value post_max_size 32M
+php_value memory_limit 512M
 <FilesMatch "\.php$">
  SetHandler application/x-httpd-php
 </FilesMatch>

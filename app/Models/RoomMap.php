@@ -12,8 +12,10 @@ class RoomMap extends Model
         'revision' => 1,
     ];
 
+    protected $hidden = ['import_data'];
+
     protected $fillable = [
-        'fog_enabled', 'fog_revealed', 'distance_scale', 'distance_unit',
+        'import_data', 'fog_enabled', 'fog_revealed', 'distance_scale', 'distance_unit',
         'room_id',
         'background_asset_id',
         'created_by',
@@ -30,7 +32,7 @@ class RoomMap extends Model
     protected function casts(): array
     {
         return [
-            'fog_enabled' => 'boolean', 'fog_revealed' => 'array', 'distance_scale' => 'float',
+            'import_data' => 'array', 'fog_enabled' => 'boolean', 'fog_revealed' => 'array', 'distance_scale' => 'float',
             'grid_opacity' => 'float',
             'grid_enabled' => 'boolean',
             'revision' => 'integer',

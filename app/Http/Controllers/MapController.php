@@ -162,6 +162,7 @@ class MapController extends Controller
             : collect();
 
         return Inertia::render('Maps/Editor', [
+            'import_details' => $canManage ? $map->import_data : null,
             'drawings' => RoomMapDrawing::where('room_map_id', $map->id)->get()->filter(fn ($drawing) => $canManage || app(MapVisibility::class)->drawing($map, $drawing))->map(fn ($drawing) => [...$drawing->only(['id', 'kind', 'points', 'color', 'stroke_width', 'revision']), 'can_delete' => $canManage || $drawing->created_by === $request->user()->id])->values(),
             'room' => $this->roomData($room),
             'map' => [
@@ -271,6 +272,7 @@ class MapController extends Controller
             }
 
             $copy = $room->maps()->create([
+                'import_data' => $map->import_data,
                 'background_asset_id' => $map->background_asset_id,
                 'created_by' => $request->user()->id,
                 'title' => $title,

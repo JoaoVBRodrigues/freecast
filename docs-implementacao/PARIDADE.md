@@ -64,3 +64,9 @@ Validação visual e funcional concluída: Playwright MCP capturou ambas as tela
 - A rodada final via Quick Tunnel passou nos testes de salas/mapas e realtime em viewport 867 × 465. O navegador confirmou HTTPS/WSS no mesmo hostname, cookie `Secure`/host-only, ausencia de recursos HTTP mistos e os fluxos funcionais descritos em `PROGRESSO.md`.
 - A captura [realtime-map-three-contexts.png](../test-results/realtime-map-three-contexts.png) documenta o canvas proprio com recursos sinteticos. Ela nao e comparacao visual com o Firecast nem comprovacao de paridade com o editor original, que nao foi validado visualmente.
 - Os navegadores eram tres contexts independentes executados neste computador atraves do hostname publico. Isso valida o tunnel e o fluxo de rede externo ao loopback da aplicacao, mas nao substitui o teste com tres computadores/dispositivos fisicos.
+
+## Parte 4C — importação dd2vtt
+
+A prévia e o resumo de dados importados são interface própria do Freecast. As capturas [prévia](../capturas/parte4c-previa.png) e [mapa do mestre](../capturas/parte4c-mestre.png) foram feitas por Playwright Test em **867 × 465**, usando somente a fixture sintética própria. Foram inspecionadas visualmente; a prévia exibe imagem/dimensões/contagens, e o inspector do mapa mostra avisos e acesso à estrutura exclusiva do mestre. O formulário continua abaixo do recorte da primeira imagem.
+
+Não houve comparação visual com o importador original nem nova inspeção REA. O contrato estático original foi consultado, e convenções do formato legado foram confrontadas com fontes primárias. Transformação por origem/PPG, confirmação explícita, staging/expiração, idempotência e névoa inicialmente coberta são regras próprias, conforme [guia](IMPORTACAO-DD2VTT.md). Paredes/portais/luzes não são renderizados como recursos funcionais nem convertidos em desenhos públicos. A névoa manual conserva os limites documentados da 4B.

@@ -1,0 +1,60 @@
+{
+  "format": 0.3,
+  "resolution": {
+    "map_origin": {
+      "x": 10,
+      "y": 20
+    },
+    "map_size": {
+      "x": 4,
+      "y": 4
+    },
+    "pixels_per_grid": 50
+  },
+  "line_of_sight": [
+    [
+      {
+        "x": 10,
+        "y": 21
+      },
+      {
+        "x": 12,
+        "y": 21
+      }
+    ]
+  ],
+  "portals": [
+    {
+      "position": {
+        "x": 12,
+        "y": 21.5
+      },
+      "bounds": [
+        {
+          "x": 12,
+          "y": 21
+        },
+        {
+          "x": 12,
+          "y": 22
+        }
+      ],
+      "rotation": 1.5707963267948966,
+      "closed": false,
+      "freestanding": false
+    }
+  ],
+  "lights": [
+    {
+      "position": {
+        "x": 11.5,
+        "y": 22.5
+      },
+      "range": 3,
+      "intensity": 0.7,
+      "color": "ffcc88ff",
+      "shadows": true
+    }
+  ],
+  "image": "iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAIAAAAiOjnJAAADAElEQVR4nO3dsQnDMBRFUU+TJn1GSKFeG2iSbJCNs0QutsWBW5uHOfxWx5hL+nvHmOvxfF0tq+6+CiyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIq6Tj9KU5tmYtlVRJYViWBZVUSWFYlgWVVElhWJYFlVRJYViWBZVUSWFYlgWVVElhWJYFlVRJYViWBZVUSWFYlgWVVElhWJYFlVdKGsN6fb9SYq/v4Kf+qCyywksACKwkssJLAAisJLLCSwAIrCSywksACKwkssJLAAisJLLCSwAIrCSywksACKwkssJLAAisJLLCSwAIrCSywksACKwkssJLAAisJLLCSwAIrCSywksACKwkssJLAAisJLLCSvLCqJBfLxUoCC6wksMBKAgusJLDASgILrCSwwEoCC6wksMBKAgusJLDASgILrCSwwEoCC6wksMBKAgusJLDASgILrCSwwEoCC6wksMBKAgusJLDASgILrCSwwEoCC6wksMBKAgusJLDASgILrKQNYVl1hcCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrksCyKgksq5LAsioJLKuSwLIqCSyrkrywqiQXy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6oksKxKAsuqJLCsSgLLqiSwrEoCy6qkH5kX88FBz3EvAAAAAElFTkSuQmCC"
+}

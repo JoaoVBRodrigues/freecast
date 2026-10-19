@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Dd2vttImporter from '@/Components/Dd2vttImporter.vue';
 import AppLayout from '@/Layouts/AppLayout.vue';
 import type { MapAsset, MapFolder, RoomMapSummary } from '@/types/maps';
 import { Head, Link, router, useForm } from '@inertiajs/vue3';
@@ -110,6 +111,7 @@ async function activateMap(map: RoomMapSummary): Promise<void> {
                 <Link class="button-secondary button-small" :href="`/mesas/${room.id}`">Conversa</Link>
             </header>
 
+            <Dd2vttImporter v-if="can_manage" :room-id="room.id" />
             <section class="map-library-section">
                 <div class="map-library-section-heading">
                     <h2>Mapas</h2>
